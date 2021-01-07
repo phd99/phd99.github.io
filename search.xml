@@ -1,6 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>使用Hexo和github page和coding page搭建个人博客</title>
+    <url>/2021/01/07/%E4%BD%BF%E7%94%A8Hexo%E5%92%8Cgithub-page%E5%92%8Ccoding-page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><ul>
+<li>Windows</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>安装 <a href="https://nodejs.org/en/">Node.js</a></li>
+<li>安装 <a href="http://git-scm.com/">Git</a></li>
+<li>安装 <a href="https://hexo.io/zh-cn/">Hexo</a><ul>
+<li>鼠标右键打开<code>git bash</code></li>
+<li>在<code>在git bash</code>中输入下列命令<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>安装<code>hexo-deployer-git</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>查看版本<ul>
+<li>查看<code>node</code>的版本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure></li>
+<li>查看<code>npm</code>的版本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure></li>
+<li>查看<code>hexo</code>的版本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="新建网站"><a href="#新建网站" class="headerlink" title="新建网站"></a>新建网站</h2><ul>
+<li>初始化<code>hexo</code>，在<code>git bash</code>中输入如下命令。<code>***</code>是文件夹名称，名称任意，如果为空，则默认在当前的文件夹下建立网站。以后的博客内容都在该文件夹中。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init ***</span><br></pre></td></tr></table></figure></li>
+<li>进入<code>***</code>文件夹<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd ***</span><br></pre></td></tr></table></figure></li>
+<li>在<code>***</code>文件夹下执行<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+<li>生成静态文件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></li>
+<li>启动服务器<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></li>
+<li>访问网站，默认情况下，访问网址为：<a href="http://localhost:4000/">http://localhost:4000/</a></li>
+</ul>
+<h2 id="生成SSH"><a href="#生成SSH" class="headerlink" title="生成SSH"></a>生成SSH</h2><ul>
+<li>配置<code>git</code>用户名。<code>-–global</code>参数，用了这个参数，表示你这台机器上所有的<code>Git</code>仓库都会使用这个配置，也可以对某个仓库指定不同的用户名和<code>Email</code>地址，我配置的用户名和邮箱与<code>github</code>和<code>coding</code>平台的相同。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;name&quot;</span><br></pre></td></tr></table></figure></li>
+<li>配置<code>git</code>邮箱<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;email&quot;</span><br></pre></td></tr></table></figure></li>
+<li>查看用户配置<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure></li>
+<li>创建<code>SSH</code>。创建过程中会要求设置密码，可以不设置密码，直接按回车键<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email&quot;</span><br></pre></td></tr></table></figure></li>
+<li><code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥，默认位置在<code>C:\Users\用户名\.ssh</code>中。</li>
+<li>将公钥添加到<code>github</code>中<ul>
+<li><code>Settings</code>-&gt;<code>SSH and GPG keys</code>-&gt;<code>New SSH key</code></li>
+<li>将<code>id_rsa.pub</code>公钥文件中的内容复制到<code>Key</code>中</li>
+<li>公钥名称任意</li>
+<li>查看是否添加成功<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>将公钥添加到<code>coding</code>中<ul>
+<li>个人账户设置-&gt;<code>SSH</code>公钥-&gt;新增公钥</li>
+<li>将<code>id_rsa.pub</code>公钥文件中的内容复制到公钥内容中</li>
+<li>公钥名称任意</li>
+<li>查看是否添加成功<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@git.coding.net</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="将博客部署到-github"><a href="#将博客部署到-github" class="headerlink" title="将博客部署到 github"></a>将博客部署到 <a href="https://github.com/">github</a></h2><ul>
+<li>在<code>github</code>中创建一个仓库，仓库名称为<code>***.github.io</code>,<code>***</code>为<code>github</code>的用户名。</li>
+<li>打开站点配置文件<code>_config.yml</code>，添加下列内容<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">    github: git@github.com:phd99&#x2F;phd99.github.io.git,master</span><br></pre></td></tr></table></figure></li>
+<li>将博客内容部署到<code>github</code>，- 部署成功后，可以访问<code>http://***.github.io</code>查看自己的个人博客<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="将博客部署到-coding"><a href="#将博客部署到-coding" class="headerlink" title="将博客部署到 coding"></a>将博客部署到 <a href="https://coding.net/">coding</a></h2><ul>
+<li>在<code>coding</code>中创建一个项目，名称任意</li>
+<li>在该项目中创建一个代码仓库，名称任意，仓库类型为<code>git</code>仓库</li>
+<li>开启<code>coding pages</code>服务<ul>
+<li>在该项目中选择持续部署-&gt;静态网站</li>
+<li>部署成功后会提供一个网络地址，使用该<code>url</code>查看自己的博客</li>
+</ul>
+</li>
+<li>打开站点配置文件<code>_config.yml</code>，修改下列内容<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">    coding: git@e.coding.net:phd99&#x2F;phd99&#x2F;phd99.git,master</span><br><span class="line">    github: git@github.com:phd99&#x2F;phd99.github.io.git,master</span><br></pre></td></tr></table></figure></li>
+<li>将博客内容部署到<code>coding</code>，- 部署成功后，可以访问coding提供的网络地址来查看个人博客<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="设置个人域名"><a href="#设置个人域名" class="headerlink" title="设置个人域名"></a>设置个人域名</h2><ul>
+<li>如果购买了域名，可以设置通过购买的域名来访问个人博客，我是在阿里云上购买的域名</li>
+</ul>
+<h3 id="github中的设置"><a href="#github中的设置" class="headerlink" title="github中的设置"></a>github中的设置</h3><ul>
+<li>登录<code>github</code>-&gt;进入仓库-&gt;<code>Settings</code>-&gt;<code>Options</code>-&gt;<code>GitHub Pages</code><ul>
+<li>在<code>Custom domain</code>中添加自己购买的域名</li>
+<li>点击保存</li>
+<li>勾选<code>Enforce HTTPS</code></li>
+</ul>
+</li>
+<li>登录<a href="https://www.aliyun.com/">阿里云</a>-&gt;账号管理-&gt;域名控制台-&gt;找到要设置的域名-&gt;解析-&gt;添加记录<ul>
+<li>记录类型为<code>CNAME</code></li>
+<li>主机记录为<code>@</code>，再重新添加一条记录并将主机记录改为<code>www</code>，其他的不变</li>
+<li>解析线路为默认，若还使用了coding，可以将github设置为境外，将coding设置为默认</li>
+<li>记录值为<code>***.github.io</code></li>
+</ul>
+</li>
+<li>在博客根目录下<code>source</code>文件夹中创建一个文件，名称为<code>CNAME</code>，没有后缀</li>
+<li>编辑<code>CNAME</code>文件，将购买的域名输入到该文件内<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">www.phd99.com</span><br></pre></td></tr></table></figure></li>
+<li>重新部署一下，过一会儿就可以通过访问购买的域名来查看个人博客了<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="coding中的设置"><a href="#coding中的设置" class="headerlink" title="coding中的设置"></a>coding中的设置</h3></li>
+<li>登录<code>coding</code>-&gt;进入项目-&gt;持续部署-&gt;静态网站-&gt;自定义域名-&gt;新建域名-&gt;输入购买的域名-&gt;确定</li>
+<li>添加域名后，网站会自动重新部署，并且同时去申请<code>SSL</code>证书<ul>
+<li>申请证书时，会提供一些信息，需要给域名添加一条记录，添加之后，过一会儿，<code>SSL</code>证书就申请成功了，此时域名也添加成功了</li>
+</ul>
+</li>
+<li>登录<a href="https://www.aliyun.com/">阿里云</a>-&gt;账号管理-&gt;域名控制台-&gt;找到要设置的域名-&gt;解析-&gt;添加记录<ul>
+<li>记录类型为<code>CNAME</code></li>
+<li>主机记录为<code>@</code>，再重新添加一条记录并将主机记录改为<code>www</code>，其他的不变</li>
+<li>解析线路为默认</li>
+<li>记录值为<code>***.com.cdn.dnsv1.com</code></li>
+</ul>
+</li>
+<li>登录<code>coding</code>-&gt;进入项目-&gt;持续部署-&gt;静态网站-&gt;重新部署</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/01/04/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
