@@ -45,6 +45,17 @@
 <body>
   <div id="app">
     
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
       
     <main class="content on">
       <section class="outer">
@@ -215,6 +226,36 @@
         <i class="ri-heart-fill heart_icon"></i> phd
       </li>
     </ul>
+
+
+    <!-- 运行天数 -->  <!-- + B + "小时" + C + "分" + D + "秒" -->  
+    <ul>
+      <li>
+        
+          <span id="runtime_span"></span>
+          <script type="text/javascript">
+            function show_runtime() {
+                window.setTimeout("show_runtime()", 1000);
+                X = new Date("01/04/2021 11:11:11");
+                Y = new Date();
+                T = (Y.getTime() - X.getTime());
+                M = 24 * 60 * 60 * 1000;
+                a = T / M;
+                A = Math.floor(a);
+                b = (a - A) * 24;
+                B = Math.floor(b);
+                c = (b - B) * 60;
+                C = Math.floor((b - B) * 60);
+                D = Math.floor((c - C) * 60);
+                runtime_span.innerHTML = "本站已运行: " + A + "天";
+            }
+            show_runtime();
+          </script>
+        
+      </li>
+    </ul>
+
+
     <ul>
       <li>
         
@@ -244,15 +285,18 @@
     <ul>
       
     </ul>
+
+    
+
     <ul>
       <li>
         <!-- cnzz统计 -->
         
-        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
-        
       </li>
     </ul>
+
   </div>
+
 </footer>
       <div class="float_btns">
         <div class="totop" id="totop">
@@ -474,6 +518,11 @@
 
 <!-- ClickBoom1 -->
 
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
 <!-- ClickBoom2 -->
 
 <!-- CodeCopy -->
@@ -542,6 +591,6 @@
 
     
   </div>
-</body>
 
+</body>
 </html>
