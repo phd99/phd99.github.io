@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>text</title>
+    <url>/2021/01/09/text/</url>
+    <content><![CDATA[<p><img src="/.com//01/09/text/1.jpg" alt="1"></p>
+<div align="center">
+  <img src="/.com//2.jpg" width="300" height="300">
+</div>
+]]></content>
+  </entry>
+  <entry>
     <title>使用Hexo和github page和coding page搭建个人博客</title>
     <url>/2021/01/07/%E4%BD%BF%E7%94%A8Hexo%E5%92%8Cgithub-page%E5%92%8Ccoding-page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><ul>

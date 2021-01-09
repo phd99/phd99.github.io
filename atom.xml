@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2021-01-08T03:29:46.855Z</updated>
+  <updated>2021-01-09T03:34:15.597Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>text</title>
+    <link href="http://phd99.com/2021/01/09/text/"/>
+    <id>http://phd99.com/2021/01/09/text/</id>
+    <published>2021-01-09T02:43:33.301Z</published>
+    <updated>2021-01-09T03:34:15.597Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/.com//01/09/text/1.jpg&quot; alt=&quot;1&quot;&gt;&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;
+  &lt;img src=&quot;/.com//2.jpg&quot; width=&quot;300&quot; height=&quot;300&quot;&gt;
+&lt;/div&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>使用Hexo和github page和coding page搭建个人博客</title>
@@ -32,7 +54,7 @@
 &lt;li&gt;安装 &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;安装 &lt;a href=&quot;https://hexo.io/zh-cn/&quot;&gt;Hexo&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;鼠标右键打开&lt;code&gt;git bash&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;在&lt;code&gt;在git bash&lt;/code&gt;中输入下列命令&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g hexo-cli&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+&lt;li&gt;在&lt;code&gt;在git bash&lt;/code&gt;中输入下列命令&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g hexo-cli&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
     
     
     
