@@ -3,9 +3,8 @@
   <entry>
     <title>text</title>
     <url>/2021/01/09/text/</url>
-    <content><![CDATA[<p><img src="/2021/01/09/text/1.jpg" alt="1"></p>
-<div align="center">
-  <img src="/2021/01/09/text/2.jpg" width="300" height="300">
+    <content><![CDATA[<div align="center">
+  <img src="/2021/01/09/text/2.jpg" width="%100">
 </div>
 ]]></content>
   </entry>
