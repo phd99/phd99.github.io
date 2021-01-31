@@ -1,13 +1,467 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HTML知识</title>
+    <url>/2021/01/31/HTML%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<li>结构用于对网页元素进行整理和分类，身体，HTML。</li>
+<li>表现用于设置网页元素的板式、颜色、大小等外观样式，装饰CSS。</li>
+<li>行为是指网页模型的定义及交互的编写，动作，JavaScript。<a id="more"></a>
+
+
+
+</li>
+</ul>
+<h2 id="结构标签-骨架标签"><a href="#结构标签-骨架标签" class="headerlink" title="结构标签(骨架标签)"></a>结构标签(骨架标签)</h2><ul>
+<li>每个网页都有一个基本的结构标签</li>
+<li>HTML标签<ul>
+<li>根标签，所有html语言都在其内部<pre><code class="html">&lt;html&gt;&lt;/html&gt;</code></pre>
+</li>
+</ul>
+</li>
+<li>网页头部<ul>
+<li>在头部中一定要设置标题<code>title</code><pre><code class="html">&lt;head&gt;&lt;/head&gt;</code></pre>
+</li>
+</ul>
+</li>
+<li>网页标题<ul>
+<li>当前网页的名字<pre><code class="html">&lt;title&gt;&lt;/title&gt;</code></pre>
+</li>
+</ul>
+</li>
+<li>网页主体<ul>
+<li>页面中的内容都在主体中<pre><code class="html">&lt;body&gt;&lt;/body&gt;</code></pre>
+</li>
+</ul>
+</li>
+<li>范例<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;网页标题&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  页面内容
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</li>
+</ul>
+<h2 id="lt-DOCTYPE-gt"><a href="#lt-DOCTYPE-gt" class="headerlink" title="&lt;!DOCTYPE&gt;"></a>&lt;!DOCTYPE&gt;</h2><ul>
+<li>文档类型声明标签</li>
+<li>告诉浏览器使用哪个版本的<code>HTML</code>来显示网页</li>
+<li>使用<code>HTML5</code>版本来显示网页<pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+</li>
+</ul>
+<h2 id="lang"><a href="#lang" class="headerlink" title="lang"></a>lang</h2><ul>
+<li>定义当前文档显示的语言</li>
+<li>若需要使用浏览器翻译当前网页，则需要用到</li>
+<li><code>en</code>为英语</li>
+<li><code>zh-CN</code>为中文<pre><code class="html">&lt;html lang=&quot;en&quot;&gt;</code></pre>
+</li>
+</ul>
+<h2 id="charset"><a href="#charset" class="headerlink" title="charset"></a>charset</h2><ul>
+<li>规定<code>HTML</code>文档使用的字符编码</li>
+<li>UTF-8为万国码，基本包含了所有国家的字符</li>
+<li>若不设置编码格式，可能会出现乱码</li>
+<li>写在<code>title</code>标签中<pre><code class="HTML">&lt;title&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/title&gt;</code></pre>
+</li>
+</ul>
+<h2 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h2><ul>
+<li>共有6级，<code>h1~h6</code></li>
+<li>一个标题单独占一行<pre><code class="HTML">&lt;h1&gt;1&lt;/h1&gt;
+&lt;h2&gt;2&lt;/h2&gt;
+···</code></pre>
+</li>
+</ul>
+<h2 id="段落标签"><a href="#段落标签" class="headerlink" title="段落标签"></a>段落标签</h2><ul>
+<li>将文字分段</li>
+<li>段落之间有间距<pre><code class="HTML">&lt;p&gt;一个段落&lt;p&gt;</code></pre>
+</li>
+</ul>
+<h2 id="换行标签"><a href="#换行标签" class="headerlink" title="换行标签"></a>换行标签</h2><ul>
+<li>换行<pre><code class="HTML">&lt;br /&gt;</code></pre>
+</li>
+</ul>
+<h2 id="加粗标签"><a href="#加粗标签" class="headerlink" title="加粗标签"></a>加粗标签</h2><ul>
+<li>将文字加粗<pre><code class="HTML">&lt;strong&gt;加粗&lt;/strong&gt;
+&lt;b&gt;加粗&lt;/b&gt;</code></pre>
+</li>
+</ul>
+<h2 id="倾斜标签"><a href="#倾斜标签" class="headerlink" title="倾斜标签"></a>倾斜标签</h2><ul>
+<li>将文字倾斜<pre><code class="HTML">&lt;em&gt;倾斜&lt;/em&gt;
+&lt;i&gt;倾斜&lt;/i&gt;</code></pre>
+</li>
+</ul>
+<h2 id="删除线标签"><a href="#删除线标签" class="headerlink" title="删除线标签"></a>删除线标签</h2><ul>
+<li>文字中间有一条线<pre><code class="HTML">&lt;del&gt;删除线&lt;/del&gt;
+&lt;s&gt;删除线&lt;/s&gt;</code></pre>
+</li>
+</ul>
+<h2 id="下划线标签"><a href="#下划线标签" class="headerlink" title="下划线标签"></a>下划线标签</h2><ul>
+<li>文字下面有一条线<pre><code class="HTML">&lt;ins&gt;下划线&lt;/ins&gt;
+&lt;u&gt;下划线&lt;/u&gt;</code></pre>
+</li>
+</ul>
+<h2 id="盒子标签"><a href="#盒子标签" class="headerlink" title="盒子标签"></a>盒子标签</h2><ul>
+<li><code>div</code><ul>
+<li>独占一行，一行只能有一个<code>div</code></li>
+<li>大盒子<pre><code class="HTML">&lt;div&gt;大盒子&lt;/div&gt;</code></pre>
+</li>
+</ul>
+</li>
+<li><code>span</code><ul>
+<li>一行可以有多个<code>span</code></li>
+<li>小盒子<pre><code class="HTML">&lt;span&gt;小盒子&lt;/span&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="图像标签"><a href="#图像标签" class="headerlink" title="图像标签"></a>图像标签</h2><ul>
+<li>用来设置<code>HTML</code>页面中的图像</li>
+<li>属性<ul>
+<li><code>src</code><ul>
+<li>用于指定图像文件的路径和文件名</li>
+<li>是图像标签必须添加的属性</li>
+</ul>
+</li>
+<li><code>alt</code><ul>
+<li>若图像不能显示时，显示的文字</li>
+</ul>
+</li>
+<li><code>title</code><ul>
+<li>鼠标放到图片上时，显示的文字</li>
+</ul>
+</li>
+<li><code>width</code><ul>
+<li>图像的宽度</li>
+</ul>
+</li>
+<li><code>height</code><ul>
+<li>图像的高度</li>
+<li>高度和宽度只需要设置一个即可，另一个会根据比例进行缩放</li>
+</ul>
+</li>
+<li><code>border</code><ul>
+<li>图像边框的粗细</li>
+<li>边框一般通过CSS进行修改</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>范例<pre><code class="HTML">&lt;img src=&quot;./image/1.jpg&quot; alt=&quot;替换文本&quot; title=&quot;提示文本&quot; width=&quot;250&quot; height=&quot;250&quot; border=&quot;3&quot; /&gt;</code></pre>
+</li>
+</ul>
+<h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><ul>
+<li><p>目录文件夹</p>
+<ul>
+<li>就是存放所有文件的最外面那个文件夹，即项目文件夹</li>
+</ul>
+</li>
+<li><p>根目录</p>
+<ul>
+<li>打开目录文件夹的第一层就是根目录</li>
+</ul>
+</li>
+<li><p>绝对路径</p>
+<ul>
+<li><code>D:\image\a.jpg</code></li>
+<li><code>https://www.phd99.com/images/a.jpg</code></li>
+</ul>
+</li>
+<li><p>相对路径</p>
+<ul>
+<li>当前文件夹中的image文件夹下的a图片<ul>
+<li><code>image/a.jpg</code></li>
+<li>或者<code>./image/a.jpg</code></li>
+</ul>
+</li>
+<li>当前文件夹的上一级文件夹中的image文件夹<ul>
+<li><code>../image</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="超链接标签"><a href="#超链接标签" class="headerlink" title="超链接标签"></a>超链接标签</h2><ul>
+<li>从一个页面跳转到另一个页面</li>
+<li>属性<ul>
+<li><code>herf</code>指定要跳转的页面的<code>url</code>地址<ul>
+<li>当值为<code>#</code>时，为空链接</li>
+</ul>
+</li>
+<li><code>target</code>指定如何打开跳转页面<ul>
+<li><code>_self</code>在当前窗口打开，默认</li>
+<li><code>_blank</code>在新窗口中打开</li>
+</ul>
+</li>
+<li>范例<pre><code class="HTML">&lt;a href=&quot;https://www.phd99.com&quot; target=&quot;_parent&quot;&gt;新页面&lt;/a&gt;</code></pre>
+</li>
+</ul>
+</li>
+<li>锚点链接<ul>
+<li>点击时可以直接定位到页面中的某个位置<pre><code class="HTML">&lt;a href=&quot;#phd&quot;&gt;跳转到id属性值为phd的标签处&lt;/a&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="注释标签"><a href="#注释标签" class="headerlink" title="注释标签"></a>注释标签</h2><ul>
+<li>快捷键<code>ctrl + /</code><pre><code class="HTML">&lt;!-- 这是一个注释 --&gt;</code></pre>
+</li>
+</ul>
+<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><ul>
+<li>空格<code>&amp;nbsp;</code><pre><code>&amp;nbsp;</code></pre>
+</li>
+<li>大于<pre><code>&amp;lt;</code></pre>
+</li>
+<li>小于<pre><code>&amp;gt;</code></pre>
+</li>
+<li>和<pre><code>&amp;amp;</code></pre>
+</li>
+<li>人民币<pre><code>&amp;yen;</code></pre>
+</li>
+<li>版权<pre><code>&amp;copy;</code></pre>
+</li>
+<li>注册商标<pre><code>&amp;reg;</code></pre>
+</li>
+<li>摄氏度<pre><code>&amp;deg;</code></pre>
+</li>
+<li>正负号<pre><code>&amp;plusmn;</code></pre>
+</li>
+<li>乘号<pre><code>&amp;times;</code></pre>
+</li>
+<li>除号<pre><code>&amp;divide;</code></pre>
+</li>
+<li>平方<pre><code>&amp;sup2;</code></pre>
+</li>
+<li>立方<pre><code>&amp;sup3;</code></pre>
+</li>
+</ul>
+<h2 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h2><ul>
+<li><code>table</code>用于定义表格</li>
+<li><code>tr</code>用于定义一行</li>
+<li><code>td</code>用于定义一行中的一列</li>
+<li><code>th</code>表头单元格，里面的单元格会加粗居中显示，一般用于表格的第一行</li>
+<li>属性<ul>
+<li><code>align</code>，对齐方式</li>
+<li><code>border</code>，设置表格是否有边框</li>
+<li><code>cellpadding</code>，文字和单元格边框之间的距离</li>
+<li><code>cellspacing</code>，单元格之间的距离</li>
+<li><code>width</code>，表格的宽度<pre><code class="html">&lt;table align=&quot;center&quot; border=&quot;1&quot; width=&quot;200&quot; cellpadding=&quot;1&quot; cellspacing=&quot;1&quot;&gt;
+&lt;tr&gt;
+    &lt;th&gt;第1行第1列&lt;/th&gt;
+    &lt;th&gt;第1行第2列&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;第2行第1列&lt;/td&gt;
+    &lt;td&gt;第2行第2列&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="表格头部标签"><a href="#表格头部标签" class="headerlink" title="表格头部标签"></a>表格头部标签</h3><ul>
+<li><code>&lt;thead&gt;</code></li>
+<li>表头区域，表头部分</li>
+</ul>
+<h3 id="表格主题标签"><a href="#表格主题标签" class="headerlink" title="表格主题标签"></a>表格主题标签</h3><ul>
+<li><code>&lt;tbody&gt;</code></li>
+<li>主体区域，表格的内容部分<pre><code class="html">&lt;table align=&quot;center&quot; border=&quot;1&quot; width=&quot;200&quot; cellpadding=&quot;1&quot; cellspacing=&quot;1&quot;&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;第1行第1列&lt;/th&gt;
+          &lt;th&gt;第1行第2列&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;第2行第1列&lt;/td&gt;
+          &lt;td&gt;第2行第2列&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+</li>
+</ul>
+<h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
+<li>无顺序</li>
+<li>用<code>&lt;ul&gt;</code>表示无序列表，<code>&lt;ul&gt;</code>标签中只能有<code>&lt;li&gt;</code>标签</li>
+<li>用<code>&lt;li&gt;</code>表示列表中的一项，<code>&lt;li&gt;</code>标签中放其他标签<pre><code class="html">&lt;ul&gt;
+   &lt;li&gt;啊啊&lt;/li&gt;
+   &lt;li&gt;嗯嗯&lt;/li&gt;
+   &lt;li&gt;嘿嘿&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><ul>
+<li>有顺序</li>
+<li>用<code>&lt;ol&gt;</code>表示有序列表，<code>&lt;ol&gt;</code>标签中只能有<code>&lt;li&gt;</code>标签</li>
+<li>用<code>&lt;li&gt;</code>表示列表中的一项<pre><code class="html">&lt;ol&gt;
+   &lt;li&gt;张三&lt;/li&gt;
+   &lt;li&gt;李四&lt;/li&gt;
+   &lt;li&gt;王五&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</li>
+</ul>
+<h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><ul>
+<li>对列表中的信息有一个整体的描述</li>
+<li>用<code>&lt;dl&gt;</code>表示自定义列表，<code>&lt;dl&gt;</code>标签中只能有<code>&lt;dt&gt;</code>和<code>&lt;dd&gt;</code>标签</li>
+<li>用<code>&lt;dt&gt;</code>表示最上面的描述标题</li>
+<li>用<code>&lt;dd&gt;</code>表示描述标题下面的每一个小标题<pre><code class="html">&lt;dl&gt;
+  &lt;dt&gt;服务支持&lt;/dt&gt;
+  &lt;dd&gt;售后政策&lt;/dd&gt;
+  &lt;dd&gt;自助服务&lt;/dd&gt;
+  &lt;dd&gt;相关下载&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+</li>
+</ul>
+<h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><h3 id="表单域"><a href="#表单域" class="headerlink" title="表单域"></a>表单域</h3><ul>
+<li><code>&lt;form&gt;</code></li>
+<li>属性<ul>
+<li><code>action</code>用于指定接收并处理表单数据的服务器程序的<code>url</code>地址</li>
+<li><code>method</code>用于设置表单数据的提交方式，其取值为<code>get</code>或<code>post</code></li>
+<li><code>name</code>用于指定表单的名称，以区分同一个页面中的不同表单域</li>
+</ul>
+</li>
+</ul>
+<h3 id="表单元素"><a href="#表单元素" class="headerlink" title="表单元素"></a>表单元素</h3><h4 id="input"><a href="#input" class="headerlink" title="input"></a>input</h4><ul>
+<li>输入表单元素</li>
+<li><code>type</code>属性值<ul>
+<li><code>button</code>按钮</li>
+<li><code>checkbox</code>复选框，要有相同的<code>name</code>属性值</li>
+<li><code>file</code>定义输入字段和“浏览”按钮，供文件上传</li>
+<li><code>hidden</code>定义隐藏的输入字段</li>
+<li><code>image</code>定义图像形式的提交按钮</li>
+<li><code>password</code>定义密码字段</li>
+<li><code>radio</code>定义单选按钮,要有相同的<code>name</code>属性值</li>
+<li><code>reset</code>定义重置按钮，会清除表单中的所有数据</li>
+<li><code>submit</code>定义提交按钮，提交按钮会把表单数据发送到服务器</li>
+<li><code>text</code>定义单行的输入字段，用户可在其中输入文本，默认宽度为20个字符</li>
+</ul>
+</li>
+<li><code>checked</code>属性值<ul>
+<li>单选按钮和复选框可以设置checked属性，当页面打开的时候可以默认选中这个按钮</li>
+<li><code>checked=&quot;checked&quot;</code></li>
+</ul>
+</li>
+<li><code>maxlength</code>属性值<ul>
+<li>规定输入字段中的字符的最大长度<pre><code class="html">&lt;form action=&quot;test.php&quot; method=&quot;post&quot; name=&quot;1&quot;&gt;
+&lt;input type=&quot;text&quot; maxlength=&quot;10&quot;&gt;&lt;br&gt;
+男&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;男&quot; checked=&quot;checked&quot;&gt;
+女&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;女&quot;&gt;
+&lt;/form&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="select"><a href="#select" class="headerlink" title="select"></a>select</h4><ul>
+<li>下拉表单元素</li>
+<li><code>&lt;option&gt;</code>标签用来表示下拉列表中的选项</li>
+<li><code>selected</code>属性设置默认选择<pre><code class="html">&lt;form&gt;
+  &lt;select&gt;
+      &lt;option&gt;学生&lt;/option&gt;
+      &lt;option&gt;警察&lt;/option&gt;
+      &lt;option&gt;医生&lt;/option&gt;
+      &lt;option selected=&quot;selected&quot;&gt;教师&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;</code></pre>
+</li>
+</ul>
+<h4 id="textarea"><a href="#textarea" class="headerlink" title="textarea"></a>textarea</h4><ul>
+<li>文本域元素</li>
+<li>可以输入多行文字</li>
+<li>常见于留言板、评论</li>
+<li>属性<ul>
+<li><code>cols</code>一行显示的字符数</li>
+<li><code>rows</code>显示的行数<pre><code class="html">&lt;form&gt;
+&lt;textarea cols=&quot;10&quot; rows=&quot;2&quot;&gt;
+    内容
+&lt;/textarea&gt;
+&lt;/form&gt;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="标注标签"><a href="#标注标签" class="headerlink" title="标注标签"></a>标注标签</h2><ul>
+<li><code>&lt;label&gt;</code></li>
+<li>当点击label标签对应的位置时，其完成的功能就是与for属性值相同的id属性值对应的其他标签所完成的功能。</li>
+<li>鼠标点击“男”的位置，也能实现单选功能<pre><code class="html">&lt;form action=&quot;test.php&quot; method=&quot;post&quot; name=&quot;1&quot;&gt;
+  &lt;label for=&quot;nan&quot;&gt;男&lt;/label&gt;
+  &lt;input id=&quot;nan&quot; type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;男&quot; checked=&quot;checked&quot;&gt;
+  &lt;label for=&quot;nu&quot;&gt;女&lt;/label&gt;
+  &lt;input id=&quot;nu&quot; type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;女&quot;&gt;
+&lt;/form&gt;</code></pre>
+<!--more-->
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>你要去相信,没有到不了的明天</title>
     <url>/2021/01/10/%E4%BD%A0%E8%A6%81%E5%8E%BB%E7%9B%B8%E4%BF%A1-%E6%B2%A1%E6%9C%89%E5%88%B0%E4%B8%8D%E4%BA%86%E7%9A%84%E6%98%8E%E5%A4%A9/</url>
-    <content><![CDATA[<h5 id="书名：你要去相信-没有到不了的明天"><a href="#书名：你要去相信-没有到不了的明天" class="headerlink" title="书名：你要去相信,没有到不了的明天"></a>书名：你要去相信,没有到不了的明天</h5><h5 id="作者：卢思浩"><a href="#作者：卢思浩" class="headerlink" title="作者：卢思浩"></a>作者：卢思浩</h5><hr>
-<h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><p>&emsp;&emsp;后来我才明白，与其担心未来，不如现在好好努力。这条路上，只有奋斗才能给你安全感。不要轻易把梦想寄托在某个人身上，也不要太在乎身旁的耳语，因为未来是你自己的，只有你自己能给自己最大的安全感。别忘了答应自己要做的事情，别忘了自己想去的地方，不管那有多难，有多远，有多不“不靠谱”。</p>
+    <content><![CDATA[<h5 id="书名：你要去相信，没有到不了的明天"><a href="#书名：你要去相信，没有到不了的明天" class="headerlink" title="书名：你要去相信，没有到不了的明天"></a>书名：你要去相信，没有到不了的明天</h5><h5 id="作者：卢思浩"><a href="#作者：卢思浩" class="headerlink" title="作者：卢思浩"></a>作者：卢思浩</h5><hr>
+<h5 id="1"><a href="#1" class="headerlink" title="1"></a>1</h5><p>&emsp;&emsp;人就是这样，拥有的时候不知道珍惜，失去之后追悔莫及。我们一再地追忆旧时光，为一部部系列电影埋单，为一次次的错过和分开难过，却从没想过我们挥霍的今天，正在变成以后再也回不去的旧时光。</p>
+<hr>
 <a id="more"></a>
+<h5 id="2"><a href="#2" class="headerlink" title="2"></a>2</h5><p>&emsp;&emsp;请好好守护曾经坚定的信念、曾经感动的感情、曾经灿烂的梦想，不要随便把这些丢下，否则在未来的夜里，你会因为把这些都留在了回忆里而难过不已。</p>
+<p>&emsp;&emsp;永远要在现在努力。如果你不把今天过得比昨天更有意义，那明天的到来又有什么用呢？</p>
+<hr>
+<h5 id="3"><a href="#3" class="headerlink" title="3"></a>3</h5><p>&emsp;&emsp;人生有多残酷，你就该有多坚强。现在让你难过的事情，许久回过头来看都会觉得那不算事，你之所以会把痛苦看得那么重，是因为你经历得不够多。觉得难过的时候，不妨告诉自己，现在正是你蜕变的契机。</p>
+<hr>
+<h5 id="4"><a href="#4" class="headerlink" title="4"></a>4</h5><p>&emsp;&emsp;失去的未必真的失去了，得到的也未必永远都是你的。</p>
+<hr>
+<h5 id="5"><a href="#5" class="headerlink" title="5"></a>5</h5><p>&emsp;&emsp;后来我才明白，与其担心未来，不如现在好好努力。这条路上，只有奋斗才能给你安全感。不要轻易把梦想寄托在某个人身上，也不要太在乎身旁的耳语，因为未来是你自己的，只有你自己能给自己最大的安全感。别忘了答应自己要做的事情，别忘了自己想去的地方，不管那有多难，有多远，有多“不靠谱”。</p>
 <p>&emsp;&emsp;当你犹豫的时候，这个世界就很大；当你勇敢地踏出第一步的时候，这个世界就很小。等到有一天你变成了你喜欢的自己的时候，谁还会质疑你的选择不靠谱呢？你已经变成更好的你了，一定会遇到更好的人的。你是谁，就会遇到谁。</p>
 <p>&emsp;&emsp;重要的是，不管做怎样的选择，都要对得起自己的内心。就像上面写的一样：很多年后，当你再次回想起来，唯一让你觉得真实和骄傲的，是你昂首挺胸用力走过的人生。</p>
+<hr>
+<h5 id="6"><a href="#6" class="headerlink" title="6"></a>6</h5><p>&emsp;&emsp;有时候你需要真正的颠肺流离，那会让你觉出生活的不易和艰辛，那不是自暴自弃，而是一种逐渐成长得到的心平气和。你需要被伤害、被拒绝，才能变得更坚强，更珍惜现在得到的一切。你需要去远方，只带上自己。更多时候，旅行的意义不在于你拍了多少照片，买了多少纪念品，去了哪些地方，而在于你经历了多少疯狂的瞬间，是不是看到了不一样的自己，是否找到了那个你能够分享喜悦和难过的人。</p>
+<p>&emsp;&emsp;其实伤害也不见得是天大的坏事，重点在于你是不是能够在跌倒之后重新站起来。你是一个怎样的人，不在于你跌倒了多少次，而在于你站起来重新来过多少次。</p>
+<p>&emsp;&emsp;生活没有那么多原因，也许几年后你回过头来看，才发现自己的改变来源于看似不经意的小事，等到那时候，其实梦想已经握在你手中了，实现不实现，它都在那里，因为你已经找到了最好的自己。就算这个世界真的是一个疯狂的世界，就算最后我也只是一个一事无成的我，我也觉得没有什么大不了的。我知道自己努力过，更何况，我真的有感觉到，有这么多人跟我在一起为了各自的梦想努力着。</p>
+<hr>
+<h5 id="7"><a href="#7" class="headerlink" title="7"></a>7</h5><p>&emsp;&emsp;有些东西，消失了就是消失了，即使大多数时候你根本说不清这东西是什么。这个世界上，最怕的，是当你最需要爱的时候，你需要的那个人却不在。慢慢地，你觉得，少了他好像自己也能活下去。</p>
+<hr>
+<h5 id="8"><a href="#8" class="headerlink" title="8"></a>8</h5><p>&emsp;&emsp;有些东西你要相信它才会存在，你要相信自己，要相信奇迹，不必感伤不必害怕，因为你就是那个奇迹。只有相信奇迹的人，奇迹才会选择你。</p>
+<hr>
+<h5 id="9"><a href="#9" class="headerlink" title="9"></a>9</h5><p>&emsp;&emsp;总有一天，你的菱角会被世界磨平，你会拔掉身上的刺，你会微笑应对讨厌的人，你会变成一个不动声色的大人。我常觉得自己还没有准备好，就已经长大了。大人的世界比想象的更难懂，有那么多字典里无法解释的字眼，有那么多努力做好了也不会被所有人喜欢的事情。</p>
+<hr>
+<h5 id="10"><a href="#10" class="headerlink" title="10"></a>10</h5><p>&emsp;&emsp;你想得越多，顾虑就越多，什么都不想的时候反而能一往无前；你害怕得越多，困难就越多，什么都不怕的时候一切反而没那么难。这世界就是这样，当你不敢去实现梦想的时候，梦想会离你越来越远，当你勇敢地去追梦的时候，全世界都会来帮你。</p>
+<hr>
+<h5 id="11"><a href="#11" class="headerlink" title="11"></a>11</h5><p>&emsp;&emsp;所有牛逼后面都是一道道苦逼的高墙，所有的苦逼背后都是一次次别人看不见的坚持。关于你的未来，只有你自己才知道。</p>
+<p>&emsp;&emsp;所以，管他呢，管别人怎么看，做自己想要的，努力到坚持不下去为止。既然解释不清，那就不要去解释。没有人在意你的青春，也别让别人左右了你的青春。这个世界没那么在意你，也别让世界改变你的节奏。</p>
+<hr>
+<h5 id="12"><a href="#12" class="headerlink" title="12"></a>12</h5><p>&emsp;&emsp;选择做一件事情，做你最喜欢的事情，把其他的都抛开。把这件事情做到你想要做到的极致，把这件事情做到你梦想中的最大化。永远不要害怕梦想太大，只有很大的梦想才拥有你向上的无限可能性。站得高才能望得远，梦想这东西也一样。从另一个角度来讲，永远要相信自己可以比现在走得更远，永远不要因为现在所取得的一点点小成绩而沾沾自喜。</p>
+<p>&emsp;&emsp;选择，本身就意味着要放弃另外一些东西。有时没有选择反而是更好的选择，没有退路反而是更好的出路。我们最容易犯的错误就是以为生活在别处，所以我们轻易地放弃一份工作、一种兴趣，我们总认为我们可以在很多事情上做得很好，这件事情不行换件事情做就行了，所以三天打鱼两天晒网。即便你可以在很多事情上做得很好，也做不到无可替代的程度，到头来，你也只是在Average上下徘徊，怎么也没能达到你想要的层次。</p>
+<p>&emsp;&emsp;所以试着去听从内心的声音，不要在乎外面的掌声。选择最喜欢的一件事情做，把它当成你最重要的事情来做，在这件事情上做到最好，而不是去不断尝试别人看来很好的。还是那句话，唯有割舍，才能专注；唯有放弃，才能追求。</p>
+<p>&emsp;&emsp;经得起诱惑，耐得住寂寞，永远是成功道路上的不二法则。</p>
+<hr>
+<h5 id="13"><a href="#13" class="headerlink" title="13"></a>13</h5><p>&emsp;&emsp;每个人表现出来的，都是光鲜的想让别人看到的外衣，你梦想过他们的生活的同时，却没有看到他们背后付出的代价。根本就不存在一蹴而就的说法，即使你偶尔幸运走上了神坛，你也会因为本身实力不足而跌落下来。那些屹立不倒的，哪儿不是付出了千百倍的努力？</p>
+<hr>
+<h5 id="14"><a href="#14" class="headerlink" title="14"></a>14</h5><p>&emsp;&emsp;如果你真的不知道自己要什么，就安静下来，寻找自己身上的闪光点，寻找你想要做的事情。生命本就没有意义，你能给它什么样的意义，它就会有什么样的意义。</p>
+<p>&emsp;&emsp;很多时候，你觉得难过，是因为你追逐的不是更好，而是比别人更好。所以你把自己的未来限定在了一个很小的框框内，过着看起来安稳却让你不甘的人生。</p>
+<p>&emsp;&emsp;让你不甘的人生，那就不要过。不知道自己想要什么，至少能够知道自己不想要什么。</p>
+<hr>
+<h5 id="15"><a href="#15" class="headerlink" title="15"></a>15</h5><p>&emsp;&emsp;不知道走哪条路的时候，就把眼前的路走好吧。觉得焦虑的时候，就去做眼前那些让你逃避的事情吧。不管做什么事情，一定都会有回报。生命是一张单程票，无法回头但是可以转弯。</p>
+<p>&emsp;&emsp;越是漫长，越要平静；越是害怕，越要面对；越是困难，越要倔强；越是困难的梦想，就越是有去实现的价值。</p>
+<p>&emsp;&emsp;无论什么时候都不要放弃希望，哪怕看不清前面的路，哪怕你是孤单一人。因为只有你放弃的时候，你才真的输了。</p>
+<p>&emsp;&emsp;你不会因为一件事情一步登天，也不会因为一件事情而一蹶不振。慢慢走，慢慢看，生命是个慢慢累积的过程，而这过程中，你唯一要做的，也是最重要的前提，就是不要放弃努力。</p>
+<hr>
+<h5 id="16"><a href="#16" class="headerlink" title="16"></a>16</h5><p>&emsp;&emsp;你不认清这个世界，就没有办法完全接受它；你不去接受它，那你就没有办法从幻灭中重新开始。你需要被这个世界狠狠地打击，狠狠地跌倒，才能真真正正脚踏实地地站在这片大地上。</p>
+<hr>
+<h5 id="17"><a href="#17" class="headerlink" title="17"></a>17</h5><p>&emsp;&emsp;生活中，并不是自己努力就什么都可以做到的。很多时候我们都会无能为力，大家都一样，没必要为难自己。人生很长，要看到新的希望；人生又很短，如果一直用消极情绪困扰自己，就太不值得了。</p>
+<hr>
+<h5 id="18"><a href="#18" class="headerlink" title="18"></a>18</h5><p>&emsp;&emsp;曾经也有个阶段觉得父母不可理喻，想离家越远越好。离开家了才发现，其实他们也有梦想，也曾经风华正茂，只是他们的梦想变成了我，我过得好他们就好。如果没有我，他们早就实现梦了。在你为了感情要死要活的时候，当你累的时候，想想你身后的父母正在为你打拼，这就是你今天需要坚强的理由。</p>
+<hr>
+<h5 id="19"><a href="#19" class="headerlink" title="19"></a>19</h5><p>&emsp;&emsp;成长不过是你哪怕难过得快死掉了，但你第二天还是照常去上课上班。没有人知道你发生了什么，也没有人在意你发生了什么。</p>
+<p>&emsp;&emsp;世界归根结底是我们一个人得去扛起的，所以你再怎么悲伤也没人能卸下你的负担，哭完了就得继续扛下去。</p>
+<hr>
+<h5 id="20"><a href="#20" class="headerlink" title="20"></a>20</h5><p>&emsp;&emsp;你必须非常努力，才能看起来毫不费力，即使躺着中枪，也要姿势漂亮。</p>
+<hr>
 <!--more-->
 ]]></content>
       <categories>
@@ -28,56 +482,70 @@
 <li>安装 <a href="http://git-scm.com/">Git</a></li>
 <li>安装 <a href="https://hexo.io/zh-cn/">Hexo</a><ul>
 <li>鼠标右键打开<code>git bash</code></li>
-<li>在<code>在git bash</code>中输入下列命令<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<li>在<code>在git bash</code>中输入下列命令<pre><code>npm install -g hexo-cli</code></pre>
 <a id="more"></a></li>
 </ul>
 </li>
-<li>安装<code>hexo-deployer-git</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>安装<code>hexo-deployer-git</code><pre><code>npm install hexo-deployer-git --save</code></pre>
+</li>
 <li>查看版本<ul>
-<li>查看<code>node</code>的版本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure></li>
-<li>查看<code>npm</code>的版本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure></li>
-<li>查看<code>hexo</code>的版本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
+<li>查看<code>node</code>的版本<pre><code>node -v</code></pre>
+</li>
+<li>查看<code>npm</code>的版本<pre><code>npm -v</code></pre>
+</li>
+<li>查看<code>hexo</code>的版本<pre><code>hexo -v</code></pre>
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="新建网站"><a href="#新建网站" class="headerlink" title="新建网站"></a>新建网站</h2><ul>
-<li>初始化<code>hexo</code>，在<code>git bash</code>中输入如下命令。<code>***</code>是文件夹名称，名称任意，如果为空，则默认在当前的文件夹下建立网站。以后的博客内容都在该文件夹中。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init ***</span><br></pre></td></tr></table></figure></li>
-<li>进入<code>***</code>文件夹<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd ***</span><br></pre></td></tr></table></figure></li>
-<li>在<code>***</code>文件夹下执行<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
-<li>生成静态文件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></li>
-<li>启动服务器<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></li>
+<li>初始化<code>hexo</code>，在<code>git bash</code>中输入如下命令。<code>***</code>是文件夹名称，名称任意，如果为空，则默认在当前的文件夹下建立网站。以后的博客内容都在该文件夹中。<pre><code>hexo init ***</code></pre>
+</li>
+<li>进入<code>***</code>文件夹<pre><code>cd ***</code></pre>
+</li>
+<li>在<code>***</code>文件夹下执行<pre><code>npm install</code></pre>
+</li>
+<li>生成静态文件<pre><code>hexo generate</code></pre>
+</li>
+<li>启动服务器<pre><code>hexo server</code></pre>
+</li>
 <li>访问网站，默认情况下，访问网址为：<a href="http://localhost:4000/">http://localhost:4000/</a></li>
 </ul>
 <h2 id="生成SSH"><a href="#生成SSH" class="headerlink" title="生成SSH"></a>生成SSH</h2><ul>
-<li>配置<code>git</code>用户名。<code>-–global</code>参数，用了这个参数，表示你这台机器上所有的<code>Git</code>仓库都会使用这个配置，也可以对某个仓库指定不同的用户名和<code>Email</code>地址，我配置的用户名和邮箱与<code>github</code>和<code>coding</code>平台的相同。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;name&quot;</span><br></pre></td></tr></table></figure></li>
-<li>配置<code>git</code>邮箱<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;email&quot;</span><br></pre></td></tr></table></figure></li>
-<li>查看用户配置<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure></li>
-<li>创建<code>SSH</code>。创建过程中会要求设置密码，可以不设置密码，直接按回车键<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email&quot;</span><br></pre></td></tr></table></figure></li>
+<li>配置<code>git</code>用户名。<code>-–global</code>参数，用了这个参数，表示你这台机器上所有的<code>Git</code>仓库都会使用这个配置，也可以对某个仓库指定不同的用户名和<code>Email</code>地址，我配置的用户名和邮箱与<code>github</code>和<code>coding</code>平台的相同。<pre><code>git config --global user.name &quot;name&quot;</code></pre>
+</li>
+<li>配置<code>git</code>邮箱<pre><code>git config --global user.email &quot;email&quot;</code></pre>
+</li>
+<li>查看用户配置<pre><code>git config --global -l</code></pre>
+</li>
+<li>创建<code>SSH</code>。创建过程中会要求设置密码，可以不设置密码，直接按回车键<pre><code>ssh-keygen -t rsa -C &quot;email&quot;</code></pre>
+</li>
 <li><code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥，默认位置在<code>C:\Users\用户名\.ssh</code>中。</li>
 <li>将公钥添加到<code>github</code>中<ul>
 <li><code>Settings</code>-&gt;<code>SSH and GPG keys</code>-&gt;<code>New SSH key</code></li>
 <li>将<code>id_rsa.pub</code>公钥文件中的内容复制到<code>Key</code>中</li>
 <li>公钥名称任意</li>
-<li>查看是否添加成功<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></li>
+<li>查看是否添加成功<pre><code>ssh -T git@github.com</code></pre>
+</li>
 </ul>
 </li>
 <li>将公钥添加到<code>coding</code>中<ul>
 <li>个人账户设置-&gt;<code>SSH</code>公钥-&gt;新增公钥</li>
 <li>将<code>id_rsa.pub</code>公钥文件中的内容复制到公钥内容中</li>
 <li>公钥名称任意</li>
-<li>查看是否添加成功<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@git.coding.net</span><br></pre></td></tr></table></figure>
-
+<li>查看是否添加成功<pre><code>ssh -T git@git.coding.net</code></pre>
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="将博客部署到-github"><a href="#将博客部署到-github" class="headerlink" title="将博客部署到 github"></a>将博客部署到 <a href="https://github.com/">github</a></h2><ul>
 <li>在<code>github</code>中创建一个仓库，仓库名称为<code>***.github.io</code>,<code>***</code>为<code>github</code>的用户名。</li>
-<li>打开站点配置文件<code>_config.yml</code>，添加下列内容<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">    github: git@github.com:phd99&#x2F;phd99.github.io.git,master</span><br></pre></td></tr></table></figure></li>
-<li>将博客内容部署到<code>github</code>，- 部署成功后，可以访问<code>http://***.github.io</code>查看自己的个人博客<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
+<li>打开站点配置文件<code>_config.yml</code>，添加下列内容<pre><code>deploy:
+type: git
+repo:
+  github: git@github.com:phd99/phd99.github.io.git,master</code></pre>
+</li>
+<li>将博客内容部署到<code>github</code>，- 部署成功后，可以访问<code>http://***.github.io</code>查看自己的个人博客<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></pre>
 </li>
 </ul>
 <h2 id="将博客部署到-coding"><a href="#将博客部署到-coding" class="headerlink" title="将博客部署到 coding"></a>将博客部署到 <a href="https://coding.net/">coding</a></h2><ul>
@@ -88,9 +556,13 @@
 <li>部署成功后会提供一个网络地址，使用该<code>url</code>查看自己的博客</li>
 </ul>
 </li>
-<li>打开站点配置文件<code>_config.yml</code>，修改下列内容<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">    coding: git@e.coding.net:phd99&#x2F;phd99&#x2F;phd99.git,master</span><br><span class="line">    github: git@github.com:phd99&#x2F;phd99.github.io.git,master</span><br></pre></td></tr></table></figure></li>
-<li>将博客内容部署到<code>coding</code>，- 部署成功后，可以访问coding提供的网络地址来查看个人博客<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
+<li>打开站点配置文件<code>_config.yml</code>，修改下列内容<pre><code>deploy:
+type: git
+repo:
+  coding: git@e.coding.net:phd99/phd99/phd99.git,master
+  github: git@github.com:phd99/phd99.github.io.git,master</code></pre>
+</li>
+<li>将博客内容部署到<code>coding</code>，- 部署成功后，可以访问coding提供的网络地址来查看个人博客<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></pre>
 </li>
 </ul>
 <h2 id="设置个人域名"><a href="#设置个人域名" class="headerlink" title="设置个人域名"></a>设置个人域名</h2><ul>
@@ -111,9 +583,12 @@
 </ul>
 </li>
 <li>在博客根目录下<code>source</code>文件夹中创建一个文件，名称为<code>CNAME</code>，没有后缀</li>
-<li>编辑<code>CNAME</code>文件，将购买的域名输入到该文件内<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">www.phd99.com</span><br></pre></td></tr></table></figure></li>
-<li>重新部署一下，过一会儿就可以通过访问购买的域名来查看个人博客了<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-<h3 id="coding中的设置"><a href="#coding中的设置" class="headerlink" title="coding中的设置"></a>coding中的设置</h3></li>
+<li>编辑<code>CNAME</code>文件，将购买的域名输入到该文件内<pre><code>www.phd99.com</code></pre>
+</li>
+<li>重新部署一下，过一会儿就可以通过访问购买的域名来查看个人博客了<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></pre>
+</li>
+</ul>
+<h3 id="coding中的设置"><a href="#coding中的设置" class="headerlink" title="coding中的设置"></a>coding中的设置</h3><ul>
 <li>登录<code>coding</code>-&gt;进入项目-&gt;持续部署-&gt;静态网站-&gt;自定义域名-&gt;新建域名-&gt;输入购买的域名-&gt;确定</li>
 <li>添加域名后，网站会自动重新部署，并且同时去申请<code>SSL</code>证书<ul>
 <li>申请证书时，会提供一些信息，需要给域名添加一条记录，添加之后，过一会儿，<code>SSL</code>证书就申请成功了，此时域名也添加成功了</li>
