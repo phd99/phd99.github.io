@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2021-01-31T13:00:01.713Z</updated>
+  <updated>2021-02-16T14:56:44.660Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GitHub和git的相关操作</title>
+    <link href="http://phd99.com/2021/02/16/GitHub%E5%92%8Cgit%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"/>
+    <id>http://phd99.com/2021/02/16/GitHub%E5%92%8Cgit%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</id>
+    <published>2021-02-16T14:51:27.202Z</published>
+    <updated>2021-02-16T14:56:44.660Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;GitHub和git的相关操作&quot;&gt;&lt;a href=&quot;#GitHub和git的相关操作&quot; class=&quot;headerlink&quot; title=&quot;GitHub和git的相关操作&quot;&gt;&lt;/a&gt;GitHub和git的相关操作&lt;/h2&gt;&lt;h3 id=&quot;初始化一个git仓库&quot;&gt;&lt;a href=&quot;#初始化一个git仓库&quot; class=&quot;headerlink&quot; title=&quot;初始化一个git仓库&quot;&gt;&lt;/a&gt;初始化一个git仓库&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;将当前文件夹作为git仓库&lt;pre&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;或者将当前文件夹下的xxx文件夹作为git仓库&lt;pre&gt;&lt;code&gt;git init xxx&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;初始化后会出现一个名为&lt;code&gt;.git&lt;/code&gt;的隐藏文件夹&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="GitHub" scheme="http://phd99.com/tags/GitHub/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML知识</title>
@@ -43,7 +68,7 @@
     <link href="http://phd99.com/2021/01/10/%E4%BD%A0%E8%A6%81%E5%8E%BB%E7%9B%B8%E4%BF%A1-%E6%B2%A1%E6%9C%89%E5%88%B0%E4%B8%8D%E4%BA%86%E7%9A%84%E6%98%8E%E5%A4%A9/"/>
     <id>http://phd99.com/2021/01/10/%E4%BD%A0%E8%A6%81%E5%8E%BB%E7%9B%B8%E4%BF%A1-%E6%B2%A1%E6%9C%89%E5%88%B0%E4%B8%8D%E4%BA%86%E7%9A%84%E6%98%8E%E5%A4%A9/</id>
     <published>2021-01-10T04:43:41.823Z</published>
-    <updated>2021-01-31T12:50:02.054Z</updated>
+    <updated>2021-02-16T14:55:35.859Z</updated>
     
     
     <summary type="html">&lt;h5 id=&quot;书名：你要去相信，没有到不了的明天&quot;&gt;&lt;a href=&quot;#书名：你要去相信，没有到不了的明天&quot; class=&quot;headerlink&quot; title=&quot;书名：你要去相信，没有到不了的明天&quot;&gt;&lt;/a&gt;书名：你要去相信，没有到不了的明天&lt;/h5&gt;&lt;h5 id=&quot;作者：卢思浩&quot;&gt;&lt;a href=&quot;#作者：卢思浩&quot; class=&quot;headerlink&quot; title=&quot;作者：卢思浩&quot;&gt;&lt;/a&gt;作者：卢思浩&lt;/h5&gt;&lt;hr&gt;
@@ -55,7 +80,7 @@
     <category term="文摘" scheme="http://phd99.com/categories/%E6%96%87%E6%91%98/"/>
     
     
-    <category term="文摘" scheme="http://phd99.com/tags/%E6%96%87%E6%91%98/"/>
+    <category term="书籍" scheme="http://phd99.com/tags/%E4%B9%A6%E7%B1%8D/"/>
     
   </entry>
   
