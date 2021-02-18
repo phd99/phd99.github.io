@@ -1,9 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Emmet</title>
+    <url>/2021/02/18/Emmet/</url>
+    <content><![CDATA[<h2 id="Emmet简介"><a href="#Emmet简介" class="headerlink" title="Emmet简介"></a>Emmet简介</h2><ul>
+<li>能够快速生成<code>HTML</code>结构和<code>CSS</code>样式语法，提高了编写速度</li>
+</ul>
+<a id="more"></a>
+<h2 id="快速生成HTML结构语法"><a href="#快速生成HTML结构语法" class="headerlink" title="快速生成HTML结构语法"></a>快速生成HTML结构语法</h2><h3 id="生成标签"><a href="#生成标签" class="headerlink" title="生成标签"></a>生成标签</h3><ul>
+<li>直接输入标签名然后按<code>tab</code>键<pre><code class="html">&lt;tab&gt;&lt;/tab&gt;</code></pre>
+</li>
+</ul>
+<h3 id="生成多个相同标签"><a href="#生成多个相同标签" class="headerlink" title="生成多个相同标签"></a>生成多个相同标签</h3><ul>
+<li>使用<code>*</code>符号</li>
+<li>例如生成3个<code>div</code>标签，输入<code>div*3</code>然后按<code>tab</code>键<pre><code class="html">&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;</code></pre>
+</li>
+</ul>
+<h3 id="生成有父子级关系的标签"><a href="#生成有父子级关系的标签" class="headerlink" title="生成有父子级关系的标签"></a>生成有父子级关系的标签</h3><ul>
+<li>使用<code>&gt;</code>符号</li>
+<li>例如输入<code>div&gt;p</code>，按<code>tab</code>键，<code>div</code>为父标签，<code>p</code>为子标签<pre><code class="html">&lt;div&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</li>
+</ul>
+<h3 id="生成有兄弟关系的标签"><a href="#生成有兄弟关系的标签" class="headerlink" title="生成有兄弟关系的标签"></a>生成有兄弟关系的标签</h3><ul>
+<li>使用<code>+</code>符号</li>
+<li>例如输入<code>div+p</code>，按<code>tab</code>键<pre><code class="html">&lt;div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;</code></pre>
+</li>
+</ul>
+<h3 id="生成带有类名的标签"><a href="#生成带有类名的标签" class="headerlink" title="生成带有类名的标签"></a>生成带有类名的标签</h3><ul>
+<li>使用<code>.</code>符号</li>
+<li>例如输入<code>p.phd</code>，按<code>tab</code>键<pre><code class="html">&lt;p class=&quot;phd&quot;&gt;&lt;/p&gt;</code></pre>
+</li>
+</ul>
+<h3 id="生成带有id的标签"><a href="#生成带有id的标签" class="headerlink" title="生成带有id的标签"></a>生成带有id的标签</h3><ul>
+<li>使用<code>#</code>符号</li>
+<li>例如输入<code>p#phd</code>，按<code>tab</code>键<pre><code class="html">&lt;p id=&quot;phd&quot;&gt;&lt;/p&gt;</code></pre>
+</li>
+</ul>
+<h3 id="生成带有类名或id顺序的多个相同标签"><a href="#生成带有类名或id顺序的多个相同标签" class="headerlink" title="生成带有类名或id顺序的多个相同标签"></a>生成带有类名或id顺序的多个相同标签</h3><ul>
+<li>使用<code>$</code>符号</li>
+<li>例如输入<code>p.phd$*3</code>，按<code>tab</code>键，<code>$</code>表示序号<pre><code class="html">&lt;p class=&quot;phd1&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;phd2&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;phd3&quot;&gt;&lt;/p&gt;</code></pre>
+</li>
+</ul>
+<ul>
+<li>例如输入<code>p#phd$*3</code>，按<code>tab</code>键，<code>$</code>表示序号<pre><code class="html">&lt;p id=&quot;phd1&quot;&gt;&lt;/p&gt;
+&lt;p id=&quot;phd2&quot;&gt;&lt;/p&gt;
+&lt;p id=&quot;phd3&quot;&gt;&lt;/p&gt;</code></pre>
+</li>
+</ul>
+<h3 id="生成带有内容的标签"><a href="#生成带有内容的标签" class="headerlink" title="生成带有内容的标签"></a>生成带有内容的标签</h3><ul>
+<li>使用<code>&#123;&#125;</code>符号</li>
+<li>例如输入<code>p&#123;无所谓&#125;</code>，按<code>tab</code>键<pre><code class="html">&lt;p&gt;无所谓&lt;/p&gt;</code></pre>
+</li>
+<li>例如输入<code>p&#123;无所谓$&#125;*3</code>，按<code>tab</code>键<pre><code class="html">&lt;p&gt;无所谓1&lt;/p&gt;
+&lt;p&gt;无所谓2&lt;/p&gt;
+&lt;p&gt;无所谓3&lt;/p&gt;</code></pre>
+</li>
+</ul>
+<h2 id="快速生成CSS样式语法"><a href="#快速生成CSS样式语法" class="headerlink" title="快速生成CSS样式语法"></a>快速生成CSS样式语法</h2><h3 id="直接输入每个单词的首字母，然后按tab键"><a href="#直接输入每个单词的首字母，然后按tab键" class="headerlink" title="直接输入每个单词的首字母，然后按tab键"></a>直接输入每个单词的首字母，然后按<code>tab</code>键</h3><ul>
+<li>例如输入<code>w</code>，按<code>tab</code>键<pre><code class="html">width: ;</code></pre>
+</li>
+<li>例如输入<code>ti</code>，按<code>tab</code>键<pre><code class="html">text-indent: ;</code></pre>
+</li>
+</ul>
+<h3 id="可以把值也一起输入"><a href="#可以把值也一起输入" class="headerlink" title="可以把值也一起输入"></a>可以把值也一起输入</h3><ul>
+<li>可以不给数值加上单位，数值不加单位的默认单位为<code>px</code></li>
+<li>例如输入<code>w100</code>或<code>w100px</code>，按<code>tab</code>键<pre><code class="html">width: 100px;</code></pre>
+</li>
+<li>例如输入<code>ti2</code>，按<code>tab</code>键<pre><code class="html">text-indent: 2px;</code></pre>
+</li>
+<li>例如输入<code>tac</code>，按<code>tab</code>键<pre><code class="html">text-align: center;</code></pre>
+</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GitHub和git的相关操作</title>
     <url>/2021/02/16/GitHub%E5%92%8Cgit%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h2 id="GitHub和git的相关操作"><a href="#GitHub和git的相关操作" class="headerlink" title="GitHub和git的相关操作"></a>GitHub和git的相关操作</h2><h3 id="初始化一个git仓库"><a href="#初始化一个git仓库" class="headerlink" title="初始化一个git仓库"></a>初始化一个git仓库</h3><ul>
+    <content><![CDATA[<h2 id="初始化一个git仓库"><a href="#初始化一个git仓库" class="headerlink" title="初始化一个git仓库"></a>初始化一个git仓库</h2><ul>
 <li>将当前文件夹作为git仓库<pre><code>git init</code></pre>
 </li>
 <li>或者将当前文件夹下的xxx文件夹作为git仓库<pre><code>git init xxx</code></pre>
@@ -12,7 +100,7 @@
 </ul>
 <a id="more"></a>
 
-<h3 id="添加远程仓库GitHub"><a href="#添加远程仓库GitHub" class="headerlink" title="添加远程仓库GitHub"></a>添加远程仓库GitHub</h3><ul>
+<h2 id="添加远程仓库GitHub"><a href="#添加远程仓库GitHub" class="headerlink" title="添加远程仓库GitHub"></a>添加远程仓库GitHub</h2><ul>
 <li>给远程仓库<code>git@github.com:phd99/test.git</code>设置一个别名<code>test</code><pre><code>git remote add 别名 git@github.com:phd99/test.git</code></pre>
 </li>
 <li>查看当前设置了哪些远程仓库的别名<pre><code>git remote -v</code></pre>
@@ -20,7 +108,7 @@
 <li>删除远程仓库的别名<pre><code>git remote rm [别名]</code></pre>
 </li>
 </ul>
-<h3 id="配置验证信息"><a href="#配置验证信息" class="headerlink" title="配置验证信息"></a>配置验证信息</h3><ul>
+<h2 id="配置验证信息"><a href="#配置验证信息" class="headerlink" title="配置验证信息"></a>配置验证信息</h2><ul>
 <li>生成<code>SSH</code>。创建过程中会要求设置密码，可以不设置密码，直接按回车键<pre><code>ssh-keygen -t rsa -C &quot;email&quot;</code></pre>
 </li>
 <li><code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥，默认位置在<code>C:\Users\用户名\.ssh</code>中。</li>
@@ -33,13 +121,13 @@
 </ul>
 </li>
 </ul>
-<h3 id="克隆远程仓库中的项目"><a href="#克隆远程仓库中的项目" class="headerlink" title="克隆远程仓库中的项目"></a>克隆远程仓库中的项目</h3><ul>
+<h2 id="克隆远程仓库中的项目"><a href="#克隆远程仓库中的项目" class="headerlink" title="克隆远程仓库中的项目"></a>克隆远程仓库中的项目</h2><ul>
 <li>克隆默认分支中的项目<pre><code>git clone https://github.com/phd99/test.git</code></pre>
 </li>
 <li>克隆指定分支中的项目<pre><code>git clone -b 分支名 https://github.com/phd99/test.git</code></pre>
 </li>
 </ul>
-<h3 id="下载远程仓库中的项目"><a href="#下载远程仓库中的项目" class="headerlink" title="下载远程仓库中的项目"></a>下载远程仓库中的项目</h3><ul>
+<h2 id="下载远程仓库中的项目"><a href="#下载远程仓库中的项目" class="headerlink" title="下载远程仓库中的项目"></a>下载远程仓库中的项目</h2><ul>
 <li>下载远程仓库中的项目并和本地仓库中的项目合并<pre><code>git pull origin myblog</code></pre>
 </li>
 <li><code>pull</code>和<code>clone</code>的区别<ul>
@@ -48,32 +136,23 @@
 </ul>
 </li>
 </ul>
-<h3 id="上传文件步骤"><a href="#上传文件步骤" class="headerlink" title="上传文件步骤"></a>上传文件步骤</h3><ul>
-<li><ol>
-<li>将内容写入暂存区</li>
-</ol>
-<ul>
+<h2 id="上传文件步骤"><a href="#上传文件步骤" class="headerlink" title="上传文件步骤"></a>上传文件步骤</h2><ul>
+<li>1.将内容写入暂存区<ul>
 <li><code>.</code>表示将文件夹中的所有内容都写入暂存区<pre><code>git add .</code></pre>
 </li>
 </ul>
 </li>
-<li><ol start="2">
-<li>将暂存区内容添加到本地仓库中<pre><code>git commit -m [备注信息]</code></pre>
+<li>2.将暂存区内容添加到本地仓库中<pre><code>git commit -m [备注信息]</code></pre>
 </li>
-</ol>
-</li>
-<li><ol start="3">
-<li>上传代码到远程仓库中并合并</li>
-</ol>
-<ul>
+<li>3.上传代码到远程仓库中并合并<ul>
 <li>使用<code>-u</code>后，以后可以直接<code>git push</code>省略了后面的内容</li>
 <li>若<code>本地分支名</code>和<code>远程分支名</code>相同，则可以省略<code>远程分支名</code>不写<pre><code>git push -u &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</code></pre>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="查看当前的本地分支名"><a href="#查看当前的本地分支名" class="headerlink" title="查看当前的本地分支名"></a>查看当前的本地分支名</h3><pre><code>git branch</code></pre>
-<h3 id="修改GitHub仓库的默认分支"><a href="#修改GitHub仓库的默认分支" class="headerlink" title="修改GitHub仓库的默认分支"></a>修改GitHub仓库的默认分支</h3><ul>
+<h2 id="查看当前的本地分支名"><a href="#查看当前的本地分支名" class="headerlink" title="查看当前的本地分支名"></a>查看当前的本地分支名</h2><pre><code>git branch</code></pre>
+<h2 id="修改GitHub仓库的默认分支"><a href="#修改GitHub仓库的默认分支" class="headerlink" title="修改GitHub仓库的默认分支"></a>修改GitHub仓库的默认分支</h2><ul>
 <li>进入仓库-&gt;<code>Settings</code>-&gt;<code>Branches</code>-&gt;<code>Default branch</code></li>
 </ul>
 <!--more-->
@@ -94,8 +173,11 @@
 <li>行为是指网页模型的定义及交互的编写，动作，JavaScript。<a id="more"></a>
 
 
-
 </li>
+</ul>
+<h2 id="文档查阅链接"><a href="#文档查阅链接" class="headerlink" title="文档查阅链接"></a>文档查阅链接</h2><ul>
+<li><a href="https://www.w3school.com.cn/">w3school</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/">MDN</a></li>
 </ul>
 <h2 id="结构标签-骨架标签"><a href="#结构标签-骨架标签" class="headerlink" title="结构标签(骨架标签)"></a>结构标签(骨架标签)</h2><ul>
 <li>每个网页都有一个基本的结构标签</li>
@@ -476,9 +558,10 @@
   &lt;label for=&quot;nu&quot;&gt;女&lt;/label&gt;
   &lt;input id=&quot;nu&quot; type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;女&quot;&gt;
 &lt;/form&gt;</code></pre>
-<!--more-->
 </li>
 </ul>
+<h2 id="水平线标签"><a href="#水平线标签" class="headerlink" title="水平线标签"></a>水平线标签</h2><pre><code class="html">&lt;hr&gt;</code></pre>
+<!--more-->
 ]]></content>
       <categories>
         <category>技术</category>
