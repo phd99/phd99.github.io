@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2021-02-18T13:50:27.781Z</updated>
+  <updated>2021-02-18T14:11:14.287Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://phd99.com/2021/02/18/Emmet/"/>
     <id>http://phd99.com/2021/02/18/Emmet/</id>
     <published>2021-02-18T13:48:08.382Z</published>
-    <updated>2021-02-18T13:50:27.781Z</updated>
+    <updated>2021-02-18T14:11:14.287Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;Emmet简介&quot;&gt;&lt;a href=&quot;#Emmet简介&quot; class=&quot;headerlink&quot; title=&quot;Emmet简介&quot;&gt;&lt;/a&gt;Emmet简介&lt;/h2&gt;&lt;ul&gt;
@@ -33,9 +33,9 @@
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="html" scheme="http://phd99.com/tags/html/"/>
+    <category term="HTML" scheme="http://phd99.com/tags/HTML/"/>
     
-    <category term="css" scheme="http://phd99.com/tags/css/"/>
+    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
     
   </entry>
   
