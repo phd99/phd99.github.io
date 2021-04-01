@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    tags |  phd
+    Java之方法 |  phd
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -68,13 +68,261 @@
       
     <main class="content on">
       <section class="outer">
+  <article
+  id="post-Java之方法"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java之方法
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/03/31/Java%E4%B9%8B%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2021-03-31T13:34:53.727Z" itemprop="datePublished">2021-03-31</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/Java/">Java</a>
+  </div>
   
-    <h1 class="page-type-title">标签</h1>
-    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E7%B1%8D/" rel="tag">书籍</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%90%E9%95%BF/" rel="tag">成长</a></li></ul>
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">520</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
   
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><ul>
+<li>方法是将具有独立功能的代码块组织成为一个整体，使其具有特殊功能的代码集。</li>
+<li>方法必须先创建才可以使用，该过程称为方法定义</li>
+<li>方法创建后并不是直接运行的，需要手动使用后才执行，该过程称为方法调用<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="二、方法定义"><a href="#二、方法定义" class="headerlink" title="二、方法定义"></a>二、方法定义</h2><h3 id="2-1-格式"><a href="#2-1-格式" class="headerlink" title="2.1. 格式"></a>2.1. 格式</h3><pre><code class="Java">public static void 方法名()
+&#123;
+    //方法体
+&#125;</code></pre>
+<h3 id="2-2-范例"><a href="#2-2-范例" class="headerlink" title="2.2. 范例"></a>2.2. 范例</h3><pre><code class="Java">public static void a()
+&#123;
+    //方法体
+&#125;</code></pre>
+<h2 id="三、方法调用"><a href="#三、方法调用" class="headerlink" title="三、方法调用"></a>三、方法调用</h2><ul>
+<li>格式：方法名();</li>
+<li>范例：a();</li>
+</ul>
+<h2 id="四、形参和实参"><a href="#四、形参和实参" class="headerlink" title="四、形参和实参"></a>四、形参和实参</h2><ul>
+<li>形参：方法定义中的参数</li>
+<li>实参：方法调用中的参数</li>
+<li>对于基本数据类型的参数，形式参数的改变，不影响实际参数的值</li>
+<li>对于引用类型的参数，形式参数的改变，影响实际参数的值</li>
+</ul>
+<h2 id="五、带返回值的方法"><a href="#五、带返回值的方法" class="headerlink" title="五、带返回值的方法"></a>五、带返回值的方法</h2><ul>
+<li><p>格式</p>
+<pre><code class="Java">public static 数据类型 方法名(参数)
+&#123;
+    return 数据;
+&#125;</code></pre>
+</li>
+<li><p>方法定义时return后面的返回值与方法定义上的数据类型要匹配，否则程序将报错</p>
+</li>
+<li><p>方法的返回值通常会使用变量接收，否则该返回值将无意义</p>
+</li>
+</ul>
+<h2 id="六、方法的注意事项"><a href="#六、方法的注意事项" class="headerlink" title="六、方法的注意事项"></a>六、方法的注意事项</h2><ul>
+<li>方法不能嵌套定义</li>
+<li>void表示无返回值，可以省略return，也可以单独的书写return，后面不加数据</li>
+</ul>
+<h2 id="七、方法重载"><a href="#七、方法重载" class="headerlink" title="七、方法重载"></a>七、方法重载</h2><h3 id="7-1-概述"><a href="#7-1-概述" class="headerlink" title="7.1. 概述"></a>7.1. 概述</h3><ul>
+<li>方法重载指同一个类中定义的多个方法之间的关系，满足下列条件的多个方法相互构成重载</li>
+<li>多个方法在同一个类中</li>
+<li>多个方法具有相同的方法名</li>
+<li>多个方法的参数不相同，类型不同或者数量不同</li>
+</ul>
+<h3 id="7-2-方法重载特点"><a href="#7-2-方法重载特点" class="headerlink" title="7.2. 方法重载特点"></a>7.2. 方法重载特点</h3><ul>
+<li>重载仅对应方法的定义，与方法的调用无关，调用方式参照标准格式</li>
+<li>重载仅针对同一个类中方法的名称与参数进行识别，与返回值无关，换句话说不能通过返回值来判定两个方法是否相互构成重载</li>
+</ul>
+<!--more-->
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://phd99.com/2021/03/31/Java%E4%B9%8B%E6%96%B9%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/03/31/Java%E4%B9%8B%E7%B1%BB/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Java之类
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/03/31/Java%E4%B9%8B%E6%A0%87%E8%AF%86%E7%AC%A6/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java之标识符</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "评论~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
 </section>
-
-
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -258,6 +506,23 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">

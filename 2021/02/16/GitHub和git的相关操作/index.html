@@ -91,7 +91,7 @@
   <time datetime="2021-02-16T14:51:27.202Z" itemprop="datePublished">2021-02-16</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/GitHub/">GitHub</a>
   </div>
   
 <div class="word_count">
@@ -99,7 +99,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">532</span>
+            <span class="post-count">543</span>
         </span>
     </span>
 
@@ -123,7 +123,7 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="初始化一个git仓库"><a href="#初始化一个git仓库" class="headerlink" title="初始化一个git仓库"></a>初始化一个git仓库</h2><ul>
+  <h2 id="一、初始化一个git仓库"><a href="#一、初始化一个git仓库" class="headerlink" title="一、初始化一个git仓库"></a>一、初始化一个git仓库</h2><ul>
 <li>将当前文件夹作为git仓库<pre><code>git init</code></pre>
 </li>
 <li>或者将当前文件夹下的xxx文件夹作为git仓库<pre><code>git init xxx</code></pre>
@@ -132,7 +132,7 @@
 </ul>
 <a id="more"></a>
 
-<h2 id="添加远程仓库GitHub"><a href="#添加远程仓库GitHub" class="headerlink" title="添加远程仓库GitHub"></a>添加远程仓库GitHub</h2><ul>
+<h2 id="二、添加远程仓库GitHub"><a href="#二、添加远程仓库GitHub" class="headerlink" title="二、添加远程仓库GitHub"></a>二、添加远程仓库GitHub</h2><ul>
 <li>给远程仓库<code>git@github.com:phd99/test.git</code>设置一个别名<code>test</code><pre><code>git remote add 别名 git@github.com:phd99/test.git</code></pre>
 </li>
 <li>查看当前设置了哪些远程仓库的别名<pre><code>git remote -v</code></pre>
@@ -140,7 +140,7 @@
 <li>删除远程仓库的别名<pre><code>git remote rm [别名]</code></pre>
 </li>
 </ul>
-<h2 id="配置验证信息"><a href="#配置验证信息" class="headerlink" title="配置验证信息"></a>配置验证信息</h2><ul>
+<h2 id="三、配置验证信息"><a href="#三、配置验证信息" class="headerlink" title="三、配置验证信息"></a>三、配置验证信息</h2><ul>
 <li>生成<code>SSH</code>。创建过程中会要求设置密码，可以不设置密码，直接按回车键<pre><code>ssh-keygen -t rsa -C &quot;email&quot;</code></pre>
 </li>
 <li><code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥，默认位置在<code>C:\Users\用户名\.ssh</code>中。</li>
@@ -153,13 +153,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="克隆远程仓库中的项目"><a href="#克隆远程仓库中的项目" class="headerlink" title="克隆远程仓库中的项目"></a>克隆远程仓库中的项目</h2><ul>
+<h2 id="四、克隆远程仓库中的项目"><a href="#四、克隆远程仓库中的项目" class="headerlink" title="四、克隆远程仓库中的项目"></a>四、克隆远程仓库中的项目</h2><ul>
 <li>克隆默认分支中的项目<pre><code>git clone https://github.com/phd99/test.git</code></pre>
 </li>
 <li>克隆指定分支中的项目<pre><code>git clone -b 分支名 https://github.com/phd99/test.git</code></pre>
 </li>
 </ul>
-<h2 id="下载远程仓库中的项目"><a href="#下载远程仓库中的项目" class="headerlink" title="下载远程仓库中的项目"></a>下载远程仓库中的项目</h2><ul>
+<h2 id="五、下载远程仓库中的项目"><a href="#五、下载远程仓库中的项目" class="headerlink" title="五、下载远程仓库中的项目"></a>五、下载远程仓库中的项目</h2><ul>
 <li>下载远程仓库中的项目并和本地仓库中的项目合并<pre><code>git pull origin myblog</code></pre>
 </li>
 <li><code>pull</code>和<code>clone</code>的区别<ul>
@@ -168,23 +168,16 @@
 </ul>
 </li>
 </ul>
-<h2 id="上传文件步骤"><a href="#上传文件步骤" class="headerlink" title="上传文件步骤"></a>上传文件步骤</h2><ul>
-<li>1.将内容写入暂存区<ul>
+<h2 id="六、上传文件步骤"><a href="#六、上传文件步骤" class="headerlink" title="六、上传文件步骤"></a>六、上传文件步骤</h2><h3 id="6-1-将内容写入暂存区"><a href="#6-1-将内容写入暂存区" class="headerlink" title="6.1. 将内容写入暂存区"></a>6.1. 将内容写入暂存区</h3><ul>
 <li><code>.</code>表示将文件夹中的所有内容都写入暂存区<pre><code>git add .</code></pre>
-</li>
-</ul>
-</li>
-<li>2.将暂存区内容添加到本地仓库中<pre><code>git commit -m [备注信息]</code></pre>
-</li>
-<li>3.上传代码到远程仓库中并合并<ul>
+<h3 id="6-2-将暂存区内容添加到本地仓库中"><a href="#6-2-将暂存区内容添加到本地仓库中" class="headerlink" title="6.2. 将暂存区内容添加到本地仓库中"></a>6.2. 将暂存区内容添加到本地仓库中</h3><pre><code>git commit -m [备注信息]</code></pre>
+<h3 id="6-3-上传代码到远程仓库中并合并"><a href="#6-3-上传代码到远程仓库中并合并" class="headerlink" title="6.3. 上传代码到远程仓库中并合并"></a>6.3. 上传代码到远程仓库中并合并</h3></li>
 <li>使用<code>-u</code>后，以后可以直接<code>git push</code>省略了后面的内容</li>
 <li>若<code>本地分支名</code>和<code>远程分支名</code>相同，则可以省略<code>远程分支名</code>不写<pre><code>git push -u &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</code></pre>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="查看当前的本地分支名"><a href="#查看当前的本地分支名" class="headerlink" title="查看当前的本地分支名"></a>查看当前的本地分支名</h2><pre><code>git branch</code></pre>
-<h2 id="修改GitHub仓库的默认分支"><a href="#修改GitHub仓库的默认分支" class="headerlink" title="修改GitHub仓库的默认分支"></a>修改GitHub仓库的默认分支</h2><ul>
+<h2 id="六、查看当前的本地分支名"><a href="#六、查看当前的本地分支名" class="headerlink" title="六、查看当前的本地分支名"></a>六、查看当前的本地分支名</h2><pre><code>git branch</code></pre>
+<h2 id="七、修改GitHub仓库的默认分支"><a href="#七、修改GitHub仓库的默认分支" class="headerlink" title="七、修改GitHub仓库的默认分支"></a>七、修改GitHub仓库的默认分支</h2><ul>
 <li>进入仓库-&gt;<code>Settings</code>-&gt;<code>Branches</code>-&gt;<code>Default branch</code></li>
 </ul>
 <!--more-->

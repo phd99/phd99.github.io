@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    tags |  phd
+    Java之运算符 |  phd
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -68,13 +68,357 @@
       
     <main class="content on">
       <section class="outer">
+  <article
+  id="post-Java之运算符"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java之运算符
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/03/26/Java%E4%B9%8B%E8%BF%90%E7%AE%97%E7%AC%A6/" class="article-date">
+  <time datetime="2021-03-26T09:41:27.944Z" itemprop="datePublished">2021-03-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/Java/">Java</a>
+  </div>
   
-    <h1 class="page-type-title">标签</h1>
-    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/" rel="tag">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6%E7%B1%8D/" rel="tag">书籍</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%90%E9%95%BF/" rel="tag">成长</a></li></ul>
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">991</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">3 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
   
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="一、算术运算符"><a href="#一、算术运算符" class="headerlink" title="一、算术运算符"></a>一、算术运算符</h2><h3 id="1-1-运算符和表达式"><a href="#1-1-运算符和表达式" class="headerlink" title="1.1. 运算符和表达式"></a>1.1. 运算符和表达式</h3><ul>
+<li>运算符：对常量或者变量进行操作的符号</li>
+<li>表达式：用运算符把常量或者变量连接起来符合java语法的式子就可以称为表达式。不同运算符连接的表达式体现的是不同类型的表达式。</li>
+<li>范例<ul>
+<li><code>int a = 10;</code></li>
+<li><code>int b = 20;</code></li>
+<li><code>int c = a + b;</code><a id="more"></a>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-算术运算符"><a href="#1-2-算术运算符" class="headerlink" title="1.2. 算术运算符"></a>1.2. 算术运算符</h3><ul>
+<li>加、减、乘、除、取余</li>
+</ul>
+<h3 id="1-3-字符的-操作"><a href="#1-3-字符的-操作" class="headerlink" title="1.3. 字符的+操作"></a>1.3. 字符的<code>+</code>操作</h3><ul>
+<li>是拿字符在计算机底层对应的数值来进行计算的<ul>
+<li><code>&#39;A&#39; -&gt; 65</code></li>
+<li><code>&#39;a&#39; -&gt; 97</code></li>
+<li><code>&#39;0&#39; -&gt; 48</code></li>
+</ul>
+</li>
+<li>算术表达式中包含多个基本数据类型的值的时候，整个算术表达式的类型会自动进行提升。</li>
+<li>提升规则：<ul>
+<li><code>byte</code>类型、<code>short</code>类型和<code>char</code>类型将被提升到<code>int</code>类型</li>
+<li>整个表达式的类型自动提升到表达式中最高等级操作数同样的类型</li>
+<li>等级顺序：<code>byte</code>、<code>short</code>、<code>char</code> -&gt; <code>int</code> -&gt; <code>long</code> -&gt; <code>float</code> -&gt; <code>double</code><h3 id="1-4-字符串的-操作"><a href="#1-4-字符串的-操作" class="headerlink" title="1.4. 字符串的+操作"></a>1.4. 字符串的<code>+</code>操作</h3></li>
+<li>当<code>+</code>操作中出现字符串时，这个<code>+</code>是字符串连接符，而不是算术运算。</li>
+<li>在<code>+</code>操作中，如果出现了字符串，就是连接运算符，否则就是算术运算。当连续进行<code>+</code>操作时，从左到右逐个执行。</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、赋值运算符"><a href="#二、赋值运算符" class="headerlink" title="二、赋值运算符"></a>二、赋值运算符</h2><ul>
+<li><code>=</code><ul>
+<li>赋值</li>
+</ul>
+</li>
+<li><code>+=</code><ul>
+<li>加后赋值</li>
+</ul>
+</li>
+<li><code>-=</code><ul>
+<li>减后赋值</li>
+</ul>
+</li>
+<li><code>*=</code><ul>
+<li>乘后赋值</li>
+</ul>
+</li>
+<li><code>/=</code><ul>
+<li>除后赋值</li>
+</ul>
+</li>
+<li><code>%=</code><ul>
+<li>取余后赋值</li>
+</ul>
+</li>
+<li>扩展的赋值运算隐含了强制类型转换</li>
+</ul>
+<h2 id="三、自增自减运算符"><a href="#三、自增自减运算符" class="headerlink" title="三、自增自减运算符"></a>三、自增自减运算符</h2><ul>
+<li><code>++</code><ul>
+<li>自增，变量的值加1</li>
+</ul>
+</li>
+<li><code>--</code><ul>
+<li>自减，变量的值减1</li>
+</ul>
+</li>
+<li><code>++</code>和<code>--</code>既可以放在变量的后边，也可以放在变量的前边</li>
+<li>单独使用的时候，<code>++</code>和<code>--</code>无论是放在变量的前边还是后边，结果是一样的</li>
+<li>参与操作的时候，如果放在变量的后边，先拿变量参与操作，后拿变量做<code>++</code>或者<code>--</code></li>
+<li>参与操作的时候，如果放在变量的前边，先拿变量做<code>++</code>或者<code>--</code>，后拿变量参与操作</li>
+</ul>
+<h2 id="四、关系运算符"><a href="#四、关系运算符" class="headerlink" title="四、关系运算符"></a>四、关系运算符</h2><ul>
+<li><code>==</code><ul>
+<li><code>a==b</code>，判断a和b的值是否相等，成立为true，不成立为false</li>
+</ul>
+</li>
+<li><code>!=</code><ul>
+<li><code>a!=b</code>，判断a和b的值是否不相等，成立为true，不成立为false</li>
+</ul>
+</li>
+<li><code>&gt;</code><ul>
+<li><code>a&gt;b</code>，判断a是否大于b，成立为true，不成立为false</li>
+</ul>
+</li>
+<li><code>&gt;=</code><ul>
+<li><code>a&gt;=b</code>，判断a是否大于等于b，成立为true，不成立为false</li>
+</ul>
+</li>
+<li><code>&lt;</code><ul>
+<li><code>a&lt;b</code>，判断a是否小于b，成立为true，不成立为false</li>
+</ul>
+</li>
+<li><code>&lt;=</code><ul>
+<li><code>a&lt;=b</code>，判断a是否小于等于b，成立为true，不成立为flase</li>
+</ul>
+</li>
+<li>关系运算符的结果都是Boolean类型，只有true和false。</li>
+</ul>
+<h2 id="五、逻辑运算符"><a href="#五、逻辑运算符" class="headerlink" title="五、逻辑运算符"></a>五、逻辑运算符</h2><ul>
+<li>逻辑运算符是用来连接关系表达式的运算符</li>
+<li>逻辑运算符也可以直接连接布尔类型的常量或者变量</li>
+<li><code>&amp;</code><ul>
+<li>逻辑与 a&amp;b，a和b都是true，结果为true，否则为false</li>
+</ul>
+</li>
+<li><code>|</code><ul>
+<li>逻辑或 a|b，a和b都是false，结果为false，否则为true</li>
+</ul>
+</li>
+<li><code>^</code><ul>
+<li>逻辑异或 a^b，a和b结果不同为true，相同为false</li>
+</ul>
+</li>
+<li><code>!</code><ul>
+<li>逻辑非 !a，结果和a的结果正好相反</li>
+</ul>
+</li>
+</ul>
+<h2 id="六、短路逻辑运算符"><a href="#六、短路逻辑运算符" class="headerlink" title="六、短路逻辑运算符"></a>六、短路逻辑运算符</h2><ul>
+<li><code>&amp;&amp;</code><ul>
+<li>短路与</li>
+<li>作用和<code>&amp;</code>相同，但是有短路效果</li>
+</ul>
+</li>
+<li><code>||</code><ul>
+<li>短路或</li>
+<li>作用和|相同，但是有短路效果</li>
+</ul>
+</li>
+<li>逻辑与<code>&amp;</code>，无论左边真假，右边都要执行</li>
+<li>短路与<code>&amp;&amp;</code>，如果左边为真，右边执行；如果左边为假，右边不执行</li>
+<li>逻辑或|，无论左边真假，右边都要执行</li>
+<li>短路或||，如果左边为假，右边执行；如果左边为真，右边不执行</li>
+<li>最常用的逻辑运算符：<code>&amp;&amp;</code>、<code>||</code>、<code>!</code></li>
+</ul>
+<h2 id="七、三元运算符"><a href="#七、三元运算符" class="headerlink" title="七、三元运算符"></a>七、三元运算符</h2><ul>
+<li>格式：关系表达式？表达式1：表达式2；</li>
+<li>范例：a &gt; b ? a : b;</li>
+<li>计算规则：<ul>
+<li>首先计算关系表达式的值</li>
+<li>如果值为true，表达式1的值就是运算结果</li>
+<li>如果值为false，表示式2的值就是运算结果</li>
+</ul>
+</li>
+</ul>
+<!--more-->
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://phd99.com/2021/03/26/Java%E4%B9%8B%E8%BF%90%E7%AE%97%E7%AC%A6/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/03/26/Java%E4%B9%8B%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Java之类型转换
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/03/26/Java%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java之流程控制</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "评论~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
 </section>
-
-
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -258,6 +602,23 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">

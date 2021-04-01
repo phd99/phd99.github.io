@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="生活" />
+   
+  <meta name="description" content="浩东、浩西、浩南、浩北" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Python基础 |  phd
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/logo.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+
+
+
+
+<link rel="alternate" href="/atom.xml" title="phd" type="application/atom+xml">
+</head>
+<body>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/monokai-sublime.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Python基础"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Python基础
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/03/23/Python%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2021-03-23T09:58:28.665Z" itemprop="datePublished">2021-03-23</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/Python/">Python</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">12.1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">44 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="一、Python介绍"><a href="#一、Python介绍" class="headerlink" title="一、Python介绍"></a>一、Python介绍</h2><h3 id="1-1-创始人"><a href="#1-1-创始人" class="headerlink" title="1.1. 创始人"></a>1.1. 创始人</h3><ul>
+<li>Python的创始人为吉多·范罗苏姆（Guido van Rossum）</li>
+</ul>
+<a id="more"></a>
+<h3 id="1-2-解释器"><a href="#1-2-解释器" class="headerlink" title="1.2. 解释器"></a>1.2. 解释器</h3><ul>
+<li>计算机不能直接理解任何除机器语言以外的语言，所以必须要把程序员所写的程序语言翻译成机器语言，计算机才能执行程序。将其他语言翻译成机器语言的工具，被称为编译器。</li>
+<li>编译器翻译的方式有两种：一个是编译，另外一个是解释。两种方式之间的区别在于翻译时间点的不同。当编译器以解释方式运行的时候，也称之为解释器。</li>
+</ul>
+<h4 id="1-2-1-编译型语言"><a href="#1-2-1-编译型语言" class="headerlink" title="1.2.1. 编译型语言"></a>1.2.1. 编译型语言</h4><ul>
+<li>工作方式：在开发环境内编写代码 -&gt; 将开发完成的代码统一交给编译器 -&gt; 保存为可执行文件 -&gt; 通过操作系统交给CPU进行处理</li>
+<li>语言：C、C++</li>
+<li>优点：执行速度相对较快</li>
+</ul>
+<h4 id="1-2-2-解释型语言"><a href="#1-2-2-解释型语言" class="headerlink" title="1.2.2. 解释型语言"></a>1.2.2. 解释型语言</h4><ul>
+<li>工作方式：在开发环境内编写代码 -&gt; 将源程序交给解释器 -&gt; 解释器通过源程序从上到下逐一读取代码（逐行解释每一行代码），读一行代码就立刻翻译成机器码并交给CPU执行 -&gt; 再读取第二行代码，并翻译成机器码，然后交给CPU执行</li>
+<li>语言：Python</li>
+<li>优点：跨平台（在不同的操作系统上安装不同的解释器）</li>
+</ul>
+<h3 id="1-3-Python的设计目标"><a href="#1-3-Python的设计目标" class="headerlink" title="1.3. Python的设计目标"></a>1.3. Python的设计目标</h3><ul>
+<li>一门简单直观的语言并与主要竞争者一样强大</li>
+<li>开源，以便任何人都可以为它做贡献</li>
+<li>代码像纯英语那样容易理解</li>
+<li>适用于短期开发的日常任务</li>
+</ul>
+<h3 id="1-4-Python的设计哲学"><a href="#1-4-Python的设计哲学" class="headerlink" title="1.4. Python的设计哲学"></a>1.4. Python的设计哲学</h3><ul>
+<li>优雅：源代码工整、整洁、阅读轻松</li>
+<li>明确：明确每句代码要做的事情</li>
+<li>简单：让每句代码都尽量的简单</li>
+<li>Python开发者的哲学是：用一种方法，最好是只有一种方法来做一件事</li>
+<li>如果面临多种选择，Python开发者一般会拒绝花哨的语法，而选择明确没有或者很少有歧义的语法</li>
+</ul>
+<h3 id="1-5-Python特点"><a href="#1-5-Python特点" class="headerlink" title="1.5. Python特点"></a>1.5. Python特点</h3><ul>
+<li>Python是完全面向对象的语言<br>函数、模块、数字、字符串都是对象，在Python中一切皆为对象<br>完全支持继承、重载、多重继承<br>支持重载运算符，也支持泛型设计</li>
+<li>Python拥有一个强大的标准库，Python语言的核心只包含数字、字符串、列表、字典、文件等常见类型和函数，而由Python标准库提供了系统管理、网络通信、文本处理、数据库接口、图形系统、XML处理等额外的功能。</li>
+<li>Python社区提供了大量的第三方模块、使用方式与标准库类似。它们的功能覆盖科学计算、人工智能、机器学习、web开发、数据库接口、图形系统多个领域。</li>
+</ul>
+<h3 id="1-6-面向对象的思维方式"><a href="#1-6-面向对象的思维方式" class="headerlink" title="1.6. 面向对象的思维方式"></a>1.6. 面向对象的思维方式</h3><ul>
+<li>面向对象是一种思维方式，也是一门程序设计技术。</li>
+<li>要解决一个问题前，首先考虑由谁来做，怎么做事情是谁的职责，最后把事情做好就行。</li>
+<li>要解决复杂的问题，就可以找多个不同的对象、各司其职，共同实现，最终完成需求。</li>
+</ul>
+<h3 id="1-7-Python的优缺点"><a href="#1-7-Python的优缺点" class="headerlink" title="1.7. Python的优缺点"></a>1.7. Python的优缺点</h3><h4 id="1-7-1-优点"><a href="#1-7-1-优点" class="headerlink" title="1.7.1. 优点"></a>1.7.1. 优点</h4><ul>
+<li>简单、易学</li>
+<li>免费、开源</li>
+<li>面向对象</li>
+<li>丰富的库</li>
+<li>可扩展性</li>
+<li>如果需要一段关键代码运行得更快或者希望某些算法不公开，可以把这部分程序用C或C++编写，然后在Python程序中使用它们</li>
+</ul>
+<h4 id="1-7-2-缺点"><a href="#1-7-2-缺点" class="headerlink" title="1.7.2. 缺点"></a>1.7.2. 缺点</h4><ul>
+<li>运行速度</li>
+<li>国内市场较小</li>
+<li>中文资料匮乏</li>
+</ul>
+<h3 id="1-8-Python文件名命名规则"><a href="#1-8-Python文件名命名规则" class="headerlink" title="1.8. Python文件名命名规则"></a>1.8. Python文件名命名规则</h3><ul>
+<li>命名文件名时建议只使用小写字母、数字和下划线</li>
+<li>文件名不能以数字开始</li>
+</ul>
+<h3 id="1-9-代码规范"><a href="#1-9-代码规范" class="headerlink" title="1.9. 代码规范"></a>1.9. 代码规范</h3><ul>
+<li>Python官方提供有一系列PEP文档</li>
+<li>其中第8篇文档专门针对Python的代码格式给出了建议，也就是俗称的PEP8</li>
+<li><a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0008/">文档地址</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/">谷歌有对应的中文文档</a></li>
+</ul>
+<h3 id="1-10-Python程序执行原理"><a href="#1-10-Python程序执行原理" class="headerlink" title="1.10. Python程序执行原理"></a>1.10. Python程序执行原理</h3><ul>
+<li>1、操作系统会首先让CPU把Python解释器的程序复制到内存中。</li>
+<li>2、Python解释器根据语法规则，从上向下让CPU翻译Python程序中的代码。</li>
+<li>3、CPU负责执行翻译完成的代码</li>
+</ul>
+<h3 id="1-11-程序的作用"><a href="#1-11-程序的作用" class="headerlink" title="1.11. 程序的作用"></a>1.11. 程序的作用</h3><ul>
+<li>程序就是用来处理数据的</li>
+<li>新闻软件提供的新闻内容、评论……是数据</li>
+<li>电商软件提供的商品信息、配送信息……是数据</li>
+<li>运动类软件提供的运动数据……是数据</li>
+<li>地图类软件提供的地图信息、定位信息、车辆信息……是数据</li>
+<li>即时通讯软件提供的聊天信息、好友信息……是数据</li>
+<li>等等</li>
+</ul>
+<h3 id="1-12-程序的三大流程"><a href="#1-12-程序的三大流程" class="headerlink" title="1.12. 程序的三大流程"></a>1.12. 程序的三大流程</h3><ul>
+<li>在程序开发中，一共有三种流程方式：<ul>
+<li>顺序——从上向下，顺序执行代码</li>
+<li>分支——根据条件判断，决定执行代码的分支</li>
+<li>循环——让特定代码重复执行</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、执行Python的三种方式"><a href="#二、执行Python的三种方式" class="headerlink" title="二、执行Python的三种方式"></a>二、执行Python的三种方式</h2><h3 id="2-1-第一种：解释器python-python3"><a href="#2-1-第一种：解释器python-python3" class="headerlink" title="2.1. 第一种：解释器python/python3"></a>2.1. 第一种：解释器python/python3</h3><ul>
+<li>使用python 2.x解释器<ul>
+<li><code>python xxx.py</code></li>
+</ul>
+</li>
+<li>使用python 3.x解释器<ul>
+<li><code>python xxx.py</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-第二种：交互式运行Python程序"><a href="#2-2-第二种：交互式运行Python程序" class="headerlink" title="2.2. 第二种：交互式运行Python程序"></a>2.2. 第二种：交互式运行Python程序</h3><ul>
+<li>直接在终端中运行解释器，而不输入要执行的文件名</li>
+<li>在Python的Shell中直接输入Python的代码，会立即看到程序执行结果</li>
+</ul>
+<h4 id="2-2-1-交互式运行Python的优缺点"><a href="#2-2-1-交互式运行Python的优缺点" class="headerlink" title="2.2.1. 交互式运行Python的优缺点"></a>2.2.1. 交互式运行Python的优缺点</h4><ul>
+<li>优点<ul>
+<li>适合于学习/验证Python语法或者局部代码</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>代码不能保存</li>
+<li>不适合运行太大的程序</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-2-退出官方的解释器"><a href="#2-2-2-退出官方的解释器" class="headerlink" title="2.2.2. 退出官方的解释器"></a>2.2.2. 退出官方的解释器</h4><ul>
+<li>方法一：直接输入`exit()``</li>
+<li>方法二：使用热键退出：在Python解释器中，按热键<code>ctrl+d</code>可以退出解释器</li>
+</ul>
+<h4 id="2-2-3-IPython"><a href="#2-2-3-IPython" class="headerlink" title="2.2.3. IPython"></a>2.2.3. IPython</h4><ul>
+<li>IPython中“i”代表交互Interactive<ul>
+<li>特点<ul>
+<li>IPython是一个python的交互式shell，比默认的python shell好用的多</li>
+<li>支持自动补全、自动缩进、支持<code>bash shell</code>命令、内置了许多很有用的功能和函数</li>
+<li>IPython是基于BSD开源的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>退出解释器<ul>
+<li>方法一：exit</li>
+<li>方法二：在IPython解释器中，按热键<code>ctrl+d</code>，IPython会询问是否退出解释器</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-第三种：Python的IDE——PyCharm"><a href="#2-3-第三种：Python的IDE——PyCharm" class="headerlink" title="2.3. 第三种：Python的IDE——PyCharm"></a>2.3. 第三种：Python的IDE——PyCharm</h3><ul>
+<li>集成开发环境（IDE）</li>
+<li>集成开发环境集成了开发软件需要的所有工具，一般包括以下工具<ul>
+<li>图形用户界面</li>
+<li>代码编辑器（支持 代码补全/自动缩进）</li>
+<li>编译器/解释器</li>
+<li>调试器（断点/单步执行）</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、注释"><a href="#三、注释" class="headerlink" title="三、注释"></a>三、注释</h2><h3 id="3-1-单行注释"><a href="#3-1-单行注释" class="headerlink" title="3.1. 单行注释"></a>3.1. 单行注释</h3><ul>
+<li>以#开头，#右边的所有东西都被当做说明文字，而不是真正要执行的程序，只起到辅助说明作用。</li>
+<li>为了保证代码的可读性，#后面建议先添加一个空格，然后再编写相应的说明文字。</li>
+<li>若在代码后面增加单行注释，为了保证代码的可读性，注释和代码之间至少要有两个空格。</li>
+<li>点击黄色的灯泡，点击Reformat file可以将所有注释的#后面都空一格。</li>
+</ul>
+<h3 id="3-2-多行注释"><a href="#3-2-多行注释" class="headerlink" title="3.2. 多行注释"></a>3.2. 多行注释</h3><ul>
+<li>如果希望填写的注释信息很多，一行无法显示，就可以使用多行注释。</li>
+<li>要在Python程序中使用多行注释，可以用一对连续的三个引号（单引号和双引号都可以）。</li>
+</ul>
+<h3 id="3-3-什么时候需要使用注释"><a href="#3-3-什么时候需要使用注释" class="headerlink" title="3.3. 什么时候需要使用注释"></a>3.3. 什么时候需要使用注释</h3><ul>
+<li>1、注释不是越多越好，对于一目了然的代码，不需要添加注释。</li>
+<li>2、对于复杂的操作，应该在操作开始前写上若干行注释。</li>
+<li>3、对于不是一目了然的代码，应在其行尾添加注释（为了提高可读性，注释应该至少离开代码2个空格）。</li>
+<li>4、觉不要描述代码，假设阅读代码的人比你更懂Python，他只是不知道你的代码要做什么。</li>
+<li>在一些正规的开发团队，通常会有代码审核的惯例，就是一个团队中彼此阅读对方的代码。</li>
+</ul>
+<h3 id="3-4-TODO注释"><a href="#3-4-TODO注释" class="headerlink" title="3.4. TODO注释"></a>3.4. TODO注释</h3><ul>
+<li>使用TODO注释可以使注释更加醒目</li>
+<li>在 # 后跟上 TODO，用于标记需要去做的工作</li>
+</ul>
+<h2 id="四、运算符"><a href="#四、运算符" class="headerlink" title="四、运算符"></a>四、运算符</h2><h3 id="4-1-算术运算符"><a href="#4-1-算术运算符" class="headerlink" title="4.1. 算术运算符"></a>4.1. 算术运算符</h3><h4 id="4-1-1-简介"><a href="#4-1-1-简介" class="headerlink" title="4.1.1. 简介"></a>4.1.1. 简介</h4><ul>
+<li>算术运算符是运算符的一种，是完成基本的算术运算使用的符号，用来处理四则运算。</li>
+<li><code>+</code> 加 10 + 20 = 30<ul>
+<li>合并，适用于字符串、列表、元组</li>
+<li>范例：<code>[1,2]+[3,4]</code></li>
+<li>结果：<code>[1,2,3,4]</code></li>
+</ul>
+</li>
+<li><code>-</code> 减 10 - 20 = -10</li>
+<li><code>*</code> 乘 10 * 20 = 200<ul>
+<li>“-“ * 10 = ‘———-‘，运算符可以用于字符串，计算结果就是字符串重复指定次数的结果</li>
+<li>重复，适用于字符串、列表、元组</li>
+<li>范例：<code>[&quot;hi&quot;]*4</code></li>
+<li>结果：<code>[&quot;hi&quot;,&quot;hi&quot;,&quot;hi&quot;,&quot;hi&quot;]</code></li>
+</ul>
+</li>
+<li><code>/</code> 除 10 / 20 = 0.5</li>
+<li><code>//</code> 取整除 返回除法的整数部分（商）<ul>
+<li>9//2输出结果为4</li>
+</ul>
+</li>
+<li><code>%</code> 取余数 返回除法的余数9%2 = 1</li>
+<li><code>**</code> 幂 又称次方、乘方，2**3 = 8</li>
+</ul>
+<h4 id="4-1-2-算术运算符优先级"><a href="#4-1-2-算术运算符优先级" class="headerlink" title="4.1.2. 算术运算符优先级"></a>4.1.2. 算术运算符优先级</h4><ul>
+<li>和数学中的运算符的优先级一致</li>
+<li>先乘除后加减</li>
+<li>同级运算符是从左至右计算</li>
+<li>可以使用（）调整计算的优先级</li>
+<li>以下表格的算术优先级由高到最低顺序排列<ul>
+<li><code>**</code> 幂（最高优先级）</li>
+<li><code>* / % //</code> 乘、除、取余数、取整数</li>
+<li><code>+ -</code> 加法、减法</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-赋值运算符"><a href="#4-2-赋值运算符" class="headerlink" title="4.2. 赋值运算符"></a>4.2. 赋值运算符</h3><ul>
+<li>在Python中，使用=可以给变量赋值</li>
+<li>在算术运算时，为了简化代码的编写，Python还提供了一系列的与算术运算符对应的赋值运算符</li>
+<li>注意：赋值运算符中间不能使用空格</li>
+<li><code>=</code> 简单的赋值运算符 c = a+b 将a+b的运算结果赋值为c</li>
+<li><code>+=</code> 加法赋值运算符 c += a等效于c = c+a</li>
+<li><code>-=</code> 减法赋值运算符 c -= a等效于c = c-a</li>
+<li><code>*=</code> 乘法赋值运算符 c <em>= a等效于c = c</em>a</li>
+<li><code>/=</code> 除法赋值运算符 c /= a等效于c = c/a</li>
+<li><code>//=</code> 取整除赋值运算符 c //= a等效于 c = c//a</li>
+<li><code>%=</code> 取模（余数）赋值运算符 c %= a等效于 c = c%a</li>
+<li><code>**=</code> 幂赋值运算符 c <strong>= a等效于c = c</strong>a</li>
+</ul>
+<h3 id="4-3-身份运算符"><a href="#4-3-身份运算符" class="headerlink" title="4.3. 身份运算符"></a>4.3. 身份运算符</h3><ul>
+<li>身份运算符用于比较两个对象的内存地址是否一致，即是否是对同一个对象的引用</li>
+<li>在python中针对None比较时，建议使用is判断</li>
+<li><code>is</code><ul>
+<li>是判断两个标识符是不是引用同一个对象 x is y，类似 id(x) == id(y)</li>
+</ul>
+</li>
+<li><code>is not</code><ul>
+<li>是判断两个标识符是不是引用不同对象 x is not y，类似 id(a) != id(b)</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-4-比较运算符"><a href="#4-4-比较运算符" class="headerlink" title="4.4. 比较运算符"></a>4.4. 比较运算符</h3><ul>
+<li><code>&gt;  &gt;=  ==  &lt;  &lt;=</code><ul>
+<li>元素比较适用于字符串、列表、元组</li>
+<li>范例：<code>(1,2,3) &lt; (2,2,3)</code></li>
+<li>结果：<code>True</code></li>
+<li>注意<ul>
+<li>in在对字典操作时，判断的是字典的键</li>
+<li>in和not in被称为成员运算符</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-5-成员运算符"><a href="#4-5-成员运算符" class="headerlink" title="4.5. 成员运算符"></a>4.5. 成员运算符</h3><ul>
+<li>成员运算符用于测试序列中是否包含指定的成员</li>
+<li><code>in</code><ul>
+<li>如果在指定的序列中找到值返回True，否则返回False</li>
+<li>元素是否存在，适用于字符串、列表、元组、字典</li>
+<li>范例：<code>3 in (1,2,3)</code><ul>
+<li>返回True</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>not in</code><ul>
+<li>如果在指定的序列中没有找到值返回True，否则返回False</li>
+<li>元素是否不存在，适用于字符串、列表、元组、字典</li>
+<li>范例：<code>3 not in (1,2,3)</code><ul>
+<li>返回False</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="五、变量"><a href="#五、变量" class="headerlink" title="五、变量"></a>五、变量</h2><h3 id="5-1-变量的定义"><a href="#5-1-变量的定义" class="headerlink" title="5.1. 变量的定义"></a>5.1. 变量的定义</h3><ul>
+<li>变量名 = 值</li>
+<li>使用交互式方式，如果要查看变量内容，直接输入变量名即可，不需要使用print函数。</li>
+<li>使用解释器执行，如果要输出变量的内容，必须要使用print函数。</li>
+</ul>
+<h3 id="5-2-变量的类型"><a href="#5-2-变量的类型" class="headerlink" title="5.2. 变量的类型"></a>5.2. 变量的类型</h3><ul>
+<li>在内存中创建一个变量，会包括<ul>
+<li>(1)变量的名称</li>
+<li>(2)变量保存的数据</li>
+<li>(3)变量存储数据的类型</li>
+<li>(4)变量的地址</li>
+</ul>
+</li>
+<li>Python可以根据=等号右侧的值，自动推导出变量中存储数据的类型。</li>
+<li>在Python中定义变量是不需要指定类型的（在其他很多高级语言中都需要）。</li>
+<li>数据类型可以分为数字型和非数字型。</li>
+<li>使用type函数可以查看一个变量的类型，<code>type(name)</code>。</li>
+</ul>
+<h3 id="5-3-数字型和非数字型"><a href="#5-3-数字型和非数字型" class="headerlink" title="5.3. 数字型和非数字型"></a>5.3. 数字型和非数字型</h3><h4 id="5-3-1-数字型"><a href="#5-3-1-数字型" class="headerlink" title="5.3.1. 数字型"></a>5.3.1. 数字型</h4><ul>
+<li>整型（int）、浮点型（flaot）、布尔型（bool，非零即真）、复数型（complex，主要用于科学计算，例如：平面场问题、波动问题、电感电容等问题。</li>
+</ul>
+<h4 id="5-3-2-非数字型"><a href="#5-3-2-非数字型" class="headerlink" title="5.3.2. 非数字型"></a>5.3.2. 非数字型</h4><ul>
+<li>字符串、列表、元组、字典</li>
+<li>在Python中，所有非数字型变量都支持以下特点：<ul>
+<li>(1)都是一个序列 sequence，也可以理解为 容器</li>
+<li>(2)取值[]</li>
+<li>(3)遍历 for in</li>
+<li>(4)计算长度、最大/最小值、比较、删除</li>
+<li>(5)链接 + 和重复 *</li>
+<li>(6)切片</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-4-可变和不可变类型"><a href="#5-4-可变和不可变类型" class="headerlink" title="5.4. 可变和不可变类型"></a>5.4. 可变和不可变类型</h3><h4 id="5-4-1-不可变类型"><a href="#5-4-1-不可变类型" class="headerlink" title="5.4.1. 不可变类型"></a>5.4.1. 不可变类型</h4><ul>
+<li>内存中的数据不允许被修改，赋予新的值时，变量对应的内存地址会发生变化。</li>
+<li>数字类型：int、bool、float、complex、long(2.x)</li>
+<li>字符串：str</li>
+<li>元组：tuple</li>
+</ul>
+<h4 id="5-4-2-可变类型"><a href="#5-4-2-可变类型" class="headerlink" title="5.4.2. 可变类型"></a>5.4.2. 可变类型</h4><ul>
+<li>内存中的数据可以被修改，通过调用方法来赋予新的值时，变量对应的内存地址不会发生变化；直接使用等号赋值还是会改变变量对应的内存地址。</li>
+<li>列表：list</li>
+<li>字典：dict，字典的key只能使用不可变类型的数据</li>
+</ul>
+<h4 id="5-4-3-注意"><a href="#5-4-3-注意" class="headerlink" title="5.4.3. 注意"></a>5.4.3. 注意</h4><ul>
+<li>可变类型的数据变化，是通过方法来实现的</li>
+<li>如果给一个可变类型的变量，赋值了一个新的数据，引用会修改<ul>
+<li>变量不再对之前的数据引用</li>
+<li>变量改为对新赋值的数据引用</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-4-4-不同类型变量之间的计算"><a href="#5-4-4-不同类型变量之间的计算" class="headerlink" title="5.4.4. 不同类型变量之间的计算"></a>5.4.4. 不同类型变量之间的计算</h4><ul>
+<li>数字型变量之间可以直接计算<ul>
+<li>在Python中，两个数字型变量是可以直接进行算术运算的。</li>
+<li>如果变量是bool型，在计算时True对应的数字是1，False对应的数字是。</li>
+</ul>
+</li>
+<li>字符串变量之间使用+拼接字符串<ul>
+<li>在Python中，字符串之间可以使用+拼接生成新的字符串</li>
+</ul>
+</li>
+<li>字符串变量可以和整数使用*重复拼接相同的字符串<ul>
+<li>范例：”-“ * 10，输出结果为：’———-‘</li>
+</ul>
+</li>
+<li>数字型变量和字符串之间不能进行其他计算</li>
+</ul>
+<h3 id="5-5-变量的输入"><a href="#5-5-变量的输入" class="headerlink" title="5.5. 变量的输入"></a>5.5. 变量的输入</h3><ul>
+<li>所谓输入，就是用代码获取用户通过键盘输入的信息</li>
+<li>在Python中，如果要获取用户在键盘上的输入信息，需要使用到input函数</li>
+<li>在Python中可以使用input函数从键盘等待用户的输入</li>
+<li>用户输入的任何内容Python都认为是一个字符串</li>
+<li>格式：字符串变量 = input(“提示信息: “)</li>
+</ul>
+<h3 id="5-6-类型转换函数"><a href="#5-6-类型转换函数" class="headerlink" title="5.6. 类型转换函数"></a>5.6. 类型转换函数</h3><ul>
+<li>int(x)：将x转换为一个整数</li>
+<li>float(x)：将x转换到一个浮点数</li>
+</ul>
+<h3 id="5-7-变量的格式化输出"><a href="#5-7-变量的格式化输出" class="headerlink" title="5.7. 变量的格式化输出"></a>5.7. 变量的格式化输出</h3><ul>
+<li>在Python中可以使用print函数将信息输出到控制台。</li>
+<li>如果希望输出文字信息的同时，一起输出数据，就需要使用到格式化操作符。</li>
+<li><code>%</code>被称为格式化操作符，专门用于处理字符串中的格式。包含%的字符串被称为格式化字符串，%和不同的字符连用，不同类型的数据需要使用不同的格式化字符。</li>
+<li><code>%s</code> 字符串</li>
+<li><code>%d</code> 有符号十进制整数，%06d表示输出的整数显示6位数，不足的地方使用0补全</li>
+<li><code>%f</code> 浮点数，%.02f表示小数点后只显示两位</li>
+<li><code>%%</code> 输出%<pre><code class="python3">print(&quot;我的名字叫 %s &quot; % name)
+print(&quot;姓名 %s, 年龄 %d, 成绩 %f&quot; % (name_str, age_int, grade_float))</code></pre>
+</li>
+</ul>
+<h3 id="5-8-标识符"><a href="#5-8-标识符" class="headerlink" title="5.8. 标识符"></a>5.8. 标识符</h3><ul>
+<li>标识符就是程序员定义的变量名、函数名</li>
+<li>名字需要有见名知意的效果<ul>
+<li>标识符可以由字母、下划线和数字组成</li>
+<li>不能以数字开头</li>
+<li>不能与关键字重名</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-9-变量的命名规则"><a href="#5-9-变量的命名规则" class="headerlink" title="5.9. 变量的命名规则"></a>5.9. 变量的命名规则</h3><ul>
+<li>命名规则可以被视为一种惯例，并无绝对与强制</li>
+<li>目的是为了增加代码的识别和可读性</li>
+<li>注意：Python中的标识符是区分大小写的</li>
+</ul>
+<h4 id="5-9-1-官方命名规范"><a href="#5-9-1-官方命名规范" class="headerlink" title="5.9.1. 官方命名规范"></a>5.9.1. 官方命名规范</h4><ul>
+<li>在定义变量时，为了保证代码格式，=的左右应该各保留一个空格。</li>
+<li>在Python中，如果变量名需要由二个或多个单词组成时，可以按照以下方式命名<ul>
+<li>每个单词都使用小写字母</li>
+<li>单词与单词之间使用_下划线连接</li>
+<li>例如：first_name、last_name、qq_number、qq_password</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-9-2-驼峰命名法"><a href="#5-9-2-驼峰命名法" class="headerlink" title="5.9.2. 驼峰命名法"></a>5.9.2. 驼峰命名法</h4><ul>
+<li>当变量名是由二个或多个单词组成时，还可以利用驼峰命名法来命名</li>
+</ul>
+<h5 id="5-9-2-1-小驼峰式命名法"><a href="#5-9-2-1-小驼峰式命名法" class="headerlink" title="5.9.2.1. 小驼峰式命名法"></a>5.9.2.1. 小驼峰式命名法</h5><ul>
+<li>第一个单词以小写字母开始，后续单词的首字母大写</li>
+<li>例如：firstName、lastName</li>
+</ul>
+<h5 id="5-9-2-2-大驼峰式命名法"><a href="#5-9-2-2-大驼峰式命名法" class="headerlink" title="5.9.2.2. 大驼峰式命名法"></a>5.9.2.2. 大驼峰式命名法</h5><ul>
+<li>每一个单词的首字母都采用大写字母</li>
+<li>例如：FirstName、LastName、CamelCase</li>
+</ul>
+<h3 id="5-10-变量的引用"><a href="#5-10-变量的引用" class="headerlink" title="5.10. 变量的引用"></a>5.10. 变量的引用</h3><h4 id="5-10-1-概念"><a href="#5-10-1-概念" class="headerlink" title="5.10.1. 概念"></a>5.10.1. 概念</h4><ul>
+<li>变量和数据是分开存储的</li>
+<li>数据保存在内存中的一个位置</li>
+<li>变量中保存着数据在内存中的地址</li>
+<li>变量中记录数据的地址的这个动作，就叫做引用</li>
+<li>使用id()函数可以查看变量中保存数据所在的内存地址</li>
+<li>注意：如果变量已经被定义，当给一个变量赋值的时候，本质上是修改了数据的引用<ul>
+<li>变量不再对之前的数据引用</li>
+<li>变量改为对新赋值的数据引用</li>
+</ul>
+</li>
+<li>函数的参数和返回值的传递<ul>
+<li>在python中，函数的实参/返回值都是靠引用来传递来的</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-10-2-局部变量和全局变量"><a href="#5-10-2-局部变量和全局变量" class="headerlink" title="5.10.2. 局部变量和全局变量"></a>5.10.2. 局部变量和全局变量</h4><ul>
+<li>局部变量是在函数内部定义的变量，只能在函数内部使用。</li>
+<li>全局变量是在函数外部定义的变量（没有定义在某一个函数内），所有函数内部都可以使用这个变量。</li>
+<li>在其他开发语言中，大多不推荐使用全局变量，因为可变范围太大，导致程序不好维护。</li>
+</ul>
+<h5 id="5-10-2-1-局部变量"><a href="#5-10-2-1-局部变量" class="headerlink" title="5.10.2.1. 局部变量"></a>5.10.2.1. 局部变量</h5><ul>
+<li>定义<ul>
+<li>局部变量是在函数内部定义的变量，只能在函数内部使用。</li>
+<li>函数执行结束后，函数内部的局部变量，会被系统回收。</li>
+<li>不同的函数，可以定义相同的名字的局部变量，但是各用各的，不会产生影响。</li>
+</ul>
+</li>
+<li>局部变量的作用<ul>
+<li>在函数内部使用，临时保存函数内部需要使用的数据。</li>
+</ul>
+</li>
+<li>局部变量的生命周期<ul>
+<li>所谓生命周期就是变量从被创建到被系统回收的过程</li>
+<li>局部变量在函数执行时才会被创建</li>
+<li>函数执行结束后，局部变量被系统回收</li>
+<li>局部变量在生命周期内，可以用来存储函数内部临时使用到的数据</li>
+</ul>
+</li>
+</ul>
+<h5 id="5-10-2-2-全局变量"><a href="#5-10-2-2-全局变量" class="headerlink" title="5.10.2.2. 全局变量"></a>5.10.2.2. 全局变量</h5><ul>
+<li><p>全局变量是在函数外部定义的变量，所有函数内部都可以使用这个变量</p>
+</li>
+<li><p>注意：函数执行时，需要处理变量时会：</p>
+<ul>
+<li>(1)首先查找函数内部是否存在指定名称的局部变量，如果有，直接使用</li>
+<li>(2)如果没有，查找函数外部是否存在指定名称的全局变量，如果有，直接使用</li>
+<li>(3)如果还没有，程序报错</li>
+</ul>
+</li>
+<li><p>函数不能直接修改全局变量的引用</p>
+<ul>
+<li>全局变量是在函数外部定义的变量（没有定义在某一个函数内），所有函数内部都可以使用这个变量。</li>
+<li>在函数内部，可以通过全局变量的引用获取对应的数据。</li>
+<li>但是，不允许直接修改全局变量的引用，即在函数内部不能使用赋值语句修改全局变量的值。如果使用赋值语句，会在函数内部，定义一个局部变量。</li>
+</ul>
+</li>
+<li><p>在函数内部修改全局变量的值</p>
+<ul>
+<li>如果在函数中需要修改全局变量，需要使用global进行声明。</li>
+<li>global关键字会告诉解释器后面的变量是一个全局变量，再使用赋值语句时，就不会创建局部变量<pre><code class="python3">num = 11
+def demo():
+  global num
+  num = 99
+  print(&quot;num == %d&quot; % num)</code></pre>
+</li>
+</ul>
+</li>
+<li><p>全局变量定义的位置</p>
+<ul>
+<li>为了保证所有的函数都能够正确使用到全局变量，应该将全局变量定义在其他函数的上方</li>
+</ul>
+</li>
+<li><p>全局变量命名的建议</p>
+<ul>
+<li>为了避免局部变量和全局变量出现混淆，在定义全局变量时，有些公司会有一些开发要求，例如：全局变量名前应该增加g_或者gl_的前缀</li>
+</ul>
+</li>
+</ul>
+<h2 id="六、if判断语句"><a href="#六、if判断语句" class="headerlink" title="六、if判断语句"></a>六、if判断语句</h2><ul>
+<li>判断语句也被称为分支语句</li>
+</ul>
+<h3 id="6-1-if"><a href="#6-1-if" class="headerlink" title="6.1. if"></a>6.1. if</h3><ul>
+<li>格式<pre><code class="python3">if 要判断的条件
+    条件成立时，要做的事情
+    ……</code></pre>
+<ul>
+<li>代码的缩进为一个tab键，或者4个空格，建议使用空格。在Python开发中，tab和空格不要混用，要么都用tab要么都用空格。</li>
+<li>if语句以及缩进部分是一个完整的代码块</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-2-else"><a href="#6-2-else" class="headerlink" title="6.2. else"></a>6.2. else</h3><ul>
+<li>else处理条件不满足的情况</li>
+<li>格式<pre><code class="python3">if 要判断的条件:
+    条件成立时，要做的事情
+else:
+    条件不成立时，要做的事情
+    ……</code></pre>
+<ul>
+<li>if和else语句以及各自的缩进部分共同是一个完整的代码块</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-3-elif"><a href="#6-3-elif" class="headerlink" title="6.3. elif"></a>6.3. elif</h3><ul>
+<li><p>在开发中，使用if可以判断条件</p>
+</li>
+<li><p>使用else可以处理条件不成立的情况</p>
+</li>
+<li><p>但是，如果希望再增加一些条件，条件不同，需要执行的代码也不同时，就可以使用elif</p>
+</li>
+<li><p>格式</p>
+<pre><code class="python3">if 条件1:
+    条件1满足时，执行的代码
+    ……
+elif 条件2:
+    条件2满足时，执行的代码
+    ……
+elif 条件3:
+    条件3满足时，执行的代码
+    ……
+else:
+    以上条件都不满足时，执行的代码
+    ……</code></pre>
+<ul>
+<li>elif和else都必须和if联合使用，而不能单独使用</li>
+<li>可以将if、elif和else以及各自缩进的代码，看成一个完整的代码块</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-4-if嵌套"><a href="#6-4-if嵌套" class="headerlink" title="6.4. if嵌套"></a>6.4. if嵌套</h3><ul>
+<li>格式<pre><code class="python3">if 条件 1:
+    条件1满足时，执行的代码
+    ……
+    if 条件1基础上的条件2:
+        条件2满足时，执行的代码
+        ……
+    else:  # 条件2不满足的处理
+        条件2不满足时，执行的代码
+        ……
+else:  # 条件1不满足的处理
+    条件1不满足时，执行的代码
+    ……</code></pre>
+</li>
+</ul>
+<h2 id="七、while循环基本使用"><a href="#七、while循环基本使用" class="headerlink" title="七、while循环基本使用"></a>七、while循环基本使用</h2><h3 id="7-1-循环的作用"><a href="#7-1-循环的作用" class="headerlink" title="7.1. 循环的作用"></a>7.1. 循环的作用</h3><ul>
+<li>循环的作用就是让指定的代码重复的执行</li>
+<li>while循环最常用的应用场景就是让执行的代码按照指定的次数重复执行</li>
+</ul>
+<h3 id="7-2-格式"><a href="#7-2-格式" class="headerlink" title="7.2. 格式"></a>7.2. 格式</h3><pre><code class="python3">while 条件(判断 计数器 是否达到 目标次数):
+    条件满足时，做的事情1
+    条件满足时，做的事情2
+    条件满足时，做的事情3
+    ……
+    处理条件（计数器 + 1）
+
+while i &lt;= 100:
+    print(i)
+    i++</code></pre>
+<h3 id="7-3-死循环"><a href="#7-3-死循环" class="headerlink" title="7.3. 死循环"></a>7.3. 死循环</h3><ul>
+<li>由于程序员的原因，忘记在循环内部修改循环的判断条件，导致循环持续执行，程序无法终止！</li>
+</ul>
+<h3 id="7-4-break和continue"><a href="#7-4-break和continue" class="headerlink" title="7.4. break和continue"></a>7.4. break和continue</h3><ul>
+<li>break和continue是专门在循环中使用的关键字</li>
+<li>break，某一条件满足时，退出循环，不再执行后续重复的代码</li>
+<li>continue，某一条件满足时，不执行后续重复的代码，进入下一次循环</li>
+<li>break和continue只针对当前所在循环有效</li>
+</ul>
+<h3 id="7-5-PyCharm的调试工具"><a href="#7-5-PyCharm的调试工具" class="headerlink" title="7.5. PyCharm的调试工具"></a>7.5. PyCharm的调试工具</h3><ul>
+<li><code>F8 Step Over</code>可以单步执行代码，会把函数调用看作是一行代码直接执行</li>
+<li><code>F7 Step Into</code>可以单步执行代码，如果是函数，会进入函数内部</li>
+</ul>
+<h2 id="八、函数"><a href="#八、函数" class="headerlink" title="八、函数"></a>八、函数</h2><h3 id="8-1-简介"><a href="#8-1-简介" class="headerlink" title="8.1. 简介"></a>8.1. 简介</h3><ul>
+<li>函数就是把具有独立功能的代码块组织为一个小模块，在需要的时候调用，</li>
+<li>函数的使用包含了两个步骤<ul>
+<li>1、定义函数——封装独立的功能</li>
+<li>2、调用函数——享受封装的成果</li>
+</ul>
+</li>
+<li>函数的作用，在开发程序时，使用函数可以提高编写的效率以及代码的重用。</li>
+</ul>
+<h3 id="8-2-格式"><a href="#8-2-格式" class="headerlink" title="8.2. 格式"></a>8.2. 格式</h3><pre><code class="python3">def 函数名(参数1, 参数2):
+    函数封装的代码
+    ……
+
+def han_shu():
+    print(&quot;hello1&quot;)
+    print(&quot;hello2&quot;)
+    print(&quot;hello3&quot;)
+
+han_shu()
+
+def dai_can(num1, num2):
+    result = num1 + num2
+    print(&quot;%d + %d = %d&quot; % (num1, num2, result))
+
+dai_can(50, 20)</code></pre>
+<ul>
+<li><p>def是英文define的缩写</p>
+</li>
+<li><p>函数名称应该能够表达函数封装代码的功能，方便后续的调用</p>
+</li>
+<li><p>函数名称的命名应该符合标识符的命名规则</p>
+<ul>
+<li>可以由字母、下划线和数字组成</li>
+<li>不能以数字开头</li>
+<li>不能与关键字重名</li>
+</ul>
+</li>
+<li><p>通过 函数名() 即可完成对函数的调用</p>
+</li>
+<li><p>定义好函数之后，只表示这个函数封装了一段代码而已</p>
+</li>
+<li><p>如果不主动调用函数，函数是不会主动执行的</p>
+</li>
+<li><p>函数执行完之后，会重新回到之前的程序中，继续执行后续的代码</p>
+</li>
+<li><p>注意</p>
+</li>
+<li><p>不能将函数调用放在函数定义的上方，因为在使用函数名调用函数之前，必须要保证Python已经知道函数的存在。否则控制台会提示：函数名没有定义</p>
+</li>
+<li><p>函数的文档注释</p>
+</li>
+<li><p>在开发中，如果希望给函数添加注释，应该在定义函数的下方，使用连续的三对引号</p>
+</li>
+<li><p>在连续的三对引号之间编写对函数的说明文字</p>
+<pre><code class="python3">def han_shu():
+  &quot;&quot;&quot;这是一个注释&quot;&quot;&quot;
+
+  print(&quot;hello1&quot;)
+  print(&quot;hello2&quot;)
+  print(&quot;hello3&quot;)</code></pre>
+</li>
+<li><p>在函数调用位置，使用快捷键<code>CTRL + q</code>可以查看函数的说明信息</p>
+</li>
+<li><p>因为函数体相对比较独立，函数定义的上方，应该和其他代码（包括注释）保留两个空行</p>
+</li>
+<li><p>在pycharm中，选择定义的函数名，在左侧会出现一个小灯泡，点击之后选择第二项<code>Insert documentation string stub</code></p>
+</li>
+</ul>
+<h3 id="8-3-参数的作用"><a href="#8-3-参数的作用" class="headerlink" title="8.3. 参数的作用"></a>8.3. 参数的作用</h3><ul>
+<li>函数把具有独立功能的代码块组织为一个小模块，在需要的时候调用</li>
+<li>函数的参数，增加函数的通用性，针对相同的数据处理逻辑，能够适应更多的数据</li>
+<li>在函数内部，把参数当做变量使用，进行需要的数据处理</li>
+<li>函数调用时，按照函数定义的参数顺序，把希望在函数内部处理的数据，通过参数传递</li>
+</ul>
+<h3 id="8-4-形参和实参"><a href="#8-4-形参和实参" class="headerlink" title="8.4. 形参和实参"></a>8.4. 形参和实参</h3><ul>
+<li>形参：定义函数时，小括号中的参数，是用来接收参数用的，在函数内部作为变量使用。</li>
+<li>实参：调用函数时，小括号中的参数，是用来把数据传递到函数内部用的。</li>
+</ul>
+<h3 id="8-5-函数的返回值"><a href="#8-5-函数的返回值" class="headerlink" title="8.5. 函数的返回值"></a>8.5. 函数的返回值</h3><ul>
+<li><p>在程序开发中，有时候，会希望一个函数执行结束后，告诉调用者一个结果，以便调用者针对具体的结果做后续的处理。</p>
+</li>
+<li><p>返回值是函数完成工作后，最后给调用者的一个结果</p>
+</li>
+<li><p>在函数中使用return关键字可以返回结果</p>
+</li>
+<li><p>调用函数一方，可以使用变量来接受函数的返回结果</p>
+</li>
+<li><p>注意：return表示返回，后续的代码都不会被执行</p>
+<pre><code class="python3">def sum_2_num(num1, num2):
+  &quot;&quot;&quot;对两个数字的求和&quot;&quot;&quot;
+
+  return num1 + num2
+# 调用函数，并使用 result 变量接受计算结果
+result = sum_2_num(10, 20)
+print(&quot;计算结果是 %d&quot; % result)</code></pre>
+</li>
+</ul>
+<h3 id="8-6-函数的嵌套调用"><a href="#8-6-函数的嵌套调用" class="headerlink" title="8.6. 函数的嵌套调用"></a>8.6. 函数的嵌套调用</h3><ul>
+<li>一个函数里面又调用了另外一个函数，这就是函数嵌套调用</li>
+<li>如果函数 test2 中，调用了另外一个函数 test1<ul>
+<li>那么执行到调用 test1 函数时，会先把函数 test1 中的任务都执行完</li>
+<li>才会回到 test2 中调用函数 test1 的位置，继续执行后续的代码</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-7-函数参数和返回值的作用"><a href="#8-7-函数参数和返回值的作用" class="headerlink" title="8.7. 函数参数和返回值的作用"></a>8.7. 函数参数和返回值的作用</h3><ul>
+<li><p>函数根据有没有参数以及有没有返回值，可以互相组合，一共有4中组合形式</p>
+<ul>
+<li>1、无参数，无返回值</li>
+<li>2、无参数，有返回值</li>
+<li>3、有参数，无返回值</li>
+<li>4、有参数，有返回值</li>
+</ul>
+</li>
+<li><p>如果函数内部处理的数据不确定，就可以将外界的数据以参数传递到函数内部。</p>
+</li>
+<li><p>如果希望一个函数执行完成后，向外界汇报执行结果，就可以增加函数的返回值。</p>
+</li>
+</ul>
+<h3 id="8-8-函数的返回值"><a href="#8-8-函数的返回值" class="headerlink" title="8.8 函数的返回值"></a>8.8 函数的返回值</h3><ul>
+<li>在程序开发中，有时候，会希望一个函数执行结束后，告诉调用者一个结果，以便调用者针对具体的结果做后续的处理。</li>
+<li>返回值是函数完成工作后，最后给调用者的一个结果。</li>
+<li>在函数中使用return关键字可以返回结果。</li>
+<li>元组可以包含多个数据，因此可以使用元组让函数一次返回多个值，如果函数返回的类型是元组，小括号可以省略。</li>
+<li>如果函数返回的类型是元组，同时希望单独的处理元组中的元素，可以使用多个变量，一次接收函数的返回结果<pre><code class="python3"># 1
+gl_temp, gl_wetness = measure()  # measure是定义的一个函数，返回一个包含两个元素的元组
+# 2
+a, b = (b, a)
+a, b = b, a  # 小括号可以省略</code></pre>
+<ul>
+<li>注意：使用多个变量接收结果时，变量的个数应该和元组中元素的个数保持一致。</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-9-函数的参数"><a href="#8-9-函数的参数" class="headerlink" title="8.9. 函数的参数"></a>8.9. 函数的参数</h3><ul>
+<li>无论传递的参数是可变还是不可变，只要针对参数使用赋值语句，会在函数内部修改局部变量的引用，不会影响到外部变量的引用。</li>
+<li>如果传递的参数是可变类型，在函数内部，使用方法修改了数据的内容，同样会影响到外部的数据。</li>
+</ul>
+<h3 id="8-10-缺省参数"><a href="#8-10-缺省参数" class="headerlink" title="8.10. 缺省参数"></a>8.10. 缺省参数</h3><h4 id="8-10-1-简介"><a href="#8-10-1-简介" class="headerlink" title="8.10.1. 简介"></a>8.10.1. 简介</h4><ul>
+<li>定义函数时，可以给某个参数指定一个默认值，具有默认值的参数就叫做缺省参数。</li>
+<li>调用函数时，如果没有传入缺省参数的值，则在函数内部使用定义函数时指定的参数默认值。</li>
+<li>函数的缺省参数，将常见的值设置为参数的缺省值，从而简化函数的调用。</li>
+</ul>
+<h4 id="8-10-2-指定函数的缺省参数"><a href="#8-10-2-指定函数的缺省参数" class="headerlink" title="8.10.2. 指定函数的缺省参数"></a>8.10.2. 指定函数的缺省参数</h4><ul>
+<li>在参数后使用赋值语句，可以指定参数的缺省值<pre><code class="python3">def print_info(name, gender=True):
+  gender_text = &quot;男生&quot;
+  if not gender:
+      gender_text = &quot;女生&quot;
+  print(&quot;%s 是 %s&quot; % (name, gender_text))</code></pre>
+</li>
+</ul>
+<ul>
+<li>缺省参数，需要使用最常见的值作为默认值。</li>
+<li>如果一个参数的值不能确定，则不应该设置默认值，具体的数值在调用函数时，由外界传递。<h4 id="8-10-3-注意"><a href="#8-10-3-注意" class="headerlink" title="8.10.3. 注意"></a>8.10.3. 注意</h4></li>
+<li>缺省参数的定义位置<ul>
+<li>必须保证带有默认值的缺省参数在参数列表末尾。<pre><code class="python3"># 错误的写法
+def print_info(name, gender=True, title):</code></pre>
+</li>
+</ul>
+</li>
+<li>调用带有多个缺省参数的函数<ul>
+<li>在调用函数时，如果有多个缺省参数，需要指定参数名，这样解释器才能够知道参数的对应关系。<pre><code class="python3">print_info(&quot;老王&quot;, gender = False)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-11-多值参数"><a href="#8-11-多值参数" class="headerlink" title="8.11. 多值参数"></a>8.11. 多值参数</h3><ul>
+<li><p>定义支持多值参数的函数</p>
+</li>
+<li><p>有时可能需要一个函数能够处理的参数个数是不确定的，这个时候，就可以使用多值参数</p>
+</li>
+<li><p>python中有两种多值参数：</p>
+<ul>
+<li>参数名前增加一个 * 可以接收元组</li>
+<li>参数名前增加两个 ** 可以接收字典</li>
+</ul>
+</li>
+<li><p>一般在给多值参数命名时，习惯使用以下两个名字</p>
+<ul>
+<li>*args —— 存放元组参数，注意前面有一个 *</li>
+<li>**kwargs —— 存放字典参数，注意前面有两个 *</li>
+</ul>
+</li>
+<li><p>args是arguments的缩写，有变量的含义</p>
+</li>
+<li><p>kw是keyword的缩写，kwargs可以记忆键值对参数</p>
+<pre><code class="python3">def demo(num, *args, **kwargs):
+    print(num)
+    print(args)
+    print(kwargs)
+
+demo(1, 2, 3, 4, 5, name = &quot;小明&quot;, age = 18, gender = True)
+&quot;&quot;&quot;
+输结果为：
+1
+(2, 3, 4, 5)
+&#123;&#39;age&#39;: 18, &#39;name&#39;: &#39;小明&#39;&#125;
+&quot;&quot;&quot;</code></pre>
+</li>
+</ul>
+<h3 id="8-12-元组和字典的拆包"><a href="#8-12-元组和字典的拆包" class="headerlink" title="8.12. 元组和字典的拆包"></a>8.12. 元组和字典的拆包</h3><ul>
+<li>在调用带有多值参数的函数时，如果希望：<ul>
+<li>将一个元组变量，直接传递给 args</li>
+<li>将一个字典变量，直接传递给 kwargs</li>
+</ul>
+</li>
+<li>就可以使用拆包，简化参数的传递，拆包的方式是：<ul>
+<li>在元组变量前，增加一个 *</li>
+<li>在字典变量前，增加两个 *<pre><code class="python3">def demo(*args, **kwargs):
+  print(args)
+  print(kwargs)
+# 需要将一个元组变量/字典变量传递给函数对应的参数
+gl_nums = (1, 2, 3)
+gl_xiaoming = &#123;&quot;name&quot;: &quot;小明&quot;, &quot;age&quot;: 18&#125;
+demo(gl_nums, gl_xiaoming)  # 会把 num_tuple 和 xiaoming 作为元组传递给 args
+demo(*gl_nums, **gl_xiaoming)  # 将元组变量和字典变量传递给函数对应的参数</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-13-函数的递归"><a href="#8-13-函数的递归" class="headerlink" title="8.13. 函数的递归"></a>8.13. 函数的递归</h3><ul>
+<li>函数调用自身的编程技巧称为递归。</li>
+</ul>
+<h4 id="8-13-1-递归函数的特点"><a href="#8-13-1-递归函数的特点" class="headerlink" title="8.13.1. 递归函数的特点"></a>8.13.1. 递归函数的特点</h4><ul>
+<li>一个函数内部调用自己，函数内部可以调用其他函数，当然在函数内部也可以调用自己。</li>
+</ul>
+<h4 id="8-13-2-代码特点"><a href="#8-13-2-代码特点" class="headerlink" title="8.13.2. 代码特点"></a>8.13.2. 代码特点</h4><ul>
+<li>函数内部的代码是相同的，只是针对参数不同，处理的结果不同。</li>
+<li>当参数满足一个条件时，函数不再执行，通常被称为递归的出口，否则会出现死循环。<pre><code class="python3">def sum_numbers(num):
+  print(num)
+  #递归的出口很重要，否则会出现死循环
+  if num == 1:
+      return
+  sum_numbers(num - 1)
+sum_numbers(3)</code></pre>
+</li>
+</ul>
+<h3 id="8-14-Python内置函数"><a href="#8-14-Python内置函数" class="headerlink" title="8.14. Python内置函数"></a>8.14. Python内置函数</h3><ul>
+<li><code>len(item)</code><ul>
+<li>计算容器中元素个数</li>
+</ul>
+</li>
+<li><code>del(item)</code><ul>
+<li>删除变量</li>
+<li>del有两种方式</li>
+</ul>
+</li>
+<li><code>max(item)</code><ul>
+<li>返回容器中元素最大值</li>
+<li>如果是字典，只针对key比较</li>
+</ul>
+</li>
+<li><code>min(item)</code><ul>
+<li>返回容器中元素最小值</li>
+<li>如果是字典，只针对key比较</li>
+</ul>
+</li>
+<li><code>cmp(item1,item2)</code><ul>
+<li>比较两个值，-1小于/0相等/1大于</li>
+<li>Python3.x取消了cmp函数</li>
+</ul>
+</li>
+<li>注意：字符串比较符合以下规则：’0’ &lt; ‘A’ &lt; ‘a’</li>
+</ul>
+<h2 id="九、列表"><a href="#九、列表" class="headerlink" title="九、列表"></a>九、列表</h2><h3 id="9-1-定义"><a href="#9-1-定义" class="headerlink" title="9.1. 定义"></a>9.1. 定义</h3><ul>
+<li>List（列表）时Python中使用最频繁的数据类型，在其他语言中通常叫做数组</li>
+<li>专门用于存储一串信息</li>
+<li>列表用 [] 定义，数据之间使用 , 分隔</li>
+<li>列表的索引从0开始<ul>
+<li>索引就是数据在列表中的位置编号，索引又可以被称为下标</li>
+<li>从列表中取值时，如果超出索引范围，程序会报错</li>
+</ul>
+</li>
+<li>应用<ul>
+<li>Python的列表中可以存储不同类型的数据</li>
+<li>在开发中，更多的应用场景是<ul>
+<li>1、列表存储相同类型的数据</li>
+<li>2、通过迭代遍历，在循环体内部，针对列表中的每一项元素，执行相同的操作</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>格式<pre><code class="python3">name_list = [&quot;zhansan&quot;, &quot;lisi&quot;, &quot;wangwu&quot;]</code></pre>
+</li>
+</ul>
+<h3 id="9-2-列表常用操作"><a href="#9-2-列表常用操作" class="headerlink" title="9.2. 列表常用操作"></a>9.2. 列表常用操作</h3><ul>
+<li>在ipython中定义一个列表，例如：name_list = []</li>
+<li>输入name_list.按下TAB键，ipython会提示列表能够使用的方法如下<ul>
+<li>增加<ul>
+<li>列表.insert(索引, 数据) 在指定位置插入数据</li>
+<li>列表.append(数据) 在末尾追加数据</li>
+<li>列表1.extend(列表2) 将列表2的数据追加到列表1的末尾</li>
+</ul>
+</li>
+<li>修改<ul>
+<li>列表[索引] = 数据 从列表中取值</li>
+</ul>
+</li>
+<li>删除<ul>
+<li>del 列表[索引] 删除指定索引的数据</li>
+<li>列表.remove[数据] 删除第一个出现的指定数据</li>
+<li>列表.pop 删除末尾数据</li>
+<li>列表.pop(索引) 删除指定索引的数据</li>
+<li>列表.clear 清空列表</li>
+</ul>
+</li>
+<li>统计<ul>
+<li>(列表) 获取列表的长度，包含的元素的总数</li>
+<li>列表.count(数据) 数据在列表中出现的次数</li>
+</ul>
+</li>
+<li>排序<ul>
+<li>列表.sort() 升序排序</li>
+<li>列表.sort(reverse=True) 降序排序</li>
+<li>列表.reverse() 反转/逆序，将123变成321</li>
+</ul>
+</li>
+<li>查询<ul>
+<li>列表.index(数据) 获取数据第一次出现的索引</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在python中，列表变量调用 += 不会做相加再赋值的操作，本质上是在执行列表变量的 extend 方法，不会修改变量的引用。</li>
+</ul>
+<h3 id="9-3-del"><a href="#9-3-del" class="headerlink" title="9.3. del"></a>9.3. del</h3><ul>
+<li>使用del关键字（delete）删除列表元素。</li>
+<li>在日常开发中，要从列表删除数据，建议使用列表提供的方法。</li>
+<li>del关键字本质上是用来将一个变量从内存中删除的。</li>
+<li>注意：如果使用del关键字将变量从内存中删除，那么后续的代码就不能再使用这个变量了。</li>
+</ul>
+<h2 id="十、元组"><a href="#十、元组" class="headerlink" title="十、元组"></a>十、元组</h2><h3 id="10-1-定义"><a href="#10-1-定义" class="headerlink" title="10.1. 定义"></a>10.1. 定义</h3><ul>
+<li>Tuple（元组）与列表类似，不同之处在于元组的元素不能修改<ul>
+<li>元组表示多个元素组成的序列</li>
+<li>元组在Python开发中，有特定的应用场景</li>
+</ul>
+</li>
+<li>元组中通常保存不同类型的数据</li>
+<li>用于存储一串信息，数据之间使用 ， 分隔</li>
+<li>元组用 () 定义</li>
+<li>元组的索引从0开始<ul>
+<li>索引就是数据在元组中的位置编号</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-2-格式"><a href="#10-2-格式" class="headerlink" title="10.2. 格式"></a>10.2. 格式</h3><pre><code class="python3">info_tuple = (&quot;zhangsan&quot;, 18, 1.75)
+
+# 创建空元组
+info_tuple2 = ()
+
+# 创建一个只包含一个元素的元组
+info_tuple3 = (99,)  # 元组中，只包含一个元素时，需要在元素后面添加逗号</code></pre>
+<h3 id="10-3-元组常用操作"><a href="#10-3-元组常用操作" class="headerlink" title="10.3. 元组常用操作"></a>10.3. 元组常用操作</h3><ul>
+<li>在ipython3中定义一个元组，例如：info = ()</li>
+<li>输入 info. 按下 TAB 键，ipython会提示元组能够使用的函数如下<ul>
+<li><code>info.count</code></li>
+<li><code>info.index</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="10-4-应用场景"><a href="#10-4-应用场景" class="headerlink" title="10.4. 应用场景"></a>10.4. 应用场景</h3><ul>
+<li>尽管可以使用for in遍历元组，但是在开发中，更多的应用场景是<ul>
+<li>1、函数的参数和返回值，一个函数可以接收任意多个参数，或者一次返回多个数据</li>
+<li>2、格式字符串，格式化字符串后面的 () 本质上就是一个元组，格式字符可以拼接生成一个新的字符串<pre><code class="python3">info = (&quot;zhangsan&quot;, 18)
+print(&quot;%s 的年龄是 %d&quot; % info)
+# 通过格式字符串拼接生成一个新的字符串
+info_str = &quot;%s 的年龄是 %d&quot; % info
+print(into_str)</code></pre>
+</li>
+<li>3.让列表不可以被修改，以保护数据安全</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-5-元组和列表之间的转换"><a href="#10-5-元组和列表之间的转换" class="headerlink" title="10.5. 元组和列表之间的转换"></a>10.5. 元组和列表之间的转换</h3><ul>
+<li>使用list函数可以把元组转换成列表<ul>
+<li>list(元组)</li>
+</ul>
+</li>
+<li>使用tuple函数可以把列表转换成元组<ul>
+<li>tuple(列表)</li>
+</ul>
+</li>
+</ul>
+<h2 id="十一、字典"><a href="#十一、字典" class="headerlink" title="十一、字典"></a>十一、字典</h2><h3 id="11-1-定义"><a href="#11-1-定义" class="headerlink" title="11.1. 定义"></a>11.1. 定义</h3><ul>
+<li>dictionary（字典）是除列表以外Python之中最灵活的数据类型</li>
+<li>字典同样可以用来存储多个数据<ul>
+<li>通常用于存储描述一个物体的相关信息</li>
+</ul>
+</li>
+<li>和列表的区别是：<ul>
+<li>列表时有序的对象集合</li>
+<li>字典是无需的对象集合</li>
+</ul>
+</li>
+<li>字典用 {} 定义</li>
+<li>字典使用键值对存储数据，键值对之间使用 , 分隔<ul>
+<li>键 key 是索引</li>
+<li>值 value 是数据</li>
+<li>键和值之间使用 : 分隔</li>
+<li>键必须是唯一的</li>
+<li>值可以取任何数据类型，但键只能使用字符串、数字或元组</li>
+</ul>
+</li>
+<li>因为字典是一个无序的数据集合，使用print函数输出字典时，通常输出的顺序和定义的顺序是不一致的</li>
+</ul>
+<h3 id="11-2-格式"><a href="#11-2-格式" class="headerlink" title="11.2. 格式"></a>11.2. 格式</h3><pre><code class="python3">xiaoming = &#123;&quot;name&quot;: &quot;小明&quot;,
+            &quot;age&quot;: 18,
+            &quot;gender&quot;: True,
+            &quot;height&quot;: 1.75&#125;</code></pre>
+<h3 id="11-3-字典的使用"><a href="#11-3-字典的使用" class="headerlink" title="11.3. 字典的使用"></a>11.3. 字典的使用</h3><pre><code class="Python3">xiaoming_dict = &#123;&quot;name&quot;: &quot;小明&quot;&#125;
+# 1.取值，在取值的时候，如果指定的key不存在，程序会报错
+print(xiaoming_dict[&quot;name&quot;])
+
+# 2.增加/修改
+# 如果key不存在，会新增键值对
+xiaoming_dict[&quot;age&quot;] = 18
+# 如果key存在, 会修改已经存在的键值对
+xiaoming_dict[&quot;name&quot;] = &quot;小小明&quot;
+
+# 3.删除
+xiaoming_dict.pop(&quot;name&quot;)
+# 在删除指定键值对的时候，如果指定的key不存在，程序会报错
+xiaoming_dict.pop(&quot;name123&quot;)
+
+print(xiaoming_dict)</code></pre>
+<h3 id="11-4-字典常用操作"><a href="#11-4-字典常用操作" class="headerlink" title="11.4. 字典常用操作"></a>11.4. 字典常用操作</h3><ul>
+<li><p>在ipython3中定义一个字典，例如：xiaoming = {}</p>
+</li>
+<li><p>输入xiaoming. 按下TAB键， ipython会提示字典能够使用的函数</p>
+</li>
+<li><p>使用update合并字典时，如果被合并的字典中包含已经存在的键值对，会覆盖原有的键值对</p>
+<ul>
+<li><code>字典.values()</code>所有value列表</li>
+<li><code>字典.items()</code>所有(key,value)元组列表</li>
+</ul>
+</li>
+<li><p>字典.keys()所有key列表</p>
+<ul>
+<li><code>字典[key]</code>可以从字典中取值，key不存在时，会报错</li>
+<li><code>字典.get(key)</code>可以从字典中取值，key不存在时，不会报错</li>
+<li><code>del 字典[key]</code>删除指定键值对，key不存在会报错</li>
+<li><code>字典.pop(key)</code>删除指定键值对，key不存在会报错</li>
+<li><code>字典.popitem()</code>随机删除一个键值对</li>
+<li><code>字典.clear()</code>清空字典</li>
+<li><code>字典[key] = value</code>如果key存在，修改数据；如果key不存在，新建键值对</li>
+<li><code>字典.setdefault(key,value)</code>如果key存在，不会修改数据；如果key不存在，新建键值对</li>
+<li><code>字典.update(字典2)</code>将字典2的数据合并到字典1</li>
+</ul>
+</li>
+</ul>
+<h3 id="11-5-字典的循环遍历"><a href="#11-5-字典的循环遍历" class="headerlink" title="11.5. 字典的循环遍历"></a>11.5. 字典的循环遍历</h3><pre><code class="python3"># for 循环内部使用的‘key的变量’ in 字典
+for k in xiaoming:
+    print(&quot;%s: %s&quot; % (k, xiaoming[k]))</code></pre>
+<h3 id="11-6-应用场景"><a href="#11-6-应用场景" class="headerlink" title="11.6. 应用场景"></a>11.6. 应用场景</h3><ul>
+<li>尽管可以使用 for in遍历字典，但是在开发中，更多的应用场景是：<ul>
+<li>使用多个键值对，存储描述一个物体的相关信息——描述更复杂的数据信息</li>
+<li>将多个字典放在一个列表中，再进行遍历，在循环体内部针对每一个字典进行相同的处理<pre><code class="Python3">card_list = [&#123;&quot;name&quot;: &quot;张三&quot;,
+        &quot;qq&quot;: &quot;12345&quot;,
+        &quot;phone&quot;: &quot;10000&quot;&#125;,
+        &#123;&quot;name&quot;: &quot;李四&quot;,
+        &quot;qq&quot;: &quot;54321&quot;,
+        &quot;phone&quot;: &quot;10086&quot;&#125;]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="十二、字符串"><a href="#十二、字符串" class="headerlink" title="十二、字符串"></a>十二、字符串</h2><h3 id="12-1-定义"><a href="#12-1-定义" class="headerlink" title="12.1. 定义"></a>12.1. 定义</h3><ul>
+<li>字符串就是一串字符，是编程语言中表示文本的数据类型</li>
+<li>在Python中可以使用一对双引号 “ 或者一对单引号 ‘ 定义一个字符串</li>
+<li>虽然可以使用 &quot; 或者 &#39; 做字符串的转义，但是在实际开发中：<ul>
+<li>如果字符串内部需要使用 “，可以使用 ‘ 定义字符串</li>
+<li>如果字符串内部需要使用 ’，可以使用 “ 定义字符串</li>
+</ul>
+</li>
+<li>可以使用索引获取一个字符串中指定位置的字符，索引计数从0开始</li>
+<li>也可以使用for循环遍历字符串中每一个字符<pre><code class="python3">string = &quot;hello python&quot;
+for c in string:
+  print(c)</code></pre>
+</li>
+<li>字符串的索引值是从0开始的</li>
+<li><code>(字符串)</code>获取字符串的长度</li>
+<li><code>字符串.count(字符串)</code>小字符串在大字符串中出现的次数</li>
+<li><code>字符串[索引]</code>从字符串中取出单个字符</li>
+<li><code>字符串.index(字符串)</code>获得小字符串第一次出现的索引</li>
+</ul>
+<h3 id="12-2-字符串的常用操作"><a href="#12-2-字符串的常用操作" class="headerlink" title="12.2. 字符串的常用操作"></a>12.2. 字符串的常用操作</h3><h4 id="12-2-1-如何查看能够使用的方法"><a href="#12-2-1-如何查看能够使用的方法" class="headerlink" title="12.2.1. 如何查看能够使用的方法"></a>12.2.1. 如何查看能够使用的方法</h4><ul>
+<li>在ipython3中定义一个字符串，例如：`hello_str = “”``</li>
+<li>输入<code>hello_str.</code>按下<code>TAB</code>键，ipython会提示字符串能够使用的方法</li>
+</ul>
+<h4 id="12-2-2-判断类型-9个"><a href="#12-2-2-判断类型-9个" class="headerlink" title="12.2.2. 判断类型(9个)"></a>12.2.2. 判断类型(9个)</h4><ul>
+<li><p><code>string.isspace()</code></p>
+<ul>
+<li>如果string中包含空格，则返回true</li>
+</ul>
+</li>
+<li><p><code>string.isalnum()</code></p>
+<ul>
+<li>如果string至少有一个字符并且所有字符都是字母或数字则返回true</li>
+</ul>
+</li>
+<li><p><code>string.isalpha()</code></p>
+<ul>
+<li>如果string至少有一个字符并且所有字符都是字母则返回true</li>
+</ul>
+</li>
+<li><p><code>string.isdecimal()</code></p>
+<ul>
+<li>如果string只包含数字则返回true，全角数字</li>
+</ul>
+</li>
+<li><p><code>string.isdigit()</code></p>
+<ul>
+<li>如果string只包含数组则返回true，全角数字、(1)、\u00b2</li>
+</ul>
+</li>
+<li><p><code>string.isnumeric()</code></p>
+<ul>
+<li>如果string只包含数字则返回true，全角数字、汉字数字</li>
+</ul>
+</li>
+<li><p><code>string.istitle()</code></p>
+<ul>
+<li>如果string是标题化的(每个单词的首字母大写)则返回true</li>
+</ul>
+</li>
+<li><p><code>string.islower()</code></p>
+<ul>
+<li>如果string中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回true</li>
+</ul>
+</li>
+<li><p><code>string.isupper()</code></p>
+<ul>
+<li>如果string中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回true</li>
+</ul>
+</li>
+<li><p>注意：这三个函数都不能判断小数。应该尽量使用<code>isdecimal()</code>方法，因为在程序开发中，绝大多数都是纯数字进行判断的，很少使用Unicode字符串和中文数字。</p>
+<ul>
+<li><code>isdecimal()</code>只能判断单纯的数字</li>
+<li><code>isdigit()</code>还可以判断unicode字符串</li>
+<li><code>isnumeric()</code>不仅可以判断unicode字符串，还可以判断中文数字（例如：一千九百）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-2-3-查找和替换-7个"><a href="#12-2-3-查找和替换-7个" class="headerlink" title="12.2.3. 查找和替换(7个)"></a>12.2.3. 查找和替换(7个)</h4><ul>
+<li><code>string.startswith(str)</code><ul>
+<li>检查字符串是否是以str开头，是则返回true</li>
+</ul>
+</li>
+<li><code>string.endswitch(str)</code><ul>
+<li>检查字符串是否是以str结束，是则返回true</li>
+</ul>
+</li>
+<li><code>string.find(str,start=0,end=len(string))</code><ul>
+<li>检测str是否包含在string中，如果start和end指定范围，则检查是否包含在指定范围内，如果是则返回开始的索引值，否则返回<code>-1</code></li>
+</ul>
+</li>
+<li><code>string.rfind(str,start=0,end=len(string))</code><ul>
+<li>类似于<code>find()</code>函数，不过是从右边开始查找</li>
+</ul>
+</li>
+<li><code>string.index(str,start=0,end=len(string))</code><ul>
+<li>跟find()方法类似，只不过如果str不在时，string会报错</li>
+</ul>
+</li>
+<li><code>string.rindex(str,start=0,end=len(string))</code><ul>
+<li>类似于index()，不过是从右边开始</li>
+</ul>
+</li>
+<li><code>string.replace(old_str,new_str,num=string.count(old))</code><ul>
+<li>把string中的old_str替换成new_str，如果num指定，则替换不超过num次</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-2-4-大小写转换-5个"><a href="#12-2-4-大小写转换-5个" class="headerlink" title="12.2.4.大小写转换(5个)"></a>12.2.4.大小写转换(5个)</h4><ul>
+<li><code>string.capitalize()</code><ul>
+<li>把字符串的第一个字符大写</li>
+</ul>
+</li>
+<li><code>string.title()</code><ul>
+<li>把字符串的每个单词首字母大写</li>
+</ul>
+</li>
+<li><code>string.lower()</code><ul>
+<li>转换string中所有大写字符为小写</li>
+</ul>
+</li>
+<li><code>string.upper()</code><ul>
+<li>转换string中的小写字母为大写</li>
+</ul>
+</li>
+<li><code>string.swapcase()</code><ul>
+<li>翻转string中的大小写</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-2-5-文本对齐-3个"><a href="#12-2-5-文本对齐-3个" class="headerlink" title="12.2.5.文本对齐(3个)"></a>12.2.5.文本对齐(3个)</h4><ul>
+<li><code>string.ljust(width)</code><ul>
+<li>返回一个原字符串左对齐，并使用空格填充至长度width的新字符串</li>
+</ul>
+</li>
+<li><code>string.rjust(width)</code><ul>
+<li>返回一个原字符串右对齐，并使用空格填充至长度width的新字符串</li>
+</ul>
+</li>
+<li><code>string.center(width)</code><ul>
+<li>返回一个原字符串居中，并使用空格填充至长度width的新字符串</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-2-6-去除空白字符-3个"><a href="#12-2-6-去除空白字符-3个" class="headerlink" title="12.2.6.去除空白字符(3个)"></a>12.2.6.去除空白字符(3个)</h4><ul>
+<li><code>string.lstrip()</code><ul>
+<li>截掉string左边(开始)的空白字符</li>
+</ul>
+</li>
+<li><code>string.rstrip()</code><ul>
+<li>截掉string右边(末尾)的空白字符</li>
+</ul>
+</li>
+<li><code>string.strip()</code><ul>
+<li>截掉string左右两边的空白字符</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-2-7-拆分和连接-5个"><a href="#12-2-7-拆分和连接-5个" class="headerlink" title="12.2.7.拆分和连接(5个)"></a>12.2.7.拆分和连接(5个)</h4><ul>
+<li><code>string.partition(str)</code><ul>
+<li>把字符串string分成一个3元素的元组(str前面，str，str后面)</li>
+</ul>
+</li>
+<li><code>string.rpartition(str)</code><ul>
+<li>类似于partition()函数，不过是从右边开始查找</li>
+</ul>
+</li>
+<li><code>string.split(str=&quot;&quot;,num)</code><ul>
+<li>以str为分隔符切片string，如果num有指定值，则仅分隔<code>num + 1</code>个子字符串，str默认包含<code>\r</code>，<code>\t</code>，<code>\n</code>和空格</li>
+</ul>
+</li>
+<li><code>string.splitlines()</code><ul>
+<li>按照行(‘\r’,<code>\n</code>,<code>\r\n</code>)分隔，返回一个包含各行作为元素的列表</li>
+</ul>
+</li>
+<li><code>string.join(&quot;-&quot;,seq)</code><ul>
+<li>以<code>-</code>作为分隔符，将seq中所有的元素合并为一个新的字符串</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-3-字符串的切片"><a href="#12-3-字符串的切片" class="headerlink" title="12.3. 字符串的切片"></a>12.3. 字符串的切片</h3><ul>
+<li>切片方法适用于字符串、列表、元组</li>
+<li>切片使用索引值来限定范围，从一个大的字符串中切出小的字符串</li>
+<li>列表和元组都是有序的集合，都能够通过索引值获取到对应的数据</li>
+<li>字典是一个无序的集合，是使用键值对保存数据</li>
+<li>格式<ul>
+<li>字符串[开始索引：结束索引：步长]</li>
+</ul>
+</li>
+<li>注意<ul>
+<li>指定的区间属于左闭右开型 [开始索引，结束索引） =&gt; 开始索引 &gt;= 范围 &lt; 结束索引</li>
+<li>从起始位开始，到结束位的前一位结束（不包含结束位本身）</li>
+<li>从头开始，开始索引数字可以省略，冒号不能省略。逆序时，从末尾开始，开始索引数字也可以省略。</li>
+<li>到末尾结束，结束索引数字可以省略，冒号不能省略</li>
+<li>步长默认为1，如果连续切片，数字和冒号都可以省略</li>
+<li>步长就是跳跃连续间隔的切片，下一次切片的起始位置为 开始索引+步长</li>
+<li>倒序时，最末尾的元素对应的索引为<code>-1</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="12-4-字符串中的转义字符"><a href="#12-4-字符串中的转义字符" class="headerlink" title="12.4. 字符串中的转义字符"></a>12.4. 字符串中的转义字符</h3><ul>
+<li><code>\t</code>在控制台输出一个制表符，协助在输出文本时，垂直方向保持对齐</li>
+<li><code>\n</code>在控制台输出一个换行符</li>
+<li>制表符的功能是在不使用表格的情况下在垂直方向按列对齐文本</li>
+<li><code>\\</code> 反斜杠符号</li>
+<li><code>\&#39;</code> 单引号</li>
+<li><code>\&#39;&#39;</code> 双引号</li>
+<li><code>\n</code> 换行</li>
+<li><code>\t</code> 横向制表符</li>
+<li><code>\r</code> 回车<pre><code class="python3">print(&quot;1\t2\t3&quot;)
+print(&quot;10\t20\t30&quot;)</code></pre>
+</li>
+</ul>
+<!--more-->
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://phd99.com/2021/03/23/Python%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/03/24/Python%E7%9F%A5%E8%AF%86%E7%82%B9/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Python知识点
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/03/12/%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">一步到位</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "评论~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> phd
+      </li>
+    </ul>
+
+
+    <!-- 运行天数 -->  <!-- + B + "小时" + C + "分" + D + "秒" -->  
+    <ul>
+      <li>
+        
+          <span id="runtime_span"></span>
+          <script type="text/javascript">
+            function show_runtime() {
+                window.setTimeout("show_runtime()", 1000);
+                X = new Date("01/04/2021 11:11:11");
+                Y = new Date();
+                T = (Y.getTime() - X.getTime());
+                M = 24 * 60 * 60 * 1000;
+                a = T / M;
+                A = Math.floor(a);
+                b = (a - A) * 24;
+                B = Math.floor(b);
+                c = (b - B) * 60;
+                C = Math.floor((b - B) * 60);
+                D = Math.floor((c - C) * 60);
+                runtime_span.innerHTML = "本站已运行: " + A + "天";
+            }
+            show_runtime();
+          </script>
+        
+      </li>
+    </ul>
+
+
+    <ul>
+      <li>
+        
+        
+        
+        由 <a href="https://hexo.io" target="_blank">Hexo</a> 强力驱动
+        <span class="division">|</span>
+        主题 - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+
+    
+
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+
+  </div>
+
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/logo.png" alt="phd"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/%E6%96%87%E6%91%98">文摘</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/aaa/html/test">测试</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+
+</body>
+</html>

@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    使用Hexo和github page和coding page搭建个人博客 |  phd
+    Python知识点 |  phd
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -69,7 +69,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-使用Hexo和github-page和coding-page搭建个人博客"
+  id="post-Python知识点"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -80,18 +80,18 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  使用Hexo和github page和coding page搭建个人博客
+  Python知识点
 </h1>
  
 
     </header>
      
     <div class="article-meta">
-      <a href="/2021/01/07/%E4%BD%BF%E7%94%A8Hexo%E5%92%8Cgithub-page%E5%92%8Ccoding-page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time datetime="2021-01-07T12:38:18.142Z" itemprop="datePublished">2021-01-07</time>
+      <a href="/2021/03/24/Python%E7%9F%A5%E8%AF%86%E7%82%B9/" class="article-date">
+  <time datetime="2021-03-24T02:37:15.822Z" itemprop="datePublished">2021-03-24</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/Hexo/">Hexo</a>
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/Python/">Python</a>
   </div>
   
 <div class="word_count">
@@ -99,7 +99,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.2k</span>
+            <span class="post-count">2.1k</span>
         </span>
     </span>
 
@@ -108,7 +108,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">4 分钟</span>
+            <span class="post-count">7 分钟</span>
         </span>
     </span>
 </div>
@@ -123,134 +123,200 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><ul>
-<li>Windows</li>
-</ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li>安装 <a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a></li>
-<li>安装 <a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a></li>
-<li>安装 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a><ul>
-<li>鼠标右键打开<code>git bash</code></li>
-<li>在<code>在git bash</code>中输入下列命令<pre><code>npm install -g hexo-cli</code></pre>
-<a id="more"></a></li>
+  <h2 id="一、关键字"><a href="#一、关键字" class="headerlink" title="一、关键字"></a>一、关键字</h2><ul>
+<li>关键字就是在Python内部已经使用的标识符</li>
+<li>关键字具有特殊的功能和含义</li>
+<li>开发者不允许定义和关键字相同的名字的标识符</li>
+<li>通过以下命令可以查看Python中的关键字<ul>
+<li>import keyword</li>
+<li>print(keyword.kwlist)</li>
 </ul>
 </li>
-<li>安装<code>hexo-deployer-git</code><pre><code>npm install hexo-deployer-git --save</code></pre>
+<li>Python中的关键字：<pre><code class="python3">   False,None,True,and,as,assert,break,class,
+   continue,def,del,elif,else,except,finally,for,
+   from,global,if,import,in,is,lambda,nonlocal,not,
+   or,pass,raise,return,try,while,with,yield</code></pre>
 </li>
-<li>查看版本<ul>
-<li>查看<code>node</code>的版本<pre><code>node -v</code></pre>
-</li>
-<li>查看<code>npm</code>的版本<pre><code>npm -v</code></pre>
-</li>
-<li>查看<code>hexo</code>的版本<pre><code>hexo -v</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="新建网站"><a href="#新建网站" class="headerlink" title="新建网站"></a>新建网站</h2><ul>
-<li>初始化<code>hexo</code>，在<code>git bash</code>中输入如下命令。<code>***</code>是文件夹名称，名称任意，如果为空，则默认在当前的文件夹下建立网站。以后的博客内容都在该文件夹中。<pre><code>hexo init ***</code></pre>
-</li>
-<li>进入<code>***</code>文件夹<pre><code>cd ***</code></pre>
-</li>
-<li>在<code>***</code>文件夹下执行<pre><code>npm install</code></pre>
-</li>
-<li>生成静态文件<pre><code>hexo generate</code></pre>
-</li>
-<li>启动服务器<pre><code>hexo server</code></pre>
-</li>
-<li>访问网站，默认情况下，访问网址为：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></li>
-</ul>
-<h2 id="生成SSH"><a href="#生成SSH" class="headerlink" title="生成SSH"></a>生成SSH</h2><ul>
-<li>配置<code>git</code>用户名。<code>-–global</code>参数，用了这个参数，表示你这台机器上所有的<code>Git</code>仓库都会使用这个配置，也可以对某个仓库指定不同的用户名和<code>Email</code>地址，我配置的用户名和邮箱与<code>github</code>和<code>coding</code>平台的相同。<pre><code>git config --global user.name &quot;name&quot;</code></pre>
-</li>
-<li>配置<code>git</code>邮箱<pre><code>git config --global user.email &quot;email&quot;</code></pre>
-</li>
-<li>查看用户配置<pre><code>git config --global -l</code></pre>
-</li>
-<li>创建<code>SSH</code>。创建过程中会要求设置密码，可以不设置密码，直接按回车键<pre><code>ssh-keygen -t rsa -C &quot;email&quot;</code></pre>
-</li>
-<li><code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥，默认位置在<code>C:\Users\用户名\.ssh</code>中。</li>
-<li>将公钥添加到<code>github</code>中<ul>
-<li><code>Settings</code>-&gt;<code>SSH and GPG keys</code>-&gt;<code>New SSH key</code></li>
-<li>将<code>id_rsa.pub</code>公钥文件中的内容复制到<code>Key</code>中</li>
-<li>公钥名称任意</li>
-<li>查看是否添加成功<pre><code>ssh -T git@github.com</code></pre>
-</li>
-</ul>
-</li>
-<li>将公钥添加到<code>coding</code>中<ul>
-<li>个人账户设置-&gt;<code>SSH</code>公钥-&gt;新增公钥</li>
-<li>将<code>id_rsa.pub</code>公钥文件中的内容复制到公钥内容中</li>
-<li>公钥名称任意</li>
-<li>查看是否添加成功<pre><code>ssh -T git@git.coding.net</code></pre>
+<li>import关键字可以导入一个“工具包”，在Python中不同的工具包，提供有不同的工具。</li>
+<li>pass<ul>
+<li>如果在开发程序时，不希望立刻编写分支内部的代码，可以使用pass关键字，表示一个占位符，能够保证程序的代码结构正确。<pre><code class="python3">if action_str in [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]:
+  pass
+elif action_str == &quot;0&quot;:
+  pass
+else:
+  print(&quot;宝剑锋从磨砺出，梅花香自苦寒来&quot;)</code></pre>
+<a id="more"></a>
+
+
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="将博客部署到-github"><a href="#将博客部署到-github" class="headerlink" title="将博客部署到 github"></a>将博客部署到 <a target="_blank" rel="noopener" href="https://github.com/">github</a></h2><ul>
-<li>在<code>github</code>中创建一个仓库，仓库名称为<code>***.github.io</code>,<code>***</code>为<code>github</code>的用户名。</li>
-<li>打开站点配置文件<code>_config.yml</code>，添加下列内容<pre><code>deploy:
-type: git
-repo:
-  github: git@github.com:phd99/phd99.github.io.git,master</code></pre>
-</li>
-<li>将博客内容部署到<code>github</code>，- 部署成功后，可以访问<code>http://***.github.io</code>查看自己的个人博客<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></pre>
-</li>
-</ul>
-<h2 id="将博客部署到-coding"><a href="#将博客部署到-coding" class="headerlink" title="将博客部署到 coding"></a>将博客部署到 <a target="_blank" rel="noopener" href="https://coding.net/">coding</a></h2><ul>
-<li>在<code>coding</code>中创建一个项目，名称任意</li>
-<li>在该项目中创建一个代码仓库，名称任意，仓库类型为<code>git</code>仓库</li>
-<li>开启<code>coding pages</code>服务<ul>
-<li>在该项目中选择持续部署-&gt;静态网站</li>
-<li>部署成功后会提供一个网络地址，使用该<code>url</code>查看自己的博客</li>
+<h2 id="二、哈希（hash）"><a href="#二、哈希（hash）" class="headerlink" title="二、哈希（hash）"></a>二、哈希（hash）</h2><h3 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1. 定义"></a>2.1. 定义</h3><ul>
+<li>python中内置有一个名字叫做hash(o)的函数<ul>
+<li>接收一个不可变类型的数据作为参数</li>
+<li>返回结果是一个整数</li>
 </ul>
 </li>
-<li>打开站点配置文件<code>_config.yml</code>，修改下列内容<pre><code>deploy:
-type: git
-repo:
-  coding: git@e.coding.net:phd99/phd99/phd99.git,master
-  github: git@github.com:phd99/phd99.github.io.git,master</code></pre>
-</li>
-<li>将博客内容部署到<code>coding</code>，- 部署成功后，可以访问coding提供的网络地址来查看个人博客<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></pre>
-</li>
 </ul>
-<h2 id="设置个人域名"><a href="#设置个人域名" class="headerlink" title="设置个人域名"></a>设置个人域名</h2><ul>
-<li>如果购买了域名，可以设置通过购买的域名来访问个人博客，我是在阿里云上购买的域名</li>
-</ul>
-<h3 id="github中的设置"><a href="#github中的设置" class="headerlink" title="github中的设置"></a>github中的设置</h3><ul>
-<li>登录<code>github</code>-&gt;进入仓库-&gt;<code>Settings</code>-&gt;<code>Options</code>-&gt;<code>GitHub Pages</code><ul>
-<li>在<code>Custom domain</code>中添加自己购买的域名</li>
-<li>点击保存</li>
-<li>勾选<code>Enforce HTTPS</code></li>
+<h3 id="2-2-作用"><a href="#2-2-作用" class="headerlink" title="2.2. 作用"></a>2.2. 作用</h3><ul>
+<li>哈希是一种算法，其作用就是提取数据的特征码（指纹）<ul>
+<li>相同的内容得到相同的结果</li>
+<li>不同的内容得到不同的结果</li>
 </ul>
 </li>
-<li>登录<a target="_blank" rel="noopener" href="https://www.aliyun.com/">阿里云</a>-&gt;账号管理-&gt;域名控制台-&gt;找到要设置的域名-&gt;解析-&gt;添加记录<ul>
-<li>记录类型为<code>CNAME</code></li>
-<li>主机记录为<code>@</code>，再重新添加一条记录并将主机记录改为<code>www</code>，其他的不变</li>
-<li>解析线路为默认，若还使用了coding，可以将github设置为境外，将coding设置为默认</li>
-<li>记录值为<code>***.github.io</code></li>
+<li>在python中，设置字典的键值对时，会首先对key进行hash已决定如何在内存中保存字典的数据，以方便后续对字典的操作：增、删、改、查<ul>
+<li>键值对的key必须是不可变类型数据</li>
+<li>键值对的value可以是任意类型的数据</li>
 </ul>
 </li>
-<li>在博客根目录下<code>source</code>文件夹中创建一个文件，名称为<code>CNAME</code>，没有后缀</li>
-<li>编辑<code>CNAME</code>文件，将购买的域名输入到该文件内<pre><code>www.phd99.com</code></pre>
-</li>
-<li>重新部署一下，过一会儿就可以通过访问购买的域名来查看个人博客了<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></pre>
-</li>
 </ul>
-<h3 id="coding中的设置"><a href="#coding中的设置" class="headerlink" title="coding中的设置"></a>coding中的设置</h3><ul>
-<li>登录<code>coding</code>-&gt;进入项目-&gt;持续部署-&gt;静态网站-&gt;自定义域名-&gt;新建域名-&gt;输入购买的域名-&gt;确定</li>
-<li>添加域名后，网站会自动重新部署，并且同时去申请<code>SSL</code>证书<ul>
-<li>申请证书时，会提供一些信息，需要给域名添加一条记录，添加之后，过一会儿，<code>SSL</code>证书就申请成功了，此时域名也添加成功了</li>
+<h2 id="三、is与-的区别"><a href="#三、is与-的区别" class="headerlink" title="三、is与==的区别"></a>三、is与==的区别</h2><ul>
+<li><code>is</code>用于判断另两个变量引用对象是否为同一个</li>
+<li><code>==</code>用于判断引用变量的值是否相等</li>
 </ul>
-</li>
-<li>登录<a target="_blank" rel="noopener" href="https://www.aliyun.com/">阿里云</a>-&gt;账号管理-&gt;域名控制台-&gt;找到要设置的域名-&gt;解析-&gt;添加记录<ul>
-<li>记录类型为<code>CNAME</code></li>
-<li>主机记录为<code>@</code>，再重新添加一条记录并将主机记录改为<code>www</code>，其他的不变</li>
-<li>解析线路为默认</li>
-<li>记录值为<code>***.com.cdn.dnsv1.com</code></li>
+<h2 id="四、Python中的计数方法"><a href="#四、Python中的计数方法" class="headerlink" title="四、Python中的计数方法"></a>四、Python中的计数方法</h2><ul>
+<li>常见的计数方法有两种，可以分别称为：<ul>
+<li>自然计数法（从1开始）——更符合人类的习惯。</li>
+<li>程序计数法（从0开始）——几乎所有的程序语言都选择从0开始计数。</li>
 </ul>
 </li>
-<li>登录<code>coding</code>-&gt;进入项目-&gt;持续部署-&gt;静态网站-&gt;重新部署</li>
+<li>因此在编写程序时，应该尽量养成习惯：除非需求的特殊要求，否则循环的计数都从0开始。</li>
+</ul>
+<h2 id="五、random"><a href="#五、random" class="headerlink" title="五、random"></a>五、random</h2><ul>
+<li>在Python中，要使用随机数，首先需要导入随机数的模块——“工具包”。<ul>
+<li>import random</li>
+</ul>
+</li>
+<li>random.randint(a,b),返回[a,b]之间的整数，包含a和b，且a&lt;=b。</li>
+<li>在ipython中，导入模块后，可以直接在模块名称后面敲一个“.”，然后按Tab键，会提示该模块中包含的所有函数。</li>
+</ul>
+<h2 id="六、print"><a href="#六、print" class="headerlink" title="六、print"></a>六、print</h2><ul>
+<li>在默认情况下，print函数输出内容之后，会自动在内容末尾增加换行</li>
+<li>如果不希望末尾增加换行，可以在print函数输出内容的后面增加：, end=””</li>
+<li>其中””中间可以指定print函数输出内容之后，继续希望显示的内容<pre><code class="python3"># 向控制台输出内容结束之后，不会换行
+print(&quot;*&quot;, end=&quot;&quot;)
+print(&quot;*&quot;)
+# 输出结果为：**
+print(&quot;*&quot;, end=&quot;---&quot;)
+print(&quot;*&quot;)
+# 输出结果为：*---*</code></pre>
+</li>
+</ul>
+<h2 id="七、逻辑运算"><a href="#七、逻辑运算" class="headerlink" title="七、逻辑运算"></a>七、逻辑运算</h2><ul>
+<li>在程序开发中，通常在判断条件时，会需要同时判断多个条件。</li>
+<li>只有多个条件都满足，才能够执行后续代码，这个时候需要使用到逻辑运算符。</li>
+<li>逻辑运算符可以把多个条件按照逻辑进行连接，变成更复杂的条件。</li>
+<li>Python中的逻辑运算符包括：与and/或or/非not（通常希望某个条件不满足时，执行一些代码，可以使用not）三种。</li>
+</ul>
+<h2 id="八、Pyc文件"><a href="#八、Pyc文件" class="headerlink" title="八、Pyc文件"></a>八、Pyc文件</h2><ul>
+<li>C是compiled编译过的意思<h3 id="8-1-操作步骤"><a href="#8-1-操作步骤" class="headerlink" title="8.1. 操作步骤"></a>8.1. 操作步骤</h3></li>
+<li>浏览程序目录会发现一个_pycache_的目录</li>
+<li>目录下会有一个自己编写的文件名.cpython.pyc 文件，cpython-35表示Python解释器的版本</li>
+<li>这个pyc文件是由Python解释器将模块的源码转换为字节码</li>
+<li>Python这样保存字节码是作为一种启动速度的优化</li>
+</ul>
+<h3 id="8-2-字节码"><a href="#8-2-字节码" class="headerlink" title="8.2. 字节码"></a>8.2. 字节码</h3><ul>
+<li>Python在解释源程序时是分成两个步骤的<ul>
+<li>首先处理源代码，编译生成一个二进制字节码</li>
+<li>再对字节码进行处理，才会生成CPU能够识别的机器码</li>
+</ul>
+</li>
+<li>有了模块的字节码文件之后，下一次运行程序时，如果在上次保存字节码之后没有修改过源代码，Python将会加载.pyc文件并跳过编译这个步骤</li>
+<li>当Python重编译时，它会自动检查源文件和字节码文件的时间戳</li>
+<li>如果你又修改了源代码，下次程序运行时，字节码将自动重新创建</li>
+</ul>
+<h2 id="九、关键字、函数和方法的特点和区别"><a href="#九、关键字、函数和方法的特点和区别" class="headerlink" title="九、关键字、函数和方法的特点和区别"></a>九、关键字、函数和方法的特点和区别</h2><h3 id="9-1-关键字"><a href="#9-1-关键字" class="headerlink" title="9.1. 关键字"></a>9.1. 关键字</h3><ul>
+<li>关键字是Python内置的、具有特殊意义的标识符</li>
+<li>关键字后面不需要使用括号</li>
+<li>Python中有33个关键字</li>
+<li>通过输入如下代码可以查看python中有哪些关键字<pre><code class="python3">import keyword
+print(keyword.kwlist)</code></pre>
+</li>
+</ul>
+<h3 id="9-2-函数"><a href="#9-2-函数" class="headerlink" title="9.2. 函数"></a>9.2. 函数</h3><ul>
+<li>函数封装了独立功能，可以直接调用</li>
+<li>格式：函数名（参数）</li>
+<li>函数需要死记硬背</li>
+</ul>
+<h3 id="9-3-方法"><a href="#9-3-方法" class="headerlink" title="9.3. 方法"></a>9.3. 方法</h3><ul>
+<li>方法和函数类似，同样是封装了独立的功能</li>
+<li>方法需要通过对象来调用，表示针对这个对象要做的操作</li>
+<li>格式：对象.方法名（参数）</li>
+<li>在变量后面输入 . ，然后选择针对这个变量要执行的操作，记忆起来比函数要简单很多</li>
+</ul>
+<h2 id="十、循环遍历"><a href="#十、循环遍历" class="headerlink" title="十、循环遍历"></a>十、循环遍历</h2><ul>
+<li>遍历就是从头到尾依次从列表中获取数据，在循环体内部针对每一个元素，执行相同的操作</li>
+<li>在Python中为了提高列表的遍历效率，专门提高的迭代iteration遍历</li>
+<li>使用for就能够实现迭代遍历</li>
+<li>格式：for 循环内部使用的遍历 in 列表<pre><code class="python3">for name in name_list:
+    print(name)</code></pre>
+</li>
+<li>在Python中，可以使用for循环遍历所有非数字型类型的变量：列表、元组、字典以及字符串</li>
+<li>在实际开发中，除非能够确认元组中的数据类型，否则针对元组的循环遍历需求并不是很多</li>
+</ul>
+<h2 id="十一、完整的for循环"><a href="#十一、完整的for循环" class="headerlink" title="十一、完整的for循环"></a>十一、完整的for循环</h2><ul>
+<li><p>在Python中完整的for循环的语法如下</p>
+<pre><code class="python3">for 变量 in 集合:
+    循环体代码
+else:
+    没有通过 break 退出循环，循环结束后，会执行的代码。
+    如果循环体代码中使用了break，则不会执行else中的语句。</code></pre>
+</li>
+<li><p>应用场景</p>
+<ul>
+<li>在迭代遍历嵌套的数据类型时，例如一个列表包含了多个字典</li>
+<li>需求：要判断某一个字典中是否存在指定的值<ul>
+<li>如果存在，提示并且退出循环</li>
+<li>如果不存在，在循环整体结束后，希望得到一个统一的提示</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="十二、切片"><a href="#十二、切片" class="headerlink" title="十二、切片"></a>十二、切片</h2><ul>
+<li>切片方法适用于字符串、列表、元组</li>
+<li>切片使用索引值来限定范围，从一个大的字符串中切出小的字符串</li>
+<li>列表和元组都是有序的集合，都能够通过索引值获取到对应的数据</li>
+<li>字典是一个无序的集合，是使用键值对保存数据<pre><code class="python3"># 字符串切片
+&quot;0123456789&quot;[::-2]  # 结果为: &quot;97531&quot;
+# 列表切片
+[0, 1, 2, 3, 4][1:3]  # 结果为：[1,2]
+# 元组切片
+(0, 1, 2, 3, 4)[1:3]  # 结果为：(1, 2))</code></pre>
+</li>
+</ul>
+<h2 id="十三、eval函数"><a href="#十三、eval函数" class="headerlink" title="十三、eval函数"></a>十三、eval函数</h2><ul>
+<li><p><code>eval()</code>函数是将字符串当成有效的表达式来求值并返回计算结果</p>
+<pre><code class="python3"># 基本的数学计算
+In[1]: eval(&quot;1 + 1&quot;)
+Out[1]: 2
+# 字符串重复
+In[2]: eval(&quot;&#39;*&#39; * 10&quot;)
+Out[2]: &#39;**********&#39;
+# 将字符串转换成列表
+In[3]: type(eval(&quot;[1, 2, 3, 4, 5]&quot;))
+Out[3]: list
+# 将字符串转换成字典
+In[4]: type(eval(&quot;&#123;&#39;name&#39;: &#39;phd&#39;, &#39;age&#39;: 18&#125;&quot;))
+Out[4]: dict</code></pre>
+</li>
+<li><p>不要滥用eval</p>
+<ul>
+<li>eval会把字符串中的内容当成python的代码去执行</li>
+<li>在开发时千万不要使用 eval 直接转换 input 的结果</li>
+<li>用户可以通过os模块来调用system方法，就可以执行任何的终端命令<pre><code class="python3">__import__(&#39;os&#39;).system(&#39;ls&#39;)</code></pre>
+</li>
+</ul>
+</li>
+<li><p>等价代码</p>
+<pre><code class="python3">import os
+os.system(&quot;终端命令&quot;)</code></pre>
+<ul>
+<li>执行成功，返回0</li>
+<li>执行失败，返回错误信息</li>
+</ul>
+</li>
 </ul>
 <!--more-->
  
@@ -317,12 +383,12 @@ repo:
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://phd99.com/2021/01/07/%E4%BD%BF%E7%94%A8Hexo%E5%92%8Cgithub-page%E5%92%8Ccoding-page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://phd99.com/2021/03/24/Python%E7%9F%A5%E8%AF%86%E7%82%B9/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
 
     </footer>
   </div>
@@ -330,15 +396,20 @@ repo:
    
   <nav class="article-nav">
     
-      <a href="/2021/01/10/%E4%BD%A0%E8%A6%81%E5%8E%BB%E7%9B%B8%E4%BF%A1-%E6%B2%A1%E6%9C%89%E5%88%B0%E4%B8%8D%E4%BA%86%E7%9A%84%E6%98%8E%E5%A4%A9/" class="article-nav-link">
+      <a href="/2021/03/26/Java%E4%B9%8B%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            你要去相信,没有到不了的明天
+            Java之修饰符
           
         </div>
       </a>
     
+    
+      <a href="/2021/03/23/Python%E5%9F%BA%E7%A1%80/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Python基础</div>
+      </a>
     
   </nav>
 

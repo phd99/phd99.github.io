@@ -1,10 +1,2903 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java之类加载</title>
+    <url>/2021/03/31/Java%E4%B9%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD/</url>
+    <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><ul>
+<li>当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过类的加载、类的连接、类的初始化这三个步骤来对类进行初始化。如果不出现以外情况，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或者类初始化。<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="二、类的加载"><a href="#二、类的加载" class="headerlink" title="二、类的加载"></a>二、类的加载</h2><ul>
+<li>就是指将class文件读入内存，并为之创建一个java.lang.Class对象</li>
+<li>任何类被使用时，系统都会为之建立一个java.lang.Class对象</li>
+</ul>
+<h2 id="三、类的连接"><a href="#三、类的连接" class="headerlink" title="三、类的连接"></a>三、类的连接</h2><ul>
+<li>验证阶段：用于检验被加载的类是否有正确的内部结构，并和其他类协调一致。</li>
+<li>准备阶段：负责为类的类变量分配内存，并设置默认初始化值。</li>
+<li>解析阶段：将类的二进制数据中的符号引用替换为直接引用。</li>
+</ul>
+<h2 id="四、类的初始化"><a href="#四、类的初始化" class="headerlink" title="四、类的初始化"></a>四、类的初始化</h2><ul>
+<li>在该阶段，主要就是对类变量进行初始化</li>
+</ul>
+<h2 id="五、类的初始化步骤"><a href="#五、类的初始化步骤" class="headerlink" title="五、类的初始化步骤"></a>五、类的初始化步骤</h2><ul>
+<li>(1)例如类还未被加载和连接，则程序先加载并连接该类</li>
+<li>(2)例如该类的直接父类还未被初始化，则先初始化其直接父类</li>
+<li>(3)例如类中有初始化语句，则系统依次执行这些初始化语句</li>
+<li>注意：在执行第2个步骤的时候，系统对直接父类的初始化步骤也遵循初始化步骤1-3</li>
+</ul>
+<h2 id="六、类的初始化时机"><a href="#六、类的初始化时机" class="headerlink" title="六、类的初始化时机"></a>六、类的初始化时机</h2><ul>
+<li>创建类的实例</li>
+<li>调用类的类方法</li>
+<li>访问类或者接口的类变量，或者为该类变量赋值</li>
+<li>使用反射方式来强制创建某个类或接口对应的<code>java.lang.Class</code>对象</li>
+<li>初始化某个类的子类</li>
+<li>直接使用java.exe命令来运行某个主类</li>
+</ul>
+<h2 id="七、类加载器"><a href="#七、类加载器" class="headerlink" title="七、类加载器"></a>七、类加载器</h2><h3 id="7-1-类加载器的作用"><a href="#7-1-类加载器的作用" class="headerlink" title="7.1. 类加载器的作用"></a>7.1. 类加载器的作用</h3><ul>
+<li>负责将.class文件加载到内存中，并为之生成对应的java.lang.Class对象</li>
+<li>虽然我们不用过分关心类加载机制，但是了解这个机制我们就能更好的理解程序的运行</li>
+</ul>
+<h3 id="7-2-JVM的类加载机制"><a href="#7-2-JVM的类加载机制" class="headerlink" title="7.2. JVM的类加载机制"></a>7.2. JVM的类加载机制</h3><ul>
+<li>全盘负责<ul>
+<li>就是当一个类加载器负责加载某个Class时，该Class所依赖的和引用的其他Class也将由该类加载器负责载入，除非显示使用另外一个类加载器来载入</li>
+</ul>
+</li>
+<li>父类委托<ul>
+<li>就是当一个类加载器负责加载某个Class时，先让父类加载器试图加载该Class，只有在父类加载器无法加载该类时才尝试从自己的类路径中加载该类</li>
+</ul>
+</li>
+<li>缓存机制<ul>
+<li>保证所有加载过的Class都会被缓存，当程序需要使用某个Class对象时，类加载器先从缓存区中搜索该Class，只有当缓存区中不存在该Class对象时，系统才会读取该类对应的二进制数据，并将其转换成Class对象，存储到缓存区</li>
+</ul>
+</li>
+<li>ClassLoader<ul>
+<li>是负责加载类的对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-3-Java运行时具有以下内置类加载器"><a href="#7-3-Java运行时具有以下内置类加载器" class="headerlink" title="7.3. Java运行时具有以下内置类加载器"></a>7.3. Java运行时具有以下内置类加载器</h3><ul>
+<li>Bootstrap class loader<ul>
+<li>它是虚拟机的内置类加载器，通常表示为null，并且没有父null</li>
+</ul>
+</li>
+<li>Platform class loader<ul>
+<li>平台类加载器可以看到所有平台类，平台类包括由平台类加载器或其祖先定义的Java SE平台API，其实现类和JDK特定的运行时类</li>
+</ul>
+</li>
+<li>System class loader<ul>
+<li>它也被称为应用程序类加载器，与平台类加载器不同，系统类加载器通常用于定义应用程序类路径，模块路径和JDK特定工具上的类</li>
+</ul>
+</li>
+<li>类加载器的继承关系<ul>
+<li>System的父加载器为Platform，而Platform的父加载器为Bootstrap</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-4-ClassLoader中的两个方法"><a href="#7-4-ClassLoader中的两个方法" class="headerlink" title="7.4. ClassLoader中的两个方法"></a>7.4. ClassLoader中的两个方法</h3><ul>
+<li>返回用于委派的系统类加载器<pre><code class="java">static ClassLoader getSystemClassLoader()</code></pre>
+</li>
+<li>返回父类加载器进行委派<pre><code class="java">ClassLoader getParent()</code></pre>
+</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之类</title>
+    <url>/2021/03/31/Java%E4%B9%8B%E7%B1%BB/</url>
+    <content><![CDATA[<h2 id="一、类的介绍"><a href="#一、类的介绍" class="headerlink" title="一、类的介绍"></a>一、类的介绍</h2><h3 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1. 概述"></a>1.1. 概述</h3><ul>
+<li>类是对现实生活中一类具有共同属性和行为的事物的抽象</li>
+<li>对象是计算机中具体的数据信息，而类是这个信息的数据类型</li>
+<li>java程序中最基本的组成单位是类</li>
+<li>类的定义格式<ul>
+<li><code>public class 类名&#123;&#125;</code><a id="more"></a>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-类的特点"><a href="#1-2-类的特点" class="headerlink" title="1.2. 类的特点"></a>1.2. 类的特点</h3><ul>
+<li>类是对象的数据类型</li>
+<li>类是具有相同属性和行为的一组对象的集合<h3 id="1-3-类的重要性"><a href="#1-3-类的重要性" class="headerlink" title="1.3. 类的重要性"></a>1.3. 类的重要性</h3></li>
+<li>类是java程序的基本组成单位<h3 id="1-4-类的组成"><a href="#1-4-类的组成" class="headerlink" title="1.4. 类的组成"></a>1.4. 类的组成</h3></li>
+<li>属性和行为<ul>
+<li>属性：在类中通过成员变量来体现（类中方法外的变量）</li>
+<li>行为：在类中通过成员方法来体现（掉static关键字）<h3 id="1-5-类的定义步骤"><a href="#1-5-类的定义步骤" class="headerlink" title="1.5. 类的定义步骤"></a>1.5. 类的定义步骤</h3></li>
+</ul>
+</li>
+<li>(1)定义类</li>
+<li>(2)编写类的成员变量</li>
+<li>(3)编写类的成员方法<pre><code class="java">public class 类名
+&#123;
+    //成员变量
+    变量1的数据类型 变量1;
+    变量2的数据类型 变量2;
+    ……
+    //成员方法
+    方法1;
+    方法2;
+    ……
+&#125;</code></pre>
+</li>
+</ul>
+<h3 id="1-6-对象"><a href="#1-6-对象" class="headerlink" title="1.6. 对象"></a>1.6. 对象</h3><ul>
+<li>概述<ul>
+<li>万物皆对象，客观存在的事物皆为对象，面向对象就是面向一个具体的对象。</li>
+</ul>
+</li>
+<li>对象的属性<ul>
+<li>指对象具有的各种特征，每个对象的每个属性都拥有特定的值。</li>
+</ul>
+</li>
+<li>对象的行为<ul>
+<li>指对象能够执行的操作，即对象能够干什么。</li>
+</ul>
+</li>
+<li>创建对象<ul>
+<li>格式：类名 对象名 = new 类名();</li>
+<li>范例：<code>Phone p = new Phone();</code></li>
+</ul>
+</li>
+<li>使用对象<ul>
+<li>使用成员变量<ul>
+<li>格式：对象名.变量名</li>
+<li>范例：<code>p.brand</code></li>
+</ul>
+</li>
+<li>使用成员方法<ul>
+<li>格式：对象名.方法名()</li>
+<li>范例：<code>p.call()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-7-类和对象的关系"><a href="#1-7-类和对象的关系" class="headerlink" title="1.7. 类和对象的关系"></a>1.7. 类和对象的关系</h3><ul>
+<li>类是对现实生活中一类具有共同属性和行为的事物的抽象</li>
+<li>对象是能够看得到摸的着的真实存在的实体</li>
+<li>类是对象的抽象，对象是类的实体</li>
+</ul>
+<h3 id="1-8-成员变量和局部变量"><a href="#1-8-成员变量和局部变量" class="headerlink" title="1.8. 成员变量和局部变量"></a>1.8. 成员变量和局部变量</h3><h4 id="1-8-1-概述"><a href="#1-8-1-概述" class="headerlink" title="1.8.1. 概述"></a>1.8.1. 概述</h4><ul>
+<li>成员变量：类中方法外的变量</li>
+<li>局部变量：方法中的变量<h4 id="1-8-2-成员变量和局部变量区别"><a href="#1-8-2-成员变量和局部变量区别" class="headerlink" title="1.8.2. 成员变量和局部变量区别"></a>1.8.2. 成员变量和局部变量区别</h4></li>
+<li>类中位置不同<ul>
+<li>成员变量在类中，方法外</li>
+<li>局部变量在方法内或者方法声明上</li>
+</ul>
+</li>
+<li>内存中位置不同<ul>
+<li>成员变量在堆内存</li>
+<li>局部变量在栈内存</li>
+</ul>
+</li>
+<li>生命周期不同<ul>
+<li>成员变量随着对象的存在而存在，随着对象的消失而消失</li>
+<li>局部变量随着方法的调用而存在，随着方法的调用完毕而消失</li>
+</ul>
+</li>
+<li>初始化值不同<ul>
+<li>成员变量有默认的初始化值</li>
+<li>局部变量没有默认的初始化值，必须先定义，赋值，才能使用</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-9-构造方法"><a href="#1-9-构造方法" class="headerlink" title="1.9. 构造方法"></a>1.9. 构造方法</h3><h4 id="1-9-1-概述"><a href="#1-9-1-概述" class="headerlink" title="1.9.1. 概述"></a>1.9.1. 概述</h4><ul>
+<li>构造方法是一种特殊的方法<h4 id="1-9-2-作用"><a href="#1-9-2-作用" class="headerlink" title="1.9.2. 作用"></a>1.9.2. 作用</h4></li>
+<li>创建对象<h4 id="1-9-3-格式"><a href="#1-9-3-格式" class="headerlink" title="1.9.3. 格式"></a>1.9.3. 格式</h4><pre><code class="Java">public class 类名
+&#123;
+  //构造方法
+  修饰符 类名(参数)
+  &#123;&#125;
+&#125;</code></pre>
+</li>
+</ul>
+<h4 id="1-9-4-功能"><a href="#1-9-4-功能" class="headerlink" title="1.9.4. 功能"></a>1.9.4. 功能</h4><ul>
+<li>主要是完成对象数据的初始化<h4 id="1-9-5-注意事项"><a href="#1-9-5-注意事项" class="headerlink" title="1.9.5. 注意事项"></a>1.9.5. 注意事项</h4></li>
+<li>构造方法的创建<ul>
+<li>如果没有定义构造方法，系统将给出一个默认的无参数构造方法</li>
+<li>如果定义了构造方法，系统将不再提供默认的构造方法</li>
+</ul>
+</li>
+<li>构造方法的重载<ul>
+<li>如果自定义了带参构造方法，还要使用无参数构造方法，就必须再写一个无参数构造方法</li>
+<li>建议，无论是否使用，都手工书写无参数构造方法</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-10-标准类制作"><a href="#1-10-标准类制作" class="headerlink" title="1.10. 标准类制作"></a>1.10. 标准类制作</h3><h4 id="1-10-1-成员变量"><a href="#1-10-1-成员变量" class="headerlink" title="1.10.1. 成员变量"></a>1.10.1. 成员变量</h4><ul>
+<li>使用private修饰<h4 id="1-10-2-构造方法"><a href="#1-10-2-构造方法" class="headerlink" title="1.10.2. 构造方法"></a>1.10.2. 构造方法</h4></li>
+<li>提供一个无参构造方法</li>
+<li>提供一个带多个参数的构造方法<h4 id="1-10-3-成员方法"><a href="#1-10-3-成员方法" class="headerlink" title="1.10.3. 成员方法"></a>1.10.3. 成员方法</h4></li>
+<li>提供一个成员变量对应的<code>setXxx()/getXxx()</code></li>
+<li>提供一个显示对象信息的<code>show()</code><h4 id="1-10-4-创建对象并为其成员变量赋值的两种方式"><a href="#1-10-4-创建对象并为其成员变量赋值的两种方式" class="headerlink" title="1.10.4. 创建对象并为其成员变量赋值的两种方式"></a>1.10.4. 创建对象并为其成员变量赋值的两种方式</h4></li>
+<li>无参构造方法创建对象后使用<code>setXxx()</code>赋值</li>
+<li>使用带参构造方法直接创建带有属性值的对象</li>
+</ul>
+<h2 id="二、抽象类"><a href="#二、抽象类" class="headerlink" title="二、抽象类"></a>二、抽象类</h2><h3 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1. 概述"></a>2.1. 概述</h3><ul>
+<li>在Java中，一个没有方法体的方法应该定义为抽象法，而类中如果有抽象方法，该类必须定义为抽象类。<h3 id="2-2-抽象类的特点"><a href="#2-2-抽象类的特点" class="headerlink" title="2.2. 抽象类的特点"></a>2.2. 抽象类的特点</h3></li>
+<li>抽象类和抽象方法必须使用abstract关键字修饰<ul>
+<li>抽象类：<code>public abstract class 类名&#123;&#125;</code></li>
+<li>抽象方法：<code>public abstract void 方法名();</code></li>
+</ul>
+</li>
+<li>抽象类中不一定有抽象方法，有抽象方法的类一定是抽象类</li>
+<li>抽象类不能实例化<ul>
+<li>抽象类如何实例化呢？</li>
+<li>参照多态的方式，通过子类对象实例化，这叫抽象类多态。</li>
+</ul>
+</li>
+<li>抽象类的子类<ul>
+<li>要么重写抽象类中的所有抽象方法</li>
+<li>要么是抽象类<h3 id="2-3-抽象类的成员特点"><a href="#2-3-抽象类的成员特点" class="headerlink" title="2.3. 抽象类的成员特点"></a>2.3. 抽象类的成员特点</h3></li>
+</ul>
+</li>
+<li>成员变量<ul>
+<li>可以是变量也可以是常量</li>
+</ul>
+</li>
+<li>构造方法<ul>
+<li>有构造方法，但是不能实例化</li>
+<li>构造方法的作用是用于子类访问父类数据的初始哈</li>
+</ul>
+</li>
+<li>成员方法<ul>
+<li>可以有抽象方法：限定子类必须完成某些动作</li>
+<li>也可以有非抽象方法：提高代码复用性</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、接口"><a href="#三、接口" class="headerlink" title="三、接口"></a>三、接口</h2><h3 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1. 概述"></a>3.1. 概述</h3><ul>
+<li>接口就是一种公共的规范标准，只要符合规范标准，大家都可以通用</li>
+<li>Java中的接口更多的体现在对行为的抽象<h3 id="3-2-接口的特点"><a href="#3-2-接口的特点" class="headerlink" title="3.2. 接口的特点"></a>3.2. 接口的特点</h3></li>
+<li>接口用关键字interface修饰<ul>
+<li><code>public interface 接口名&#123;&#125;</code></li>
+</ul>
+</li>
+<li>类实现接口用implements表示<ul>
+<li>`public class 类名 implements 接口名{}``</li>
+</ul>
+</li>
+<li>接口不能实例化<ul>
+<li>接口如何实例化：参照多态的方式，通过实现类对象实例化，这叫接口多态</li>
+<li>多态的形式：具体类多态，抽象类多态，接口多态</li>
+<li>多态的前提：有继承或者实现关系；有方法重写；有父类引用指向子类对象；有父接口引用指向实现类对象</li>
+</ul>
+</li>
+<li>接口的实现类<ul>
+<li>要么重写接口中的所有抽象方法</li>
+<li>要么是抽象类</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3-接口的成员特点"><a href="#3-3-接口的成员特点" class="headerlink" title="3.3. 接口的成员特点"></a>3.3. 接口的成员特点</h3><ul>
+<li>成员变量<ul>
+<li>只能是常量</li>
+<li>默认修饰符：<code>public static final（可以不写）</code></li>
+</ul>
+</li>
+<li>构造方法<ul>
+<li>接口没有构造方法，因为接口主要是对行为进行抽象的，是没有具体存在的</li>
+<li>一个类如果没有父类，默认继承自Object类</li>
+</ul>
+</li>
+<li>成员方法<ul>
+<li>只能是抽象方法</li>
+<li>默认修饰符：public abstract。</li>
+<li>关于接口中的方法，JDK8和JDK9中有一些新特性</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-类和接口的关系"><a href="#3-4-类和接口的关系" class="headerlink" title="3.4. 类和接口的关系"></a>3.4. 类和接口的关系</h3><ul>
+<li>类和类的关系<ul>
+<li>继承关系，只能单继承，但是可以多层继承。</li>
+</ul>
+</li>
+<li>类和接口的关系<ul>
+<li>实现关系，可以单实现，也可以多实现，还可以在继承一个类的同时实现多个接口。</li>
+</ul>
+</li>
+<li>接口和接口的关系<ul>
+<li>继承关系，可以单继承，也可以多继承。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-5-抽象类和接口的区别"><a href="#3-5-抽象类和接口的区别" class="headerlink" title="3.5. 抽象类和接口的区别"></a>3.5. 抽象类和接口的区别</h3><ul>
+<li>成员区别<ul>
+<li>抽象类：变量，常量；有构造方法；有抽象方法，也有非抽象方法</li>
+<li>接口：常量；抽象方法</li>
+</ul>
+</li>
+<li>关系区别<ul>
+<li>类与类：继承关系，单继承</li>
+<li>类与接口：实现关系，可以单实现，也可以多实现</li>
+<li>接口与接口：继承关系，单继承，多继承</li>
+</ul>
+</li>
+<li>设计理念区别<ul>
+<li>抽象类：对类抽象，包括属性、行为，抽象类是对事物的抽象</li>
+<li>接口：对行为抽象，主要是行为</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-6-形参和返回值"><a href="#3-6-形参和返回值" class="headerlink" title="3.6. 形参和返回值"></a>3.6. 形参和返回值</h3><ul>
+<li>抽象类名作为形参和返回值<ul>
+<li>方法的形参是抽象类名，其实需要的是该抽象类的子类对象。</li>
+<li>方法的返回值是抽象类名，其实返回的是该抽象类的子类对象。</li>
+</ul>
+</li>
+<li>接口名作为形参和返回值<ul>
+<li>方法的形参是接口名，其实需要的是该接口的实现类对象。</li>
+<li>方法的返回值是接口名，其实返回的是该接口的实现类对象。</li>
+</ul>
+</li>
+</ul>
+<h2 id="四、内部类"><a href="#四、内部类" class="headerlink" title="四、内部类"></a>四、内部类</h2><h3 id="4-1-概述"><a href="#4-1-概述" class="headerlink" title="4.1. 概述"></a>4.1. 概述</h3><ul>
+<li><p>内部类就是在一个类中定义一个类。</p>
+</li>
+<li><p>举例：在一个类A的内部定义一个类B，类B就被称为内部类。</p>
+</li>
+<li><p>按照内部类在类中定义的位置不同，可以分为如下两种方式</p>
+<ul>
+<li><p>在类的成员位置：成员内部类</p>
+</li>
+<li><p>在类的局部位置：局部内部类</p>
+<h3 id="4-2-格式"><a href="#4-2-格式" class="headerlink" title="4.2. 格式"></a>4.2. 格式</h3><pre><code class="java">public class 类名
+&#123;
+//内部类
+修饰符 class 类名
+&#123;
+
+&#125;
+&#125;
+//范例
+public class a
+&#123;
+pubilc class b
+&#123;
+
+&#125;
+&#125;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-3-内部类的访问特点"><a href="#4-3-内部类的访问特点" class="headerlink" title="4.3. 内部类的访问特点"></a>4.3. 内部类的访问特点</h3><ul>
+<li><p>内部类可以直接访问外部类的成员，包括私有的</p>
+</li>
+<li><p>外部类要访问内部类的成员，必须创建对象</p>
+<h3 id="4-4-成员内部类"><a href="#4-4-成员内部类" class="headerlink" title="4.4. 成员内部类"></a>4.4. 成员内部类</h3></li>
+<li><p>在类的成员位置</p>
+</li>
+<li><p>成员内部类，外界如何创建对象使用呢？</p>
+</li>
+<li><p>格式：外部类名.内部类名 对象名 = 外部类对象.内部类对象;</p>
+</li>
+<li><p>范例：Outer.lnner oi = new Outer.lnner();</p>
+<h3 id="4-5-局部内部类"><a href="#4-5-局部内部类" class="headerlink" title="4.5. 局部内部类"></a>4.5. 局部内部类</h3></li>
+<li><p>在类的局部位置，即在方法中</p>
+</li>
+<li><p>局部内部类是在方法中定义的类，所以外界是无法直接使用的，需要在方法内部创建对象并使用</p>
+</li>
+<li><p>该类可以直接访问外部类的成员，也可以访问方法内的局部变量。</p>
+<h3 id="4-6-匿名内部类"><a href="#4-6-匿名内部类" class="headerlink" title="4.6. 匿名内部类"></a>4.6. 匿名内部类</h3></li>
+<li><p>也归属于局部内部类</p>
+</li>
+<li><p>前提：存在一个类或者接口，这里的类可以是具体类也可以是抽象类。</p>
+</li>
+<li><p>格式</p>
+<pre><code class="java">new 类名或者接口名()
+&#123;
+    重写方法;
+&#125;
+
+//范例
+new Inter()
+&#123;
+    public void show()
+    &#123;
+
+    &#125;
+&#125;</code></pre>
+</li>
+<li><p>本质：是一个继承了该类或者实现了该接口的子类匿名对象</p>
+</li>
+<li><p>匿名内部类在开发中的使用</p>
+<ul>
+<li>当接口实例化时需要重新定义一个子类去实现接口中的方法，使用匿名内部类后，就不需要定义一个新的子类</li>
+</ul>
+</li>
+</ul>
+<h2 id="五、Math类"><a href="#五、Math类" class="headerlink" title="五、Math类"></a>五、Math类</h2><h3 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1. 概述"></a>5.1. 概述</h3><ul>
+<li>Math包含执行基本数字运算的方法</li>
+<li>没有构造方法时如何使用类中的成员呢？看类的成员是否都是静态的，如果是，通过类名就可以直接调用<h3 id="5-2-Math类的常用方法"><a href="#5-2-Math类的常用方法" class="headerlink" title="5.2. Math类的常用方法"></a>5.2. Math类的常用方法</h3></li>
+<li><code>public static int abs(int a)</code><ul>
+<li>返回参数的绝对值</li>
+</ul>
+</li>
+<li><code>public static double ceil(double a)</code><ul>
+<li>返回大于或等于参数double值的最小整数</li>
+</ul>
+</li>
+<li><code>public static double floor(double a)</code><ul>
+<li>返回小于或等于参数double值的最大整数</li>
+</ul>
+</li>
+<li><code>public static int round(float a)</code><ul>
+<li>按照四舍五入返回最接近参数的int</li>
+</ul>
+</li>
+<li><code>public static int max(int a, int b)</code><ul>
+<li>返回两个int值中的较大值</li>
+</ul>
+</li>
+<li><code>public static int min(int a, int b)</code><ul>
+<li>返回两个int值中的较小值</li>
+</ul>
+</li>
+<li><code>public static double pow(double a, double b)</code><ul>
+<li>返回a的b次幂的值</li>
+</ul>
+</li>
+<li><code>public static double random()</code><ul>
+<li>返回值为double的正值，范围为[0.0，1.0)</li>
+</ul>
+</li>
+</ul>
+<h2 id="六、System类"><a href="#六、System类" class="headerlink" title="六、System类"></a>六、System类</h2><h3 id="6-1-概述"><a href="#6-1-概述" class="headerlink" title="6.1. 概述"></a>6.1. 概述</h3><ul>
+<li>System包含几个有用的类字段和方法，它不能被实例化<h3 id="6-2-System类的常用方法"><a href="#6-2-System类的常用方法" class="headerlink" title="6.2. System类的常用方法"></a>6.2. System类的常用方法</h3></li>
+<li><code>public static void exit(int status)</code><ul>
+<li>终止当前运行的Java虚拟机，非零表示异常终止</li>
+</ul>
+</li>
+<li><code>public static long currentTimeMillis()</code><ul>
+<li>返回当前时间（以毫秒为单位），当前时间与1970年之间的毫秒值</li>
+</ul>
+</li>
+</ul>
+<h2 id="七、Object类"><a href="#七、Object类" class="headerlink" title="七、Object类"></a>七、Object类</h2><h3 id="7-1-概述"><a href="#7-1-概述" class="headerlink" title="7.1. 概述"></a>7.1. 概述</h3><ul>
+<li>Object是类层次结构的根，每个类都可以将Object作为超类，所有类都直接或者间接的继承自该类</li>
+<li>构造方法：public Object()</li>
+<li>回想面向对象中，为什么说子类的构造方法默认访问的是父类的无参构造方法？<ul>
+<li>因为它们的顶级父类只有无参构造方法<h3 id="7-2-toString方法"><a href="#7-2-toString方法" class="headerlink" title="7.2. toString方法"></a>7.2. toString方法</h3></li>
+</ul>
+</li>
+<li><code>public String toString()</code></li>
+<li>建议所有子类重写此方法。因为该方法原本输出的内容不直观。</li>
+<li>如何重写：自动生成即可（与生成get、set相似）</li>
+<li><code>System.out.println(对象名);</code>实际上就是System.out.println(对象名.toString());<h3 id="7-3-equals方法"><a href="#7-3-equals方法" class="headerlink" title="7.3. equals方法"></a>7.3. equals方法</h3></li>
+<li><code>public boolean equals(Object obj)</code></li>
+<li>比较对象是否相等，默认比较地址，重写可以比较内容，自动生成（与生成get、set相似）</li>
+</ul>
+<h2 id="八、Arrays类"><a href="#八、Arrays类" class="headerlink" title="八、Arrays类"></a>八、Arrays类</h2><ul>
+<li>Arrays类包含用于操作数组的各种方法</li>
+<li><code>public static String toString(int[] a)</code><ul>
+<li>返回指定数组的内容的字符串表示形式，数字之间会自动用逗号隔开，输出范例：[1,2,3,4,5]</li>
+</ul>
+</li>
+<li><code>public static void sort(int[] a)</code><ul>
+<li>按照数字顺序排列指定的数组</li>
+</ul>
+</li>
+</ul>
+<h2 id="九、工具类的设计思想"><a href="#九、工具类的设计思想" class="headerlink" title="九、工具类的设计思想"></a>九、工具类的设计思想</h2><ul>
+<li>构造方法用private修饰，原因是为了防止外界创建该对象。</li>
+<li>成员用public static修饰，原因是为了让使用类名来访问该成员方法。</li>
+</ul>
+<h2 id="十、基本类型包装类"><a href="#十、基本类型包装类" class="headerlink" title="十、基本类型包装类"></a>十、基本类型包装类</h2><h3 id="10-1-概述"><a href="#10-1-概述" class="headerlink" title="10.1. 概述"></a>10.1. 概述</h3><ul>
+<li>将基本数据类型封装成对象的好处在于可以在对象中定义更多的功能方法操作该数据。</li>
+<li>常用的操作之一：用于基本数据类型与字符串之间的转换</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">基本数据类型</th>
+<th align="center">包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">byte</td>
+<td align="center">Byte</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">Short</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">Integer</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">Long</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">Float</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">Double</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">Character</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">Boolean</td>
+</tr>
+</tbody></table>
+<h3 id="10-2-Integer类的概述和使用"><a href="#10-2-Integer类的概述和使用" class="headerlink" title="10.2. Integer类的概述和使用"></a>10.2. Integer类的概述和使用</h3><ul>
+<li>Integer包装一个对象中的原始类型int的值</li>
+<li><code>public Integer(int value)</code><ul>
+<li>根据int值创建Integer对象(过时)</li>
+</ul>
+</li>
+<li><code>public Integer(String s)</code><ul>
+<li>根据String值创建Integer对象(过时)</li>
+</ul>
+</li>
+<li><code>public static Integer valueOf(int i)</code><ul>
+<li>返回表示指定的int值的Integer实例</li>
+</ul>
+</li>
+<li><code>public static Integer valueOf(String s)</code><ul>
+<li>返回一个保存指定值String的Integer对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-3-int和String的相互转换"><a href="#10-3-int和String的相互转换" class="headerlink" title="10.3. int和String的相互转换"></a>10.3. int和String的相互转换</h3><ul>
+<li>基本类型包装类的最常见操作就是：用于基本类型和字符串之间的相互转换。</li>
+<li>int转换为String<ul>
+<li><code>public static String valueOf(int i)</code></li>
+<li>返回int参数的字符串表示形式。该方法是String类中的方法。</li>
+</ul>
+</li>
+<li>String转换为int<ul>
+<li>public static int parseInt(String s)</li>
+<li>将字符串解析为int类型，该方法是Integer类中的方法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-4-自动装箱和拆箱"><a href="#10-4-自动装箱和拆箱" class="headerlink" title="10.4. 自动装箱和拆箱"></a>10.4. 自动装箱和拆箱</h3><ul>
+<li>装箱：把基本数据类型转换为对应的包装类类型</li>
+<li>拆箱：把包装类类型转换为对应的基本数据类型<pre><code class="java">Integer a = Integer.valueOf(100);//装箱
+Integer i = 100;//自动装箱
+i = i.intValue() + 200;//i.intValue()是拆箱
+i += 200;//i = i + 200; i + 200是自动拆箱; i = i + 200是自动装箱</code></pre>
+</li>
+<li>注意：在使用包装类类型的时候，如果做操作，最好先判断是否为null，建议只要是对象，在使用前就必须进行不为null的判断。</li>
+</ul>
+<h2 id="十一、日期类"><a href="#十一、日期类" class="headerlink" title="十一、日期类"></a>十一、日期类</h2><h3 id="11-1-Date"><a href="#11-1-Date" class="headerlink" title="11.1. Date"></a>11.1. Date</h3><h4 id="11-1-1-概述"><a href="#11-1-1-概述" class="headerlink" title="11.1.1. 概述"></a>11.1.1. 概述</h4><ul>
+<li>Date代表了一个特点的时间，精确到毫秒。</li>
+<li><code>public Date()</code><ul>
+<li>分配一个Date对象，并初始化，以便它代表它被分配的时间，精确到毫秒，输出值为当前时间。</li>
+</ul>
+</li>
+<li><code>public Date(long date)</code><ul>
+<li>分配一个Date对象，并将其初始化为表示从标准基准时间起指定的毫秒数。</li>
+</ul>
+</li>
+</ul>
+<h3 id="11-1-2-Date类的常用方法"><a href="#11-1-2-Date类的常用方法" class="headerlink" title="11.1.2. Date类的常用方法"></a>11.1.2. Date类的常用方法</h3><ul>
+<li><code>public long getTime()</code><ul>
+<li>获取的是日期对象从1970年1月1日00：00：00到现在的毫秒值</li>
+</ul>
+</li>
+<li><code>public void setTime(long time)</code><ul>
+<li>设置时间，给的是毫米值</li>
+</ul>
+</li>
+</ul>
+<h3 id="11-2-SimpleDateFormat"><a href="#11-2-SimpleDateFormat" class="headerlink" title="11.2. SimpleDateFormat"></a>11.2. SimpleDateFormat</h3><h4 id="11-2-1-概述"><a href="#11-2-1-概述" class="headerlink" title="11.2.1. 概述"></a>11.2.1. 概述</h4><ul>
+<li>SimpleDateFormat是一个具体的类，用于以区域设置敏感的方式格式化和解析日期</li>
+<li>日期和时间格式由日期和时间模式字符串指定，在日期和时间模式字符串中，从‘A’到‘Z’以及从‘a’到‘z’引号的字母被解释为表示日期或时间字符串的组件的模式字母</li>
+<li>常用的模式字母即对应关系如下<ul>
+<li>y：年</li>
+<li>M：月</li>
+<li>d：日</li>
+<li>H：时</li>
+<li>m：分</li>
+<li>s：秒</li>
+</ul>
+</li>
+</ul>
+<h4 id="11-2-2-SimpleDateFormat的构造方法"><a href="#11-2-2-SimpleDateFormat的构造方法" class="headerlink" title="11.2.2. SimpleDateFormat的构造方法"></a>11.2.2. SimpleDateFormat的构造方法</h4><ul>
+<li><code>public SimpleDateFormat()</code><ul>
+<li>构造一个SimpleDateFormat，使用默认模式和日期格式</li>
+</ul>
+</li>
+<li><code>public SimpleDateFormat(String pattern)</code><ul>
+<li>构造一个SimpleDateFormat使用给定的pattern模式和默认的日期格式</li>
+</ul>
+</li>
+</ul>
+<h4 id="11-2-3-SimpleDateFormat格式化和解析日期"><a href="#11-2-3-SimpleDateFormat格式化和解析日期" class="headerlink" title="11.2.3. SimpleDateFormat格式化和解析日期"></a>11.2.3. SimpleDateFormat格式化和解析日期</h4><ul>
+<li>格式化（从Date到String）<ul>
+<li>public final String format(Date date)</li>
+<li>将日期格式化成日期/时间字符串，从Date到String<pre><code class="java">Date d = new Date();
+SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy年MM月dd日 HH:mm:ss&quot;);
+String s = sdf.format(d);
+System.out.println(s);
+//输出结果为：2020年06月03日 14:09:11</code></pre>
+</li>
+</ul>
+</li>
+<li>解析（从String到Date）<ul>
+<li>public Date parse(String source)</li>
+<li>从给定字符串的开始解析文本以生成日期，从String到Date<pre><code class="java">String s = &quot;2048-08-09 11:11:11&quot;;
+SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+Date d = sdf.parse(s);
+System.out.println(d);
+//输出结果为：Sun Aug 09 11:11:11 CST 2048</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="11-3-Calendar"><a href="#11-3-Calendar" class="headerlink" title="11.3. Calendar"></a>11.3. Calendar</h3><h4 id="11-3-1-概述"><a href="#11-3-1-概述" class="headerlink" title="11.3.1. 概述"></a>11.3.1. 概述</h4><ul>
+<li>Calendar为某一时刻和一组日历字段之间的转换提供了一些方法，并为操作日历字段提供了一些方法。</li>
+<li>Calendar提供了一个类方法getInstance用于获取Calendar对象，其日历字段已使用当前日期和时间初始化。</li>
+<li><code>Calendar rightNow = Calendar.getInstance();</code></li>
+<li>注意：月数是从0开始的。<h4 id="11-3-2-Calendar类的常用方法"><a href="#11-3-2-Calendar类的常用方法" class="headerlink" title="11.3.2. Calendar类的常用方法"></a>11.3.2. Calendar类的常用方法</h4></li>
+<li><code>public int get(int field)</code><ul>
+<li>返回给定日历字段的值</li>
+</ul>
+</li>
+<li><code>public abstract void add(int field, int amount)</code><ul>
+<li>根据日历的规则，将指定的时间量添加或减去给定的日历字段</li>
+</ul>
+</li>
+<li><code>public final void set(int year, int month, int date)</code><ul>
+<li>设置当前日历的年月日</li>
+</ul>
+</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之方法</title>
+    <url>/2021/03/31/Java%E4%B9%8B%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><ul>
+<li>方法是将具有独立功能的代码块组织成为一个整体，使其具有特殊功能的代码集。</li>
+<li>方法必须先创建才可以使用，该过程称为方法定义</li>
+<li>方法创建后并不是直接运行的，需要手动使用后才执行，该过程称为方法调用<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="二、方法定义"><a href="#二、方法定义" class="headerlink" title="二、方法定义"></a>二、方法定义</h2><h3 id="2-1-格式"><a href="#2-1-格式" class="headerlink" title="2.1. 格式"></a>2.1. 格式</h3><pre><code class="Java">public static void 方法名()
+&#123;
+    //方法体
+&#125;</code></pre>
+<h3 id="2-2-范例"><a href="#2-2-范例" class="headerlink" title="2.2. 范例"></a>2.2. 范例</h3><pre><code class="Java">public static void a()
+&#123;
+    //方法体
+&#125;</code></pre>
+<h2 id="三、方法调用"><a href="#三、方法调用" class="headerlink" title="三、方法调用"></a>三、方法调用</h2><ul>
+<li>格式：方法名();</li>
+<li>范例：a();</li>
+</ul>
+<h2 id="四、形参和实参"><a href="#四、形参和实参" class="headerlink" title="四、形参和实参"></a>四、形参和实参</h2><ul>
+<li>形参：方法定义中的参数</li>
+<li>实参：方法调用中的参数</li>
+<li>对于基本数据类型的参数，形式参数的改变，不影响实际参数的值</li>
+<li>对于引用类型的参数，形式参数的改变，影响实际参数的值</li>
+</ul>
+<h2 id="五、带返回值的方法"><a href="#五、带返回值的方法" class="headerlink" title="五、带返回值的方法"></a>五、带返回值的方法</h2><ul>
+<li><p>格式</p>
+<pre><code class="Java">public static 数据类型 方法名(参数)
+&#123;
+    return 数据;
+&#125;</code></pre>
+</li>
+<li><p>方法定义时return后面的返回值与方法定义上的数据类型要匹配，否则程序将报错</p>
+</li>
+<li><p>方法的返回值通常会使用变量接收，否则该返回值将无意义</p>
+</li>
+</ul>
+<h2 id="六、方法的注意事项"><a href="#六、方法的注意事项" class="headerlink" title="六、方法的注意事项"></a>六、方法的注意事项</h2><ul>
+<li>方法不能嵌套定义</li>
+<li>void表示无返回值，可以省略return，也可以单独的书写return，后面不加数据</li>
+</ul>
+<h2 id="七、方法重载"><a href="#七、方法重载" class="headerlink" title="七、方法重载"></a>七、方法重载</h2><h3 id="7-1-概述"><a href="#7-1-概述" class="headerlink" title="7.1. 概述"></a>7.1. 概述</h3><ul>
+<li>方法重载指同一个类中定义的多个方法之间的关系，满足下列条件的多个方法相互构成重载</li>
+<li>多个方法在同一个类中</li>
+<li>多个方法具有相同的方法名</li>
+<li>多个方法的参数不相同，类型不同或者数量不同</li>
+</ul>
+<h3 id="7-2-方法重载特点"><a href="#7-2-方法重载特点" class="headerlink" title="7.2. 方法重载特点"></a>7.2. 方法重载特点</h3><ul>
+<li>重载仅对应方法的定义，与方法的调用无关，调用方式参照标准格式</li>
+<li>重载仅针对同一个类中方法的名称与参数进行识别，与返回值无关，换句话说不能通过返回值来判定两个方法是否相互构成重载</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之标识符</title>
+    <url>/2021/03/31/Java%E4%B9%8B%E6%A0%87%E8%AF%86%E7%AC%A6/</url>
+    <content><![CDATA[<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><ul>
+<li>标识符就是给类、方法、变量等起名字的符号<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="二、定义规则"><a href="#二、定义规则" class="headerlink" title="二、定义规则"></a>二、定义规则</h2><ul>
+<li>由数字、字母、下划线和美元符组成</li>
+<li>不能以数字开头</li>
+<li>不能是关键字</li>
+<li>区分大小写，即大写和小写是不同的</li>
+</ul>
+<h2 id="三、常见命名约定"><a href="#三、常见命名约定" class="headerlink" title="三、常见命名约定"></a>三、常见命名约定</h2><h3 id="3-1-小驼峰命名法：针对方法、变量来命名的"><a href="#3-1-小驼峰命名法：针对方法、变量来命名的" class="headerlink" title="3.1. 小驼峰命名法：针对方法、变量来命名的"></a>3.1. 小驼峰命名法：针对方法、变量来命名的</h3><ul>
+<li>(1)标识符是一个单词的时候，首字母小写<ul>
+<li>范例：<code>name</code></li>
+</ul>
+</li>
+<li>(2)标识符由多个单词组成的时候，第一个单词首字母小写，其他单词首字母大写<ul>
+<li>范例：<code>firstName</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-大驼峰命名法：针对类来命名的"><a href="#3-2-大驼峰命名法：针对类来命名的" class="headerlink" title="3.2. 大驼峰命名法：针对类来命名的"></a>3.2. 大驼峰命名法：针对类来命名的</h3><ul>
+<li>(1)标识符是一个单词的时候，首字母大写<ul>
+<li>范例：<code>Student</code></li>
+</ul>
+</li>
+<li>(2)标识符由多个单词组成的时候，每个单词的首字母大写<ul>
+<li>范例：<code>GoodStudent</code></li>
+</ul>
+</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之常量和变量</title>
+    <url>/2021/03/26/Java%E4%B9%8B%E5%B8%B8%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F/</url>
+    <content><![CDATA[<h2 id="一、常量"><a href="#一、常量" class="headerlink" title="一、常量"></a>一、常量</h2><h3 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1. 概述"></a>1.1. 概述</h3><ul>
+<li>常量就是在程序运行过程中，其值不可以发生改变的量。<a id="more"></a>
+
+</li>
+</ul>
+<h3 id="1-2-常量分类"><a href="#1-2-常量分类" class="headerlink" title="1.2. 常量分类"></a>1.2. 常量分类</h3><ul>
+<li>字符串常量<ul>
+<li>用双引号括起来的内容</li>
+<li>范例：<code>&quot;HelloWorld&quot;</code></li>
+</ul>
+</li>
+<li>整数常量<ul>
+<li>不带小数的数字</li>
+<li>范例：<code>666</code>，<code>-88</code></li>
+</ul>
+</li>
+<li>小数常量<ul>
+<li>带小数的数字</li>
+<li>范例：<code>13.14</code>，<code>-5.21</code></li>
+</ul>
+</li>
+<li>字符常量<ul>
+<li>用单引号括起来的内容</li>
+<li>范例：<code>&#39;A&#39;</code>，<code>&#39;0&#39;</code>，<code>&#39;我&#39;</code></li>
+</ul>
+</li>
+<li>布尔常量<ul>
+<li>布尔值，表示真假</li>
+<li>只有两个值：<code>true</code>，<code>false</code></li>
+</ul>
+</li>
+<li>空常量<ul>
+<li>一个特殊的值，空值</li>
+<li>值是：<code>null</code></li>
+<li>空常量是不能直接输出的。</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、变量"><a href="#二、变量" class="headerlink" title="二、变量"></a>二、变量</h2><h3 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1. 概述"></a>2.1. 概述</h3><ul>
+<li>变量就是在程序运行过程中，其值可以发生改变的量。</li>
+<li>从本质上讲，变量是内存中的一小块区域。</li>
+</ul>
+<h3 id="2-2-定义"><a href="#2-2-定义" class="headerlink" title="2.2. 定义"></a>2.2. 定义</h3><ul>
+<li>格式<ul>
+<li><code>数据类型 变量名 = 变量值;</code></li>
+</ul>
+</li>
+<li>范例<ul>
+<li><code>int a = 10;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-使用"><a href="#2-3-使用" class="headerlink" title="2.3. 使用"></a>2.3. 使用</h3><ul>
+<li>取值和修改值</li>
+</ul>
+<h3 id="2-4-注意事项"><a href="#2-4-注意事项" class="headerlink" title="2.4. 注意事项"></a>2.4. 注意事项</h3><ul>
+<li>(1)不能重复定义同一个变量名</li>
+<li>(2)定义<code>long</code>类型的变量时，赋值时需要加上<code>L</code><ul>
+<li>例如<ul>
+<li><code>long a = 10000L</code></li>
+</ul>
+</li>
+<li>因为给出的一个整数默认是<code>int</code>类型的</li>
+</ul>
+</li>
+<li>(3)定义<code>float</code>类型的变量时，赋值时需要加上<code>f</code><ul>
+<li>例如<ul>
+<li><code>float a = 3.14F</code></li>
+</ul>
+</li>
+<li>因为给出的一个小数默认是<code>double</code>类型的</li>
+</ul>
+</li>
+<li>(4)变量未赋值时，不能使用</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之数据类型</title>
+    <url>/2021/03/26/Java%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><ul>
+<li>java语言是强类型语言，对于每一种数据都给出了明确的数据类型，不同的数据类型也分配了不同的内存空间，所以它们表示的数据大小也是不一样的。</li>
+<li>数据类型<ul>
+<li>基本数据类型<ul>
+<li>数值型<ul>
+<li>整数<code>byte,short,int,long</code></li>
+<li>浮点数<code>float,double</code></li>
+<li>字符<code>char</code></li>
+</ul>
+</li>
+<li>非数值型<ul>
+<li>布尔<code>boolean</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>引用数据类型<ul>
+<li>类<code>class</code></li>
+<li>接口<code>interface</code></li>
+<li>数值<code>[]</code><a id="more"></a>
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、数据类型内存占用和取值范围"><a href="#二、数据类型内存占用和取值范围" class="headerlink" title="二、数据类型内存占用和取值范围"></a>二、数据类型内存占用和取值范围</h2><h3 id="2-1-整数"><a href="#2-1-整数" class="headerlink" title="2.1. 整数"></a>2.1. 整数</h3><ul>
+<li>byte<ul>
+<li>内存占用：<code>1</code></li>
+<li>取值范围：<code>-128~127</code></li>
+</ul>
+</li>
+<li>short<ul>
+<li>内存占用：<code>2</code></li>
+<li>取值范围：<code>-32768~32767</code></li>
+</ul>
+</li>
+<li>int(默认)<ul>
+<li>内存占用：<code>4</code></li>
+<li>取值范围：<code>(-2的31次方~2的31次方)-1</code></li>
+</ul>
+</li>
+<li>long<ul>
+<li>内存占用：<code>8</code></li>
+<li>取值范围：<code>(-2的63次方~2的63次方)-1</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-浮点数"><a href="#2-2-浮点数" class="headerlink" title="2.2. 浮点数"></a>2.2. 浮点数</h3><ul>
+<li>float<ul>
+<li>内存占用：<code>4</code></li>
+<li>取值范围<ul>
+<li>负数：<code>-3.402823E+38~-1.401298E-45</code></li>
+<li>正数：<code>1.401298E-45~3.402823E+38</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>double(默认)<ul>
+<li>内存占用：<code>8</code></li>
+<li>取值范围<ul>
+<li>负数：<code>-1.797693E+308~-4.9000000E-324</code></li>
+<li>正数：<code>4.9000000E-324~1.797693E+308</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-字符"><a href="#2-3-字符" class="headerlink" title="2.3. 字符"></a>2.3. 字符</h3><ul>
+<li>char<ul>
+<li>内存占用：<code>2</code></li>
+<li>取值范围：<code>0~65535</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-4-布尔"><a href="#2-4-布尔" class="headerlink" title="2.4. 布尔"></a>2.4. 布尔</h3><ul>
+<li>boolean<ul>
+<li>内存占用：<code>1</code></li>
+<li>取值范围：<code>true,false</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-5-E"><a href="#2-5-E" class="headerlink" title="2.5. E"></a>2.5. E</h3><ul>
+<li><code>E+99</code>表示：乘以10的99次方</li>
+<li><code>E-99</code>表示：乘以10的-99次方</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之类型转换</title>
+    <url>/2021/03/26/Java%E4%B9%8B%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<h2 id="一、自动类型转换"><a href="#一、自动类型转换" class="headerlink" title="一、自动类型转换"></a>一、自动类型转换</h2><ul>
+<li>把一个表示数据范围小的数值或者变量赋值给另一个表示数据范围大的变量</li>
+<li>范例<ul>
+<li><code>double d = 10;</code></li>
+</ul>
+</li>
+<li><code>byte</code> -&gt; <code>short</code> -&gt; <code>int</code> -&gt; <code>long</code> -&gt; <code>float</code> -&gt; <code>double</code></li>
+<li><code>char</code> -&gt; <code>int</code> -&gt; <code>long</code> -&gt; <code>float</code> -&gt; <code>double</code><a id="more"></a>
+
+</li>
+</ul>
+<h2 id="二、强制类型转换"><a href="#二、强制类型转换" class="headerlink" title="二、强制类型转换"></a>二、强制类型转换</h2><ul>
+<li>把一个表示数据范围大的数值或者变量赋值给另一个表示数据范围小的变量</li>
+<li>格式<ul>
+<li>目标数据类型 变量名 = （目标数据类型）值或者变量;</li>
+</ul>
+</li>
+<li>范例：<code>int k = (int)88.88;</code><ul>
+<li>`强制转换后k的值为88，小数点后面的值没有了，造成了数据的丢失，一般不建议使用强制类型转换</li>
+</ul>
+</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之运算符</title>
+    <url>/2021/03/26/Java%E4%B9%8B%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+    <content><![CDATA[<h2 id="一、算术运算符"><a href="#一、算术运算符" class="headerlink" title="一、算术运算符"></a>一、算术运算符</h2><h3 id="1-1-运算符和表达式"><a href="#1-1-运算符和表达式" class="headerlink" title="1.1. 运算符和表达式"></a>1.1. 运算符和表达式</h3><ul>
+<li>运算符：对常量或者变量进行操作的符号</li>
+<li>表达式：用运算符把常量或者变量连接起来符合java语法的式子就可以称为表达式。不同运算符连接的表达式体现的是不同类型的表达式。</li>
+<li>范例<ul>
+<li><code>int a = 10;</code></li>
+<li><code>int b = 20;</code></li>
+<li><code>int c = a + b;</code><a id="more"></a>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-算术运算符"><a href="#1-2-算术运算符" class="headerlink" title="1.2. 算术运算符"></a>1.2. 算术运算符</h3><ul>
+<li>加、减、乘、除、取余</li>
+</ul>
+<h3 id="1-3-字符的-操作"><a href="#1-3-字符的-操作" class="headerlink" title="1.3. 字符的+操作"></a>1.3. 字符的<code>+</code>操作</h3><ul>
+<li>是拿字符在计算机底层对应的数值来进行计算的<ul>
+<li><code>&#39;A&#39; -&gt; 65</code></li>
+<li><code>&#39;a&#39; -&gt; 97</code></li>
+<li><code>&#39;0&#39; -&gt; 48</code></li>
+</ul>
+</li>
+<li>算术表达式中包含多个基本数据类型的值的时候，整个算术表达式的类型会自动进行提升。</li>
+<li>提升规则：<ul>
+<li><code>byte</code>类型、<code>short</code>类型和<code>char</code>类型将被提升到<code>int</code>类型</li>
+<li>整个表达式的类型自动提升到表达式中最高等级操作数同样的类型</li>
+<li>等级顺序：<code>byte</code>、<code>short</code>、<code>char</code> -&gt; <code>int</code> -&gt; <code>long</code> -&gt; <code>float</code> -&gt; <code>double</code><h3 id="1-4-字符串的-操作"><a href="#1-4-字符串的-操作" class="headerlink" title="1.4. 字符串的+操作"></a>1.4. 字符串的<code>+</code>操作</h3></li>
+<li>当<code>+</code>操作中出现字符串时，这个<code>+</code>是字符串连接符，而不是算术运算。</li>
+<li>在<code>+</code>操作中，如果出现了字符串，就是连接运算符，否则就是算术运算。当连续进行<code>+</code>操作时，从左到右逐个执行。</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、赋值运算符"><a href="#二、赋值运算符" class="headerlink" title="二、赋值运算符"></a>二、赋值运算符</h2><ul>
+<li><code>=</code><ul>
+<li>赋值</li>
+</ul>
+</li>
+<li><code>+=</code><ul>
+<li>加后赋值</li>
+</ul>
+</li>
+<li><code>-=</code><ul>
+<li>减后赋值</li>
+</ul>
+</li>
+<li><code>*=</code><ul>
+<li>乘后赋值</li>
+</ul>
+</li>
+<li><code>/=</code><ul>
+<li>除后赋值</li>
+</ul>
+</li>
+<li><code>%=</code><ul>
+<li>取余后赋值</li>
+</ul>
+</li>
+<li>扩展的赋值运算隐含了强制类型转换</li>
+</ul>
+<h2 id="三、自增自减运算符"><a href="#三、自增自减运算符" class="headerlink" title="三、自增自减运算符"></a>三、自增自减运算符</h2><ul>
+<li><code>++</code><ul>
+<li>自增，变量的值加1</li>
+</ul>
+</li>
+<li><code>--</code><ul>
+<li>自减，变量的值减1</li>
+</ul>
+</li>
+<li><code>++</code>和<code>--</code>既可以放在变量的后边，也可以放在变量的前边</li>
+<li>单独使用的时候，<code>++</code>和<code>--</code>无论是放在变量的前边还是后边，结果是一样的</li>
+<li>参与操作的时候，如果放在变量的后边，先拿变量参与操作，后拿变量做<code>++</code>或者<code>--</code></li>
+<li>参与操作的时候，如果放在变量的前边，先拿变量做<code>++</code>或者<code>--</code>，后拿变量参与操作</li>
+</ul>
+<h2 id="四、关系运算符"><a href="#四、关系运算符" class="headerlink" title="四、关系运算符"></a>四、关系运算符</h2><ul>
+<li><code>==</code><ul>
+<li><code>a==b</code>，判断a和b的值是否相等，成立为true，不成立为false</li>
+</ul>
+</li>
+<li><code>!=</code><ul>
+<li><code>a!=b</code>，判断a和b的值是否不相等，成立为true，不成立为false</li>
+</ul>
+</li>
+<li><code>&gt;</code><ul>
+<li><code>a&gt;b</code>，判断a是否大于b，成立为true，不成立为false</li>
+</ul>
+</li>
+<li><code>&gt;=</code><ul>
+<li><code>a&gt;=b</code>，判断a是否大于等于b，成立为true，不成立为false</li>
+</ul>
+</li>
+<li><code>&lt;</code><ul>
+<li><code>a&lt;b</code>，判断a是否小于b，成立为true，不成立为false</li>
+</ul>
+</li>
+<li><code>&lt;=</code><ul>
+<li><code>a&lt;=b</code>，判断a是否小于等于b，成立为true，不成立为flase</li>
+</ul>
+</li>
+<li>关系运算符的结果都是Boolean类型，只有true和false。</li>
+</ul>
+<h2 id="五、逻辑运算符"><a href="#五、逻辑运算符" class="headerlink" title="五、逻辑运算符"></a>五、逻辑运算符</h2><ul>
+<li>逻辑运算符是用来连接关系表达式的运算符</li>
+<li>逻辑运算符也可以直接连接布尔类型的常量或者变量</li>
+<li><code>&amp;</code><ul>
+<li>逻辑与 a&amp;b，a和b都是true，结果为true，否则为false</li>
+</ul>
+</li>
+<li><code>|</code><ul>
+<li>逻辑或 a|b，a和b都是false，结果为false，否则为true</li>
+</ul>
+</li>
+<li><code>^</code><ul>
+<li>逻辑异或 a^b，a和b结果不同为true，相同为false</li>
+</ul>
+</li>
+<li><code>!</code><ul>
+<li>逻辑非 !a，结果和a的结果正好相反</li>
+</ul>
+</li>
+</ul>
+<h2 id="六、短路逻辑运算符"><a href="#六、短路逻辑运算符" class="headerlink" title="六、短路逻辑运算符"></a>六、短路逻辑运算符</h2><ul>
+<li><code>&amp;&amp;</code><ul>
+<li>短路与</li>
+<li>作用和<code>&amp;</code>相同，但是有短路效果</li>
+</ul>
+</li>
+<li><code>||</code><ul>
+<li>短路或</li>
+<li>作用和|相同，但是有短路效果</li>
+</ul>
+</li>
+<li>逻辑与<code>&amp;</code>，无论左边真假，右边都要执行</li>
+<li>短路与<code>&amp;&amp;</code>，如果左边为真，右边执行；如果左边为假，右边不执行</li>
+<li>逻辑或|，无论左边真假，右边都要执行</li>
+<li>短路或||，如果左边为假，右边执行；如果左边为真，右边不执行</li>
+<li>最常用的逻辑运算符：<code>&amp;&amp;</code>、<code>||</code>、<code>!</code></li>
+</ul>
+<h2 id="七、三元运算符"><a href="#七、三元运算符" class="headerlink" title="七、三元运算符"></a>七、三元运算符</h2><ul>
+<li>格式：关系表达式？表达式1：表达式2；</li>
+<li>范例：a &gt; b ? a : b;</li>
+<li>计算规则：<ul>
+<li>首先计算关系表达式的值</li>
+<li>如果值为true，表达式1的值就是运算结果</li>
+<li>如果值为false，表示式2的值就是运算结果</li>
+</ul>
+</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之流程控制</title>
+    <url>/2021/03/26/Java%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
+    <content><![CDATA[<h2 id="一、顺序结构"><a href="#一、顺序结构" class="headerlink" title="一、顺序结构"></a>一、顺序结构</h2><ul>
+<li>顺序结构是程序中最简单最基本的流程控制，没有特定的语法结构，按照代码的先后顺序，依次执行，程序中大多数的代码都是这样执行的。</li>
+<li>它是从上往下依次执行的。<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="二、分支结构"><a href="#二、分支结构" class="headerlink" title="二、分支结构"></a>二、分支结构</h2><h3 id="2-1-if语句"><a href="#2-1-if语句" class="headerlink" title="2.1. if语句"></a>2.1. if语句</h3><ul>
+<li>格式1<ul>
+<li>if（关系表达式）{语句体；}</li>
+</ul>
+</li>
+<li>格式2<ul>
+<li>if（关系表达式）{语句体；}else{语句体；}</li>
+</ul>
+</li>
+<li>格式3<ul>
+<li>if（关系表达式1）{语句体1；}else if（关系表达式2）{语句体2；} ···  else{语句体n+1；}</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-switch语句"><a href="#2-2-switch语句" class="headerlink" title="2.2. switch语句"></a>2.2. switch语句</h3><ul>
+<li>格式<pre><code class="Java">switch(表达式)
+&#123;
+  case 值1:
+      语句体1;
+      break;
+  case 值2:
+      语句体2;
+      break;
+  ……
+ default:
+     语句体n+1;
+     break;//default中的break可以省略
+&#125;</code></pre>
+</li>
+<li>在switch语句中，如果case控制的语句体后面不写break，将会出现穿透现象，在不判断下一个case值的情况下，向下运行，直到遇到break，或者整体switch语句结束</li>
+</ul>
+<h2 id="三、循环结构"><a href="#三、循环结构" class="headerlink" title="三、循环结构"></a>三、循环结构</h2><h3 id="3-1-循环结构的组成"><a href="#3-1-循环结构的组成" class="headerlink" title="3.1. 循环结构的组成"></a>3.1. 循环结构的组成</h3><ul>
+<li>初始化语句：用于表示循环开启时的起始状态，简单说就是循环开始的时候是什么样的</li>
+<li>条件判断语句：用于表示循环反复执行的条件，简单说就是判断循环是否能一直执行下去。</li>
+<li>循环体语句：用于表示循环反复执行的内容，简单说就是循环反复执行的事情。</li>
+<li>条件控制语句：用于表示循环执行中每次变化的内容，简单说就是控制循环是否能执行下去</li>
+</ul>
+<h3 id="3-2-循环结构对应的语法"><a href="#3-2-循环结构对应的语法" class="headerlink" title="3.2. 循环结构对应的语法"></a>3.2. 循环结构对应的语法</h3><ul>
+<li>初始化语句：这里可以是一条或者多条语句，这些语句可以完成一些初始化操作。</li>
+<li>条件判断语句：这里使用一个结果值为boolean类型的表达式，这个表达式能决定是否执行循环体。</li>
+<li>循环体语句：这里可以是任意语句，这些语句将反复执行。</li>
+<li>条件控制语句：这里通常是使用一条语句类改变变量的值，从而达到控制循环是否继续向下执行的效果。常见i++，i–这样的操作。</li>
+</ul>
+<h3 id="3-3-for循环语句"><a href="#3-3-for循环语句" class="headerlink" title="3.3. for循环语句"></a>3.3. for循环语句</h3><ul>
+<li>格式<pre><code class="Java">for(初始化语句, 条件判断语句, 条件控制语句)
+&#123;
+    循环体语句;
+&#125;</code></pre>
+</li>
+</ul>
+<h3 id="3-4-while循环语句"><a href="#3-4-while循环语句" class="headerlink" title="3.4. while循环语句"></a>3.4. while循环语句</h3><ul>
+<li>格式<ul>
+<li>初始化语句;<pre><code class="Java">while(条件判断语句)
+&#123;
+  循环体语句;
+  条件控制语句;
+&#125;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-5-do…while循环语句"><a href="#3-5-do…while循环语句" class="headerlink" title="3.5. do…while循环语句"></a>3.5. do…while循环语句</h3><ul>
+<li>格式<ul>
+<li>初始化语句<pre><code class="Java">do
+&#123;
+  循环语句;
+  条件控制语句;
+&#125;while(条件判断语句);</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-6-三种循环的区别"><a href="#3-6-三种循环的区别" class="headerlink" title="3.6. 三种循环的区别"></a>3.6. 三种循环的区别</h3><ul>
+<li>for循环和while循环先判断条件是否成立，然后决定是否执行循环体（先判断后执行）</li>
+<li><code>do……while</code>循环先执行一次循环体，然后判断条件是否成立，是否继续执行循环体（先执行后判断）</li>
+<li>for和while的区别<ul>
+<li>条件控制语句所控制的自增变量，因为归属for循环的语法结构中，在for循环结束后，就不能再次被访问到了。</li>
+<li>条件控制语句所控制的自增变量，对于while循环来说不归属其语法结构中，在while循环结束后，该变量还可以继续使用。</li>
+</ul>
+</li>
+<li>死循环格式<pre><code class="java">for(;;)&#123;&#125;
+while(true)&#123;&#125;
+do&#123;&#125;while(true);</code></pre>
+</li>
+<li>命令提示窗口中Ctrl+C可以结束死循环</li>
+</ul>
+<h2 id="四、跳转控制语句"><a href="#四、跳转控制语句" class="headerlink" title="四、跳转控制语句"></a>四、跳转控制语句</h2><ul>
+<li>continue用在循环中，基于条件控制，跳过某次循环体内容的执行，继续下一次的执行。</li>
+<li>break用在循环中，基于条件控制，终止循环体内容的执行，也就是说结束当前的整个循环。</li>
+</ul>
+<h2 id="五、循环嵌套"><a href="#五、循环嵌套" class="headerlink" title="五、循环嵌套"></a>五、循环嵌套</h2><ul>
+<li>分支语句中包含分支语句称为分支嵌套</li>
+<li>循环语句中包含循环语句称为循环嵌套</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之数组</title>
+    <url>/2021/03/26/Java%E4%B9%8B%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><ul>
+<li>数组（array）是一种用于存储多个相同类型数据的存储模型<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="二、格式"><a href="#二、格式" class="headerlink" title="二、格式"></a>二、格式</h2><h3 id="2-1-格式一"><a href="#2-1-格式一" class="headerlink" title="2.1. 格式一"></a>2.1. 格式一</h3><ul>
+<li>数据类型[] 变量名</li>
+<li>范例：int[] arr</li>
+<li>定义了一个int类型的数组，数组名是arr数组</li>
+</ul>
+<h3 id="2-2-格式二"><a href="#2-2-格式二" class="headerlink" title="2.2. 格式二"></a>2.2. 格式二</h3><ul>
+<li>数据类型 变量名[]</li>
+<li>范例：int arr[]</li>
+<li>定义了一个int类型的变量，变量名是arr数组</li>
+</ul>
+<h2 id="三、数组初始化"><a href="#三、数组初始化" class="headerlink" title="三、数组初始化"></a>三、数组初始化</h2><h3 id="3-1-简介"><a href="#3-1-简介" class="headerlink" title="3.1. 简介"></a>3.1. 简介</h3><ul>
+<li>Java中的数组必须先初始化，然后才能使用</li>
+<li>所谓初始化：就是为数组中的数组元素分配内存空间，并为每个数组元素赋值</li>
+<li>数组在初始化时，会为存储空间添加默认值<ul>
+<li>整数：默认值0</li>
+<li>浮点数：默认值0.0</li>
+<li>布尔值：默认值false</li>
+<li>字符：默认值是空字符</li>
+<li>引用数据类型：默认值是null</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-动态初始化"><a href="#3-2-动态初始化" class="headerlink" title="3.2. 动态初始化"></a>3.2. 动态初始化</h3><ul>
+<li>动态初始化时只指定数组长度，由系统为数组分配初始值</li>
+<li>格式<ul>
+<li><code>数据类型[] 变量名 = new 数据类型[数组长度];</code></li>
+</ul>
+</li>
+<li>范例<ul>
+<li><code>int[] arr = new int[3];</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3-静态初始化"><a href="#3-3-静态初始化" class="headerlink" title="3.3. 静态初始化"></a>3.3. 静态初始化</h3><ul>
+<li>静态初始化时指定每个数组元素的初始值，由系统决定数组长度</li>
+<li>格式<ul>
+<li>数据类型[] 变量名 = new 数据类型[]{数据1，数据2，数据3，……};</li>
+<li>范例<ul>
+<li><code>int[] arr = new int[]&#123;1,2,3&#125;;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>简化格式<ul>
+<li>数据类型[] 变量名 = {数据1，数据2，数据3，……};<ul>
+<li>范例<ul>
+<li><code>int[] arr = &#123;1,2,3&#125;;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="四、数组操纵的常见问题"><a href="#四、数组操纵的常见问题" class="headerlink" title="四、数组操纵的常见问题"></a>四、数组操纵的常见问题</h2><ul>
+<li>索引越界<ul>
+<li>访问了数组中不存在的索引对应的元素，造成索引越界问题</li>
+</ul>
+</li>
+<li>空指针异常<ul>
+<li>访问的数组已经不再指向堆内存的数据，造成空指针异常</li>
+</ul>
+</li>
+<li>null<ul>
+<li>空值，引用数据类型的默认值，表示不指向任何有效对象</li>
+</ul>
+</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之修饰符</title>
+    <url>/2021/03/26/Java%E4%B9%8B%E4%BF%AE%E9%A5%B0%E7%AC%A6/</url>
+    <content><![CDATA[<h2 id="一、权限修饰符"><a href="#一、权限修饰符" class="headerlink" title="一、权限修饰符"></a>一、权限修饰符</h2><table>
+<thead>
+<tr>
+<th align="center">修饰符</th>
+<th align="center">同一个类中</th>
+<th align="center">同一个包中子类或无关类</th>
+<th align="center">不同包的子类</th>
+<th align="center">不同包的无关类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">private</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">默认</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">protected</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">public</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+</tbody></table>
+<a id="more"></a>
+
+<h2 id="二、状态修饰符"><a href="#二、状态修饰符" class="headerlink" title="二、状态修饰符"></a>二、状态修饰符</h2><h3 id="2-1-final（最终态）"><a href="#2-1-final（最终态）" class="headerlink" title="2.1. final（最终态）"></a>2.1. final（最终态）</h3><h4 id="2-1-1-概述"><a href="#2-1-1-概述" class="headerlink" title="2.1.1. 概述"></a>2.1.1. 概述</h4><ul>
+<li>final关键字是最终的意思，可以修饰成员方法，成员变量，类。<h4 id="2-1-2-final修饰的特点"><a href="#2-1-2-final修饰的特点" class="headerlink" title="2.1.2. final修饰的特点"></a>2.1.2. final修饰的特点</h4></li>
+<li>修饰方法：表明该方法是最终方法，不能被重写。</li>
+<li>修饰变量：表明该变量是常量，不能再次被赋值。</li>
+<li>修饰类：表明该类是最终类，不能被继承。<h4 id="2-1-3-final修饰局部变量"><a href="#2-1-3-final修饰局部变量" class="headerlink" title="2.1.3. final修饰局部变量"></a>2.1.3. final修饰局部变量</h4></li>
+<li>变量是基本类型：final修饰指的是基本类型的数据值不能发生改变。</li>
+<li>变量是引用类型：final修饰指的是引用类型的地址值不能发生改变，但是地址里面的内容是可以发生改变的。</li>
+</ul>
+<h3 id="2-2-static（静态）"><a href="#2-2-static（静态）" class="headerlink" title="2.2. static（静态）"></a>2.2. static（静态）</h3><h4 id="2-2-1-概述"><a href="#2-2-1-概述" class="headerlink" title="2.2.1. 概述"></a>2.2.1. 概述</h4><ul>
+<li>static关键字是静态的意思，可以修饰成员方法、成员变量。<h4 id="2-2-2-static修饰的特点"><a href="#2-2-2-static修饰的特点" class="headerlink" title="2.2.2. static修饰的特点"></a>2.2.2. static修饰的特点</h4></li>
+<li>(1)被类的所有对象共享，这也是我们判断是否使用静态关键字的条件</li>
+<li>(2)可以通过类名调用，也可以通过对象名调用，建议使用类名调用。<h4 id="2-2-3-static访问特点"><a href="#2-2-3-static访问特点" class="headerlink" title="2.2.3. static访问特点"></a>2.2.3. static访问特点</h4></li>
+<li>非静态的成员方法<ul>
+<li>(1)能访问静态的成员变量</li>
+<li>(2)能访问非静态的成员变量</li>
+<li>(3)能访问静态的成员方法</li>
+<li>(4)能访问非静态的成员方法</li>
+</ul>
+</li>
+<li>静态的成员方法<ul>
+<li>(1)能访问静态的成员变量</li>
+<li>(2)能访问静态的成员方法</li>
+</ul>
+</li>
+<li>静态成员方法只能访问静态成员</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python知识点</title>
+    <url>/2021/03/24/Python%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    <content><![CDATA[<h2 id="一、关键字"><a href="#一、关键字" class="headerlink" title="一、关键字"></a>一、关键字</h2><ul>
+<li>关键字就是在Python内部已经使用的标识符</li>
+<li>关键字具有特殊的功能和含义</li>
+<li>开发者不允许定义和关键字相同的名字的标识符</li>
+<li>通过以下命令可以查看Python中的关键字<ul>
+<li>import keyword</li>
+<li>print(keyword.kwlist)</li>
+</ul>
+</li>
+<li>Python中的关键字：<pre><code class="python3">   False,None,True,and,as,assert,break,class,
+   continue,def,del,elif,else,except,finally,for,
+   from,global,if,import,in,is,lambda,nonlocal,not,
+   or,pass,raise,return,try,while,with,yield</code></pre>
+</li>
+<li>import关键字可以导入一个“工具包”，在Python中不同的工具包，提供有不同的工具。</li>
+<li>pass<ul>
+<li>如果在开发程序时，不希望立刻编写分支内部的代码，可以使用pass关键字，表示一个占位符，能够保证程序的代码结构正确。<pre><code class="python3">if action_str in [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]:
+  pass
+elif action_str == &quot;0&quot;:
+  pass
+else:
+  print(&quot;宝剑锋从磨砺出，梅花香自苦寒来&quot;)</code></pre>
+<a id="more"></a>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、哈希（hash）"><a href="#二、哈希（hash）" class="headerlink" title="二、哈希（hash）"></a>二、哈希（hash）</h2><h3 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1. 定义"></a>2.1. 定义</h3><ul>
+<li>python中内置有一个名字叫做hash(o)的函数<ul>
+<li>接收一个不可变类型的数据作为参数</li>
+<li>返回结果是一个整数</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-作用"><a href="#2-2-作用" class="headerlink" title="2.2. 作用"></a>2.2. 作用</h3><ul>
+<li>哈希是一种算法，其作用就是提取数据的特征码（指纹）<ul>
+<li>相同的内容得到相同的结果</li>
+<li>不同的内容得到不同的结果</li>
+</ul>
+</li>
+<li>在python中，设置字典的键值对时，会首先对key进行hash已决定如何在内存中保存字典的数据，以方便后续对字典的操作：增、删、改、查<ul>
+<li>键值对的key必须是不可变类型数据</li>
+<li>键值对的value可以是任意类型的数据</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、is与-的区别"><a href="#三、is与-的区别" class="headerlink" title="三、is与==的区别"></a>三、is与==的区别</h2><ul>
+<li><code>is</code>用于判断另两个变量引用对象是否为同一个</li>
+<li><code>==</code>用于判断引用变量的值是否相等</li>
+</ul>
+<h2 id="四、Python中的计数方法"><a href="#四、Python中的计数方法" class="headerlink" title="四、Python中的计数方法"></a>四、Python中的计数方法</h2><ul>
+<li>常见的计数方法有两种，可以分别称为：<ul>
+<li>自然计数法（从1开始）——更符合人类的习惯。</li>
+<li>程序计数法（从0开始）——几乎所有的程序语言都选择从0开始计数。</li>
+</ul>
+</li>
+<li>因此在编写程序时，应该尽量养成习惯：除非需求的特殊要求，否则循环的计数都从0开始。</li>
+</ul>
+<h2 id="五、random"><a href="#五、random" class="headerlink" title="五、random"></a>五、random</h2><ul>
+<li>在Python中，要使用随机数，首先需要导入随机数的模块——“工具包”。<ul>
+<li>import random</li>
+</ul>
+</li>
+<li>random.randint(a,b),返回[a,b]之间的整数，包含a和b，且a&lt;=b。</li>
+<li>在ipython中，导入模块后，可以直接在模块名称后面敲一个“.”，然后按Tab键，会提示该模块中包含的所有函数。</li>
+</ul>
+<h2 id="六、print"><a href="#六、print" class="headerlink" title="六、print"></a>六、print</h2><ul>
+<li>在默认情况下，print函数输出内容之后，会自动在内容末尾增加换行</li>
+<li>如果不希望末尾增加换行，可以在print函数输出内容的后面增加：, end=””</li>
+<li>其中””中间可以指定print函数输出内容之后，继续希望显示的内容<pre><code class="python3"># 向控制台输出内容结束之后，不会换行
+print(&quot;*&quot;, end=&quot;&quot;)
+print(&quot;*&quot;)
+# 输出结果为：**
+print(&quot;*&quot;, end=&quot;---&quot;)
+print(&quot;*&quot;)
+# 输出结果为：*---*</code></pre>
+</li>
+</ul>
+<h2 id="七、逻辑运算"><a href="#七、逻辑运算" class="headerlink" title="七、逻辑运算"></a>七、逻辑运算</h2><ul>
+<li>在程序开发中，通常在判断条件时，会需要同时判断多个条件。</li>
+<li>只有多个条件都满足，才能够执行后续代码，这个时候需要使用到逻辑运算符。</li>
+<li>逻辑运算符可以把多个条件按照逻辑进行连接，变成更复杂的条件。</li>
+<li>Python中的逻辑运算符包括：与and/或or/非not（通常希望某个条件不满足时，执行一些代码，可以使用not）三种。</li>
+</ul>
+<h2 id="八、Pyc文件"><a href="#八、Pyc文件" class="headerlink" title="八、Pyc文件"></a>八、Pyc文件</h2><ul>
+<li>C是compiled编译过的意思<h3 id="8-1-操作步骤"><a href="#8-1-操作步骤" class="headerlink" title="8.1. 操作步骤"></a>8.1. 操作步骤</h3></li>
+<li>浏览程序目录会发现一个_pycache_的目录</li>
+<li>目录下会有一个自己编写的文件名.cpython.pyc 文件，cpython-35表示Python解释器的版本</li>
+<li>这个pyc文件是由Python解释器将模块的源码转换为字节码</li>
+<li>Python这样保存字节码是作为一种启动速度的优化</li>
+</ul>
+<h3 id="8-2-字节码"><a href="#8-2-字节码" class="headerlink" title="8.2. 字节码"></a>8.2. 字节码</h3><ul>
+<li>Python在解释源程序时是分成两个步骤的<ul>
+<li>首先处理源代码，编译生成一个二进制字节码</li>
+<li>再对字节码进行处理，才会生成CPU能够识别的机器码</li>
+</ul>
+</li>
+<li>有了模块的字节码文件之后，下一次运行程序时，如果在上次保存字节码之后没有修改过源代码，Python将会加载.pyc文件并跳过编译这个步骤</li>
+<li>当Python重编译时，它会自动检查源文件和字节码文件的时间戳</li>
+<li>如果你又修改了源代码，下次程序运行时，字节码将自动重新创建</li>
+</ul>
+<h2 id="九、关键字、函数和方法的特点和区别"><a href="#九、关键字、函数和方法的特点和区别" class="headerlink" title="九、关键字、函数和方法的特点和区别"></a>九、关键字、函数和方法的特点和区别</h2><h3 id="9-1-关键字"><a href="#9-1-关键字" class="headerlink" title="9.1. 关键字"></a>9.1. 关键字</h3><ul>
+<li>关键字是Python内置的、具有特殊意义的标识符</li>
+<li>关键字后面不需要使用括号</li>
+<li>Python中有33个关键字</li>
+<li>通过输入如下代码可以查看python中有哪些关键字<pre><code class="python3">import keyword
+print(keyword.kwlist)</code></pre>
+</li>
+</ul>
+<h3 id="9-2-函数"><a href="#9-2-函数" class="headerlink" title="9.2. 函数"></a>9.2. 函数</h3><ul>
+<li>函数封装了独立功能，可以直接调用</li>
+<li>格式：函数名（参数）</li>
+<li>函数需要死记硬背</li>
+</ul>
+<h3 id="9-3-方法"><a href="#9-3-方法" class="headerlink" title="9.3. 方法"></a>9.3. 方法</h3><ul>
+<li>方法和函数类似，同样是封装了独立的功能</li>
+<li>方法需要通过对象来调用，表示针对这个对象要做的操作</li>
+<li>格式：对象.方法名（参数）</li>
+<li>在变量后面输入 . ，然后选择针对这个变量要执行的操作，记忆起来比函数要简单很多</li>
+</ul>
+<h2 id="十、循环遍历"><a href="#十、循环遍历" class="headerlink" title="十、循环遍历"></a>十、循环遍历</h2><ul>
+<li>遍历就是从头到尾依次从列表中获取数据，在循环体内部针对每一个元素，执行相同的操作</li>
+<li>在Python中为了提高列表的遍历效率，专门提高的迭代iteration遍历</li>
+<li>使用for就能够实现迭代遍历</li>
+<li>格式：for 循环内部使用的遍历 in 列表<pre><code class="python3">for name in name_list:
+    print(name)</code></pre>
+</li>
+<li>在Python中，可以使用for循环遍历所有非数字型类型的变量：列表、元组、字典以及字符串</li>
+<li>在实际开发中，除非能够确认元组中的数据类型，否则针对元组的循环遍历需求并不是很多</li>
+</ul>
+<h2 id="十一、完整的for循环"><a href="#十一、完整的for循环" class="headerlink" title="十一、完整的for循环"></a>十一、完整的for循环</h2><ul>
+<li><p>在Python中完整的for循环的语法如下</p>
+<pre><code class="python3">for 变量 in 集合:
+    循环体代码
+else:
+    没有通过 break 退出循环，循环结束后，会执行的代码。
+    如果循环体代码中使用了break，则不会执行else中的语句。</code></pre>
+</li>
+<li><p>应用场景</p>
+<ul>
+<li>在迭代遍历嵌套的数据类型时，例如一个列表包含了多个字典</li>
+<li>需求：要判断某一个字典中是否存在指定的值<ul>
+<li>如果存在，提示并且退出循环</li>
+<li>如果不存在，在循环整体结束后，希望得到一个统一的提示</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="十二、切片"><a href="#十二、切片" class="headerlink" title="十二、切片"></a>十二、切片</h2><ul>
+<li>切片方法适用于字符串、列表、元组</li>
+<li>切片使用索引值来限定范围，从一个大的字符串中切出小的字符串</li>
+<li>列表和元组都是有序的集合，都能够通过索引值获取到对应的数据</li>
+<li>字典是一个无序的集合，是使用键值对保存数据<pre><code class="python3"># 字符串切片
+&quot;0123456789&quot;[::-2]  # 结果为: &quot;97531&quot;
+# 列表切片
+[0, 1, 2, 3, 4][1:3]  # 结果为：[1,2]
+# 元组切片
+(0, 1, 2, 3, 4)[1:3]  # 结果为：(1, 2))</code></pre>
+</li>
+</ul>
+<h2 id="十三、eval函数"><a href="#十三、eval函数" class="headerlink" title="十三、eval函数"></a>十三、eval函数</h2><ul>
+<li><p><code>eval()</code>函数是将字符串当成有效的表达式来求值并返回计算结果</p>
+<pre><code class="python3"># 基本的数学计算
+In[1]: eval(&quot;1 + 1&quot;)
+Out[1]: 2
+# 字符串重复
+In[2]: eval(&quot;&#39;*&#39; * 10&quot;)
+Out[2]: &#39;**********&#39;
+# 将字符串转换成列表
+In[3]: type(eval(&quot;[1, 2, 3, 4, 5]&quot;))
+Out[3]: list
+# 将字符串转换成字典
+In[4]: type(eval(&quot;&#123;&#39;name&#39;: &#39;phd&#39;, &#39;age&#39;: 18&#125;&quot;))
+Out[4]: dict</code></pre>
+</li>
+<li><p>不要滥用eval</p>
+<ul>
+<li>eval会把字符串中的内容当成python的代码去执行</li>
+<li>在开发时千万不要使用 eval 直接转换 input 的结果</li>
+<li>用户可以通过os模块来调用system方法，就可以执行任何的终端命令<pre><code class="python3">__import__(&#39;os&#39;).system(&#39;ls&#39;)</code></pre>
+</li>
+</ul>
+</li>
+<li><p>等价代码</p>
+<pre><code class="python3">import os
+os.system(&quot;终端命令&quot;)</code></pre>
+<ul>
+<li>执行成功，返回0</li>
+<li>执行失败，返回错误信息</li>
+</ul>
+</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python基础</title>
+    <url>/2021/03/23/Python%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="一、Python介绍"><a href="#一、Python介绍" class="headerlink" title="一、Python介绍"></a>一、Python介绍</h2><h3 id="1-1-创始人"><a href="#1-1-创始人" class="headerlink" title="1.1. 创始人"></a>1.1. 创始人</h3><ul>
+<li>Python的创始人为吉多·范罗苏姆（Guido van Rossum）</li>
+</ul>
+<a id="more"></a>
+<h3 id="1-2-解释器"><a href="#1-2-解释器" class="headerlink" title="1.2. 解释器"></a>1.2. 解释器</h3><ul>
+<li>计算机不能直接理解任何除机器语言以外的语言，所以必须要把程序员所写的程序语言翻译成机器语言，计算机才能执行程序。将其他语言翻译成机器语言的工具，被称为编译器。</li>
+<li>编译器翻译的方式有两种：一个是编译，另外一个是解释。两种方式之间的区别在于翻译时间点的不同。当编译器以解释方式运行的时候，也称之为解释器。</li>
+</ul>
+<h4 id="1-2-1-编译型语言"><a href="#1-2-1-编译型语言" class="headerlink" title="1.2.1. 编译型语言"></a>1.2.1. 编译型语言</h4><ul>
+<li>工作方式：在开发环境内编写代码 -&gt; 将开发完成的代码统一交给编译器 -&gt; 保存为可执行文件 -&gt; 通过操作系统交给CPU进行处理</li>
+<li>语言：C、C++</li>
+<li>优点：执行速度相对较快</li>
+</ul>
+<h4 id="1-2-2-解释型语言"><a href="#1-2-2-解释型语言" class="headerlink" title="1.2.2. 解释型语言"></a>1.2.2. 解释型语言</h4><ul>
+<li>工作方式：在开发环境内编写代码 -&gt; 将源程序交给解释器 -&gt; 解释器通过源程序从上到下逐一读取代码（逐行解释每一行代码），读一行代码就立刻翻译成机器码并交给CPU执行 -&gt; 再读取第二行代码，并翻译成机器码，然后交给CPU执行</li>
+<li>语言：Python</li>
+<li>优点：跨平台（在不同的操作系统上安装不同的解释器）</li>
+</ul>
+<h3 id="1-3-Python的设计目标"><a href="#1-3-Python的设计目标" class="headerlink" title="1.3. Python的设计目标"></a>1.3. Python的设计目标</h3><ul>
+<li>一门简单直观的语言并与主要竞争者一样强大</li>
+<li>开源，以便任何人都可以为它做贡献</li>
+<li>代码像纯英语那样容易理解</li>
+<li>适用于短期开发的日常任务</li>
+</ul>
+<h3 id="1-4-Python的设计哲学"><a href="#1-4-Python的设计哲学" class="headerlink" title="1.4. Python的设计哲学"></a>1.4. Python的设计哲学</h3><ul>
+<li>优雅：源代码工整、整洁、阅读轻松</li>
+<li>明确：明确每句代码要做的事情</li>
+<li>简单：让每句代码都尽量的简单</li>
+<li>Python开发者的哲学是：用一种方法，最好是只有一种方法来做一件事</li>
+<li>如果面临多种选择，Python开发者一般会拒绝花哨的语法，而选择明确没有或者很少有歧义的语法</li>
+</ul>
+<h3 id="1-5-Python特点"><a href="#1-5-Python特点" class="headerlink" title="1.5. Python特点"></a>1.5. Python特点</h3><ul>
+<li>Python是完全面向对象的语言<br>函数、模块、数字、字符串都是对象，在Python中一切皆为对象<br>完全支持继承、重载、多重继承<br>支持重载运算符，也支持泛型设计</li>
+<li>Python拥有一个强大的标准库，Python语言的核心只包含数字、字符串、列表、字典、文件等常见类型和函数，而由Python标准库提供了系统管理、网络通信、文本处理、数据库接口、图形系统、XML处理等额外的功能。</li>
+<li>Python社区提供了大量的第三方模块、使用方式与标准库类似。它们的功能覆盖科学计算、人工智能、机器学习、web开发、数据库接口、图形系统多个领域。</li>
+</ul>
+<h3 id="1-6-面向对象的思维方式"><a href="#1-6-面向对象的思维方式" class="headerlink" title="1.6. 面向对象的思维方式"></a>1.6. 面向对象的思维方式</h3><ul>
+<li>面向对象是一种思维方式，也是一门程序设计技术。</li>
+<li>要解决一个问题前，首先考虑由谁来做，怎么做事情是谁的职责，最后把事情做好就行。</li>
+<li>要解决复杂的问题，就可以找多个不同的对象、各司其职，共同实现，最终完成需求。</li>
+</ul>
+<h3 id="1-7-Python的优缺点"><a href="#1-7-Python的优缺点" class="headerlink" title="1.7. Python的优缺点"></a>1.7. Python的优缺点</h3><h4 id="1-7-1-优点"><a href="#1-7-1-优点" class="headerlink" title="1.7.1. 优点"></a>1.7.1. 优点</h4><ul>
+<li>简单、易学</li>
+<li>免费、开源</li>
+<li>面向对象</li>
+<li>丰富的库</li>
+<li>可扩展性</li>
+<li>如果需要一段关键代码运行得更快或者希望某些算法不公开，可以把这部分程序用C或C++编写，然后在Python程序中使用它们</li>
+</ul>
+<h4 id="1-7-2-缺点"><a href="#1-7-2-缺点" class="headerlink" title="1.7.2. 缺点"></a>1.7.2. 缺点</h4><ul>
+<li>运行速度</li>
+<li>国内市场较小</li>
+<li>中文资料匮乏</li>
+</ul>
+<h3 id="1-8-Python文件名命名规则"><a href="#1-8-Python文件名命名规则" class="headerlink" title="1.8. Python文件名命名规则"></a>1.8. Python文件名命名规则</h3><ul>
+<li>命名文件名时建议只使用小写字母、数字和下划线</li>
+<li>文件名不能以数字开始</li>
+</ul>
+<h3 id="1-9-代码规范"><a href="#1-9-代码规范" class="headerlink" title="1.9. 代码规范"></a>1.9. 代码规范</h3><ul>
+<li>Python官方提供有一系列PEP文档</li>
+<li>其中第8篇文档专门针对Python的代码格式给出了建议，也就是俗称的PEP8</li>
+<li><a href="https://www.python.org/dev/peps/pep-0008/">文档地址</a></li>
+<li><a href="https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/">谷歌有对应的中文文档</a></li>
+</ul>
+<h3 id="1-10-Python程序执行原理"><a href="#1-10-Python程序执行原理" class="headerlink" title="1.10. Python程序执行原理"></a>1.10. Python程序执行原理</h3><ul>
+<li>1、操作系统会首先让CPU把Python解释器的程序复制到内存中。</li>
+<li>2、Python解释器根据语法规则，从上向下让CPU翻译Python程序中的代码。</li>
+<li>3、CPU负责执行翻译完成的代码</li>
+</ul>
+<h3 id="1-11-程序的作用"><a href="#1-11-程序的作用" class="headerlink" title="1.11. 程序的作用"></a>1.11. 程序的作用</h3><ul>
+<li>程序就是用来处理数据的</li>
+<li>新闻软件提供的新闻内容、评论……是数据</li>
+<li>电商软件提供的商品信息、配送信息……是数据</li>
+<li>运动类软件提供的运动数据……是数据</li>
+<li>地图类软件提供的地图信息、定位信息、车辆信息……是数据</li>
+<li>即时通讯软件提供的聊天信息、好友信息……是数据</li>
+<li>等等</li>
+</ul>
+<h3 id="1-12-程序的三大流程"><a href="#1-12-程序的三大流程" class="headerlink" title="1.12. 程序的三大流程"></a>1.12. 程序的三大流程</h3><ul>
+<li>在程序开发中，一共有三种流程方式：<ul>
+<li>顺序——从上向下，顺序执行代码</li>
+<li>分支——根据条件判断，决定执行代码的分支</li>
+<li>循环——让特定代码重复执行</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、执行Python的三种方式"><a href="#二、执行Python的三种方式" class="headerlink" title="二、执行Python的三种方式"></a>二、执行Python的三种方式</h2><h3 id="2-1-第一种：解释器python-python3"><a href="#2-1-第一种：解释器python-python3" class="headerlink" title="2.1. 第一种：解释器python/python3"></a>2.1. 第一种：解释器python/python3</h3><ul>
+<li>使用python 2.x解释器<ul>
+<li><code>python xxx.py</code></li>
+</ul>
+</li>
+<li>使用python 3.x解释器<ul>
+<li><code>python xxx.py</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-第二种：交互式运行Python程序"><a href="#2-2-第二种：交互式运行Python程序" class="headerlink" title="2.2. 第二种：交互式运行Python程序"></a>2.2. 第二种：交互式运行Python程序</h3><ul>
+<li>直接在终端中运行解释器，而不输入要执行的文件名</li>
+<li>在Python的Shell中直接输入Python的代码，会立即看到程序执行结果</li>
+</ul>
+<h4 id="2-2-1-交互式运行Python的优缺点"><a href="#2-2-1-交互式运行Python的优缺点" class="headerlink" title="2.2.1. 交互式运行Python的优缺点"></a>2.2.1. 交互式运行Python的优缺点</h4><ul>
+<li>优点<ul>
+<li>适合于学习/验证Python语法或者局部代码</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>代码不能保存</li>
+<li>不适合运行太大的程序</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-2-退出官方的解释器"><a href="#2-2-2-退出官方的解释器" class="headerlink" title="2.2.2. 退出官方的解释器"></a>2.2.2. 退出官方的解释器</h4><ul>
+<li>方法一：直接输入`exit()``</li>
+<li>方法二：使用热键退出：在Python解释器中，按热键<code>ctrl+d</code>可以退出解释器</li>
+</ul>
+<h4 id="2-2-3-IPython"><a href="#2-2-3-IPython" class="headerlink" title="2.2.3. IPython"></a>2.2.3. IPython</h4><ul>
+<li>IPython中“i”代表交互Interactive<ul>
+<li>特点<ul>
+<li>IPython是一个python的交互式shell，比默认的python shell好用的多</li>
+<li>支持自动补全、自动缩进、支持<code>bash shell</code>命令、内置了许多很有用的功能和函数</li>
+<li>IPython是基于BSD开源的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>退出解释器<ul>
+<li>方法一：exit</li>
+<li>方法二：在IPython解释器中，按热键<code>ctrl+d</code>，IPython会询问是否退出解释器</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-第三种：Python的IDE——PyCharm"><a href="#2-3-第三种：Python的IDE——PyCharm" class="headerlink" title="2.3. 第三种：Python的IDE——PyCharm"></a>2.3. 第三种：Python的IDE——PyCharm</h3><ul>
+<li>集成开发环境（IDE）</li>
+<li>集成开发环境集成了开发软件需要的所有工具，一般包括以下工具<ul>
+<li>图形用户界面</li>
+<li>代码编辑器（支持 代码补全/自动缩进）</li>
+<li>编译器/解释器</li>
+<li>调试器（断点/单步执行）</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、注释"><a href="#三、注释" class="headerlink" title="三、注释"></a>三、注释</h2><h3 id="3-1-单行注释"><a href="#3-1-单行注释" class="headerlink" title="3.1. 单行注释"></a>3.1. 单行注释</h3><ul>
+<li>以#开头，#右边的所有东西都被当做说明文字，而不是真正要执行的程序，只起到辅助说明作用。</li>
+<li>为了保证代码的可读性，#后面建议先添加一个空格，然后再编写相应的说明文字。</li>
+<li>若在代码后面增加单行注释，为了保证代码的可读性，注释和代码之间至少要有两个空格。</li>
+<li>点击黄色的灯泡，点击Reformat file可以将所有注释的#后面都空一格。</li>
+</ul>
+<h3 id="3-2-多行注释"><a href="#3-2-多行注释" class="headerlink" title="3.2. 多行注释"></a>3.2. 多行注释</h3><ul>
+<li>如果希望填写的注释信息很多，一行无法显示，就可以使用多行注释。</li>
+<li>要在Python程序中使用多行注释，可以用一对连续的三个引号（单引号和双引号都可以）。</li>
+</ul>
+<h3 id="3-3-什么时候需要使用注释"><a href="#3-3-什么时候需要使用注释" class="headerlink" title="3.3. 什么时候需要使用注释"></a>3.3. 什么时候需要使用注释</h3><ul>
+<li>1、注释不是越多越好，对于一目了然的代码，不需要添加注释。</li>
+<li>2、对于复杂的操作，应该在操作开始前写上若干行注释。</li>
+<li>3、对于不是一目了然的代码，应在其行尾添加注释（为了提高可读性，注释应该至少离开代码2个空格）。</li>
+<li>4、觉不要描述代码，假设阅读代码的人比你更懂Python，他只是不知道你的代码要做什么。</li>
+<li>在一些正规的开发团队，通常会有代码审核的惯例，就是一个团队中彼此阅读对方的代码。</li>
+</ul>
+<h3 id="3-4-TODO注释"><a href="#3-4-TODO注释" class="headerlink" title="3.4. TODO注释"></a>3.4. TODO注释</h3><ul>
+<li>使用TODO注释可以使注释更加醒目</li>
+<li>在 # 后跟上 TODO，用于标记需要去做的工作</li>
+</ul>
+<h2 id="四、运算符"><a href="#四、运算符" class="headerlink" title="四、运算符"></a>四、运算符</h2><h3 id="4-1-算术运算符"><a href="#4-1-算术运算符" class="headerlink" title="4.1. 算术运算符"></a>4.1. 算术运算符</h3><h4 id="4-1-1-简介"><a href="#4-1-1-简介" class="headerlink" title="4.1.1. 简介"></a>4.1.1. 简介</h4><ul>
+<li>算术运算符是运算符的一种，是完成基本的算术运算使用的符号，用来处理四则运算。</li>
+<li><code>+</code> 加 10 + 20 = 30<ul>
+<li>合并，适用于字符串、列表、元组</li>
+<li>范例：<code>[1,2]+[3,4]</code></li>
+<li>结果：<code>[1,2,3,4]</code></li>
+</ul>
+</li>
+<li><code>-</code> 减 10 - 20 = -10</li>
+<li><code>*</code> 乘 10 * 20 = 200<ul>
+<li>“-“ * 10 = ‘———-‘，运算符可以用于字符串，计算结果就是字符串重复指定次数的结果</li>
+<li>重复，适用于字符串、列表、元组</li>
+<li>范例：<code>[&quot;hi&quot;]*4</code></li>
+<li>结果：<code>[&quot;hi&quot;,&quot;hi&quot;,&quot;hi&quot;,&quot;hi&quot;]</code></li>
+</ul>
+</li>
+<li><code>/</code> 除 10 / 20 = 0.5</li>
+<li><code>//</code> 取整除 返回除法的整数部分（商）<ul>
+<li>9//2输出结果为4</li>
+</ul>
+</li>
+<li><code>%</code> 取余数 返回除法的余数9%2 = 1</li>
+<li><code>**</code> 幂 又称次方、乘方，2**3 = 8</li>
+</ul>
+<h4 id="4-1-2-算术运算符优先级"><a href="#4-1-2-算术运算符优先级" class="headerlink" title="4.1.2. 算术运算符优先级"></a>4.1.2. 算术运算符优先级</h4><ul>
+<li>和数学中的运算符的优先级一致</li>
+<li>先乘除后加减</li>
+<li>同级运算符是从左至右计算</li>
+<li>可以使用（）调整计算的优先级</li>
+<li>以下表格的算术优先级由高到最低顺序排列<ul>
+<li><code>**</code> 幂（最高优先级）</li>
+<li><code>* / % //</code> 乘、除、取余数、取整数</li>
+<li><code>+ -</code> 加法、减法</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-赋值运算符"><a href="#4-2-赋值运算符" class="headerlink" title="4.2. 赋值运算符"></a>4.2. 赋值运算符</h3><ul>
+<li>在Python中，使用=可以给变量赋值</li>
+<li>在算术运算时，为了简化代码的编写，Python还提供了一系列的与算术运算符对应的赋值运算符</li>
+<li>注意：赋值运算符中间不能使用空格</li>
+<li><code>=</code> 简单的赋值运算符 c = a+b 将a+b的运算结果赋值为c</li>
+<li><code>+=</code> 加法赋值运算符 c += a等效于c = c+a</li>
+<li><code>-=</code> 减法赋值运算符 c -= a等效于c = c-a</li>
+<li><code>*=</code> 乘法赋值运算符 c <em>= a等效于c = c</em>a</li>
+<li><code>/=</code> 除法赋值运算符 c /= a等效于c = c/a</li>
+<li><code>//=</code> 取整除赋值运算符 c //= a等效于 c = c//a</li>
+<li><code>%=</code> 取模（余数）赋值运算符 c %= a等效于 c = c%a</li>
+<li><code>**=</code> 幂赋值运算符 c <strong>= a等效于c = c</strong>a</li>
+</ul>
+<h3 id="4-3-身份运算符"><a href="#4-3-身份运算符" class="headerlink" title="4.3. 身份运算符"></a>4.3. 身份运算符</h3><ul>
+<li>身份运算符用于比较两个对象的内存地址是否一致，即是否是对同一个对象的引用</li>
+<li>在python中针对None比较时，建议使用is判断</li>
+<li><code>is</code><ul>
+<li>是判断两个标识符是不是引用同一个对象 x is y，类似 id(x) == id(y)</li>
+</ul>
+</li>
+<li><code>is not</code><ul>
+<li>是判断两个标识符是不是引用不同对象 x is not y，类似 id(a) != id(b)</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-4-比较运算符"><a href="#4-4-比较运算符" class="headerlink" title="4.4. 比较运算符"></a>4.4. 比较运算符</h3><ul>
+<li><code>&gt;  &gt;=  ==  &lt;  &lt;=</code><ul>
+<li>元素比较适用于字符串、列表、元组</li>
+<li>范例：<code>(1,2,3) &lt; (2,2,3)</code></li>
+<li>结果：<code>True</code></li>
+<li>注意<ul>
+<li>in在对字典操作时，判断的是字典的键</li>
+<li>in和not in被称为成员运算符</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-5-成员运算符"><a href="#4-5-成员运算符" class="headerlink" title="4.5. 成员运算符"></a>4.5. 成员运算符</h3><ul>
+<li>成员运算符用于测试序列中是否包含指定的成员</li>
+<li><code>in</code><ul>
+<li>如果在指定的序列中找到值返回True，否则返回False</li>
+<li>元素是否存在，适用于字符串、列表、元组、字典</li>
+<li>范例：<code>3 in (1,2,3)</code><ul>
+<li>返回True</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>not in</code><ul>
+<li>如果在指定的序列中没有找到值返回True，否则返回False</li>
+<li>元素是否不存在，适用于字符串、列表、元组、字典</li>
+<li>范例：<code>3 not in (1,2,3)</code><ul>
+<li>返回False</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="五、变量"><a href="#五、变量" class="headerlink" title="五、变量"></a>五、变量</h2><h3 id="5-1-变量的定义"><a href="#5-1-变量的定义" class="headerlink" title="5.1. 变量的定义"></a>5.1. 变量的定义</h3><ul>
+<li>变量名 = 值</li>
+<li>使用交互式方式，如果要查看变量内容，直接输入变量名即可，不需要使用print函数。</li>
+<li>使用解释器执行，如果要输出变量的内容，必须要使用print函数。</li>
+</ul>
+<h3 id="5-2-变量的类型"><a href="#5-2-变量的类型" class="headerlink" title="5.2. 变量的类型"></a>5.2. 变量的类型</h3><ul>
+<li>在内存中创建一个变量，会包括<ul>
+<li>(1)变量的名称</li>
+<li>(2)变量保存的数据</li>
+<li>(3)变量存储数据的类型</li>
+<li>(4)变量的地址</li>
+</ul>
+</li>
+<li>Python可以根据=等号右侧的值，自动推导出变量中存储数据的类型。</li>
+<li>在Python中定义变量是不需要指定类型的（在其他很多高级语言中都需要）。</li>
+<li>数据类型可以分为数字型和非数字型。</li>
+<li>使用type函数可以查看一个变量的类型，<code>type(name)</code>。</li>
+</ul>
+<h3 id="5-3-数字型和非数字型"><a href="#5-3-数字型和非数字型" class="headerlink" title="5.3. 数字型和非数字型"></a>5.3. 数字型和非数字型</h3><h4 id="5-3-1-数字型"><a href="#5-3-1-数字型" class="headerlink" title="5.3.1. 数字型"></a>5.3.1. 数字型</h4><ul>
+<li>整型（int）、浮点型（flaot）、布尔型（bool，非零即真）、复数型（complex，主要用于科学计算，例如：平面场问题、波动问题、电感电容等问题。</li>
+</ul>
+<h4 id="5-3-2-非数字型"><a href="#5-3-2-非数字型" class="headerlink" title="5.3.2. 非数字型"></a>5.3.2. 非数字型</h4><ul>
+<li>字符串、列表、元组、字典</li>
+<li>在Python中，所有非数字型变量都支持以下特点：<ul>
+<li>(1)都是一个序列 sequence，也可以理解为 容器</li>
+<li>(2)取值[]</li>
+<li>(3)遍历 for in</li>
+<li>(4)计算长度、最大/最小值、比较、删除</li>
+<li>(5)链接 + 和重复 *</li>
+<li>(6)切片</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-4-可变和不可变类型"><a href="#5-4-可变和不可变类型" class="headerlink" title="5.4. 可变和不可变类型"></a>5.4. 可变和不可变类型</h3><h4 id="5-4-1-不可变类型"><a href="#5-4-1-不可变类型" class="headerlink" title="5.4.1. 不可变类型"></a>5.4.1. 不可变类型</h4><ul>
+<li>内存中的数据不允许被修改，赋予新的值时，变量对应的内存地址会发生变化。</li>
+<li>数字类型：int、bool、float、complex、long(2.x)</li>
+<li>字符串：str</li>
+<li>元组：tuple</li>
+</ul>
+<h4 id="5-4-2-可变类型"><a href="#5-4-2-可变类型" class="headerlink" title="5.4.2. 可变类型"></a>5.4.2. 可变类型</h4><ul>
+<li>内存中的数据可以被修改，通过调用方法来赋予新的值时，变量对应的内存地址不会发生变化；直接使用等号赋值还是会改变变量对应的内存地址。</li>
+<li>列表：list</li>
+<li>字典：dict，字典的key只能使用不可变类型的数据</li>
+</ul>
+<h4 id="5-4-3-注意"><a href="#5-4-3-注意" class="headerlink" title="5.4.3. 注意"></a>5.4.3. 注意</h4><ul>
+<li>可变类型的数据变化，是通过方法来实现的</li>
+<li>如果给一个可变类型的变量，赋值了一个新的数据，引用会修改<ul>
+<li>变量不再对之前的数据引用</li>
+<li>变量改为对新赋值的数据引用</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-4-4-不同类型变量之间的计算"><a href="#5-4-4-不同类型变量之间的计算" class="headerlink" title="5.4.4. 不同类型变量之间的计算"></a>5.4.4. 不同类型变量之间的计算</h4><ul>
+<li>数字型变量之间可以直接计算<ul>
+<li>在Python中，两个数字型变量是可以直接进行算术运算的。</li>
+<li>如果变量是bool型，在计算时True对应的数字是1，False对应的数字是。</li>
+</ul>
+</li>
+<li>字符串变量之间使用+拼接字符串<ul>
+<li>在Python中，字符串之间可以使用+拼接生成新的字符串</li>
+</ul>
+</li>
+<li>字符串变量可以和整数使用*重复拼接相同的字符串<ul>
+<li>范例：”-“ * 10，输出结果为：’———-‘</li>
+</ul>
+</li>
+<li>数字型变量和字符串之间不能进行其他计算</li>
+</ul>
+<h3 id="5-5-变量的输入"><a href="#5-5-变量的输入" class="headerlink" title="5.5. 变量的输入"></a>5.5. 变量的输入</h3><ul>
+<li>所谓输入，就是用代码获取用户通过键盘输入的信息</li>
+<li>在Python中，如果要获取用户在键盘上的输入信息，需要使用到input函数</li>
+<li>在Python中可以使用input函数从键盘等待用户的输入</li>
+<li>用户输入的任何内容Python都认为是一个字符串</li>
+<li>格式：字符串变量 = input(“提示信息: “)</li>
+</ul>
+<h3 id="5-6-类型转换函数"><a href="#5-6-类型转换函数" class="headerlink" title="5.6. 类型转换函数"></a>5.6. 类型转换函数</h3><ul>
+<li>int(x)：将x转换为一个整数</li>
+<li>float(x)：将x转换到一个浮点数</li>
+</ul>
+<h3 id="5-7-变量的格式化输出"><a href="#5-7-变量的格式化输出" class="headerlink" title="5.7. 变量的格式化输出"></a>5.7. 变量的格式化输出</h3><ul>
+<li>在Python中可以使用print函数将信息输出到控制台。</li>
+<li>如果希望输出文字信息的同时，一起输出数据，就需要使用到格式化操作符。</li>
+<li><code>%</code>被称为格式化操作符，专门用于处理字符串中的格式。包含%的字符串被称为格式化字符串，%和不同的字符连用，不同类型的数据需要使用不同的格式化字符。</li>
+<li><code>%s</code> 字符串</li>
+<li><code>%d</code> 有符号十进制整数，%06d表示输出的整数显示6位数，不足的地方使用0补全</li>
+<li><code>%f</code> 浮点数，%.02f表示小数点后只显示两位</li>
+<li><code>%%</code> 输出%<pre><code class="python3">print(&quot;我的名字叫 %s &quot; % name)
+print(&quot;姓名 %s, 年龄 %d, 成绩 %f&quot; % (name_str, age_int, grade_float))</code></pre>
+</li>
+</ul>
+<h3 id="5-8-标识符"><a href="#5-8-标识符" class="headerlink" title="5.8. 标识符"></a>5.8. 标识符</h3><ul>
+<li>标识符就是程序员定义的变量名、函数名</li>
+<li>名字需要有见名知意的效果<ul>
+<li>标识符可以由字母、下划线和数字组成</li>
+<li>不能以数字开头</li>
+<li>不能与关键字重名</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-9-变量的命名规则"><a href="#5-9-变量的命名规则" class="headerlink" title="5.9. 变量的命名规则"></a>5.9. 变量的命名规则</h3><ul>
+<li>命名规则可以被视为一种惯例，并无绝对与强制</li>
+<li>目的是为了增加代码的识别和可读性</li>
+<li>注意：Python中的标识符是区分大小写的</li>
+</ul>
+<h4 id="5-9-1-官方命名规范"><a href="#5-9-1-官方命名规范" class="headerlink" title="5.9.1. 官方命名规范"></a>5.9.1. 官方命名规范</h4><ul>
+<li>在定义变量时，为了保证代码格式，=的左右应该各保留一个空格。</li>
+<li>在Python中，如果变量名需要由二个或多个单词组成时，可以按照以下方式命名<ul>
+<li>每个单词都使用小写字母</li>
+<li>单词与单词之间使用_下划线连接</li>
+<li>例如：first_name、last_name、qq_number、qq_password</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-9-2-驼峰命名法"><a href="#5-9-2-驼峰命名法" class="headerlink" title="5.9.2. 驼峰命名法"></a>5.9.2. 驼峰命名法</h4><ul>
+<li>当变量名是由二个或多个单词组成时，还可以利用驼峰命名法来命名</li>
+</ul>
+<h5 id="5-9-2-1-小驼峰式命名法"><a href="#5-9-2-1-小驼峰式命名法" class="headerlink" title="5.9.2.1. 小驼峰式命名法"></a>5.9.2.1. 小驼峰式命名法</h5><ul>
+<li>第一个单词以小写字母开始，后续单词的首字母大写</li>
+<li>例如：firstName、lastName</li>
+</ul>
+<h5 id="5-9-2-2-大驼峰式命名法"><a href="#5-9-2-2-大驼峰式命名法" class="headerlink" title="5.9.2.2. 大驼峰式命名法"></a>5.9.2.2. 大驼峰式命名法</h5><ul>
+<li>每一个单词的首字母都采用大写字母</li>
+<li>例如：FirstName、LastName、CamelCase</li>
+</ul>
+<h3 id="5-10-变量的引用"><a href="#5-10-变量的引用" class="headerlink" title="5.10. 变量的引用"></a>5.10. 变量的引用</h3><h4 id="5-10-1-概念"><a href="#5-10-1-概念" class="headerlink" title="5.10.1. 概念"></a>5.10.1. 概念</h4><ul>
+<li>变量和数据是分开存储的</li>
+<li>数据保存在内存中的一个位置</li>
+<li>变量中保存着数据在内存中的地址</li>
+<li>变量中记录数据的地址的这个动作，就叫做引用</li>
+<li>使用id()函数可以查看变量中保存数据所在的内存地址</li>
+<li>注意：如果变量已经被定义，当给一个变量赋值的时候，本质上是修改了数据的引用<ul>
+<li>变量不再对之前的数据引用</li>
+<li>变量改为对新赋值的数据引用</li>
+</ul>
+</li>
+<li>函数的参数和返回值的传递<ul>
+<li>在python中，函数的实参/返回值都是靠引用来传递来的</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-10-2-局部变量和全局变量"><a href="#5-10-2-局部变量和全局变量" class="headerlink" title="5.10.2. 局部变量和全局变量"></a>5.10.2. 局部变量和全局变量</h4><ul>
+<li>局部变量是在函数内部定义的变量，只能在函数内部使用。</li>
+<li>全局变量是在函数外部定义的变量（没有定义在某一个函数内），所有函数内部都可以使用这个变量。</li>
+<li>在其他开发语言中，大多不推荐使用全局变量，因为可变范围太大，导致程序不好维护。</li>
+</ul>
+<h5 id="5-10-2-1-局部变量"><a href="#5-10-2-1-局部变量" class="headerlink" title="5.10.2.1. 局部变量"></a>5.10.2.1. 局部变量</h5><ul>
+<li>定义<ul>
+<li>局部变量是在函数内部定义的变量，只能在函数内部使用。</li>
+<li>函数执行结束后，函数内部的局部变量，会被系统回收。</li>
+<li>不同的函数，可以定义相同的名字的局部变量，但是各用各的，不会产生影响。</li>
+</ul>
+</li>
+<li>局部变量的作用<ul>
+<li>在函数内部使用，临时保存函数内部需要使用的数据。</li>
+</ul>
+</li>
+<li>局部变量的生命周期<ul>
+<li>所谓生命周期就是变量从被创建到被系统回收的过程</li>
+<li>局部变量在函数执行时才会被创建</li>
+<li>函数执行结束后，局部变量被系统回收</li>
+<li>局部变量在生命周期内，可以用来存储函数内部临时使用到的数据</li>
+</ul>
+</li>
+</ul>
+<h5 id="5-10-2-2-全局变量"><a href="#5-10-2-2-全局变量" class="headerlink" title="5.10.2.2. 全局变量"></a>5.10.2.2. 全局变量</h5><ul>
+<li><p>全局变量是在函数外部定义的变量，所有函数内部都可以使用这个变量</p>
+</li>
+<li><p>注意：函数执行时，需要处理变量时会：</p>
+<ul>
+<li>(1)首先查找函数内部是否存在指定名称的局部变量，如果有，直接使用</li>
+<li>(2)如果没有，查找函数外部是否存在指定名称的全局变量，如果有，直接使用</li>
+<li>(3)如果还没有，程序报错</li>
+</ul>
+</li>
+<li><p>函数不能直接修改全局变量的引用</p>
+<ul>
+<li>全局变量是在函数外部定义的变量（没有定义在某一个函数内），所有函数内部都可以使用这个变量。</li>
+<li>在函数内部，可以通过全局变量的引用获取对应的数据。</li>
+<li>但是，不允许直接修改全局变量的引用，即在函数内部不能使用赋值语句修改全局变量的值。如果使用赋值语句，会在函数内部，定义一个局部变量。</li>
+</ul>
+</li>
+<li><p>在函数内部修改全局变量的值</p>
+<ul>
+<li>如果在函数中需要修改全局变量，需要使用global进行声明。</li>
+<li>global关键字会告诉解释器后面的变量是一个全局变量，再使用赋值语句时，就不会创建局部变量<pre><code class="python3">num = 11
+def demo():
+  global num
+  num = 99
+  print(&quot;num == %d&quot; % num)</code></pre>
+</li>
+</ul>
+</li>
+<li><p>全局变量定义的位置</p>
+<ul>
+<li>为了保证所有的函数都能够正确使用到全局变量，应该将全局变量定义在其他函数的上方</li>
+</ul>
+</li>
+<li><p>全局变量命名的建议</p>
+<ul>
+<li>为了避免局部变量和全局变量出现混淆，在定义全局变量时，有些公司会有一些开发要求，例如：全局变量名前应该增加g_或者gl_的前缀</li>
+</ul>
+</li>
+</ul>
+<h2 id="六、if判断语句"><a href="#六、if判断语句" class="headerlink" title="六、if判断语句"></a>六、if判断语句</h2><ul>
+<li>判断语句也被称为分支语句</li>
+</ul>
+<h3 id="6-1-if"><a href="#6-1-if" class="headerlink" title="6.1. if"></a>6.1. if</h3><ul>
+<li>格式<pre><code class="python3">if 要判断的条件
+    条件成立时，要做的事情
+    ……</code></pre>
+<ul>
+<li>代码的缩进为一个tab键，或者4个空格，建议使用空格。在Python开发中，tab和空格不要混用，要么都用tab要么都用空格。</li>
+<li>if语句以及缩进部分是一个完整的代码块</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-2-else"><a href="#6-2-else" class="headerlink" title="6.2. else"></a>6.2. else</h3><ul>
+<li>else处理条件不满足的情况</li>
+<li>格式<pre><code class="python3">if 要判断的条件:
+    条件成立时，要做的事情
+else:
+    条件不成立时，要做的事情
+    ……</code></pre>
+<ul>
+<li>if和else语句以及各自的缩进部分共同是一个完整的代码块</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-3-elif"><a href="#6-3-elif" class="headerlink" title="6.3. elif"></a>6.3. elif</h3><ul>
+<li><p>在开发中，使用if可以判断条件</p>
+</li>
+<li><p>使用else可以处理条件不成立的情况</p>
+</li>
+<li><p>但是，如果希望再增加一些条件，条件不同，需要执行的代码也不同时，就可以使用elif</p>
+</li>
+<li><p>格式</p>
+<pre><code class="python3">if 条件1:
+    条件1满足时，执行的代码
+    ……
+elif 条件2:
+    条件2满足时，执行的代码
+    ……
+elif 条件3:
+    条件3满足时，执行的代码
+    ……
+else:
+    以上条件都不满足时，执行的代码
+    ……</code></pre>
+<ul>
+<li>elif和else都必须和if联合使用，而不能单独使用</li>
+<li>可以将if、elif和else以及各自缩进的代码，看成一个完整的代码块</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-4-if嵌套"><a href="#6-4-if嵌套" class="headerlink" title="6.4. if嵌套"></a>6.4. if嵌套</h3><ul>
+<li>格式<pre><code class="python3">if 条件 1:
+    条件1满足时，执行的代码
+    ……
+    if 条件1基础上的条件2:
+        条件2满足时，执行的代码
+        ……
+    else:  # 条件2不满足的处理
+        条件2不满足时，执行的代码
+        ……
+else:  # 条件1不满足的处理
+    条件1不满足时，执行的代码
+    ……</code></pre>
+</li>
+</ul>
+<h2 id="七、while循环基本使用"><a href="#七、while循环基本使用" class="headerlink" title="七、while循环基本使用"></a>七、while循环基本使用</h2><h3 id="7-1-循环的作用"><a href="#7-1-循环的作用" class="headerlink" title="7.1. 循环的作用"></a>7.1. 循环的作用</h3><ul>
+<li>循环的作用就是让指定的代码重复的执行</li>
+<li>while循环最常用的应用场景就是让执行的代码按照指定的次数重复执行</li>
+</ul>
+<h3 id="7-2-格式"><a href="#7-2-格式" class="headerlink" title="7.2. 格式"></a>7.2. 格式</h3><pre><code class="python3">while 条件(判断 计数器 是否达到 目标次数):
+    条件满足时，做的事情1
+    条件满足时，做的事情2
+    条件满足时，做的事情3
+    ……
+    处理条件（计数器 + 1）
+
+while i &lt;= 100:
+    print(i)
+    i++</code></pre>
+<h3 id="7-3-死循环"><a href="#7-3-死循环" class="headerlink" title="7.3. 死循环"></a>7.3. 死循环</h3><ul>
+<li>由于程序员的原因，忘记在循环内部修改循环的判断条件，导致循环持续执行，程序无法终止！</li>
+</ul>
+<h3 id="7-4-break和continue"><a href="#7-4-break和continue" class="headerlink" title="7.4. break和continue"></a>7.4. break和continue</h3><ul>
+<li>break和continue是专门在循环中使用的关键字</li>
+<li>break，某一条件满足时，退出循环，不再执行后续重复的代码</li>
+<li>continue，某一条件满足时，不执行后续重复的代码，进入下一次循环</li>
+<li>break和continue只针对当前所在循环有效</li>
+</ul>
+<h3 id="7-5-PyCharm的调试工具"><a href="#7-5-PyCharm的调试工具" class="headerlink" title="7.5. PyCharm的调试工具"></a>7.5. PyCharm的调试工具</h3><ul>
+<li><code>F8 Step Over</code>可以单步执行代码，会把函数调用看作是一行代码直接执行</li>
+<li><code>F7 Step Into</code>可以单步执行代码，如果是函数，会进入函数内部</li>
+</ul>
+<h2 id="八、函数"><a href="#八、函数" class="headerlink" title="八、函数"></a>八、函数</h2><h3 id="8-1-简介"><a href="#8-1-简介" class="headerlink" title="8.1. 简介"></a>8.1. 简介</h3><ul>
+<li>函数就是把具有独立功能的代码块组织为一个小模块，在需要的时候调用，</li>
+<li>函数的使用包含了两个步骤<ul>
+<li>1、定义函数——封装独立的功能</li>
+<li>2、调用函数——享受封装的成果</li>
+</ul>
+</li>
+<li>函数的作用，在开发程序时，使用函数可以提高编写的效率以及代码的重用。</li>
+</ul>
+<h3 id="8-2-格式"><a href="#8-2-格式" class="headerlink" title="8.2. 格式"></a>8.2. 格式</h3><pre><code class="python3">def 函数名(参数1, 参数2):
+    函数封装的代码
+    ……
+
+def han_shu():
+    print(&quot;hello1&quot;)
+    print(&quot;hello2&quot;)
+    print(&quot;hello3&quot;)
+
+han_shu()
+
+def dai_can(num1, num2):
+    result = num1 + num2
+    print(&quot;%d + %d = %d&quot; % (num1, num2, result))
+
+dai_can(50, 20)</code></pre>
+<ul>
+<li><p>def是英文define的缩写</p>
+</li>
+<li><p>函数名称应该能够表达函数封装代码的功能，方便后续的调用</p>
+</li>
+<li><p>函数名称的命名应该符合标识符的命名规则</p>
+<ul>
+<li>可以由字母、下划线和数字组成</li>
+<li>不能以数字开头</li>
+<li>不能与关键字重名</li>
+</ul>
+</li>
+<li><p>通过 函数名() 即可完成对函数的调用</p>
+</li>
+<li><p>定义好函数之后，只表示这个函数封装了一段代码而已</p>
+</li>
+<li><p>如果不主动调用函数，函数是不会主动执行的</p>
+</li>
+<li><p>函数执行完之后，会重新回到之前的程序中，继续执行后续的代码</p>
+</li>
+<li><p>注意</p>
+</li>
+<li><p>不能将函数调用放在函数定义的上方，因为在使用函数名调用函数之前，必须要保证Python已经知道函数的存在。否则控制台会提示：函数名没有定义</p>
+</li>
+<li><p>函数的文档注释</p>
+</li>
+<li><p>在开发中，如果希望给函数添加注释，应该在定义函数的下方，使用连续的三对引号</p>
+</li>
+<li><p>在连续的三对引号之间编写对函数的说明文字</p>
+<pre><code class="python3">def han_shu():
+  &quot;&quot;&quot;这是一个注释&quot;&quot;&quot;
+
+  print(&quot;hello1&quot;)
+  print(&quot;hello2&quot;)
+  print(&quot;hello3&quot;)</code></pre>
+</li>
+<li><p>在函数调用位置，使用快捷键<code>CTRL + q</code>可以查看函数的说明信息</p>
+</li>
+<li><p>因为函数体相对比较独立，函数定义的上方，应该和其他代码（包括注释）保留两个空行</p>
+</li>
+<li><p>在pycharm中，选择定义的函数名，在左侧会出现一个小灯泡，点击之后选择第二项<code>Insert documentation string stub</code></p>
+</li>
+</ul>
+<h3 id="8-3-参数的作用"><a href="#8-3-参数的作用" class="headerlink" title="8.3. 参数的作用"></a>8.3. 参数的作用</h3><ul>
+<li>函数把具有独立功能的代码块组织为一个小模块，在需要的时候调用</li>
+<li>函数的参数，增加函数的通用性，针对相同的数据处理逻辑，能够适应更多的数据</li>
+<li>在函数内部，把参数当做变量使用，进行需要的数据处理</li>
+<li>函数调用时，按照函数定义的参数顺序，把希望在函数内部处理的数据，通过参数传递</li>
+</ul>
+<h3 id="8-4-形参和实参"><a href="#8-4-形参和实参" class="headerlink" title="8.4. 形参和实参"></a>8.4. 形参和实参</h3><ul>
+<li>形参：定义函数时，小括号中的参数，是用来接收参数用的，在函数内部作为变量使用。</li>
+<li>实参：调用函数时，小括号中的参数，是用来把数据传递到函数内部用的。</li>
+</ul>
+<h3 id="8-5-函数的返回值"><a href="#8-5-函数的返回值" class="headerlink" title="8.5. 函数的返回值"></a>8.5. 函数的返回值</h3><ul>
+<li><p>在程序开发中，有时候，会希望一个函数执行结束后，告诉调用者一个结果，以便调用者针对具体的结果做后续的处理。</p>
+</li>
+<li><p>返回值是函数完成工作后，最后给调用者的一个结果</p>
+</li>
+<li><p>在函数中使用return关键字可以返回结果</p>
+</li>
+<li><p>调用函数一方，可以使用变量来接受函数的返回结果</p>
+</li>
+<li><p>注意：return表示返回，后续的代码都不会被执行</p>
+<pre><code class="python3">def sum_2_num(num1, num2):
+  &quot;&quot;&quot;对两个数字的求和&quot;&quot;&quot;
+
+  return num1 + num2
+# 调用函数，并使用 result 变量接受计算结果
+result = sum_2_num(10, 20)
+print(&quot;计算结果是 %d&quot; % result)</code></pre>
+</li>
+</ul>
+<h3 id="8-6-函数的嵌套调用"><a href="#8-6-函数的嵌套调用" class="headerlink" title="8.6. 函数的嵌套调用"></a>8.6. 函数的嵌套调用</h3><ul>
+<li>一个函数里面又调用了另外一个函数，这就是函数嵌套调用</li>
+<li>如果函数 test2 中，调用了另外一个函数 test1<ul>
+<li>那么执行到调用 test1 函数时，会先把函数 test1 中的任务都执行完</li>
+<li>才会回到 test2 中调用函数 test1 的位置，继续执行后续的代码</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-7-函数参数和返回值的作用"><a href="#8-7-函数参数和返回值的作用" class="headerlink" title="8.7. 函数参数和返回值的作用"></a>8.7. 函数参数和返回值的作用</h3><ul>
+<li><p>函数根据有没有参数以及有没有返回值，可以互相组合，一共有4中组合形式</p>
+<ul>
+<li>1、无参数，无返回值</li>
+<li>2、无参数，有返回值</li>
+<li>3、有参数，无返回值</li>
+<li>4、有参数，有返回值</li>
+</ul>
+</li>
+<li><p>如果函数内部处理的数据不确定，就可以将外界的数据以参数传递到函数内部。</p>
+</li>
+<li><p>如果希望一个函数执行完成后，向外界汇报执行结果，就可以增加函数的返回值。</p>
+</li>
+</ul>
+<h3 id="8-8-函数的返回值"><a href="#8-8-函数的返回值" class="headerlink" title="8.8 函数的返回值"></a>8.8 函数的返回值</h3><ul>
+<li>在程序开发中，有时候，会希望一个函数执行结束后，告诉调用者一个结果，以便调用者针对具体的结果做后续的处理。</li>
+<li>返回值是函数完成工作后，最后给调用者的一个结果。</li>
+<li>在函数中使用return关键字可以返回结果。</li>
+<li>元组可以包含多个数据，因此可以使用元组让函数一次返回多个值，如果函数返回的类型是元组，小括号可以省略。</li>
+<li>如果函数返回的类型是元组，同时希望单独的处理元组中的元素，可以使用多个变量，一次接收函数的返回结果<pre><code class="python3"># 1
+gl_temp, gl_wetness = measure()  # measure是定义的一个函数，返回一个包含两个元素的元组
+# 2
+a, b = (b, a)
+a, b = b, a  # 小括号可以省略</code></pre>
+<ul>
+<li>注意：使用多个变量接收结果时，变量的个数应该和元组中元素的个数保持一致。</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-9-函数的参数"><a href="#8-9-函数的参数" class="headerlink" title="8.9. 函数的参数"></a>8.9. 函数的参数</h3><ul>
+<li>无论传递的参数是可变还是不可变，只要针对参数使用赋值语句，会在函数内部修改局部变量的引用，不会影响到外部变量的引用。</li>
+<li>如果传递的参数是可变类型，在函数内部，使用方法修改了数据的内容，同样会影响到外部的数据。</li>
+</ul>
+<h3 id="8-10-缺省参数"><a href="#8-10-缺省参数" class="headerlink" title="8.10. 缺省参数"></a>8.10. 缺省参数</h3><h4 id="8-10-1-简介"><a href="#8-10-1-简介" class="headerlink" title="8.10.1. 简介"></a>8.10.1. 简介</h4><ul>
+<li>定义函数时，可以给某个参数指定一个默认值，具有默认值的参数就叫做缺省参数。</li>
+<li>调用函数时，如果没有传入缺省参数的值，则在函数内部使用定义函数时指定的参数默认值。</li>
+<li>函数的缺省参数，将常见的值设置为参数的缺省值，从而简化函数的调用。</li>
+</ul>
+<h4 id="8-10-2-指定函数的缺省参数"><a href="#8-10-2-指定函数的缺省参数" class="headerlink" title="8.10.2. 指定函数的缺省参数"></a>8.10.2. 指定函数的缺省参数</h4><ul>
+<li>在参数后使用赋值语句，可以指定参数的缺省值<pre><code class="python3">def print_info(name, gender=True):
+  gender_text = &quot;男生&quot;
+  if not gender:
+      gender_text = &quot;女生&quot;
+  print(&quot;%s 是 %s&quot; % (name, gender_text))</code></pre>
+</li>
+</ul>
+<ul>
+<li>缺省参数，需要使用最常见的值作为默认值。</li>
+<li>如果一个参数的值不能确定，则不应该设置默认值，具体的数值在调用函数时，由外界传递。<h4 id="8-10-3-注意"><a href="#8-10-3-注意" class="headerlink" title="8.10.3. 注意"></a>8.10.3. 注意</h4></li>
+<li>缺省参数的定义位置<ul>
+<li>必须保证带有默认值的缺省参数在参数列表末尾。<pre><code class="python3"># 错误的写法
+def print_info(name, gender=True, title):</code></pre>
+</li>
+</ul>
+</li>
+<li>调用带有多个缺省参数的函数<ul>
+<li>在调用函数时，如果有多个缺省参数，需要指定参数名，这样解释器才能够知道参数的对应关系。<pre><code class="python3">print_info(&quot;老王&quot;, gender = False)</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-11-多值参数"><a href="#8-11-多值参数" class="headerlink" title="8.11. 多值参数"></a>8.11. 多值参数</h3><ul>
+<li><p>定义支持多值参数的函数</p>
+</li>
+<li><p>有时可能需要一个函数能够处理的参数个数是不确定的，这个时候，就可以使用多值参数</p>
+</li>
+<li><p>python中有两种多值参数：</p>
+<ul>
+<li>参数名前增加一个 * 可以接收元组</li>
+<li>参数名前增加两个 ** 可以接收字典</li>
+</ul>
+</li>
+<li><p>一般在给多值参数命名时，习惯使用以下两个名字</p>
+<ul>
+<li>*args —— 存放元组参数，注意前面有一个 *</li>
+<li>**kwargs —— 存放字典参数，注意前面有两个 *</li>
+</ul>
+</li>
+<li><p>args是arguments的缩写，有变量的含义</p>
+</li>
+<li><p>kw是keyword的缩写，kwargs可以记忆键值对参数</p>
+<pre><code class="python3">def demo(num, *args, **kwargs):
+    print(num)
+    print(args)
+    print(kwargs)
+
+demo(1, 2, 3, 4, 5, name = &quot;小明&quot;, age = 18, gender = True)
+&quot;&quot;&quot;
+输结果为：
+1
+(2, 3, 4, 5)
+&#123;&#39;age&#39;: 18, &#39;name&#39;: &#39;小明&#39;&#125;
+&quot;&quot;&quot;</code></pre>
+</li>
+</ul>
+<h3 id="8-12-元组和字典的拆包"><a href="#8-12-元组和字典的拆包" class="headerlink" title="8.12. 元组和字典的拆包"></a>8.12. 元组和字典的拆包</h3><ul>
+<li>在调用带有多值参数的函数时，如果希望：<ul>
+<li>将一个元组变量，直接传递给 args</li>
+<li>将一个字典变量，直接传递给 kwargs</li>
+</ul>
+</li>
+<li>就可以使用拆包，简化参数的传递，拆包的方式是：<ul>
+<li>在元组变量前，增加一个 *</li>
+<li>在字典变量前，增加两个 *<pre><code class="python3">def demo(*args, **kwargs):
+  print(args)
+  print(kwargs)
+# 需要将一个元组变量/字典变量传递给函数对应的参数
+gl_nums = (1, 2, 3)
+gl_xiaoming = &#123;&quot;name&quot;: &quot;小明&quot;, &quot;age&quot;: 18&#125;
+demo(gl_nums, gl_xiaoming)  # 会把 num_tuple 和 xiaoming 作为元组传递给 args
+demo(*gl_nums, **gl_xiaoming)  # 将元组变量和字典变量传递给函数对应的参数</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-13-函数的递归"><a href="#8-13-函数的递归" class="headerlink" title="8.13. 函数的递归"></a>8.13. 函数的递归</h3><ul>
+<li>函数调用自身的编程技巧称为递归。</li>
+</ul>
+<h4 id="8-13-1-递归函数的特点"><a href="#8-13-1-递归函数的特点" class="headerlink" title="8.13.1. 递归函数的特点"></a>8.13.1. 递归函数的特点</h4><ul>
+<li>一个函数内部调用自己，函数内部可以调用其他函数，当然在函数内部也可以调用自己。</li>
+</ul>
+<h4 id="8-13-2-代码特点"><a href="#8-13-2-代码特点" class="headerlink" title="8.13.2. 代码特点"></a>8.13.2. 代码特点</h4><ul>
+<li>函数内部的代码是相同的，只是针对参数不同，处理的结果不同。</li>
+<li>当参数满足一个条件时，函数不再执行，通常被称为递归的出口，否则会出现死循环。<pre><code class="python3">def sum_numbers(num):
+  print(num)
+  #递归的出口很重要，否则会出现死循环
+  if num == 1:
+      return
+  sum_numbers(num - 1)
+sum_numbers(3)</code></pre>
+</li>
+</ul>
+<h3 id="8-14-Python内置函数"><a href="#8-14-Python内置函数" class="headerlink" title="8.14. Python内置函数"></a>8.14. Python内置函数</h3><ul>
+<li><code>len(item)</code><ul>
+<li>计算容器中元素个数</li>
+</ul>
+</li>
+<li><code>del(item)</code><ul>
+<li>删除变量</li>
+<li>del有两种方式</li>
+</ul>
+</li>
+<li><code>max(item)</code><ul>
+<li>返回容器中元素最大值</li>
+<li>如果是字典，只针对key比较</li>
+</ul>
+</li>
+<li><code>min(item)</code><ul>
+<li>返回容器中元素最小值</li>
+<li>如果是字典，只针对key比较</li>
+</ul>
+</li>
+<li><code>cmp(item1,item2)</code><ul>
+<li>比较两个值，-1小于/0相等/1大于</li>
+<li>Python3.x取消了cmp函数</li>
+</ul>
+</li>
+<li>注意：字符串比较符合以下规则：’0’ &lt; ‘A’ &lt; ‘a’</li>
+</ul>
+<h2 id="九、列表"><a href="#九、列表" class="headerlink" title="九、列表"></a>九、列表</h2><h3 id="9-1-定义"><a href="#9-1-定义" class="headerlink" title="9.1. 定义"></a>9.1. 定义</h3><ul>
+<li>List（列表）时Python中使用最频繁的数据类型，在其他语言中通常叫做数组</li>
+<li>专门用于存储一串信息</li>
+<li>列表用 [] 定义，数据之间使用 , 分隔</li>
+<li>列表的索引从0开始<ul>
+<li>索引就是数据在列表中的位置编号，索引又可以被称为下标</li>
+<li>从列表中取值时，如果超出索引范围，程序会报错</li>
+</ul>
+</li>
+<li>应用<ul>
+<li>Python的列表中可以存储不同类型的数据</li>
+<li>在开发中，更多的应用场景是<ul>
+<li>1、列表存储相同类型的数据</li>
+<li>2、通过迭代遍历，在循环体内部，针对列表中的每一项元素，执行相同的操作</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>格式<pre><code class="python3">name_list = [&quot;zhansan&quot;, &quot;lisi&quot;, &quot;wangwu&quot;]</code></pre>
+</li>
+</ul>
+<h3 id="9-2-列表常用操作"><a href="#9-2-列表常用操作" class="headerlink" title="9.2. 列表常用操作"></a>9.2. 列表常用操作</h3><ul>
+<li>在ipython中定义一个列表，例如：name_list = []</li>
+<li>输入name_list.按下TAB键，ipython会提示列表能够使用的方法如下<ul>
+<li>增加<ul>
+<li>列表.insert(索引, 数据) 在指定位置插入数据</li>
+<li>列表.append(数据) 在末尾追加数据</li>
+<li>列表1.extend(列表2) 将列表2的数据追加到列表1的末尾</li>
+</ul>
+</li>
+<li>修改<ul>
+<li>列表[索引] = 数据 从列表中取值</li>
+</ul>
+</li>
+<li>删除<ul>
+<li>del 列表[索引] 删除指定索引的数据</li>
+<li>列表.remove[数据] 删除第一个出现的指定数据</li>
+<li>列表.pop 删除末尾数据</li>
+<li>列表.pop(索引) 删除指定索引的数据</li>
+<li>列表.clear 清空列表</li>
+</ul>
+</li>
+<li>统计<ul>
+<li>(列表) 获取列表的长度，包含的元素的总数</li>
+<li>列表.count(数据) 数据在列表中出现的次数</li>
+</ul>
+</li>
+<li>排序<ul>
+<li>列表.sort() 升序排序</li>
+<li>列表.sort(reverse=True) 降序排序</li>
+<li>列表.reverse() 反转/逆序，将123变成321</li>
+</ul>
+</li>
+<li>查询<ul>
+<li>列表.index(数据) 获取数据第一次出现的索引</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在python中，列表变量调用 += 不会做相加再赋值的操作，本质上是在执行列表变量的 extend 方法，不会修改变量的引用。</li>
+</ul>
+<h3 id="9-3-del"><a href="#9-3-del" class="headerlink" title="9.3. del"></a>9.3. del</h3><ul>
+<li>使用del关键字（delete）删除列表元素。</li>
+<li>在日常开发中，要从列表删除数据，建议使用列表提供的方法。</li>
+<li>del关键字本质上是用来将一个变量从内存中删除的。</li>
+<li>注意：如果使用del关键字将变量从内存中删除，那么后续的代码就不能再使用这个变量了。</li>
+</ul>
+<h2 id="十、元组"><a href="#十、元组" class="headerlink" title="十、元组"></a>十、元组</h2><h3 id="10-1-定义"><a href="#10-1-定义" class="headerlink" title="10.1. 定义"></a>10.1. 定义</h3><ul>
+<li>Tuple（元组）与列表类似，不同之处在于元组的元素不能修改<ul>
+<li>元组表示多个元素组成的序列</li>
+<li>元组在Python开发中，有特定的应用场景</li>
+</ul>
+</li>
+<li>元组中通常保存不同类型的数据</li>
+<li>用于存储一串信息，数据之间使用 ， 分隔</li>
+<li>元组用 () 定义</li>
+<li>元组的索引从0开始<ul>
+<li>索引就是数据在元组中的位置编号</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-2-格式"><a href="#10-2-格式" class="headerlink" title="10.2. 格式"></a>10.2. 格式</h3><pre><code class="python3">info_tuple = (&quot;zhangsan&quot;, 18, 1.75)
+
+# 创建空元组
+info_tuple2 = ()
+
+# 创建一个只包含一个元素的元组
+info_tuple3 = (99,)  # 元组中，只包含一个元素时，需要在元素后面添加逗号</code></pre>
+<h3 id="10-3-元组常用操作"><a href="#10-3-元组常用操作" class="headerlink" title="10.3. 元组常用操作"></a>10.3. 元组常用操作</h3><ul>
+<li>在ipython3中定义一个元组，例如：info = ()</li>
+<li>输入 info. 按下 TAB 键，ipython会提示元组能够使用的函数如下<ul>
+<li><code>info.count</code></li>
+<li><code>info.index</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="10-4-应用场景"><a href="#10-4-应用场景" class="headerlink" title="10.4. 应用场景"></a>10.4. 应用场景</h3><ul>
+<li>尽管可以使用for in遍历元组，但是在开发中，更多的应用场景是<ul>
+<li>1、函数的参数和返回值，一个函数可以接收任意多个参数，或者一次返回多个数据</li>
+<li>2、格式字符串，格式化字符串后面的 () 本质上就是一个元组，格式字符可以拼接生成一个新的字符串<pre><code class="python3">info = (&quot;zhangsan&quot;, 18)
+print(&quot;%s 的年龄是 %d&quot; % info)
+# 通过格式字符串拼接生成一个新的字符串
+info_str = &quot;%s 的年龄是 %d&quot; % info
+print(into_str)</code></pre>
+</li>
+<li>3.让列表不可以被修改，以保护数据安全</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-5-元组和列表之间的转换"><a href="#10-5-元组和列表之间的转换" class="headerlink" title="10.5. 元组和列表之间的转换"></a>10.5. 元组和列表之间的转换</h3><ul>
+<li>使用list函数可以把元组转换成列表<ul>
+<li>list(元组)</li>
+</ul>
+</li>
+<li>使用tuple函数可以把列表转换成元组<ul>
+<li>tuple(列表)</li>
+</ul>
+</li>
+</ul>
+<h2 id="十一、字典"><a href="#十一、字典" class="headerlink" title="十一、字典"></a>十一、字典</h2><h3 id="11-1-定义"><a href="#11-1-定义" class="headerlink" title="11.1. 定义"></a>11.1. 定义</h3><ul>
+<li>dictionary（字典）是除列表以外Python之中最灵活的数据类型</li>
+<li>字典同样可以用来存储多个数据<ul>
+<li>通常用于存储描述一个物体的相关信息</li>
+</ul>
+</li>
+<li>和列表的区别是：<ul>
+<li>列表时有序的对象集合</li>
+<li>字典是无需的对象集合</li>
+</ul>
+</li>
+<li>字典用 {} 定义</li>
+<li>字典使用键值对存储数据，键值对之间使用 , 分隔<ul>
+<li>键 key 是索引</li>
+<li>值 value 是数据</li>
+<li>键和值之间使用 : 分隔</li>
+<li>键必须是唯一的</li>
+<li>值可以取任何数据类型，但键只能使用字符串、数字或元组</li>
+</ul>
+</li>
+<li>因为字典是一个无序的数据集合，使用print函数输出字典时，通常输出的顺序和定义的顺序是不一致的</li>
+</ul>
+<h3 id="11-2-格式"><a href="#11-2-格式" class="headerlink" title="11.2. 格式"></a>11.2. 格式</h3><pre><code class="python3">xiaoming = &#123;&quot;name&quot;: &quot;小明&quot;,
+            &quot;age&quot;: 18,
+            &quot;gender&quot;: True,
+            &quot;height&quot;: 1.75&#125;</code></pre>
+<h3 id="11-3-字典的使用"><a href="#11-3-字典的使用" class="headerlink" title="11.3. 字典的使用"></a>11.3. 字典的使用</h3><pre><code class="Python3">xiaoming_dict = &#123;&quot;name&quot;: &quot;小明&quot;&#125;
+# 1.取值，在取值的时候，如果指定的key不存在，程序会报错
+print(xiaoming_dict[&quot;name&quot;])
+
+# 2.增加/修改
+# 如果key不存在，会新增键值对
+xiaoming_dict[&quot;age&quot;] = 18
+# 如果key存在, 会修改已经存在的键值对
+xiaoming_dict[&quot;name&quot;] = &quot;小小明&quot;
+
+# 3.删除
+xiaoming_dict.pop(&quot;name&quot;)
+# 在删除指定键值对的时候，如果指定的key不存在，程序会报错
+xiaoming_dict.pop(&quot;name123&quot;)
+
+print(xiaoming_dict)</code></pre>
+<h3 id="11-4-字典常用操作"><a href="#11-4-字典常用操作" class="headerlink" title="11.4. 字典常用操作"></a>11.4. 字典常用操作</h3><ul>
+<li><p>在ipython3中定义一个字典，例如：xiaoming = {}</p>
+</li>
+<li><p>输入xiaoming. 按下TAB键， ipython会提示字典能够使用的函数</p>
+</li>
+<li><p>使用update合并字典时，如果被合并的字典中包含已经存在的键值对，会覆盖原有的键值对</p>
+<ul>
+<li><code>字典.values()</code>所有value列表</li>
+<li><code>字典.items()</code>所有(key,value)元组列表</li>
+</ul>
+</li>
+<li><p>字典.keys()所有key列表</p>
+<ul>
+<li><code>字典[key]</code>可以从字典中取值，key不存在时，会报错</li>
+<li><code>字典.get(key)</code>可以从字典中取值，key不存在时，不会报错</li>
+<li><code>del 字典[key]</code>删除指定键值对，key不存在会报错</li>
+<li><code>字典.pop(key)</code>删除指定键值对，key不存在会报错</li>
+<li><code>字典.popitem()</code>随机删除一个键值对</li>
+<li><code>字典.clear()</code>清空字典</li>
+<li><code>字典[key] = value</code>如果key存在，修改数据；如果key不存在，新建键值对</li>
+<li><code>字典.setdefault(key,value)</code>如果key存在，不会修改数据；如果key不存在，新建键值对</li>
+<li><code>字典.update(字典2)</code>将字典2的数据合并到字典1</li>
+</ul>
+</li>
+</ul>
+<h3 id="11-5-字典的循环遍历"><a href="#11-5-字典的循环遍历" class="headerlink" title="11.5. 字典的循环遍历"></a>11.5. 字典的循环遍历</h3><pre><code class="python3"># for 循环内部使用的‘key的变量’ in 字典
+for k in xiaoming:
+    print(&quot;%s: %s&quot; % (k, xiaoming[k]))</code></pre>
+<h3 id="11-6-应用场景"><a href="#11-6-应用场景" class="headerlink" title="11.6. 应用场景"></a>11.6. 应用场景</h3><ul>
+<li>尽管可以使用 for in遍历字典，但是在开发中，更多的应用场景是：<ul>
+<li>使用多个键值对，存储描述一个物体的相关信息——描述更复杂的数据信息</li>
+<li>将多个字典放在一个列表中，再进行遍历，在循环体内部针对每一个字典进行相同的处理<pre><code class="Python3">card_list = [&#123;&quot;name&quot;: &quot;张三&quot;,
+        &quot;qq&quot;: &quot;12345&quot;,
+        &quot;phone&quot;: &quot;10000&quot;&#125;,
+        &#123;&quot;name&quot;: &quot;李四&quot;,
+        &quot;qq&quot;: &quot;54321&quot;,
+        &quot;phone&quot;: &quot;10086&quot;&#125;]</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="十二、字符串"><a href="#十二、字符串" class="headerlink" title="十二、字符串"></a>十二、字符串</h2><h3 id="12-1-定义"><a href="#12-1-定义" class="headerlink" title="12.1. 定义"></a>12.1. 定义</h3><ul>
+<li>字符串就是一串字符，是编程语言中表示文本的数据类型</li>
+<li>在Python中可以使用一对双引号 “ 或者一对单引号 ‘ 定义一个字符串</li>
+<li>虽然可以使用 &quot; 或者 &#39; 做字符串的转义，但是在实际开发中：<ul>
+<li>如果字符串内部需要使用 “，可以使用 ‘ 定义字符串</li>
+<li>如果字符串内部需要使用 ’，可以使用 “ 定义字符串</li>
+</ul>
+</li>
+<li>可以使用索引获取一个字符串中指定位置的字符，索引计数从0开始</li>
+<li>也可以使用for循环遍历字符串中每一个字符<pre><code class="python3">string = &quot;hello python&quot;
+for c in string:
+  print(c)</code></pre>
+</li>
+<li>字符串的索引值是从0开始的</li>
+<li><code>(字符串)</code>获取字符串的长度</li>
+<li><code>字符串.count(字符串)</code>小字符串在大字符串中出现的次数</li>
+<li><code>字符串[索引]</code>从字符串中取出单个字符</li>
+<li><code>字符串.index(字符串)</code>获得小字符串第一次出现的索引</li>
+</ul>
+<h3 id="12-2-字符串的常用操作"><a href="#12-2-字符串的常用操作" class="headerlink" title="12.2. 字符串的常用操作"></a>12.2. 字符串的常用操作</h3><h4 id="12-2-1-如何查看能够使用的方法"><a href="#12-2-1-如何查看能够使用的方法" class="headerlink" title="12.2.1. 如何查看能够使用的方法"></a>12.2.1. 如何查看能够使用的方法</h4><ul>
+<li>在ipython3中定义一个字符串，例如：`hello_str = “”``</li>
+<li>输入<code>hello_str.</code>按下<code>TAB</code>键，ipython会提示字符串能够使用的方法</li>
+</ul>
+<h4 id="12-2-2-判断类型-9个"><a href="#12-2-2-判断类型-9个" class="headerlink" title="12.2.2. 判断类型(9个)"></a>12.2.2. 判断类型(9个)</h4><ul>
+<li><p><code>string.isspace()</code></p>
+<ul>
+<li>如果string中包含空格，则返回true</li>
+</ul>
+</li>
+<li><p><code>string.isalnum()</code></p>
+<ul>
+<li>如果string至少有一个字符并且所有字符都是字母或数字则返回true</li>
+</ul>
+</li>
+<li><p><code>string.isalpha()</code></p>
+<ul>
+<li>如果string至少有一个字符并且所有字符都是字母则返回true</li>
+</ul>
+</li>
+<li><p><code>string.isdecimal()</code></p>
+<ul>
+<li>如果string只包含数字则返回true，全角数字</li>
+</ul>
+</li>
+<li><p><code>string.isdigit()</code></p>
+<ul>
+<li>如果string只包含数组则返回true，全角数字、(1)、\u00b2</li>
+</ul>
+</li>
+<li><p><code>string.isnumeric()</code></p>
+<ul>
+<li>如果string只包含数字则返回true，全角数字、汉字数字</li>
+</ul>
+</li>
+<li><p><code>string.istitle()</code></p>
+<ul>
+<li>如果string是标题化的(每个单词的首字母大写)则返回true</li>
+</ul>
+</li>
+<li><p><code>string.islower()</code></p>
+<ul>
+<li>如果string中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回true</li>
+</ul>
+</li>
+<li><p><code>string.isupper()</code></p>
+<ul>
+<li>如果string中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回true</li>
+</ul>
+</li>
+<li><p>注意：这三个函数都不能判断小数。应该尽量使用<code>isdecimal()</code>方法，因为在程序开发中，绝大多数都是纯数字进行判断的，很少使用Unicode字符串和中文数字。</p>
+<ul>
+<li><code>isdecimal()</code>只能判断单纯的数字</li>
+<li><code>isdigit()</code>还可以判断unicode字符串</li>
+<li><code>isnumeric()</code>不仅可以判断unicode字符串，还可以判断中文数字（例如：一千九百）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-2-3-查找和替换-7个"><a href="#12-2-3-查找和替换-7个" class="headerlink" title="12.2.3. 查找和替换(7个)"></a>12.2.3. 查找和替换(7个)</h4><ul>
+<li><code>string.startswith(str)</code><ul>
+<li>检查字符串是否是以str开头，是则返回true</li>
+</ul>
+</li>
+<li><code>string.endswitch(str)</code><ul>
+<li>检查字符串是否是以str结束，是则返回true</li>
+</ul>
+</li>
+<li><code>string.find(str,start=0,end=len(string))</code><ul>
+<li>检测str是否包含在string中，如果start和end指定范围，则检查是否包含在指定范围内，如果是则返回开始的索引值，否则返回<code>-1</code></li>
+</ul>
+</li>
+<li><code>string.rfind(str,start=0,end=len(string))</code><ul>
+<li>类似于<code>find()</code>函数，不过是从右边开始查找</li>
+</ul>
+</li>
+<li><code>string.index(str,start=0,end=len(string))</code><ul>
+<li>跟find()方法类似，只不过如果str不在时，string会报错</li>
+</ul>
+</li>
+<li><code>string.rindex(str,start=0,end=len(string))</code><ul>
+<li>类似于index()，不过是从右边开始</li>
+</ul>
+</li>
+<li><code>string.replace(old_str,new_str,num=string.count(old))</code><ul>
+<li>把string中的old_str替换成new_str，如果num指定，则替换不超过num次</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-2-4-大小写转换-5个"><a href="#12-2-4-大小写转换-5个" class="headerlink" title="12.2.4.大小写转换(5个)"></a>12.2.4.大小写转换(5个)</h4><ul>
+<li><code>string.capitalize()</code><ul>
+<li>把字符串的第一个字符大写</li>
+</ul>
+</li>
+<li><code>string.title()</code><ul>
+<li>把字符串的每个单词首字母大写</li>
+</ul>
+</li>
+<li><code>string.lower()</code><ul>
+<li>转换string中所有大写字符为小写</li>
+</ul>
+</li>
+<li><code>string.upper()</code><ul>
+<li>转换string中的小写字母为大写</li>
+</ul>
+</li>
+<li><code>string.swapcase()</code><ul>
+<li>翻转string中的大小写</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-2-5-文本对齐-3个"><a href="#12-2-5-文本对齐-3个" class="headerlink" title="12.2.5.文本对齐(3个)"></a>12.2.5.文本对齐(3个)</h4><ul>
+<li><code>string.ljust(width)</code><ul>
+<li>返回一个原字符串左对齐，并使用空格填充至长度width的新字符串</li>
+</ul>
+</li>
+<li><code>string.rjust(width)</code><ul>
+<li>返回一个原字符串右对齐，并使用空格填充至长度width的新字符串</li>
+</ul>
+</li>
+<li><code>string.center(width)</code><ul>
+<li>返回一个原字符串居中，并使用空格填充至长度width的新字符串</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-2-6-去除空白字符-3个"><a href="#12-2-6-去除空白字符-3个" class="headerlink" title="12.2.6.去除空白字符(3个)"></a>12.2.6.去除空白字符(3个)</h4><ul>
+<li><code>string.lstrip()</code><ul>
+<li>截掉string左边(开始)的空白字符</li>
+</ul>
+</li>
+<li><code>string.rstrip()</code><ul>
+<li>截掉string右边(末尾)的空白字符</li>
+</ul>
+</li>
+<li><code>string.strip()</code><ul>
+<li>截掉string左右两边的空白字符</li>
+</ul>
+</li>
+</ul>
+<h4 id="12-2-7-拆分和连接-5个"><a href="#12-2-7-拆分和连接-5个" class="headerlink" title="12.2.7.拆分和连接(5个)"></a>12.2.7.拆分和连接(5个)</h4><ul>
+<li><code>string.partition(str)</code><ul>
+<li>把字符串string分成一个3元素的元组(str前面，str，str后面)</li>
+</ul>
+</li>
+<li><code>string.rpartition(str)</code><ul>
+<li>类似于partition()函数，不过是从右边开始查找</li>
+</ul>
+</li>
+<li><code>string.split(str=&quot;&quot;,num)</code><ul>
+<li>以str为分隔符切片string，如果num有指定值，则仅分隔<code>num + 1</code>个子字符串，str默认包含<code>\r</code>，<code>\t</code>，<code>\n</code>和空格</li>
+</ul>
+</li>
+<li><code>string.splitlines()</code><ul>
+<li>按照行(‘\r’,<code>\n</code>,<code>\r\n</code>)分隔，返回一个包含各行作为元素的列表</li>
+</ul>
+</li>
+<li><code>string.join(&quot;-&quot;,seq)</code><ul>
+<li>以<code>-</code>作为分隔符，将seq中所有的元素合并为一个新的字符串</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-3-字符串的切片"><a href="#12-3-字符串的切片" class="headerlink" title="12.3. 字符串的切片"></a>12.3. 字符串的切片</h3><ul>
+<li>切片方法适用于字符串、列表、元组</li>
+<li>切片使用索引值来限定范围，从一个大的字符串中切出小的字符串</li>
+<li>列表和元组都是有序的集合，都能够通过索引值获取到对应的数据</li>
+<li>字典是一个无序的集合，是使用键值对保存数据</li>
+<li>格式<ul>
+<li>字符串[开始索引：结束索引：步长]</li>
+</ul>
+</li>
+<li>注意<ul>
+<li>指定的区间属于左闭右开型 [开始索引，结束索引） =&gt; 开始索引 &gt;= 范围 &lt; 结束索引</li>
+<li>从起始位开始，到结束位的前一位结束（不包含结束位本身）</li>
+<li>从头开始，开始索引数字可以省略，冒号不能省略。逆序时，从末尾开始，开始索引数字也可以省略。</li>
+<li>到末尾结束，结束索引数字可以省略，冒号不能省略</li>
+<li>步长默认为1，如果连续切片，数字和冒号都可以省略</li>
+<li>步长就是跳跃连续间隔的切片，下一次切片的起始位置为 开始索引+步长</li>
+<li>倒序时，最末尾的元素对应的索引为<code>-1</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="12-4-字符串中的转义字符"><a href="#12-4-字符串中的转义字符" class="headerlink" title="12.4. 字符串中的转义字符"></a>12.4. 字符串中的转义字符</h3><ul>
+<li><code>\t</code>在控制台输出一个制表符，协助在输出文本时，垂直方向保持对齐</li>
+<li><code>\n</code>在控制台输出一个换行符</li>
+<li>制表符的功能是在不使用表格的情况下在垂直方向按列对齐文本</li>
+<li><code>\\</code> 反斜杠符号</li>
+<li><code>\&#39;</code> 单引号</li>
+<li><code>\&#39;&#39;</code> 双引号</li>
+<li><code>\n</code> 换行</li>
+<li><code>\t</code> 横向制表符</li>
+<li><code>\r</code> 回车<pre><code class="python3">print(&quot;1\t2\t3&quot;)
+print(&quot;10\t20\t30&quot;)</code></pre>
+</li>
+</ul>
+<!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一步到位</title>
     <url>/2021/03/12/%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码输入错误，请重新输入" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="bce7e381eb2fa60080d16d502345d995aed0501542ab6a2ea77cb649cd542de2">8862e90410cd8c85be3a32b7edaab782f02872aa327a4f4d034d8fadaccaef8e39a8890143ce4f83f14c91e7d99d121080fee76857f76549a7fc79dd60e955bc6cafd5d81a61bb5a008e00401b72743afb0c3e5cefb368e322f33166008e571b28a1462a8d4e13ce5e71fc47d81ab9fe03109be227956eb8d4affc7c6256affb9a3aa465497f68c177cd5842b76b63d825d6ac6962f6cdb449b1961331ba5bd387fe868db53a008e3488ceb02470ca1062633a0912498d718fdc386779cb1e7a3d9b6f655c35e225a05f29abf9b857ff9863c1737848f11c4d633f2c4cf521b92af0a033d57e94312243676e6973f0793c2d3ea39077cd9545dbc48676bfedeca6b482feede10d0197219dff9af18030d90c3f8ce8c11731a29f83e48a3c1792b8d3a351b614b55b7b7029d510eea08159d7936db9f8f66f76e43c18a4785396d72de69d095954f32523810e1259c45cb392a4bb016bc945d347e5b899cc8b9a18ffa6f06fabe544667d1cc9b24e5d9cc92bb2f2c2bee5850650c46c5178ed089434885ccace13aea8f9a2ba38073f9f010da19018a857e71bf4d6747c222379039d2d092219d534a4a2b5f17440a9f1fd5004ede6ef5e83575d64c5c4dee9698ad2ea83936bf7553baa454ddc4346a3f0fbfc879e51666b821527759ffeaa87a582d868a86cef9cbc441b0533357846db8cdf5e1bc50c7e4321e68038ee13d14b4a64acf4e21b3ef785587ef238cb5c36c33fa56c6513cc8a5ac910bbde6f8d48da72b6503eb484ab4f57622f7e8adbe9560c6afab95721c9ed79a28431c6e683b9752f1b53d011536b965fa16c2a4148fb28e3e019935c69fc7dd07a1e4dc02e64b310e9008ce68d29b14079983bd28e748254e83e20cd3c2a4cd14aad2bddb892ca4265e6a1543b646b01251bf26eab5b9d6179e2f654ffaf8594d5d03a00718483658007213ca7dc034201df368438ad0eafad16a77634ccaf43104d856cacdfd68f10c7e1b5cdb062b4e824586bbf89f3bf37b8961e80234f9d575265ec63c1a952a9ff6ed2a8b68c9632382eed4f2c1cf50224e74d197ceb07b6ed2fc431631d58010adcc955048287d393ca8e8e841e7338a647ae5eb3ac449777f26a48d422df174e2219494e40736721a9beeec5d18388120d780ba18b00ffca415d6d7435dd27683693826c7b81baacbbe4ed76b5ae5e9cf8407b1ee2cccb08a699ed7a3824f7bf9200a704dbb44e73e8602933634cdbd44fba376de0c07411d2cd237c386f67a12eab858cc00a83e540e7d946166926512cf7154e1e4557ceaa90236016328c5c7fb805698ea54a3181535be90f51cd9232e1f20d31833c7d1f67466a5f2dac1307b11e0a6cc085bb845fa6519011e562170187abf900ca99ef0f77aeed7b243ebef42cedde0cacba257dde14eba0e65d74f73564c2cc155305bd62e1fe4596569e8ba3b379fe9e18ab38af55ba7a8b750baa72ed20c8035819485e322ff24758d505f39edc4b252cd60994bb40ff3f8425f20aea717dba2cacfab708b6f09d37adedabd343f5c761a43ea2469eb6ec0aea321226af7fdc18bca8f3d50b744b77518759ed1b0abdfd38cee06873754624d7aa7be9187f2f948a5a0a1b8a21b629ca191d4f87f45b6481bd7bbe7bc7a86d930843e9cfdb4623996253f1dce99378f63206d0c30be79c3b15372f322be141b2d8dc0e3a3ac7849c549ba8b21896c99bcf7a3f83ccdcbad7fd3fe34e2957bb497c0c8a11c5fc8f3119cd1c67ad55e490e58b5dbbf4fd86b6244a7db5a0257fbcf924aae5ccf6accb9872ebfa9d7c97a6fd82dd174de604d62413334cd59db62f5818b641c8253ba80bf7437a444ac9cca12b938a0daa4500c2439285a232025e734bebda2761fca0b78284e251a0fbb0c4d3593d193524e0cb875257c03442b8f2a27ea9f1189a1fb7e068122ad201d9b976a00d8f7add6cccb756b876c581ca5065a98313fb389ba95ee2be85c2a8d04a06ded61fd5f45b45599f7aa06b9d4c7cb4ae4e1bd5ef9d5a077e33388ba211f6b99e469cdea7ad34a21ad79785f93dbf90624f6635ba06046b5898b3f06199ee84068b7671fa0201edc250313aba6ce85b9f9ec0821687bfd84ca01b619bd54371cd9ce3745afd2912332f39c68d5207a3fa051ea516d82c4d53fdb8a53894b761d948707237344cdd75f095ede1337de0771115dce3bba0ec440d51cb581c016cae74f34fbc2f00e5941112228379b5e0bce28e273cad6643a897edf72f2a8f19acce9aba891bb8b101c6496c784d43c04b043b659e51886cc29bd17cf16d88b2a1cb0fb26ff553c493fe9b00a8b15b26a87976c0ab8d011a41e5e7240c604685ed0e1847791889e1119bd07a0fa9a6cf768530965f5fd391803a61311cd62e6bfa82fbcdb57f33fca3fbdc6a3dfc02e8274c93b9cbdccc3c004c43b13c4f7833ed0c264e50e7e2508d461cb7b5ace2c101bf1517cf4ed04c76073d55f18966837c870131b8bec22e1bfc03f4a96f8b5638168fd2391538f1f70481584abe5842dfdff7e10ddd442cf89d0dc38b35bfa3a25c69ec47494d4beade3e532b485a72515c8be576f6e471ff141ddb4a78325ce93d2e7aae976db45c6efc38a552479a012c2c5cc81b21702766ff0d993ecdcd697d928371aa4d875a701671c2c69cd7d04c0d164f5adf7fcea056c0b410877efd97c5fea10ff8bafe7d1c13228263094ca2c37d495685acf11fd35ba761bcab410cce47701e46185e55a1da2c03bc30ff595130429b0f65b8955a81feaab42c0bb4428d9be03a57ca6f39d97c0c9b640021300f0c6f84e8be7306a5374413df8f9c78ed4be8cf082a4604cf17fe71d41cdb11363255d4b53007c94af3d6ef6b19bd7a5366127b3a8e1854020ee052ae0e57174a9ee18dade09148b4b3121ee2bd5a97640cff94b3df8326e0cf0005b2ed9f8e2a0b8a01d39db5674daa788d3aa3227a3041baf6781c1333927795885b1a372eab868eea562403b9c242cb127abad9d84cefc9ebe0d89b3615b61e6e71a690950e468eef7532f6c8928ff44706eb67d82b3b4b86627a52d9f9918fbd22aaec1e700327b752d3dd530ebe6f2ea4ed34cda4c0ff120afdde87ce7142a206da96445d3f0055cf323f7748e98886784ffab08dff80dc37c2cce79d73482c7fc16e6a4ecb4edc6a2a76b5f94cfccc86486e1b52501872a848c0bf47212c513a1174b6c8b8eac46afb2462ef3ea18e69d9d8f176abfbd6909b5f50d1d53d0b0ca6afe35184f800a8514329cef41bf3a4ac4bc003fd17325fa2d960d73072b0bbbdbc170235384e33325dfa3576240057babccb23a176919b53c6893ee71c215a1aacc819b1df83ea5a39b75fd512bb414cadf62d8efd9d1bc1b0628eefd426e905b2a0353b20bb53b9c58a3f0214af6d066ddedb1858be3a64eec3179c9c2f8c9e2a33a8cd544c5f689a94e0b31e6e4f1c1597e34694c9c3ed306fa203ca6d0db10c0b658250f6979acea039b3089768dbaca78f72cdda520237b0e60b90669e43b29e6c7a36f01248beabae9411be5c98147f729dd6e0e52b6001a348ddcdd6e6fdf5b54c25256bae91e3858c212c178df8cedf6d35e4c0920e65f707a0d1126802d68f32acefbb67d9a213e48b37928b4632459e912acf888f7e2ad92325e4db26ee635c57e691122d2bc1f51786cc5e56982df7eeb673ef4e53386199301f27b934950997d709c4bf9bda60cc7819c5743a70ff39bbbc051ca24bbd4af0eed351eb36cb6c81c1018f51d3d4c34a8a98c8fb64df3b72ec0365637cdf9f0747a3c342472e978d50f570d09cc1a876dfec5b619112eb7b003e19b4d2178626fb3b26661d75ac3496f3e5dcd3f675f702c0ed306a5fcbe423ffb64524a360e0ac57b022f8b4abf1c9d814da0bfa574d5883969ac1da727415cbe9198052fd1d1d2a217759bd8ee68f5052e83da3667cb0d5391e8ca76b03bdf2fb1a48b18f849b397e1bb43b0d3ffd078c8d2ad8197b2f752f8b99ec3dfd566ac1862278b780a3414ccbfd3edfd669d76c16b1e6b795645adfebc1e6e4b42055b391ca6f8ab6a5bfbd5e3f3ce96274c7403d040b17d2c67ea4dd7ab01791bd0235b045e55e195ad25f7d6ce2f84005e84b3c1f032f014c353a335b18b6cb893c9a51a16ce94515ba3f1a120b8dc89ed9ce45f48186ac406f735c6f88a1fdf393eab8be27d05806c5753386996e6244618c9f9e5d37d1daf000eac09838f0a4d82503c20a26fb1ad843b3cb269c14d28e2666fa588820165a68c75780fd082800ae0126fdb88c10f9f018575505c94e755ceef6111b037b46e6ef9e6bf5056f5c94ab82643b0b2b2ff49c49f612b67f550f8f6e1e4048e343ecc87d8e44376c7ed9c93552b538d329880112a2070f348488af1e3ae5c446d994defbdb9aa45cc529025d6d69cd010c75112fc0b8bcfd00332d111248aa7d2ac3f0e6766a85d6ebf0f2df5dbd99b50a0286099f3e3d4e1eea6f4967fea70c4b0049110f29cc0bab20568a37e343f25b8983910ab18f0f83eeb3457d1bfbed7bb08e2aa2c23bdfeb6a6f4203e5650f33ff50aea44fb480e52db51f778c493f42e89c211c6b32143a32780c919e0e9f2c491079af788cc722dd459023d12ae0b8f068c48a7db184569bde8cea5fed29ecc7ec4d28d80562760b7d1f2c5ed6095d3a17ba927d94ff38bf4fc5413d69487e4ea001d1ce39e884e9ed3666210ad00903b8fa29867f47111c2f126fe7c3de766c91dfe6aecee972c88ff35cce3cf37bf0c2a3cf75ab40b21274450d58edc1497c8e0c53dd70cce0a37f885083914f42f4189f9b93e7b326788f8ffd2348e5f26b2a17abc651e18860105037bac8b3eecf45357b6910fbf8990cdae79fc3873bb7de25bc54ce14babb67d0e27b208e7edfaffa945aadad1383571e61d3b7dc386d9296f8ce3719e57a563706df01d17722aa06e48ac67f9d994438b0715637f8b2090ce35fe5a783f0bfc9f66d1fcdba95a1c0398a5a</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="9adab85c9c6359ca222756e755e6a26dea8e908500857aa20e616e3ddb3735e3">8862e90410cd8c85be3a32b7edaab782f02872aa327a4f4d034d8fadaccaef8e39a8890143ce4f83f14c91e7d99d121080fee76857f76549a7fc79dd60e955bc6cafd5d81a61bb5a008e00401b72743afb0c3e5cefb368e322f33166008e571b28a1462a8d4e13ce5e71fc47d81ab9fe03109be227956eb8d4affc7c6256affb9a3aa465497f68c177cd5842b76b63d825d6ac6962f6cdb449b1961331ba5bd387fe868db53a008e3488ceb02470ca1062633a0912498d718fdc386779cb1e7a3d9b6f655c35e225a05f29abf9b857ff9863c1737848f11c4d633f2c4cf521b92af0a033d57e94312243676e6973f0793c2d3ea39077cd9545dbc48676bfedec76debb83eeadda427c7942c7a0b235258ebf32eb912d39f6742e68726903a5ed0949e150ed23aeee7664af452f6e12beabb7888f92349d96f37ee20be72def8775e99d3969eb12b3ce46d8b5d7e298f8d9da71c2fbebc1641bdbe8fe5d9b4013fa5118d7b70e55ad379ae3f52a9a5cfa567564c926ab4fb9bc382a82786d36e61bb69f793fa537ad8377abfca699bea2872dd44483a85762fcc762ba67b6e2e13dfa64d8f5fe57fa333656db21182d4efe1e2d2957fe998a26729bec9f2b9fba97b4b6465c0e973629fe6ddf0a519f29667e1c6c74e9b9c30b3099e9fc31870d1ceb8bbcb171bf88ec65b1d6be34f92390d6f381fb4a0f68e319ec1363b821459849af68057c0927dc5961e285544c1a0eafaa1eaf5d97d899930925abcd482ae33f14a316bbbfeb21a351091be22853c9d5a7c75d313204e25796ca50c0fdd5d9f8bb6f2dcde6f89bb478e1b383f9b691b9abb889302ccec4b80aa3d435da4c92d8827c3a82c2fc58d1de8999f5fb673e69fdf4568494784f923603fee07da812ae3d72e9fb6a69ea17ae318ec548e6b20f64454630a5af38f1509054d041aa5599356b090521a490a8ea973b193b31e7cb8f9dd2621da92734b9b9bceae7abaa83099c8ba8c9f2e5b9f35b4fbccee60433b95c3bbfccedaf12f5899aff86f16935d590745a6eeefb2a4f07719c9fed6e56c40d6b85acc141aa9f1d79cdf292f37cec0786e35d2de9945059b5d1ecf3f53bc4ddd2ded4ab72e352e09ed0734703166570aaba20ad38254a7609cd5e3d3e91a1bbda4b881aa5867c37ad5fb231ccc98500018839fa01db8d079bdca5fc081b12a64fc9d4d021d580662bbaa79c1bfb4b5b3f70d04a1168afad053c6c28305d2f429018f23bae07197ee808b83ed17fc432624c1bd0c03b2f32adfdd589ebf8c0c3896b4acb4c7a92cf6251cfc3fe6dc5c9da680eb4d7630afee66b19932959fb58baa9cfc2010f9ddd0ba00855a89df5655d50b38b39ccb604a452f99dd4db01c64b809e3cb91ddd0af3ca9feff8b48cd574b235543df0f8ba92ac2303f513c43c75f7eb38f4b8342c4aacecb6289f4e86557dc896ca50b2cb97681cc6486eed792effa3ec205c3545b8ed8bc7b63bc4ea6da55320306351f170ad46f7a0dfd02a7e6f200670028182eae73432d7790ed53261c01363163f445b55d0300bfa68699e0ba331c8dccb1373470604cfae037eeca0223b180403743cdd509a489c8f74fdf93ae567146eabf272cb06668faf9be9d23de78ec3fd42f7cd36bc8af97d33095612a8408266115617153c77855404438b1bf596218a8ab0f100b363262f525cf1d640a3b44f3069bb8e59e2ae96459465508991a7e16076af6f95b4829b4db2d56f4ff025c5b25c0e25c4d78cfa627725710a47431d5bb911b7c49a1f548b82651bcdeb41c9721d5f8aadfd35091e3b8f0a2c2da3dcbd1dceb04585dce468f24f89f7cf559e367afaf2993d0366ee7c3d95bc969e5bc888d4611a1f502d48f59396ac0f57ca61ddb851d58f178b558a457659db940a399c2f42827430bdab17a1b7a5bee64e38ee84633dde58615800614b8297ac8a948930424070340fe57e975f137eb11a64c12a323e45798754ca310d286c2e138e3b1c5f03a9cf74b76e87195b582bbbcfc735922dbc4f09ba0da8a1e3cee348f831119e1a93637820ecb325aa9475a5b56090aa77a5d8081244d43618bcecb40513943b604516a4a55d7bbb6c17f26f98c636e36e9b24ffcc0aee832c653ae68cd690217931a06817d06cacf8fbf102aae44dd2a52664b9a012c485ef8ed250964865b990492f1079781af4a0c765f132fbed41a4e83024164db437f259d16b87672ff3962b10116d525e04461b8bc65bce252440c6d6717ab939352fab934bf1bffbba7ae769fa4e7dd9d8756aa111da91c98a0686be43558d9e6df45bdb2bb9802e81f5d33606d428b70387bfe2d6f277b43adb61e2091d37cea3adcde0d759b4bd28664cc5b984c956adfd15e83c2a88f488febd81cfbe829b70d35c79d7b6c4b5ec1606a21caffc3ca101c242339b4f6fd290fb5dcfb4ece101e22d84d8c7ade89438a93b636b26b8e8f0fdc035ae769a0d780bccfc7c70f4d9111a22de2bc85c4d72f49fc0d474579a2dde1ef6bb1a4a9f5bc5e743fc53e5edab1c51d25a593aada04762df24363834a804775f8fad863ce7f8f16af1969cda55c2e46ea80cc2e135ff9c0ecfc3f4ee7694f9eb62bc8d68f2aaadad4d3fa77caa385b05b89fd20dbb82cef5d38cabd6d8794bbb242897809ec50d74b70eb3c66999dd89b6a3ba61ee387044169e8a4172efcf478b21a730d15cdfa9ff174a31eab37b6b15b46e572172b79622457b89dd35d00546086f3de035e3db9417313a1b067ca296fb631fd210a5fb9fabc803fcc541a4aa0e1868d2e53815f1cd45c873c2fa13905ae74bc43811800863432b9092d686e1f5a6101afbf2647a87b7ada797c4b03f496a7d825795a48cf58fb856c19dc68adfd9ef67db525e5c56de4d0f00e5bb8c688ec1995b7fa69a1510455ecfbf40788b5f3d572849ae7162a3c474073dc4f510cdc1663993e240da4ccb447cd3c6797012ac9691f56d463187fcf0f3e6cef99dc26415bd22b47313715855787d9cdb4eced81e7e771747c3ded4b5fdb9496d815477492806117126cd6981745799b8f3cb6f0b9ba980c1f5ab6cd3fede79fb63bf9fce068dd15eeac3498e426a00f852ba6f97a2a531b97ae13430474dc63d9e85b92e7a2f3221ce33893b27be57e8ed44733d1221755eee728fbffbd96374dbc01b56cae0ae7bfbc119ba8cefa44b5a1e0c7f323d9af94e97cb5549e8141ba228914abdc483574926bcf868d238689f40d7c55ddd037fa44d84bae8862eaf5d30faf628c3705b9bb00fae1d922eccfa24f12e4873f664613e6731e11cb1f64c7f6a0c55c767382a696f502947deb2663b05903d5c6d3aa44d11f89543961e18ade09384bd7b0de4b1b6b95f93386da59fb16cc49e4d6fff7520e3214fa3f355147e3cb539c73b6077524ae032a8d50c5cf908e70aa21bb3c28c64ecb78930b75ed07c343a55bd74693fcfaa74c85aebf5e249628199300ee5ef86693b0d3eeec46210431d0f79289114ac665733318bb2e6fffebf69ffa47e61d81e838914db9df96a79f0353153bd7bdb0154cd81218e4e1c6bd7efeb8d0112d4abb40ca249e620b9176edbdd6ee8661c39cbc8cdaff496872061c6ea1a17268b9fdf34e20df0bff45b5dd1263f6c38d291c47d78d13dfefde268ef18773971ea2cd2b1d7d76b465aa3f908a21896db47ec2896c2ab6b78383e4dc5484f1caa62d1142ad3fdd3d531eef73e9815966a967cb8dec87166951cd80c86134f3b04b3c80549a6148dfd783862567aafb9d1063b4c2ce01e9356a105c8f1439ee9dcee24714fd4276dabd128d872efdfd3ed95e1a732eb05f8891a9ec5bcf33935add1140d1f476acaa1ee40d38220929fc12de9856a0e45e756ebe45df55b00366b450d7952d26c92fcd60358709b45602183d9484b2eaf6922b8400f390fcadc8ab90a2bdcd9d029e1fcc8c216908faf1bad18bae9f89c9cda578b91e098a9d14bcdf5406571535524c718dc3a5154f3e6f4eec0a9c778f43b0950b6259628e839d6e111a7a15796e6adb6ddacd6678ce544f3ef5e369bf1410893dfdc8c78114eab3168d7d1b152fe1a42420def16d4d16657b941e6cecd05ab5291038a4b2b99773ffcc9a9399800ef9200e707abcae7610207a5f9f782df658db038f4992cb2b2ef4a1e4711ae9fef0312c572352e0022864a689daa8b763e0446918f2f9a12d6a5ef85b86a548599e66b69939206c59d4ba111056b414a99d29a6035827ece62e1df18576903fd03556e3f488fc59ba741bbcfe36baad3b0ef3c204535e4b83aa936d6780e227290748dd510cf6bdf15397aba9abcd0a8bae795b6632ca557829108ae47177ae545c331bccd8de48a6ddbd84ca895b4777c6ca5be1e4c4146f7c376520d4b2952e12af84cefeedd21e6a86c60d3a472b6038c0480c5c8667faf9e36a7d5cc3ecb0c0c5c27b44b8f72fbcd5e7f67c07ab2ba0425f8853d0d43ae8366b592f73361cc44bd297cb84c4394959dcfe1eaadb7054c967811b83427b59d9fdeb5d7cd6210f5c8d5ac52feed1c748478857057ce4fc42c4d4ef987828f282bb9569533f7bc6b6856da31c101f9a37c1d355aba1e82ecb241cfb7e8a56a1d56b6df8c40f5ef4abfeb422a8957c64781c2847f83d0ce2ca15097a4d399989b7b62a3fe399e6bad7a79387f9c93f1b60399af29289eee0393a62990ab82e31ef15abdeefb010e147edc5a1f36c79cfc5a3709e0943b493797fcb27a318029360e47b9cac5ae4e1da72f23abbb632a9fb8e0d6295591d534fe392f4268053e19c2557939a6d503c6e179859546a6a27dc1090f28dd5db23909f3d9d0c59e296c380f2bd145ad266434c827b0ad6927a629b59c1093f4469d76584f3e97bc4fb5d4188665c82e15484c55cd26baead41a2aea9c4dc4bb556af7e256d3902375d67f07553321721e25c08085c9ff6598f8f1ece693b4092f223b665e4ba233048f616b5ab94917f887104445d9430e96de38af0e0115d9768b93218237f90c6589a13d5eb534d8c77b02a813fbccbeb03c42338abd7db11238c73d5963b62655de8c13c393f8a5ff325a283e2fcc123b78a64e9fc81f75c001954d58dc709489f745a907d6ab5af8564a8769fe6eb0b969dd893c7443dcbe183a610e0bf77a02c02d992c4462e212c9eaa3f6375c90da00dca08f91aa3b5a392a1df9555dac8cc2ef8996a8cd6aff5402ec4d429075edfe10b8e1604668d3e6ecb1d8685efbfaec927a7a874f7da07b49a40d8573e0608f8c32e747c83d8d9136890914162a3e37627d8116caa0655eda85078fd5f204447ab220d1de28badffa2891572a530644c6d24120a64e7c3d539392f8e268ad3d167127f4fa22999ed56db16bc8cd24bb407de5f6923e73e5c588ee39dfd91add047aff9574f0e172f55be1ca9f931951afc84ac94ccca54c808bb2dd0703d5de76fb0e66946a165c8054274102802542e9a88e6dd095644587a2163dfa23817c58d0f8fbebe414d186c0528cbd25eac34b8e61322358d2ebecbce2d2e9f08252dd37a3c01889fc920f6373d5e6d44ef000c23317d91bb7e195b645d9772e544a5cc0768330f48375a6a251606cec95ef08ab98b9cc07efce41981d9a5ef2a090001cb21e965170b40beba6fdc0ca23ddd56d5020f4ee39cdc87addcabb3393e33390e9c298bcb0</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
@@ -104,6 +2997,7 @@
 ]]></content>
       <categories>
         <category>技术</category>
+        <category>web开发</category>
       </categories>
       <tags>
         <tag>HTML</tag>
@@ -113,7 +3007,7 @@
   <entry>
     <title>GitHub和git的相关操作</title>
     <url>/2021/02/16/GitHub%E5%92%8Cgit%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h2 id="初始化一个git仓库"><a href="#初始化一个git仓库" class="headerlink" title="初始化一个git仓库"></a>初始化一个git仓库</h2><ul>
+    <content><![CDATA[<h2 id="一、初始化一个git仓库"><a href="#一、初始化一个git仓库" class="headerlink" title="一、初始化一个git仓库"></a>一、初始化一个git仓库</h2><ul>
 <li>将当前文件夹作为git仓库<pre><code>git init</code></pre>
 </li>
 <li>或者将当前文件夹下的xxx文件夹作为git仓库<pre><code>git init xxx</code></pre>
@@ -122,7 +3016,7 @@
 </ul>
 <a id="more"></a>
 
-<h2 id="添加远程仓库GitHub"><a href="#添加远程仓库GitHub" class="headerlink" title="添加远程仓库GitHub"></a>添加远程仓库GitHub</h2><ul>
+<h2 id="二、添加远程仓库GitHub"><a href="#二、添加远程仓库GitHub" class="headerlink" title="二、添加远程仓库GitHub"></a>二、添加远程仓库GitHub</h2><ul>
 <li>给远程仓库<code>git@github.com:phd99/test.git</code>设置一个别名<code>test</code><pre><code>git remote add 别名 git@github.com:phd99/test.git</code></pre>
 </li>
 <li>查看当前设置了哪些远程仓库的别名<pre><code>git remote -v</code></pre>
@@ -130,7 +3024,7 @@
 <li>删除远程仓库的别名<pre><code>git remote rm [别名]</code></pre>
 </li>
 </ul>
-<h2 id="配置验证信息"><a href="#配置验证信息" class="headerlink" title="配置验证信息"></a>配置验证信息</h2><ul>
+<h2 id="三、配置验证信息"><a href="#三、配置验证信息" class="headerlink" title="三、配置验证信息"></a>三、配置验证信息</h2><ul>
 <li>生成<code>SSH</code>。创建过程中会要求设置密码，可以不设置密码，直接按回车键<pre><code>ssh-keygen -t rsa -C &quot;email&quot;</code></pre>
 </li>
 <li><code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥，默认位置在<code>C:\Users\用户名\.ssh</code>中。</li>
@@ -143,13 +3037,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="克隆远程仓库中的项目"><a href="#克隆远程仓库中的项目" class="headerlink" title="克隆远程仓库中的项目"></a>克隆远程仓库中的项目</h2><ul>
+<h2 id="四、克隆远程仓库中的项目"><a href="#四、克隆远程仓库中的项目" class="headerlink" title="四、克隆远程仓库中的项目"></a>四、克隆远程仓库中的项目</h2><ul>
 <li>克隆默认分支中的项目<pre><code>git clone https://github.com/phd99/test.git</code></pre>
 </li>
 <li>克隆指定分支中的项目<pre><code>git clone -b 分支名 https://github.com/phd99/test.git</code></pre>
 </li>
 </ul>
-<h2 id="下载远程仓库中的项目"><a href="#下载远程仓库中的项目" class="headerlink" title="下载远程仓库中的项目"></a>下载远程仓库中的项目</h2><ul>
+<h2 id="五、下载远程仓库中的项目"><a href="#五、下载远程仓库中的项目" class="headerlink" title="五、下载远程仓库中的项目"></a>五、下载远程仓库中的项目</h2><ul>
 <li>下载远程仓库中的项目并和本地仓库中的项目合并<pre><code>git pull origin myblog</code></pre>
 </li>
 <li><code>pull</code>和<code>clone</code>的区别<ul>
@@ -158,29 +3052,23 @@
 </ul>
 </li>
 </ul>
-<h2 id="上传文件步骤"><a href="#上传文件步骤" class="headerlink" title="上传文件步骤"></a>上传文件步骤</h2><ul>
-<li>1.将内容写入暂存区<ul>
+<h2 id="六、上传文件步骤"><a href="#六、上传文件步骤" class="headerlink" title="六、上传文件步骤"></a>六、上传文件步骤</h2><h3 id="6-1-将内容写入暂存区"><a href="#6-1-将内容写入暂存区" class="headerlink" title="6.1. 将内容写入暂存区"></a>6.1. 将内容写入暂存区</h3><ul>
 <li><code>.</code>表示将文件夹中的所有内容都写入暂存区<pre><code>git add .</code></pre>
-</li>
-</ul>
-</li>
-<li>2.将暂存区内容添加到本地仓库中<pre><code>git commit -m [备注信息]</code></pre>
-</li>
-<li>3.上传代码到远程仓库中并合并<ul>
+<h3 id="6-2-将暂存区内容添加到本地仓库中"><a href="#6-2-将暂存区内容添加到本地仓库中" class="headerlink" title="6.2. 将暂存区内容添加到本地仓库中"></a>6.2. 将暂存区内容添加到本地仓库中</h3><pre><code>git commit -m [备注信息]</code></pre>
+<h3 id="6-3-上传代码到远程仓库中并合并"><a href="#6-3-上传代码到远程仓库中并合并" class="headerlink" title="6.3. 上传代码到远程仓库中并合并"></a>6.3. 上传代码到远程仓库中并合并</h3></li>
 <li>使用<code>-u</code>后，以后可以直接<code>git push</code>省略了后面的内容</li>
 <li>若<code>本地分支名</code>和<code>远程分支名</code>相同，则可以省略<code>远程分支名</code>不写<pre><code>git push -u &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</code></pre>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="查看当前的本地分支名"><a href="#查看当前的本地分支名" class="headerlink" title="查看当前的本地分支名"></a>查看当前的本地分支名</h2><pre><code>git branch</code></pre>
-<h2 id="修改GitHub仓库的默认分支"><a href="#修改GitHub仓库的默认分支" class="headerlink" title="修改GitHub仓库的默认分支"></a>修改GitHub仓库的默认分支</h2><ul>
+<h2 id="六、查看当前的本地分支名"><a href="#六、查看当前的本地分支名" class="headerlink" title="六、查看当前的本地分支名"></a>六、查看当前的本地分支名</h2><pre><code>git branch</code></pre>
+<h2 id="七、修改GitHub仓库的默认分支"><a href="#七、修改GitHub仓库的默认分支" class="headerlink" title="七、修改GitHub仓库的默认分支"></a>七、修改GitHub仓库的默认分支</h2><ul>
 <li>进入仓库-&gt;<code>Settings</code>-&gt;<code>Branches</code>-&gt;<code>Default branch</code></li>
 </ul>
 <!--more-->
 ]]></content>
       <categories>
         <category>技术</category>
+        <category>GitHub</category>
       </categories>
       <tags>
         <tag>GitHub</tag>
@@ -587,6 +3475,7 @@
 ]]></content>
       <categories>
         <category>技术</category>
+        <category>web开发</category>
       </categories>
       <tags>
         <tag>HTML</tag>
@@ -797,6 +3686,7 @@ repo:
 ]]></content>
       <categories>
         <category>技术</category>
+        <category>Hexo</category>
       </categories>
       <tags>
         <tag>Hexo</tag>

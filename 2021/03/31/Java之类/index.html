@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="生活" />
+   
+  <meta name="description" content="浩东、浩西、浩南、浩北" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Java之类 |  phd
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/logo.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+
+
+
+
+<link rel="alternate" href="/atom.xml" title="phd" type="application/atom+xml">
+</head>
+<body>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/monokai-sublime.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-Java之类"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Java之类
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/03/31/Java%E4%B9%8B%E7%B1%BB/" class="article-date">
+  <time datetime="2021-03-31T13:36:47.721Z" itemprop="datePublished">2021-03-31</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a> / <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/Java/">Java</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">4.2k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">15 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="一、类的介绍"><a href="#一、类的介绍" class="headerlink" title="一、类的介绍"></a>一、类的介绍</h2><h3 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1. 概述"></a>1.1. 概述</h3><ul>
+<li>类是对现实生活中一类具有共同属性和行为的事物的抽象</li>
+<li>对象是计算机中具体的数据信息，而类是这个信息的数据类型</li>
+<li>java程序中最基本的组成单位是类</li>
+<li>类的定义格式<ul>
+<li><code>public class 类名&#123;&#125;</code><a id="more"></a>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-类的特点"><a href="#1-2-类的特点" class="headerlink" title="1.2. 类的特点"></a>1.2. 类的特点</h3><ul>
+<li>类是对象的数据类型</li>
+<li>类是具有相同属性和行为的一组对象的集合<h3 id="1-3-类的重要性"><a href="#1-3-类的重要性" class="headerlink" title="1.3. 类的重要性"></a>1.3. 类的重要性</h3></li>
+<li>类是java程序的基本组成单位<h3 id="1-4-类的组成"><a href="#1-4-类的组成" class="headerlink" title="1.4. 类的组成"></a>1.4. 类的组成</h3></li>
+<li>属性和行为<ul>
+<li>属性：在类中通过成员变量来体现（类中方法外的变量）</li>
+<li>行为：在类中通过成员方法来体现（掉static关键字）<h3 id="1-5-类的定义步骤"><a href="#1-5-类的定义步骤" class="headerlink" title="1.5. 类的定义步骤"></a>1.5. 类的定义步骤</h3></li>
+</ul>
+</li>
+<li>(1)定义类</li>
+<li>(2)编写类的成员变量</li>
+<li>(3)编写类的成员方法<pre><code class="java">public class 类名
+&#123;
+    //成员变量
+    变量1的数据类型 变量1;
+    变量2的数据类型 变量2;
+    ……
+    //成员方法
+    方法1;
+    方法2;
+    ……
+&#125;</code></pre>
+</li>
+</ul>
+<h3 id="1-6-对象"><a href="#1-6-对象" class="headerlink" title="1.6. 对象"></a>1.6. 对象</h3><ul>
+<li>概述<ul>
+<li>万物皆对象，客观存在的事物皆为对象，面向对象就是面向一个具体的对象。</li>
+</ul>
+</li>
+<li>对象的属性<ul>
+<li>指对象具有的各种特征，每个对象的每个属性都拥有特定的值。</li>
+</ul>
+</li>
+<li>对象的行为<ul>
+<li>指对象能够执行的操作，即对象能够干什么。</li>
+</ul>
+</li>
+<li>创建对象<ul>
+<li>格式：类名 对象名 = new 类名();</li>
+<li>范例：<code>Phone p = new Phone();</code></li>
+</ul>
+</li>
+<li>使用对象<ul>
+<li>使用成员变量<ul>
+<li>格式：对象名.变量名</li>
+<li>范例：<code>p.brand</code></li>
+</ul>
+</li>
+<li>使用成员方法<ul>
+<li>格式：对象名.方法名()</li>
+<li>范例：<code>p.call()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-7-类和对象的关系"><a href="#1-7-类和对象的关系" class="headerlink" title="1.7. 类和对象的关系"></a>1.7. 类和对象的关系</h3><ul>
+<li>类是对现实生活中一类具有共同属性和行为的事物的抽象</li>
+<li>对象是能够看得到摸的着的真实存在的实体</li>
+<li>类是对象的抽象，对象是类的实体</li>
+</ul>
+<h3 id="1-8-成员变量和局部变量"><a href="#1-8-成员变量和局部变量" class="headerlink" title="1.8. 成员变量和局部变量"></a>1.8. 成员变量和局部变量</h3><h4 id="1-8-1-概述"><a href="#1-8-1-概述" class="headerlink" title="1.8.1. 概述"></a>1.8.1. 概述</h4><ul>
+<li>成员变量：类中方法外的变量</li>
+<li>局部变量：方法中的变量<h4 id="1-8-2-成员变量和局部变量区别"><a href="#1-8-2-成员变量和局部变量区别" class="headerlink" title="1.8.2. 成员变量和局部变量区别"></a>1.8.2. 成员变量和局部变量区别</h4></li>
+<li>类中位置不同<ul>
+<li>成员变量在类中，方法外</li>
+<li>局部变量在方法内或者方法声明上</li>
+</ul>
+</li>
+<li>内存中位置不同<ul>
+<li>成员变量在堆内存</li>
+<li>局部变量在栈内存</li>
+</ul>
+</li>
+<li>生命周期不同<ul>
+<li>成员变量随着对象的存在而存在，随着对象的消失而消失</li>
+<li>局部变量随着方法的调用而存在，随着方法的调用完毕而消失</li>
+</ul>
+</li>
+<li>初始化值不同<ul>
+<li>成员变量有默认的初始化值</li>
+<li>局部变量没有默认的初始化值，必须先定义，赋值，才能使用</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-9-构造方法"><a href="#1-9-构造方法" class="headerlink" title="1.9. 构造方法"></a>1.9. 构造方法</h3><h4 id="1-9-1-概述"><a href="#1-9-1-概述" class="headerlink" title="1.9.1. 概述"></a>1.9.1. 概述</h4><ul>
+<li>构造方法是一种特殊的方法<h4 id="1-9-2-作用"><a href="#1-9-2-作用" class="headerlink" title="1.9.2. 作用"></a>1.9.2. 作用</h4></li>
+<li>创建对象<h4 id="1-9-3-格式"><a href="#1-9-3-格式" class="headerlink" title="1.9.3. 格式"></a>1.9.3. 格式</h4><pre><code class="Java">public class 类名
+&#123;
+  //构造方法
+  修饰符 类名(参数)
+  &#123;&#125;
+&#125;</code></pre>
+</li>
+</ul>
+<h4 id="1-9-4-功能"><a href="#1-9-4-功能" class="headerlink" title="1.9.4. 功能"></a>1.9.4. 功能</h4><ul>
+<li>主要是完成对象数据的初始化<h4 id="1-9-5-注意事项"><a href="#1-9-5-注意事项" class="headerlink" title="1.9.5. 注意事项"></a>1.9.5. 注意事项</h4></li>
+<li>构造方法的创建<ul>
+<li>如果没有定义构造方法，系统将给出一个默认的无参数构造方法</li>
+<li>如果定义了构造方法，系统将不再提供默认的构造方法</li>
+</ul>
+</li>
+<li>构造方法的重载<ul>
+<li>如果自定义了带参构造方法，还要使用无参数构造方法，就必须再写一个无参数构造方法</li>
+<li>建议，无论是否使用，都手工书写无参数构造方法</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-10-标准类制作"><a href="#1-10-标准类制作" class="headerlink" title="1.10. 标准类制作"></a>1.10. 标准类制作</h3><h4 id="1-10-1-成员变量"><a href="#1-10-1-成员变量" class="headerlink" title="1.10.1. 成员变量"></a>1.10.1. 成员变量</h4><ul>
+<li>使用private修饰<h4 id="1-10-2-构造方法"><a href="#1-10-2-构造方法" class="headerlink" title="1.10.2. 构造方法"></a>1.10.2. 构造方法</h4></li>
+<li>提供一个无参构造方法</li>
+<li>提供一个带多个参数的构造方法<h4 id="1-10-3-成员方法"><a href="#1-10-3-成员方法" class="headerlink" title="1.10.3. 成员方法"></a>1.10.3. 成员方法</h4></li>
+<li>提供一个成员变量对应的<code>setXxx()/getXxx()</code></li>
+<li>提供一个显示对象信息的<code>show()</code><h4 id="1-10-4-创建对象并为其成员变量赋值的两种方式"><a href="#1-10-4-创建对象并为其成员变量赋值的两种方式" class="headerlink" title="1.10.4. 创建对象并为其成员变量赋值的两种方式"></a>1.10.4. 创建对象并为其成员变量赋值的两种方式</h4></li>
+<li>无参构造方法创建对象后使用<code>setXxx()</code>赋值</li>
+<li>使用带参构造方法直接创建带有属性值的对象</li>
+</ul>
+<h2 id="二、抽象类"><a href="#二、抽象类" class="headerlink" title="二、抽象类"></a>二、抽象类</h2><h3 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1. 概述"></a>2.1. 概述</h3><ul>
+<li>在Java中，一个没有方法体的方法应该定义为抽象法，而类中如果有抽象方法，该类必须定义为抽象类。<h3 id="2-2-抽象类的特点"><a href="#2-2-抽象类的特点" class="headerlink" title="2.2. 抽象类的特点"></a>2.2. 抽象类的特点</h3></li>
+<li>抽象类和抽象方法必须使用abstract关键字修饰<ul>
+<li>抽象类：<code>public abstract class 类名&#123;&#125;</code></li>
+<li>抽象方法：<code>public abstract void 方法名();</code></li>
+</ul>
+</li>
+<li>抽象类中不一定有抽象方法，有抽象方法的类一定是抽象类</li>
+<li>抽象类不能实例化<ul>
+<li>抽象类如何实例化呢？</li>
+<li>参照多态的方式，通过子类对象实例化，这叫抽象类多态。</li>
+</ul>
+</li>
+<li>抽象类的子类<ul>
+<li>要么重写抽象类中的所有抽象方法</li>
+<li>要么是抽象类<h3 id="2-3-抽象类的成员特点"><a href="#2-3-抽象类的成员特点" class="headerlink" title="2.3. 抽象类的成员特点"></a>2.3. 抽象类的成员特点</h3></li>
+</ul>
+</li>
+<li>成员变量<ul>
+<li>可以是变量也可以是常量</li>
+</ul>
+</li>
+<li>构造方法<ul>
+<li>有构造方法，但是不能实例化</li>
+<li>构造方法的作用是用于子类访问父类数据的初始哈</li>
+</ul>
+</li>
+<li>成员方法<ul>
+<li>可以有抽象方法：限定子类必须完成某些动作</li>
+<li>也可以有非抽象方法：提高代码复用性</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、接口"><a href="#三、接口" class="headerlink" title="三、接口"></a>三、接口</h2><h3 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1. 概述"></a>3.1. 概述</h3><ul>
+<li>接口就是一种公共的规范标准，只要符合规范标准，大家都可以通用</li>
+<li>Java中的接口更多的体现在对行为的抽象<h3 id="3-2-接口的特点"><a href="#3-2-接口的特点" class="headerlink" title="3.2. 接口的特点"></a>3.2. 接口的特点</h3></li>
+<li>接口用关键字interface修饰<ul>
+<li><code>public interface 接口名&#123;&#125;</code></li>
+</ul>
+</li>
+<li>类实现接口用implements表示<ul>
+<li>`public class 类名 implements 接口名{}``</li>
+</ul>
+</li>
+<li>接口不能实例化<ul>
+<li>接口如何实例化：参照多态的方式，通过实现类对象实例化，这叫接口多态</li>
+<li>多态的形式：具体类多态，抽象类多态，接口多态</li>
+<li>多态的前提：有继承或者实现关系；有方法重写；有父类引用指向子类对象；有父接口引用指向实现类对象</li>
+</ul>
+</li>
+<li>接口的实现类<ul>
+<li>要么重写接口中的所有抽象方法</li>
+<li>要么是抽象类</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3-接口的成员特点"><a href="#3-3-接口的成员特点" class="headerlink" title="3.3. 接口的成员特点"></a>3.3. 接口的成员特点</h3><ul>
+<li>成员变量<ul>
+<li>只能是常量</li>
+<li>默认修饰符：<code>public static final（可以不写）</code></li>
+</ul>
+</li>
+<li>构造方法<ul>
+<li>接口没有构造方法，因为接口主要是对行为进行抽象的，是没有具体存在的</li>
+<li>一个类如果没有父类，默认继承自Object类</li>
+</ul>
+</li>
+<li>成员方法<ul>
+<li>只能是抽象方法</li>
+<li>默认修饰符：public abstract。</li>
+<li>关于接口中的方法，JDK8和JDK9中有一些新特性</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-类和接口的关系"><a href="#3-4-类和接口的关系" class="headerlink" title="3.4. 类和接口的关系"></a>3.4. 类和接口的关系</h3><ul>
+<li>类和类的关系<ul>
+<li>继承关系，只能单继承，但是可以多层继承。</li>
+</ul>
+</li>
+<li>类和接口的关系<ul>
+<li>实现关系，可以单实现，也可以多实现，还可以在继承一个类的同时实现多个接口。</li>
+</ul>
+</li>
+<li>接口和接口的关系<ul>
+<li>继承关系，可以单继承，也可以多继承。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-5-抽象类和接口的区别"><a href="#3-5-抽象类和接口的区别" class="headerlink" title="3.5. 抽象类和接口的区别"></a>3.5. 抽象类和接口的区别</h3><ul>
+<li>成员区别<ul>
+<li>抽象类：变量，常量；有构造方法；有抽象方法，也有非抽象方法</li>
+<li>接口：常量；抽象方法</li>
+</ul>
+</li>
+<li>关系区别<ul>
+<li>类与类：继承关系，单继承</li>
+<li>类与接口：实现关系，可以单实现，也可以多实现</li>
+<li>接口与接口：继承关系，单继承，多继承</li>
+</ul>
+</li>
+<li>设计理念区别<ul>
+<li>抽象类：对类抽象，包括属性、行为，抽象类是对事物的抽象</li>
+<li>接口：对行为抽象，主要是行为</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-6-形参和返回值"><a href="#3-6-形参和返回值" class="headerlink" title="3.6. 形参和返回值"></a>3.6. 形参和返回值</h3><ul>
+<li>抽象类名作为形参和返回值<ul>
+<li>方法的形参是抽象类名，其实需要的是该抽象类的子类对象。</li>
+<li>方法的返回值是抽象类名，其实返回的是该抽象类的子类对象。</li>
+</ul>
+</li>
+<li>接口名作为形参和返回值<ul>
+<li>方法的形参是接口名，其实需要的是该接口的实现类对象。</li>
+<li>方法的返回值是接口名，其实返回的是该接口的实现类对象。</li>
+</ul>
+</li>
+</ul>
+<h2 id="四、内部类"><a href="#四、内部类" class="headerlink" title="四、内部类"></a>四、内部类</h2><h3 id="4-1-概述"><a href="#4-1-概述" class="headerlink" title="4.1. 概述"></a>4.1. 概述</h3><ul>
+<li><p>内部类就是在一个类中定义一个类。</p>
+</li>
+<li><p>举例：在一个类A的内部定义一个类B，类B就被称为内部类。</p>
+</li>
+<li><p>按照内部类在类中定义的位置不同，可以分为如下两种方式</p>
+<ul>
+<li><p>在类的成员位置：成员内部类</p>
+</li>
+<li><p>在类的局部位置：局部内部类</p>
+<h3 id="4-2-格式"><a href="#4-2-格式" class="headerlink" title="4.2. 格式"></a>4.2. 格式</h3><pre><code class="java">public class 类名
+&#123;
+//内部类
+修饰符 class 类名
+&#123;
+
+&#125;
+&#125;
+//范例
+public class a
+&#123;
+pubilc class b
+&#123;
+
+&#125;
+&#125;</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-3-内部类的访问特点"><a href="#4-3-内部类的访问特点" class="headerlink" title="4.3. 内部类的访问特点"></a>4.3. 内部类的访问特点</h3><ul>
+<li><p>内部类可以直接访问外部类的成员，包括私有的</p>
+</li>
+<li><p>外部类要访问内部类的成员，必须创建对象</p>
+<h3 id="4-4-成员内部类"><a href="#4-4-成员内部类" class="headerlink" title="4.4. 成员内部类"></a>4.4. 成员内部类</h3></li>
+<li><p>在类的成员位置</p>
+</li>
+<li><p>成员内部类，外界如何创建对象使用呢？</p>
+</li>
+<li><p>格式：外部类名.内部类名 对象名 = 外部类对象.内部类对象;</p>
+</li>
+<li><p>范例：Outer.lnner oi = new Outer.lnner();</p>
+<h3 id="4-5-局部内部类"><a href="#4-5-局部内部类" class="headerlink" title="4.5. 局部内部类"></a>4.5. 局部内部类</h3></li>
+<li><p>在类的局部位置，即在方法中</p>
+</li>
+<li><p>局部内部类是在方法中定义的类，所以外界是无法直接使用的，需要在方法内部创建对象并使用</p>
+</li>
+<li><p>该类可以直接访问外部类的成员，也可以访问方法内的局部变量。</p>
+<h3 id="4-6-匿名内部类"><a href="#4-6-匿名内部类" class="headerlink" title="4.6. 匿名内部类"></a>4.6. 匿名内部类</h3></li>
+<li><p>也归属于局部内部类</p>
+</li>
+<li><p>前提：存在一个类或者接口，这里的类可以是具体类也可以是抽象类。</p>
+</li>
+<li><p>格式</p>
+<pre><code class="java">new 类名或者接口名()
+&#123;
+    重写方法;
+&#125;
+
+//范例
+new Inter()
+&#123;
+    public void show()
+    &#123;
+
+    &#125;
+&#125;</code></pre>
+</li>
+<li><p>本质：是一个继承了该类或者实现了该接口的子类匿名对象</p>
+</li>
+<li><p>匿名内部类在开发中的使用</p>
+<ul>
+<li>当接口实例化时需要重新定义一个子类去实现接口中的方法，使用匿名内部类后，就不需要定义一个新的子类</li>
+</ul>
+</li>
+</ul>
+<h2 id="五、Math类"><a href="#五、Math类" class="headerlink" title="五、Math类"></a>五、Math类</h2><h3 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1. 概述"></a>5.1. 概述</h3><ul>
+<li>Math包含执行基本数字运算的方法</li>
+<li>没有构造方法时如何使用类中的成员呢？看类的成员是否都是静态的，如果是，通过类名就可以直接调用<h3 id="5-2-Math类的常用方法"><a href="#5-2-Math类的常用方法" class="headerlink" title="5.2. Math类的常用方法"></a>5.2. Math类的常用方法</h3></li>
+<li><code>public static int abs(int a)</code><ul>
+<li>返回参数的绝对值</li>
+</ul>
+</li>
+<li><code>public static double ceil(double a)</code><ul>
+<li>返回大于或等于参数double值的最小整数</li>
+</ul>
+</li>
+<li><code>public static double floor(double a)</code><ul>
+<li>返回小于或等于参数double值的最大整数</li>
+</ul>
+</li>
+<li><code>public static int round(float a)</code><ul>
+<li>按照四舍五入返回最接近参数的int</li>
+</ul>
+</li>
+<li><code>public static int max(int a, int b)</code><ul>
+<li>返回两个int值中的较大值</li>
+</ul>
+</li>
+<li><code>public static int min(int a, int b)</code><ul>
+<li>返回两个int值中的较小值</li>
+</ul>
+</li>
+<li><code>public static double pow(double a, double b)</code><ul>
+<li>返回a的b次幂的值</li>
+</ul>
+</li>
+<li><code>public static double random()</code><ul>
+<li>返回值为double的正值，范围为[0.0，1.0)</li>
+</ul>
+</li>
+</ul>
+<h2 id="六、System类"><a href="#六、System类" class="headerlink" title="六、System类"></a>六、System类</h2><h3 id="6-1-概述"><a href="#6-1-概述" class="headerlink" title="6.1. 概述"></a>6.1. 概述</h3><ul>
+<li>System包含几个有用的类字段和方法，它不能被实例化<h3 id="6-2-System类的常用方法"><a href="#6-2-System类的常用方法" class="headerlink" title="6.2. System类的常用方法"></a>6.2. System类的常用方法</h3></li>
+<li><code>public static void exit(int status)</code><ul>
+<li>终止当前运行的Java虚拟机，非零表示异常终止</li>
+</ul>
+</li>
+<li><code>public static long currentTimeMillis()</code><ul>
+<li>返回当前时间（以毫秒为单位），当前时间与1970年之间的毫秒值</li>
+</ul>
+</li>
+</ul>
+<h2 id="七、Object类"><a href="#七、Object类" class="headerlink" title="七、Object类"></a>七、Object类</h2><h3 id="7-1-概述"><a href="#7-1-概述" class="headerlink" title="7.1. 概述"></a>7.1. 概述</h3><ul>
+<li>Object是类层次结构的根，每个类都可以将Object作为超类，所有类都直接或者间接的继承自该类</li>
+<li>构造方法：public Object()</li>
+<li>回想面向对象中，为什么说子类的构造方法默认访问的是父类的无参构造方法？<ul>
+<li>因为它们的顶级父类只有无参构造方法<h3 id="7-2-toString方法"><a href="#7-2-toString方法" class="headerlink" title="7.2. toString方法"></a>7.2. toString方法</h3></li>
+</ul>
+</li>
+<li><code>public String toString()</code></li>
+<li>建议所有子类重写此方法。因为该方法原本输出的内容不直观。</li>
+<li>如何重写：自动生成即可（与生成get、set相似）</li>
+<li><code>System.out.println(对象名);</code>实际上就是System.out.println(对象名.toString());<h3 id="7-3-equals方法"><a href="#7-3-equals方法" class="headerlink" title="7.3. equals方法"></a>7.3. equals方法</h3></li>
+<li><code>public boolean equals(Object obj)</code></li>
+<li>比较对象是否相等，默认比较地址，重写可以比较内容，自动生成（与生成get、set相似）</li>
+</ul>
+<h2 id="八、Arrays类"><a href="#八、Arrays类" class="headerlink" title="八、Arrays类"></a>八、Arrays类</h2><ul>
+<li>Arrays类包含用于操作数组的各种方法</li>
+<li><code>public static String toString(int[] a)</code><ul>
+<li>返回指定数组的内容的字符串表示形式，数字之间会自动用逗号隔开，输出范例：[1,2,3,4,5]</li>
+</ul>
+</li>
+<li><code>public static void sort(int[] a)</code><ul>
+<li>按照数字顺序排列指定的数组</li>
+</ul>
+</li>
+</ul>
+<h2 id="九、工具类的设计思想"><a href="#九、工具类的设计思想" class="headerlink" title="九、工具类的设计思想"></a>九、工具类的设计思想</h2><ul>
+<li>构造方法用private修饰，原因是为了防止外界创建该对象。</li>
+<li>成员用public static修饰，原因是为了让使用类名来访问该成员方法。</li>
+</ul>
+<h2 id="十、基本类型包装类"><a href="#十、基本类型包装类" class="headerlink" title="十、基本类型包装类"></a>十、基本类型包装类</h2><h3 id="10-1-概述"><a href="#10-1-概述" class="headerlink" title="10.1. 概述"></a>10.1. 概述</h3><ul>
+<li>将基本数据类型封装成对象的好处在于可以在对象中定义更多的功能方法操作该数据。</li>
+<li>常用的操作之一：用于基本数据类型与字符串之间的转换</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">基本数据类型</th>
+<th align="center">包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">byte</td>
+<td align="center">Byte</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">Short</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">Integer</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">Long</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">Float</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">Double</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">Character</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">Boolean</td>
+</tr>
+</tbody></table>
+<h3 id="10-2-Integer类的概述和使用"><a href="#10-2-Integer类的概述和使用" class="headerlink" title="10.2. Integer类的概述和使用"></a>10.2. Integer类的概述和使用</h3><ul>
+<li>Integer包装一个对象中的原始类型int的值</li>
+<li><code>public Integer(int value)</code><ul>
+<li>根据int值创建Integer对象(过时)</li>
+</ul>
+</li>
+<li><code>public Integer(String s)</code><ul>
+<li>根据String值创建Integer对象(过时)</li>
+</ul>
+</li>
+<li><code>public static Integer valueOf(int i)</code><ul>
+<li>返回表示指定的int值的Integer实例</li>
+</ul>
+</li>
+<li><code>public static Integer valueOf(String s)</code><ul>
+<li>返回一个保存指定值String的Integer对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-3-int和String的相互转换"><a href="#10-3-int和String的相互转换" class="headerlink" title="10.3. int和String的相互转换"></a>10.3. int和String的相互转换</h3><ul>
+<li>基本类型包装类的最常见操作就是：用于基本类型和字符串之间的相互转换。</li>
+<li>int转换为String<ul>
+<li><code>public static String valueOf(int i)</code></li>
+<li>返回int参数的字符串表示形式。该方法是String类中的方法。</li>
+</ul>
+</li>
+<li>String转换为int<ul>
+<li>public static int parseInt(String s)</li>
+<li>将字符串解析为int类型，该方法是Integer类中的方法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-4-自动装箱和拆箱"><a href="#10-4-自动装箱和拆箱" class="headerlink" title="10.4. 自动装箱和拆箱"></a>10.4. 自动装箱和拆箱</h3><ul>
+<li>装箱：把基本数据类型转换为对应的包装类类型</li>
+<li>拆箱：把包装类类型转换为对应的基本数据类型<pre><code class="java">Integer a = Integer.valueOf(100);//装箱
+Integer i = 100;//自动装箱
+i = i.intValue() + 200;//i.intValue()是拆箱
+i += 200;//i = i + 200; i + 200是自动拆箱; i = i + 200是自动装箱</code></pre>
+</li>
+<li>注意：在使用包装类类型的时候，如果做操作，最好先判断是否为null，建议只要是对象，在使用前就必须进行不为null的判断。</li>
+</ul>
+<h2 id="十一、日期类"><a href="#十一、日期类" class="headerlink" title="十一、日期类"></a>十一、日期类</h2><h3 id="11-1-Date"><a href="#11-1-Date" class="headerlink" title="11.1. Date"></a>11.1. Date</h3><h4 id="11-1-1-概述"><a href="#11-1-1-概述" class="headerlink" title="11.1.1. 概述"></a>11.1.1. 概述</h4><ul>
+<li>Date代表了一个特点的时间，精确到毫秒。</li>
+<li><code>public Date()</code><ul>
+<li>分配一个Date对象，并初始化，以便它代表它被分配的时间，精确到毫秒，输出值为当前时间。</li>
+</ul>
+</li>
+<li><code>public Date(long date)</code><ul>
+<li>分配一个Date对象，并将其初始化为表示从标准基准时间起指定的毫秒数。</li>
+</ul>
+</li>
+</ul>
+<h3 id="11-1-2-Date类的常用方法"><a href="#11-1-2-Date类的常用方法" class="headerlink" title="11.1.2. Date类的常用方法"></a>11.1.2. Date类的常用方法</h3><ul>
+<li><code>public long getTime()</code><ul>
+<li>获取的是日期对象从1970年1月1日00：00：00到现在的毫秒值</li>
+</ul>
+</li>
+<li><code>public void setTime(long time)</code><ul>
+<li>设置时间，给的是毫米值</li>
+</ul>
+</li>
+</ul>
+<h3 id="11-2-SimpleDateFormat"><a href="#11-2-SimpleDateFormat" class="headerlink" title="11.2. SimpleDateFormat"></a>11.2. SimpleDateFormat</h3><h4 id="11-2-1-概述"><a href="#11-2-1-概述" class="headerlink" title="11.2.1. 概述"></a>11.2.1. 概述</h4><ul>
+<li>SimpleDateFormat是一个具体的类，用于以区域设置敏感的方式格式化和解析日期</li>
+<li>日期和时间格式由日期和时间模式字符串指定，在日期和时间模式字符串中，从‘A’到‘Z’以及从‘a’到‘z’引号的字母被解释为表示日期或时间字符串的组件的模式字母</li>
+<li>常用的模式字母即对应关系如下<ul>
+<li>y：年</li>
+<li>M：月</li>
+<li>d：日</li>
+<li>H：时</li>
+<li>m：分</li>
+<li>s：秒</li>
+</ul>
+</li>
+</ul>
+<h4 id="11-2-2-SimpleDateFormat的构造方法"><a href="#11-2-2-SimpleDateFormat的构造方法" class="headerlink" title="11.2.2. SimpleDateFormat的构造方法"></a>11.2.2. SimpleDateFormat的构造方法</h4><ul>
+<li><code>public SimpleDateFormat()</code><ul>
+<li>构造一个SimpleDateFormat，使用默认模式和日期格式</li>
+</ul>
+</li>
+<li><code>public SimpleDateFormat(String pattern)</code><ul>
+<li>构造一个SimpleDateFormat使用给定的pattern模式和默认的日期格式</li>
+</ul>
+</li>
+</ul>
+<h4 id="11-2-3-SimpleDateFormat格式化和解析日期"><a href="#11-2-3-SimpleDateFormat格式化和解析日期" class="headerlink" title="11.2.3. SimpleDateFormat格式化和解析日期"></a>11.2.3. SimpleDateFormat格式化和解析日期</h4><ul>
+<li>格式化（从Date到String）<ul>
+<li>public final String format(Date date)</li>
+<li>将日期格式化成日期/时间字符串，从Date到String<pre><code class="java">Date d = new Date();
+SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy年MM月dd日 HH:mm:ss&quot;);
+String s = sdf.format(d);
+System.out.println(s);
+//输出结果为：2020年06月03日 14:09:11</code></pre>
+</li>
+</ul>
+</li>
+<li>解析（从String到Date）<ul>
+<li>public Date parse(String source)</li>
+<li>从给定字符串的开始解析文本以生成日期，从String到Date<pre><code class="java">String s = &quot;2048-08-09 11:11:11&quot;;
+SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+Date d = sdf.parse(s);
+System.out.println(d);
+//输出结果为：Sun Aug 09 11:11:11 CST 2048</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="11-3-Calendar"><a href="#11-3-Calendar" class="headerlink" title="11.3. Calendar"></a>11.3. Calendar</h3><h4 id="11-3-1-概述"><a href="#11-3-1-概述" class="headerlink" title="11.3.1. 概述"></a>11.3.1. 概述</h4><ul>
+<li>Calendar为某一时刻和一组日历字段之间的转换提供了一些方法，并为操作日历字段提供了一些方法。</li>
+<li>Calendar提供了一个类方法getInstance用于获取Calendar对象，其日历字段已使用当前日期和时间初始化。</li>
+<li><code>Calendar rightNow = Calendar.getInstance();</code></li>
+<li>注意：月数是从0开始的。<h4 id="11-3-2-Calendar类的常用方法"><a href="#11-3-2-Calendar类的常用方法" class="headerlink" title="11.3.2. Calendar类的常用方法"></a>11.3.2. Calendar类的常用方法</h4></li>
+<li><code>public int get(int field)</code><ul>
+<li>返回给定日历字段的值</li>
+</ul>
+</li>
+<li><code>public abstract void add(int field, int amount)</code><ul>
+<li>根据日历的规则，将指定的时间量添加或减去给定的日历字段</li>
+</ul>
+</li>
+<li><code>public final void set(int year, int month, int date)</code><ul>
+<li>设置当前日历的年月日</li>
+</ul>
+</li>
+</ul>
+<!--more-->
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://phd99.com/2021/03/31/Java%E4%B9%8B%E7%B1%BB/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/03/31/Java%E4%B9%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Java之类加载
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/03/31/Java%E4%B9%8B%E6%96%B9%E6%B3%95/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Java之方法</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "评论~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021
+        <i class="ri-heart-fill heart_icon"></i> phd
+      </li>
+    </ul>
+
+
+    <!-- 运行天数 -->  <!-- + B + "小时" + C + "分" + D + "秒" -->  
+    <ul>
+      <li>
+        
+          <span id="runtime_span"></span>
+          <script type="text/javascript">
+            function show_runtime() {
+                window.setTimeout("show_runtime()", 1000);
+                X = new Date("01/04/2021 11:11:11");
+                Y = new Date();
+                T = (Y.getTime() - X.getTime());
+                M = 24 * 60 * 60 * 1000;
+                a = T / M;
+                A = Math.floor(a);
+                b = (a - A) * 24;
+                B = Math.floor(b);
+                c = (b - B) * 60;
+                C = Math.floor((b - B) * 60);
+                D = Math.floor((c - C) * 60);
+                runtime_span.innerHTML = "本站已运行: " + A + "天";
+            }
+            show_runtime();
+          </script>
+        
+      </li>
+    </ul>
+
+
+    <ul>
+      <li>
+        
+        
+        
+        由 <a href="https://hexo.io" target="_blank">Hexo</a> 强力驱动
+        <span class="division">|</span>
+        主题 - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+
+    
+
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+
+  </div>
+
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/logo.png" alt="phd"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories/%E6%96%87%E6%91%98">文摘</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/aaa/html/test">测试</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+
+</body>
+</html>
