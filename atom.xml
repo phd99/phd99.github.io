@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>phd</title>
   <icon>https://www.gravatar.com/avatar/079369380d945b7e56ef48f8610b3da4</icon>
-  <subtitle>宝剑锋从磨砺出，梅花香自苦寒来</subtitle>
+  
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
@@ -25,7 +25,7 @@
     
     
     <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过类的加载、类的连接、类的初始化这三个步骤来对类进行初始化。如果不出现以外情况，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或者类初始化。&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;li&gt;当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过类的加载、类的连接、类的初始化这三个步骤来对类进行初始化。如果不出现以外情况，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或者类初始化。</summary>
     
     
     
@@ -51,7 +51,7 @@
 &lt;li&gt;对象是计算机中具体的数据信息，而类是这个信息的数据类型&lt;/li&gt;
 &lt;li&gt;java程序中最基本的组成单位是类&lt;/li&gt;
 &lt;li&gt;类的定义格式&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;public class 类名&amp;#123;&amp;#125;&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;li&gt;&lt;code&gt;public class 类名&amp;#123;&amp;#125;&lt;/code&gt;</summary>
     
     
     
@@ -75,7 +75,7 @@
     <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;方法是将具有独立功能的代码块组织成为一个整体，使其具有特殊功能的代码集。&lt;/li&gt;
 &lt;li&gt;方法必须先创建才可以使用，该过程称为方法定义&lt;/li&gt;
-&lt;li&gt;方法创建后并不是直接运行的，需要手动使用后才执行，该过程称为方法调用&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;li&gt;方法创建后并不是直接运行的，需要手动使用后才执行，该过程称为方法调用</summary>
     
     
     
@@ -97,7 +97,7 @@
     
     
     <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;标识符就是给类、方法、变量等起名字的符号&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;li&gt;标识符就是给类、方法、变量等起名字的符号</summary>
     
     
     
@@ -119,7 +119,7 @@
     
     
     <summary type="html">&lt;h2 id=&quot;一、常量&quot;&gt;&lt;a href=&quot;#一、常量&quot; class=&quot;headerlink&quot; title=&quot;一、常量&quot;&gt;&lt;/a&gt;一、常量&lt;/h2&gt;&lt;h3 id=&quot;1-1-概述&quot;&gt;&lt;a href=&quot;#1-1-概述&quot; class=&quot;headerlink&quot; title=&quot;1.1. 概述&quot;&gt;&lt;/a&gt;1.1. 概述&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;常量就是在程序运行过程中，其值不可以发生改变的量。&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;li&gt;常量就是在程序运行过程中，其值不可以发生改变的量。</summary>
     
     
     
@@ -159,7 +159,7 @@
 &lt;li&gt;引用数据类型&lt;ul&gt;
 &lt;li&gt;类&lt;code&gt;class&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;接口&lt;code&gt;interface&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;数值&lt;code&gt;[]&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;li&gt;数值&lt;code&gt;[]&lt;/code&gt;</summary>
     
     
     
@@ -187,7 +187,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;byte&lt;/code&gt; -&amp;gt; &lt;code&gt;short&lt;/code&gt; -&amp;gt; &lt;code&gt;int&lt;/code&gt; -&amp;gt; &lt;code&gt;long&lt;/code&gt; -&amp;gt; &lt;code&gt;float&lt;/code&gt; -&amp;gt; &lt;code&gt;double&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;char&lt;/code&gt; -&amp;gt; &lt;code&gt;int&lt;/code&gt; -&amp;gt; &lt;code&gt;long&lt;/code&gt; -&amp;gt; &lt;code&gt;float&lt;/code&gt; -&amp;gt; &lt;code&gt;double&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;li&gt;&lt;code&gt;char&lt;/code&gt; -&amp;gt; &lt;code&gt;int&lt;/code&gt; -&amp;gt; &lt;code&gt;long&lt;/code&gt; -&amp;gt; &lt;code&gt;float&lt;/code&gt; -&amp;gt; &lt;code&gt;double&lt;/code&gt;</summary>
     
     
     
@@ -214,7 +214,7 @@
 &lt;li&gt;范例&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;int a = 10;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;int b = 20;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;int c = a + b;&lt;/code&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;li&gt;&lt;code&gt;int c = a + b;&lt;/code&gt;</summary>
     
     
     
@@ -237,7 +237,7 @@
     
     <summary type="html">&lt;h2 id=&quot;一、顺序结构&quot;&gt;&lt;a href=&quot;#一、顺序结构&quot; class=&quot;headerlink&quot; title=&quot;一、顺序结构&quot;&gt;&lt;/a&gt;一、顺序结构&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;顺序结构是程序中最简单最基本的流程控制，没有特定的语法结构，按照代码的先后顺序，依次执行，程序中大多数的代码都是这样执行的。&lt;/li&gt;
-&lt;li&gt;它是从上往下依次执行的。&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;li&gt;它是从上往下依次执行的。</summary>
     
     
     
@@ -259,7 +259,7 @@
     
     
     <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;数组（array）是一种用于存储多个相同类型数据的存储模型&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;li&gt;数组（array）是一种用于存储多个相同类型数据的存储模型</summary>
     
     
     
@@ -360,7 +360,7 @@
 elif action_str == &amp;quot;0&amp;quot;:
   pass
 else:
-  print(&amp;quot;宝剑锋从磨砺出，梅花香自苦寒来&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+  print(&amp;quot;宝剑锋从磨砺出，梅花香自苦寒来&amp;quot;)&lt;/code&gt;&lt;/pre&gt;</summary>
     
     
     
@@ -478,7 +478,7 @@ else:
     <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;结构用于对网页元素进行整理和分类，身体，HTML。&lt;/li&gt;
 &lt;li&gt;表现用于设置网页元素的板式、颜色、大小等外观样式，装饰CSS。&lt;/li&gt;
-&lt;li&gt;行为是指网页模型的定义及交互的编写，动作，JavaScript。&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;li&gt;行为是指网页模型的定义及交互的编写，动作，JavaScript。</summary>
     
     
     
@@ -528,7 +528,7 @@ else:
 &lt;li&gt;安装 &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;安装 &lt;a href=&quot;https://hexo.io/zh-cn/&quot;&gt;Hexo&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;鼠标右键打开&lt;code&gt;git bash&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;在&lt;code&gt;在git bash&lt;/code&gt;中输入下列命令&lt;pre&gt;&lt;code&gt;npm install -g hexo-cli&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;</summary>
+&lt;li&gt;在&lt;code&gt;在git bash&lt;/code&gt;中输入下列命令&lt;pre&gt;&lt;code&gt;npm install -g hexo-cli&lt;/code&gt;&lt;/pre&gt;</summary>
     
     
     
