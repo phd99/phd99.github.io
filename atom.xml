@@ -348,19 +348,10 @@
 &lt;li&gt;print(keyword.kwlist)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Python中的关键字：&lt;pre&gt;&lt;code class=&quot;python3&quot;&gt;   False,None,True,and,as,assert,break,class,
-   continue,def,del,elif,else,except,finally,for,
-   from,global,if,import,in,is,lambda,nonlocal,not,
-   or,pass,raise,return,try,while,with,yield&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
+&lt;li&gt;Python中的关键字：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;False,None,True,and,as,assert,break,class,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;continue,def,del,elif,else,except,finally,for,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from,global,if,import,in,is,lambda,nonlocal,not,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;or,pass,raise,return,try,while,with,yield&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
 &lt;li&gt;import关键字可以导入一个“工具包”，在Python中不同的工具包，提供有不同的工具。&lt;/li&gt;
 &lt;li&gt;pass&lt;ul&gt;
-&lt;li&gt;如果在开发程序时，不希望立刻编写分支内部的代码，可以使用pass关键字，表示一个占位符，能够保证程序的代码结构正确。&lt;pre&gt;&lt;code class=&quot;python3&quot;&gt;if action_str in [&amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;, &amp;quot;3&amp;quot;]:
-  pass
-elif action_str == &amp;quot;0&amp;quot;:
-  pass
-else:
-  print(&amp;quot;宝剑锋从磨砺出，梅花香自苦寒来&amp;quot;)&lt;/code&gt;&lt;/pre&gt;</summary>
+&lt;li&gt;如果在开发程序时，不希望立刻编写分支内部的代码，可以使用pass关键字，表示一个占位符，能够保证程序的代码结构正确。&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;if action_str in [&amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;, &amp;quot;3&amp;quot;]:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pass&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;elif action_str &amp;#x3D;&amp;#x3D; &amp;quot;0&amp;quot;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pass&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;else:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print(&amp;quot;宝剑锋从磨砺出，梅花香自苦寒来&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
@@ -449,10 +440,8 @@ else:
     
     
     <summary type="html">&lt;h2 id=&quot;一、初始化一个git仓库&quot;&gt;&lt;a href=&quot;#一、初始化一个git仓库&quot; class=&quot;headerlink&quot; title=&quot;一、初始化一个git仓库&quot;&gt;&lt;/a&gt;一、初始化一个git仓库&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;将当前文件夹作为git仓库&lt;pre&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;或者将当前文件夹下的xxx文件夹作为git仓库&lt;pre&gt;&lt;code&gt;git init xxx&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
+&lt;li&gt;将当前文件夹作为git仓库&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;或者将当前文件夹下的xxx文件夹作为git仓库&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git init xxx&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
 &lt;li&gt;初始化后会出现一个名为&lt;code&gt;.git&lt;/code&gt;的隐藏文件夹&lt;/li&gt;
 &lt;/ul&gt;</summary>
     
@@ -528,7 +517,7 @@ else:
 &lt;li&gt;安装 &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;安装 &lt;a href=&quot;https://hexo.io/zh-cn/&quot;&gt;Hexo&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;鼠标右键打开&lt;code&gt;git bash&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;在&lt;code&gt;在git bash&lt;/code&gt;中输入下列命令&lt;pre&gt;&lt;code&gt;npm install -g hexo-cli&lt;/code&gt;&lt;/pre&gt;</summary>
+&lt;li&gt;在&lt;code&gt;在git bash&lt;/code&gt;中输入下列命令&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g hexo-cli&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     

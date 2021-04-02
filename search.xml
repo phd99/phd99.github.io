@@ -75,12 +75,11 @@
 </li>
 </ul>
 <h3 id="7-4-ClassLoader中的两个方法"><a href="#7-4-ClassLoader中的两个方法" class="headerlink" title="7.4. ClassLoader中的两个方法"></a>7.4. ClassLoader中的两个方法</h3><ul>
-<li>返回用于委派的系统类加载器<pre><code class="java">static ClassLoader getSystemClassLoader()</code></pre>
-</li>
-<li>返回父类加载器进行委派<pre><code class="java">ClassLoader getParent()</code></pre>
+<li>返回用于委派的系统类加载器<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> ClassLoader <span class="title">getSystemClassLoader</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></li>
+<li>返回父类加载器进行委派<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ClassLoader <span class="title">getParent</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<!--more-->
 </li>
 </ul>
-<!--more-->
 ]]></content>
       <categories>
         <category>技术</category>
@@ -115,17 +114,8 @@
 </li>
 <li>(1)定义类</li>
 <li>(2)编写类的成员变量</li>
-<li>(3)编写类的成员方法<pre><code class="java">public class 类名
-&#123;
-    //成员变量
-    变量1的数据类型 变量1;
-    变量2的数据类型 变量2;
-    ……
-    //成员方法
-    方法1;
-    方法2;
-    ……
-&#125;</code></pre>
+<li>(3)编写类的成员方法<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">//成员变量</span></span><br><span class="line">    变量<span class="number">1</span>的数据类型 变量<span class="number">1</span>;</span><br><span class="line">    变量<span class="number">2</span>的数据类型 变量<span class="number">2</span>;</span><br><span class="line">    ……</span><br><span class="line">    <span class="comment">//成员方法</span></span><br><span class="line">    方法<span class="number">1</span>;</span><br><span class="line">    方法<span class="number">2</span>;</span><br><span class="line">    ……</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="1-6-对象"><a href="#1-6-对象" class="headerlink" title="1.6. 对象"></a>1.6. 对象</h3><ul>
@@ -191,12 +181,8 @@
 </ul>
 <h3 id="1-9-构造方法"><a href="#1-9-构造方法" class="headerlink" title="1.9. 构造方法"></a>1.9. 构造方法</h3><h4 id="1-9-1-概述"><a href="#1-9-1-概述" class="headerlink" title="1.9.1. 概述"></a>1.9.1. 概述</h4><ul>
 <li>构造方法是一种特殊的方法<h4 id="1-9-2-作用"><a href="#1-9-2-作用" class="headerlink" title="1.9.2. 作用"></a>1.9.2. 作用</h4></li>
-<li>创建对象<h4 id="1-9-3-格式"><a href="#1-9-3-格式" class="headerlink" title="1.9.3. 格式"></a>1.9.3. 格式</h4><pre><code class="Java">public class 类名
-&#123;
-  //构造方法
-  修饰符 类名(参数)
-  &#123;&#125;
-&#125;</code></pre>
+<li>创建对象<h4 id="1-9-3-格式"><a href="#1-9-3-格式" class="headerlink" title="1.9.3. 格式"></a>1.9.3. 格式</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    修饰符 类名(参数)</span><br><span class="line">    &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h4 id="1-9-4-功能"><a href="#1-9-4-功能" class="headerlink" title="1.9.4. 功能"></a>1.9.4. 功能</h4><ul>
@@ -340,77 +326,31 @@
 </li>
 </ul>
 <h2 id="四、内部类"><a href="#四、内部类" class="headerlink" title="四、内部类"></a>四、内部类</h2><h3 id="4-1-概述"><a href="#4-1-概述" class="headerlink" title="4.1. 概述"></a>4.1. 概述</h3><ul>
-<li><p>内部类就是在一个类中定义一个类。</p>
-</li>
-<li><p>举例：在一个类A的内部定义一个类B，类B就被称为内部类。</p>
-</li>
-<li><p>按照内部类在类中定义的位置不同，可以分为如下两种方式</p>
-<ul>
-<li><p>在类的成员位置：成员内部类</p>
-</li>
-<li><p>在类的局部位置：局部内部类</p>
-<h3 id="4-2-格式"><a href="#4-2-格式" class="headerlink" title="4.2. 格式"></a>4.2. 格式</h3><pre><code class="java">public class 类名
-&#123;
-//内部类
-修饰符 class 类名
-&#123;
+<li>内部类就是在一个类中定义一个类。</li>
+<li>举例：在一个类A的内部定义一个类B，类B就被称为内部类。</li>
+<li>按照内部类在类中定义的位置不同，可以分为如下两种方式<ul>
+<li>在类的成员位置：成员内部类</li>
+<li>在类的局部位置：局部内部类<h3 id="4-2-格式"><a href="#4-2-格式" class="headerlink" title="4.2. 格式"></a>4.2. 格式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">//内部类</span></span><br><span class="line">    修饰符 <span class="class"><span class="keyword">class</span> 类名</span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//范例</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">a</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    pubilc <span class="class"><span class="keyword">class</span> <span class="title">b</span></span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-&#125;
-&#125;
-//范例
-public class a
-&#123;
-pubilc class b
-&#123;
-
-&#125;
-&#125;</code></pre>
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="4-3-内部类的访问特点"><a href="#4-3-内部类的访问特点" class="headerlink" title="4.3. 内部类的访问特点"></a>4.3. 内部类的访问特点</h3><ul>
-<li><p>内部类可以直接访问外部类的成员，包括私有的</p>
-</li>
-<li><p>外部类要访问内部类的成员，必须创建对象</p>
-<h3 id="4-4-成员内部类"><a href="#4-4-成员内部类" class="headerlink" title="4.4. 成员内部类"></a>4.4. 成员内部类</h3></li>
-<li><p>在类的成员位置</p>
-</li>
-<li><p>成员内部类，外界如何创建对象使用呢？</p>
-</li>
-<li><p>格式：外部类名.内部类名 对象名 = 外部类对象.内部类对象;</p>
-</li>
-<li><p>范例：Outer.lnner oi = new Outer.lnner();</p>
-<h3 id="4-5-局部内部类"><a href="#4-5-局部内部类" class="headerlink" title="4.5. 局部内部类"></a>4.5. 局部内部类</h3></li>
-<li><p>在类的局部位置，即在方法中</p>
-</li>
-<li><p>局部内部类是在方法中定义的类，所以外界是无法直接使用的，需要在方法内部创建对象并使用</p>
-</li>
-<li><p>该类可以直接访问外部类的成员，也可以访问方法内的局部变量。</p>
-<h3 id="4-6-匿名内部类"><a href="#4-6-匿名内部类" class="headerlink" title="4.6. 匿名内部类"></a>4.6. 匿名内部类</h3></li>
-<li><p>也归属于局部内部类</p>
-</li>
-<li><p>前提：存在一个类或者接口，这里的类可以是具体类也可以是抽象类。</p>
-</li>
-<li><p>格式</p>
-<pre><code class="java">new 类名或者接口名()
-&#123;
-    重写方法;
-&#125;
-
-//范例
-new Inter()
-&#123;
-    public void show()
-    &#123;
-
-    &#125;
-&#125;</code></pre>
-</li>
-<li><p>本质：是一个继承了该类或者实现了该接口的子类匿名对象</p>
-</li>
-<li><p>匿名内部类在开发中的使用</p>
-<ul>
+<li>内部类可以直接访问外部类的成员，包括私有的</li>
+<li>外部类要访问内部类的成员，必须创建对象<h3 id="4-4-成员内部类"><a href="#4-4-成员内部类" class="headerlink" title="4.4. 成员内部类"></a>4.4. 成员内部类</h3></li>
+<li>在类的成员位置</li>
+<li>成员内部类，外界如何创建对象使用呢？</li>
+<li>格式：外部类名.内部类名 对象名 = 外部类对象.内部类对象;</li>
+<li>范例：Outer.lnner oi = new Outer.lnner();<h3 id="4-5-局部内部类"><a href="#4-5-局部内部类" class="headerlink" title="4.5. 局部内部类"></a>4.5. 局部内部类</h3></li>
+<li>在类的局部位置，即在方法中</li>
+<li>局部内部类是在方法中定义的类，所以外界是无法直接使用的，需要在方法内部创建对象并使用</li>
+<li>该类可以直接访问外部类的成员，也可以访问方法内的局部变量。<h3 id="4-6-匿名内部类"><a href="#4-6-匿名内部类" class="headerlink" title="4.6. 匿名内部类"></a>4.6. 匿名内部类</h3></li>
+<li>也归属于局部内部类</li>
+<li>前提：存在一个类或者接口，这里的类可以是具体类也可以是抽象类。</li>
+<li>格式<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> 类名或者接口名()</span><br><span class="line">&#123;</span><br><span class="line">    重写方法;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//范例</span></span><br><span class="line"><span class="keyword">new</span> Inter()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>本质：是一个继承了该类或者实现了该接口的子类匿名对象</li>
+<li>匿名内部类在开发中的使用<ul>
 <li>当接口实例化时需要重新定义一个子类去实现接口中的方法，使用匿名内部类后，就不需要定义一个新的子类</li>
 </ul>
 </li>
@@ -569,11 +509,7 @@ new Inter()
 </ul>
 <h3 id="10-4-自动装箱和拆箱"><a href="#10-4-自动装箱和拆箱" class="headerlink" title="10.4. 自动装箱和拆箱"></a>10.4. 自动装箱和拆箱</h3><ul>
 <li>装箱：把基本数据类型转换为对应的包装类类型</li>
-<li>拆箱：把包装类类型转换为对应的基本数据类型<pre><code class="java">Integer a = Integer.valueOf(100);//装箱
-Integer i = 100;//自动装箱
-i = i.intValue() + 200;//i.intValue()是拆箱
-i += 200;//i = i + 200; i + 200是自动拆箱; i = i + 200是自动装箱</code></pre>
-</li>
+<li>拆箱：把包装类类型转换为对应的基本数据类型<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer a = Integer.valueOf(<span class="number">100</span>);<span class="comment">//装箱</span></span><br><span class="line">Integer i = <span class="number">100</span>;<span class="comment">//自动装箱</span></span><br><span class="line">i = i.intValue() + <span class="number">200</span>;<span class="comment">//i.intValue()是拆箱</span></span><br><span class="line">i += <span class="number">200</span>;<span class="comment">//i = i + 200; i + 200是自动拆箱; i = i + 200是自动装箱</span></span><br></pre></td></tr></table></figure></li>
 <li>注意：在使用包装类类型的时候，如果做操作，最好先判断是否为null，建议只要是对象，在使用前就必须进行不为null的判断。</li>
 </ul>
 <h2 id="十一、日期类"><a href="#十一、日期类" class="headerlink" title="十一、日期类"></a>十一、日期类</h2><h3 id="11-1-Date"><a href="#11-1-Date" class="headerlink" title="11.1. Date"></a>11.1. Date</h3><h4 id="11-1-1-概述"><a href="#11-1-1-概述" class="headerlink" title="11.1.1. 概述"></a>11.1.1. 概述</h4><ul>
@@ -623,21 +559,13 @@ i += 200;//i = i + 200; i + 200是自动拆箱; i = i + 200是自动装箱</code
 <h4 id="11-2-3-SimpleDateFormat格式化和解析日期"><a href="#11-2-3-SimpleDateFormat格式化和解析日期" class="headerlink" title="11.2.3. SimpleDateFormat格式化和解析日期"></a>11.2.3. SimpleDateFormat格式化和解析日期</h4><ul>
 <li>格式化（从Date到String）<ul>
 <li>public final String format(Date date)</li>
-<li>将日期格式化成日期/时间字符串，从Date到String<pre><code class="java">Date d = new Date();
-SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy年MM月dd日 HH:mm:ss&quot;);
-String s = sdf.format(d);
-System.out.println(s);
-//输出结果为：2020年06月03日 14:09:11</code></pre>
-</li>
+<li>将日期格式化成日期/时间字符串，从Date到String<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Date d = <span class="keyword">new</span> Date();</span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy年MM月dd日 HH:mm:ss&quot;</span>);</span><br><span class="line">String s = sdf.format(d);</span><br><span class="line">System.out.println(s);</span><br><span class="line"><span class="comment">//输出结果为：2020年06月03日 14:09:11</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>解析（从String到Date）<ul>
 <li>public Date parse(String source)</li>
-<li>从给定字符串的开始解析文本以生成日期，从String到Date<pre><code class="java">String s = &quot;2048-08-09 11:11:11&quot;;
-SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
-Date d = sdf.parse(s);
-System.out.println(d);
-//输出结果为：Sun Aug 09 11:11:11 CST 2048</code></pre>
+<li>从给定字符串的开始解析文本以生成日期，从String到Date<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String s = <span class="string">&quot;2048-08-09 11:11:11&quot;</span>;</span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);</span><br><span class="line">Date d = sdf.parse(s);</span><br><span class="line">System.out.println(d);</span><br><span class="line"><span class="comment">//输出结果为：Sun Aug 09 11:11:11 CST 2048</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
@@ -680,14 +608,9 @@ System.out.println(d);
 
 </li>
 </ul>
-<h2 id="二、方法定义"><a href="#二、方法定义" class="headerlink" title="二、方法定义"></a>二、方法定义</h2><h3 id="2-1-格式"><a href="#2-1-格式" class="headerlink" title="2.1. 格式"></a>2.1. 格式</h3><pre><code class="Java">public static void 方法名()
-&#123;
-    //方法体
-&#125;</code></pre>
-<h3 id="2-2-范例"><a href="#2-2-范例" class="headerlink" title="2.2. 范例"></a>2.2. 范例</h3><pre><code class="Java">public static void a()
-&#123;
-    //方法体
-&#125;</code></pre>
+<h2 id="二、方法定义"><a href="#二、方法定义" class="headerlink" title="二、方法定义"></a>二、方法定义</h2><h3 id="2-1-格式"><a href="#2-1-格式" class="headerlink" title="2.1. 格式"></a>2.1. 格式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> 方法名()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//方法体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-范例"><a href="#2-2-范例" class="headerlink" title="2.2. 范例"></a>2.2. 范例</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">a</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//方法体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="三、方法调用"><a href="#三、方法调用" class="headerlink" title="三、方法调用"></a>三、方法调用</h2><ul>
 <li>格式：方法名();</li>
 <li>范例：a();</li>
@@ -699,16 +622,9 @@ System.out.println(d);
 <li>对于引用类型的参数，形式参数的改变，影响实际参数的值</li>
 </ul>
 <h2 id="五、带返回值的方法"><a href="#五、带返回值的方法" class="headerlink" title="五、带返回值的方法"></a>五、带返回值的方法</h2><ul>
-<li><p>格式</p>
-<pre><code class="Java">public static 数据类型 方法名(参数)
-&#123;
-    return 数据;
-&#125;</code></pre>
-</li>
-<li><p>方法定义时return后面的返回值与方法定义上的数据类型要匹配，否则程序将报错</p>
-</li>
-<li><p>方法的返回值通常会使用变量接收，否则该返回值将无意义</p>
-</li>
+<li>格式<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> 数据类型 方法名(参数)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> 数据;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>方法定义时return后面的返回值与方法定义上的数据类型要匹配，否则程序将报错</li>
+<li>方法的返回值通常会使用变量接收，否则该返回值将无意义</li>
 </ul>
 <h2 id="六、方法的注意事项"><a href="#六、方法的注意事项" class="headerlink" title="六、方法的注意事项"></a>六、方法的注意事项</h2><ul>
 <li>方法不能嵌套定义</li>
@@ -1186,20 +1102,7 @@ System.out.println(d);
 </li>
 </ul>
 <h3 id="2-2-switch语句"><a href="#2-2-switch语句" class="headerlink" title="2.2. switch语句"></a>2.2. switch语句</h3><ul>
-<li>格式<pre><code class="Java">switch(表达式)
-&#123;
-  case 值1:
-      语句体1;
-      break;
-  case 值2:
-      语句体2;
-      break;
-  ……
- default:
-     语句体n+1;
-     break;//default中的break可以省略
-&#125;</code></pre>
-</li>
+<li>格式<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> 值<span class="number">1</span>:</span><br><span class="line">        语句体<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 值<span class="number">2</span>:</span><br><span class="line">        语句体<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    ……</span><br><span class="line">   <span class="keyword">default</span>:</span><br><span class="line">       语句体n+<span class="number">1</span>;</span><br><span class="line">       <span class="keyword">break</span>;<span class="comment">//default中的break可以省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>在switch语句中，如果case控制的语句体后面不写break，将会出现穿透现象，在不判断下一个case值的情况下，向下运行，直到遇到break，或者整体switch语句结束</li>
 </ul>
 <h2 id="三、循环结构"><a href="#三、循环结构" class="headerlink" title="三、循环结构"></a>三、循环结构</h2><h3 id="3-1-循环结构的组成"><a href="#3-1-循环结构的组成" class="headerlink" title="3.1. 循环结构的组成"></a>3.1. 循环结构的组成</h3><ul>
@@ -1215,30 +1118,22 @@ System.out.println(d);
 <li>条件控制语句：这里通常是使用一条语句类改变变量的值，从而达到控制循环是否继续向下执行的效果。常见i++，i–这样的操作。</li>
 </ul>
 <h3 id="3-3-for循环语句"><a href="#3-3-for循环语句" class="headerlink" title="3.3. for循环语句"></a>3.3. for循环语句</h3><ul>
-<li>格式<pre><code class="Java">for(初始化语句, 条件判断语句, 条件控制语句)
-&#123;
-    循环体语句;
-&#125;</code></pre>
+<li>格式<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(初始化语句, 条件判断语句, 条件控制语句)</span><br><span class="line">&#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="3-4-while循环语句"><a href="#3-4-while循环语句" class="headerlink" title="3.4. while循环语句"></a>3.4. while循环语句</h3><ul>
 <li>格式<ul>
-<li>初始化语句;<pre><code class="Java">while(条件判断语句)
-&#123;
-  循环体语句;
-  条件控制语句;
-&#125;</code></pre>
+<li>初始化语句;<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(条件判断语句)</span><br><span class="line">&#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">    条件控制语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="3-5-do…while循环语句"><a href="#3-5-do…while循环语句" class="headerlink" title="3.5. do…while循环语句"></a>3.5. do…while循环语句</h3><ul>
 <li>格式<ul>
-<li>初始化语句<pre><code class="Java">do
-&#123;
-  循环语句;
-  条件控制语句;
-&#125;while(条件判断语句);</code></pre>
+<li>初始化语句<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">    循环语句;</span><br><span class="line">    条件控制语句;</span><br><span class="line">&#125;<span class="keyword">while</span>(条件判断语句);</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
@@ -1251,10 +1146,7 @@ System.out.println(d);
 <li>条件控制语句所控制的自增变量，对于while循环来说不归属其语法结构中，在while循环结束后，该变量还可以继续使用。</li>
 </ul>
 </li>
-<li>死循环格式<pre><code class="java">for(;;)&#123;&#125;
-while(true)&#123;&#125;
-do&#123;&#125;while(true);</code></pre>
-</li>
+<li>死循环格式<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(;;)&#123;&#125;</span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;&#125;</span><br><span class="line"><span class="keyword">do</span>&#123;&#125;<span class="keyword">while</span>(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure></li>
 <li>命令提示窗口中Ctrl+C可以结束死循环</li>
 </ul>
 <h2 id="四、跳转控制语句"><a href="#四、跳转控制语句" class="headerlink" title="四、跳转控制语句"></a>四、跳转控制语句</h2><ul>
@@ -1453,19 +1345,10 @@ do&#123;&#125;while(true);</code></pre>
 <li>print(keyword.kwlist)</li>
 </ul>
 </li>
-<li>Python中的关键字：<pre><code class="python3">   False,None,True,and,as,assert,break,class,
-   continue,def,del,elif,else,except,finally,for,
-   from,global,if,import,in,is,lambda,nonlocal,not,
-   or,pass,raise,return,try,while,with,yield</code></pre>
-</li>
+<li>Python中的关键字：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">False,None,True,and,as,assert,break,class,</span><br><span class="line">continue,def,del,elif,else,except,finally,for,</span><br><span class="line">from,global,if,import,in,is,lambda,nonlocal,not,</span><br><span class="line">or,pass,raise,return,try,while,with,yield</span><br></pre></td></tr></table></figure></li>
 <li>import关键字可以导入一个“工具包”，在Python中不同的工具包，提供有不同的工具。</li>
 <li>pass<ul>
-<li>如果在开发程序时，不希望立刻编写分支内部的代码，可以使用pass关键字，表示一个占位符，能够保证程序的代码结构正确。<pre><code class="python3">if action_str in [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]:
-  pass
-elif action_str == &quot;0&quot;:
-  pass
-else:
-  print(&quot;宝剑锋从磨砺出，梅花香自苦寒来&quot;)</code></pre>
+<li>如果在开发程序时，不希望立刻编写分支内部的代码，可以使用pass关键字，表示一个占位符，能够保证程序的代码结构正确。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if action_str in [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]:</span><br><span class="line">    pass</span><br><span class="line">elif action_str &#x3D;&#x3D; &quot;0&quot;:</span><br><span class="line">    pass</span><br><span class="line">else:</span><br><span class="line">    print(&quot;宝剑锋从磨砺出，梅花香自苦寒来&quot;)</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 
 
@@ -1515,13 +1398,8 @@ else:
 <h2 id="六、print"><a href="#六、print" class="headerlink" title="六、print"></a>六、print</h2><ul>
 <li>在默认情况下，print函数输出内容之后，会自动在内容末尾增加换行</li>
 <li>如果不希望末尾增加换行，可以在print函数输出内容的后面增加：, end=””</li>
-<li>其中””中间可以指定print函数输出内容之后，继续希望显示的内容<pre><code class="python3"># 向控制台输出内容结束之后，不会换行
-print(&quot;*&quot;, end=&quot;&quot;)
-print(&quot;*&quot;)
-# 输出结果为：**
-print(&quot;*&quot;, end=&quot;---&quot;)
-print(&quot;*&quot;)
-# 输出结果为：*---*</code></pre>
+<li>其中””中间可以指定print函数输出内容之后，继续希望显示的内容<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 向控制台输出内容结束之后，不会换行</span><br><span class="line">print(&quot;*&quot;, end&#x3D;&quot;&quot;)</span><br><span class="line">print(&quot;*&quot;)</span><br><span class="line"># 输出结果为：**</span><br><span class="line">print(&quot;*&quot;, end&#x3D;&quot;---&quot;)</span><br><span class="line">print(&quot;*&quot;)</span><br><span class="line"># 输出结果为：*---*</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="七、逻辑运算"><a href="#七、逻辑运算" class="headerlink" title="七、逻辑运算"></a>七、逻辑运算</h2><ul>
@@ -1551,8 +1429,8 @@ print(&quot;*&quot;)
 <li>关键字是Python内置的、具有特殊意义的标识符</li>
 <li>关键字后面不需要使用括号</li>
 <li>Python中有33个关键字</li>
-<li>通过输入如下代码可以查看python中有哪些关键字<pre><code class="python3">import keyword
-print(keyword.kwlist)</code></pre>
+<li>通过输入如下代码可以查看python中有哪些关键字<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import keyword</span><br><span class="line">print(keyword.kwlist)</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="9-2-函数"><a href="#9-2-函数" class="headerlink" title="9.2. 函数"></a>9.2. 函数</h3><ul>
@@ -1570,22 +1448,13 @@ print(keyword.kwlist)</code></pre>
 <li>遍历就是从头到尾依次从列表中获取数据，在循环体内部针对每一个元素，执行相同的操作</li>
 <li>在Python中为了提高列表的遍历效率，专门提高的迭代iteration遍历</li>
 <li>使用for就能够实现迭代遍历</li>
-<li>格式：for 循环内部使用的遍历 in 列表<pre><code class="python3">for name in name_list:
-    print(name)</code></pre>
-</li>
+<li>格式：for 循环内部使用的遍历 in 列表<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for name in name_list:</span><br><span class="line">    print(name)</span><br></pre></td></tr></table></figure></li>
 <li>在Python中，可以使用for循环遍历所有非数字型类型的变量：列表、元组、字典以及字符串</li>
 <li>在实际开发中，除非能够确认元组中的数据类型，否则针对元组的循环遍历需求并不是很多</li>
 </ul>
 <h2 id="十一、完整的for循环"><a href="#十一、完整的for循环" class="headerlink" title="十一、完整的for循环"></a>十一、完整的for循环</h2><ul>
-<li><p>在Python中完整的for循环的语法如下</p>
-<pre><code class="python3">for 变量 in 集合:
-    循环体代码
-else:
-    没有通过 break 退出循环，循环结束后，会执行的代码。
-    如果循环体代码中使用了break，则不会执行else中的语句。</code></pre>
-</li>
-<li><p>应用场景</p>
-<ul>
+<li>在Python中完整的for循环的语法如下<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for 变量 in 集合:</span><br><span class="line">    循环体代码</span><br><span class="line">else:</span><br><span class="line">    没有通过 break 退出循环，循环结束后，会执行的代码。</span><br><span class="line">    如果循环体代码中使用了break，则不会执行else中的语句。</span><br></pre></td></tr></table></figure></li>
+<li>应用场景<ul>
 <li>在迭代遍历嵌套的数据类型时，例如一个列表包含了多个字典</li>
 <li>需求：要判断某一个字典中是否存在指定的值<ul>
 <li>如果存在，提示并且退出循环</li>
@@ -1599,40 +1468,19 @@ else:
 <li>切片方法适用于字符串、列表、元组</li>
 <li>切片使用索引值来限定范围，从一个大的字符串中切出小的字符串</li>
 <li>列表和元组都是有序的集合，都能够通过索引值获取到对应的数据</li>
-<li>字典是一个无序的集合，是使用键值对保存数据<pre><code class="python3"># 字符串切片
-&quot;0123456789&quot;[::-2]  # 结果为: &quot;97531&quot;
-# 列表切片
-[0, 1, 2, 3, 4][1:3]  # 结果为：[1,2]
-# 元组切片
-(0, 1, 2, 3, 4)[1:3]  # 结果为：(1, 2))</code></pre>
+<li>字典是一个无序的集合，是使用键值对保存数据<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 字符串切片</span><br><span class="line">&quot;0123456789&quot;[::-2]  # 结果为: &quot;97531&quot;</span><br><span class="line"># 列表切片</span><br><span class="line">[0, 1, 2, 3, 4][1:3]  # 结果为：[1,2]</span><br><span class="line"># 元组切片</span><br><span class="line">(0, 1, 2, 3, 4)[1:3]  # 结果为：(1, 2))</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="十三、eval函数"><a href="#十三、eval函数" class="headerlink" title="十三、eval函数"></a>十三、eval函数</h2><ul>
-<li><p><code>eval()</code>函数是将字符串当成有效的表达式来求值并返回计算结果</p>
-<pre><code class="python3"># 基本的数学计算
-In[1]: eval(&quot;1 + 1&quot;)
-Out[1]: 2
-# 字符串重复
-In[2]: eval(&quot;&#39;*&#39; * 10&quot;)
-Out[2]: &#39;**********&#39;
-# 将字符串转换成列表
-In[3]: type(eval(&quot;[1, 2, 3, 4, 5]&quot;))
-Out[3]: list
-# 将字符串转换成字典
-In[4]: type(eval(&quot;&#123;&#39;name&#39;: &#39;phd&#39;, &#39;age&#39;: 18&#125;&quot;))
-Out[4]: dict</code></pre>
-</li>
-<li><p>不要滥用eval</p>
-<ul>
+<li><code>eval()</code>函数是将字符串当成有效的表达式来求值并返回计算结果<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 基本的数学计算</span><br><span class="line">In[1]: eval(&quot;1 + 1&quot;)</span><br><span class="line">Out[1]: 2</span><br><span class="line"># 字符串重复</span><br><span class="line">In[2]: eval(&quot;&#39;*&#39; * 10&quot;)</span><br><span class="line">Out[2]: &#39;**********&#39;</span><br><span class="line"># 将字符串转换成列表</span><br><span class="line">In[3]: type(eval(&quot;[1, 2, 3, 4, 5]&quot;))</span><br><span class="line">Out[3]: list</span><br><span class="line"># 将字符串转换成字典</span><br><span class="line">In[4]: type(eval(&quot;&#123;&#39;name&#39;: &#39;phd&#39;, &#39;age&#39;: 18&#125;&quot;))</span><br><span class="line">Out[4]: dict</span><br></pre></td></tr></table></figure></li>
+<li>不要滥用eval<ul>
 <li>eval会把字符串中的内容当成python的代码去执行</li>
 <li>在开发时千万不要使用 eval 直接转换 input 的结果</li>
-<li>用户可以通过os模块来调用system方法，就可以执行任何的终端命令<pre><code class="python3">__import__(&#39;os&#39;).system(&#39;ls&#39;)</code></pre>
-</li>
+<li>用户可以通过os模块来调用system方法，就可以执行任何的终端命令<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">__import__(&#39;os&#39;).system(&#39;ls&#39;)</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li><p>等价代码</p>
-<pre><code class="python3">import os
-os.system(&quot;终端命令&quot;)</code></pre>
+<li>等价代码<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import os</span><br><span class="line">os.system(&quot;终端命令&quot;)</span><br></pre></td></tr></table></figure>
 <ul>
 <li>执行成功，返回0</li>
 <li>执行失败，返回错误信息</li>
@@ -1995,8 +1843,8 @@ os.system(&quot;终端命令&quot;)</code></pre>
 <li><code>%s</code> 字符串</li>
 <li><code>%d</code> 有符号十进制整数，%06d表示输出的整数显示6位数，不足的地方使用0补全</li>
 <li><code>%f</code> 浮点数，%.02f表示小数点后只显示两位</li>
-<li><code>%%</code> 输出%<pre><code class="python3">print(&quot;我的名字叫 %s &quot; % name)
-print(&quot;姓名 %s, 年龄 %d, 成绩 %f&quot; % (name_str, age_int, grade_float))</code></pre>
+<li><code>%%</code> 输出%<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&quot;我的名字叫 %s &quot; % name)</span><br><span class="line">print(&quot;姓名 %s, 年龄 %d, 成绩 %f&quot; % (name_str, age_int, grade_float))</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="5-8-标识符"><a href="#5-8-标识符" class="headerlink" title="5.8. 标识符"></a>5.8. 标识符</h3><ul>
@@ -2093,12 +1941,7 @@ print(&quot;姓名 %s, 年龄 %d, 成绩 %f&quot; % (name_str, age_int, grade_fl
 <li><p>在函数内部修改全局变量的值</p>
 <ul>
 <li>如果在函数中需要修改全局变量，需要使用global进行声明。</li>
-<li>global关键字会告诉解释器后面的变量是一个全局变量，再使用赋值语句时，就不会创建局部变量<pre><code class="python3">num = 11
-def demo():
-  global num
-  num = 99
-  print(&quot;num == %d&quot; % num)</code></pre>
-</li>
+<li>global关键字会告诉解释器后面的变量是一个全局变量，再使用赋值语句时，就不会创建局部变量<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">num &#x3D; 11</span><br><span class="line">def demo():</span><br><span class="line">    global num</span><br><span class="line">    num &#x3D; 99</span><br><span class="line">    print(&quot;num &#x3D;&#x3D; %d&quot; % num)</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>全局变量定义的位置</p>
@@ -2116,9 +1959,7 @@ def demo():
 <li>判断语句也被称为分支语句</li>
 </ul>
 <h3 id="6-1-if"><a href="#6-1-if" class="headerlink" title="6.1. if"></a>6.1. if</h3><ul>
-<li>格式<pre><code class="python3">if 要判断的条件
-    条件成立时，要做的事情
-    ……</code></pre>
+<li>格式<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if 要判断的条件</span><br><span class="line">    条件成立时，要做的事情</span><br><span class="line">    ……</span><br></pre></td></tr></table></figure>
 <ul>
 <li>代码的缩进为一个tab键，或者4个空格，建议使用空格。在Python开发中，tab和空格不要混用，要么都用tab要么都用空格。</li>
 <li>if语句以及缩进部分是一个完整的代码块</li>
@@ -2127,36 +1968,17 @@ def demo():
 </ul>
 <h3 id="6-2-else"><a href="#6-2-else" class="headerlink" title="6.2. else"></a>6.2. else</h3><ul>
 <li>else处理条件不满足的情况</li>
-<li>格式<pre><code class="python3">if 要判断的条件:
-    条件成立时，要做的事情
-else:
-    条件不成立时，要做的事情
-    ……</code></pre>
+<li>格式<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if 要判断的条件:</span><br><span class="line">    条件成立时，要做的事情</span><br><span class="line">else:</span><br><span class="line">    条件不成立时，要做的事情</span><br><span class="line">    ……</span><br></pre></td></tr></table></figure>
 <ul>
 <li>if和else语句以及各自的缩进部分共同是一个完整的代码块</li>
 </ul>
 </li>
 </ul>
 <h3 id="6-3-elif"><a href="#6-3-elif" class="headerlink" title="6.3. elif"></a>6.3. elif</h3><ul>
-<li><p>在开发中，使用if可以判断条件</p>
-</li>
-<li><p>使用else可以处理条件不成立的情况</p>
-</li>
-<li><p>但是，如果希望再增加一些条件，条件不同，需要执行的代码也不同时，就可以使用elif</p>
-</li>
-<li><p>格式</p>
-<pre><code class="python3">if 条件1:
-    条件1满足时，执行的代码
-    ……
-elif 条件2:
-    条件2满足时，执行的代码
-    ……
-elif 条件3:
-    条件3满足时，执行的代码
-    ……
-else:
-    以上条件都不满足时，执行的代码
-    ……</code></pre>
+<li>在开发中，使用if可以判断条件</li>
+<li>使用else可以处理条件不成立的情况</li>
+<li>但是，如果希望再增加一些条件，条件不同，需要执行的代码也不同时，就可以使用elif</li>
+<li>格式<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if 条件1:</span><br><span class="line">    条件1满足时，执行的代码</span><br><span class="line">    ……</span><br><span class="line">elif 条件2:</span><br><span class="line">    条件2满足时，执行的代码</span><br><span class="line">    ……</span><br><span class="line">elif 条件3:</span><br><span class="line">    条件3满足时，执行的代码</span><br><span class="line">    ……</span><br><span class="line">else:</span><br><span class="line">    以上条件都不满足时，执行的代码</span><br><span class="line">    ……</span><br></pre></td></tr></table></figure>
 <ul>
 <li>elif和else都必须和if联合使用，而不能单独使用</li>
 <li>可以将if、elif和else以及各自缩进的代码，看成一个完整的代码块</li>
@@ -2164,34 +1986,16 @@ else:
 </li>
 </ul>
 <h3 id="6-4-if嵌套"><a href="#6-4-if嵌套" class="headerlink" title="6.4. if嵌套"></a>6.4. if嵌套</h3><ul>
-<li>格式<pre><code class="python3">if 条件 1:
-    条件1满足时，执行的代码
-    ……
-    if 条件1基础上的条件2:
-        条件2满足时，执行的代码
-        ……
-    else:  # 条件2不满足的处理
-        条件2不满足时，执行的代码
-        ……
-else:  # 条件1不满足的处理
-    条件1不满足时，执行的代码
-    ……</code></pre>
+<li>格式<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if 条件 1:</span><br><span class="line">    条件1满足时，执行的代码</span><br><span class="line">    ……</span><br><span class="line">    if 条件1基础上的条件2:</span><br><span class="line">        条件2满足时，执行的代码</span><br><span class="line">        ……</span><br><span class="line">    else:  # 条件2不满足的处理</span><br><span class="line">        条件2不满足时，执行的代码</span><br><span class="line">        ……</span><br><span class="line">else:  # 条件1不满足的处理</span><br><span class="line">    条件1不满足时，执行的代码</span><br><span class="line">    ……</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="七、while循环基本使用"><a href="#七、while循环基本使用" class="headerlink" title="七、while循环基本使用"></a>七、while循环基本使用</h2><h3 id="7-1-循环的作用"><a href="#7-1-循环的作用" class="headerlink" title="7.1. 循环的作用"></a>7.1. 循环的作用</h3><ul>
 <li>循环的作用就是让指定的代码重复的执行</li>
 <li>while循环最常用的应用场景就是让执行的代码按照指定的次数重复执行</li>
 </ul>
-<h3 id="7-2-格式"><a href="#7-2-格式" class="headerlink" title="7.2. 格式"></a>7.2. 格式</h3><pre><code class="python3">while 条件(判断 计数器 是否达到 目标次数):
-    条件满足时，做的事情1
-    条件满足时，做的事情2
-    条件满足时，做的事情3
-    ……
-    处理条件（计数器 + 1）
+<h3 id="7-2-格式"><a href="#7-2-格式" class="headerlink" title="7.2. 格式"></a>7.2. 格式</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">while 条件(判断 计数器 是否达到 目标次数):</span><br><span class="line">    条件满足时，做的事情1</span><br><span class="line">    条件满足时，做的事情2</span><br><span class="line">    条件满足时，做的事情3</span><br><span class="line">    ……</span><br><span class="line">    处理条件（计数器 + 1）</span><br><span class="line"></span><br><span class="line">while i &lt;&#x3D; 100:</span><br><span class="line">    print(i)</span><br><span class="line">    i++</span><br></pre></td></tr></table></figure>
 
-while i &lt;= 100:
-    print(i)
-    i++</code></pre>
 <h3 id="7-3-死循环"><a href="#7-3-死循环" class="headerlink" title="7.3. 死循环"></a>7.3. 死循环</h3><ul>
 <li>由于程序员的原因，忘记在循环内部修改循环的判断条件，导致循环持续执行，程序无法终止！</li>
 </ul>
@@ -2214,64 +2018,28 @@ while i &lt;= 100:
 </li>
 <li>函数的作用，在开发程序时，使用函数可以提高编写的效率以及代码的重用。</li>
 </ul>
-<h3 id="8-2-格式"><a href="#8-2-格式" class="headerlink" title="8.2. 格式"></a>8.2. 格式</h3><pre><code class="python3">def 函数名(参数1, 参数2):
-    函数封装的代码
-    ……
-
-def han_shu():
-    print(&quot;hello1&quot;)
-    print(&quot;hello2&quot;)
-    print(&quot;hello3&quot;)
-
-han_shu()
-
-def dai_can(num1, num2):
-    result = num1 + num2
-    print(&quot;%d + %d = %d&quot; % (num1, num2, result))
-
-dai_can(50, 20)</code></pre>
+<h3 id="8-2-格式"><a href="#8-2-格式" class="headerlink" title="8.2. 格式"></a>8.2. 格式</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def 函数名(参数1, 参数2):</span><br><span class="line">    函数封装的代码</span><br><span class="line">    ……</span><br><span class="line"></span><br><span class="line">def han_shu():</span><br><span class="line">    print(&quot;hello1&quot;)</span><br><span class="line">    print(&quot;hello2&quot;)</span><br><span class="line">    print(&quot;hello3&quot;)</span><br><span class="line"></span><br><span class="line">han_shu()</span><br><span class="line"></span><br><span class="line">def dai_can(num1, num2):</span><br><span class="line">    result &#x3D; num1 + num2</span><br><span class="line">    print(&quot;%d + %d &#x3D; %d&quot; % (num1, num2, result))</span><br><span class="line"></span><br><span class="line">dai_can(50, 20)</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>def是英文define的缩写</p>
-</li>
-<li><p>函数名称应该能够表达函数封装代码的功能，方便后续的调用</p>
-</li>
-<li><p>函数名称的命名应该符合标识符的命名规则</p>
-<ul>
+<li>def是英文define的缩写</li>
+<li>函数名称应该能够表达函数封装代码的功能，方便后续的调用</li>
+<li>函数名称的命名应该符合标识符的命名规则<ul>
 <li>可以由字母、下划线和数字组成</li>
 <li>不能以数字开头</li>
 <li>不能与关键字重名</li>
 </ul>
 </li>
-<li><p>通过 函数名() 即可完成对函数的调用</p>
-</li>
-<li><p>定义好函数之后，只表示这个函数封装了一段代码而已</p>
-</li>
-<li><p>如果不主动调用函数，函数是不会主动执行的</p>
-</li>
-<li><p>函数执行完之后，会重新回到之前的程序中，继续执行后续的代码</p>
-</li>
-<li><p>注意</p>
-</li>
-<li><p>不能将函数调用放在函数定义的上方，因为在使用函数名调用函数之前，必须要保证Python已经知道函数的存在。否则控制台会提示：函数名没有定义</p>
-</li>
-<li><p>函数的文档注释</p>
-</li>
-<li><p>在开发中，如果希望给函数添加注释，应该在定义函数的下方，使用连续的三对引号</p>
-</li>
-<li><p>在连续的三对引号之间编写对函数的说明文字</p>
-<pre><code class="python3">def han_shu():
-  &quot;&quot;&quot;这是一个注释&quot;&quot;&quot;
-
-  print(&quot;hello1&quot;)
-  print(&quot;hello2&quot;)
-  print(&quot;hello3&quot;)</code></pre>
-</li>
-<li><p>在函数调用位置，使用快捷键<code>CTRL + q</code>可以查看函数的说明信息</p>
-</li>
-<li><p>因为函数体相对比较独立，函数定义的上方，应该和其他代码（包括注释）保留两个空行</p>
-</li>
-<li><p>在pycharm中，选择定义的函数名，在左侧会出现一个小灯泡，点击之后选择第二项<code>Insert documentation string stub</code></p>
-</li>
+<li>通过 函数名() 即可完成对函数的调用</li>
+<li>定义好函数之后，只表示这个函数封装了一段代码而已</li>
+<li>如果不主动调用函数，函数是不会主动执行的</li>
+<li>函数执行完之后，会重新回到之前的程序中，继续执行后续的代码</li>
+<li>注意</li>
+<li>不能将函数调用放在函数定义的上方，因为在使用函数名调用函数之前，必须要保证Python已经知道函数的存在。否则控制台会提示：函数名没有定义</li>
+<li>函数的文档注释</li>
+<li>在开发中，如果希望给函数添加注释，应该在定义函数的下方，使用连续的三对引号</li>
+<li>在连续的三对引号之间编写对函数的说明文字<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def han_shu():</span><br><span class="line">    &quot;&quot;&quot;这是一个注释&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    print(&quot;hello1&quot;)</span><br><span class="line">    print(&quot;hello2&quot;)</span><br><span class="line">    print(&quot;hello3&quot;)</span><br></pre></td></tr></table></figure></li>
+<li>在函数调用位置，使用快捷键<code>CTRL + q</code>可以查看函数的说明信息</li>
+<li>因为函数体相对比较独立，函数定义的上方，应该和其他代码（包括注释）保留两个空行</li>
+<li>在pycharm中，选择定义的函数名，在左侧会出现一个小灯泡，点击之后选择第二项<code>Insert documentation string stub</code></li>
 </ul>
 <h3 id="8-3-参数的作用"><a href="#8-3-参数的作用" class="headerlink" title="8.3. 参数的作用"></a>8.3. 参数的作用</h3><ul>
 <li>函数把具有独立功能的代码块组织为一个小模块，在需要的时候调用</li>
@@ -2284,22 +2052,12 @@ dai_can(50, 20)</code></pre>
 <li>实参：调用函数时，小括号中的参数，是用来把数据传递到函数内部用的。</li>
 </ul>
 <h3 id="8-5-函数的返回值"><a href="#8-5-函数的返回值" class="headerlink" title="8.5. 函数的返回值"></a>8.5. 函数的返回值</h3><ul>
-<li><p>在程序开发中，有时候，会希望一个函数执行结束后，告诉调用者一个结果，以便调用者针对具体的结果做后续的处理。</p>
-</li>
-<li><p>返回值是函数完成工作后，最后给调用者的一个结果</p>
-</li>
-<li><p>在函数中使用return关键字可以返回结果</p>
-</li>
-<li><p>调用函数一方，可以使用变量来接受函数的返回结果</p>
-</li>
-<li><p>注意：return表示返回，后续的代码都不会被执行</p>
-<pre><code class="python3">def sum_2_num(num1, num2):
-  &quot;&quot;&quot;对两个数字的求和&quot;&quot;&quot;
+<li>在程序开发中，有时候，会希望一个函数执行结束后，告诉调用者一个结果，以便调用者针对具体的结果做后续的处理。</li>
+<li>返回值是函数完成工作后，最后给调用者的一个结果</li>
+<li>在函数中使用return关键字可以返回结果</li>
+<li>调用函数一方，可以使用变量来接受函数的返回结果</li>
+<li>注意：return表示返回，后续的代码都不会被执行<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def sum_2_num(num1, num2):</span><br><span class="line">    &quot;&quot;&quot;对两个数字的求和&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    return num1 + num2</span><br><span class="line"># 调用函数，并使用 result 变量接受计算结果</span><br><span class="line">result &#x3D; sum_2_num(10, 20)</span><br><span class="line">print(&quot;计算结果是 %d&quot; % result)</span><br></pre></td></tr></table></figure>
 
-  return num1 + num2
-# 调用函数，并使用 result 变量接受计算结果
-result = sum_2_num(10, 20)
-print(&quot;计算结果是 %d&quot; % result)</code></pre>
 </li>
 </ul>
 <h3 id="8-6-函数的嵌套调用"><a href="#8-6-函数的嵌套调用" class="headerlink" title="8.6. 函数的嵌套调用"></a>8.6. 函数的嵌套调用</h3><ul>
@@ -2329,11 +2087,7 @@ print(&quot;计算结果是 %d&quot; % result)</code></pre>
 <li>返回值是函数完成工作后，最后给调用者的一个结果。</li>
 <li>在函数中使用return关键字可以返回结果。</li>
 <li>元组可以包含多个数据，因此可以使用元组让函数一次返回多个值，如果函数返回的类型是元组，小括号可以省略。</li>
-<li>如果函数返回的类型是元组，同时希望单独的处理元组中的元素，可以使用多个变量，一次接收函数的返回结果<pre><code class="python3"># 1
-gl_temp, gl_wetness = measure()  # measure是定义的一个函数，返回一个包含两个元素的元组
-# 2
-a, b = (b, a)
-a, b = b, a  # 小括号可以省略</code></pre>
+<li>如果函数返回的类型是元组，同时希望单独的处理元组中的元素，可以使用多个变量，一次接收函数的返回结果<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 1</span><br><span class="line">gl_temp, gl_wetness &#x3D; measure()  # measure是定义的一个函数，返回一个包含两个元素的元组</span><br><span class="line"># 2</span><br><span class="line">a, b &#x3D; (b, a)</span><br><span class="line">a, b &#x3D; b, a  # 小括号可以省略</span><br></pre></td></tr></table></figure>
 <ul>
 <li>注意：使用多个变量接收结果时，变量的个数应该和元组中元素的个数保持一致。</li>
 </ul>
@@ -2349,60 +2103,42 @@ a, b = b, a  # 小括号可以省略</code></pre>
 <li>函数的缺省参数，将常见的值设置为参数的缺省值，从而简化函数的调用。</li>
 </ul>
 <h4 id="8-10-2-指定函数的缺省参数"><a href="#8-10-2-指定函数的缺省参数" class="headerlink" title="8.10.2. 指定函数的缺省参数"></a>8.10.2. 指定函数的缺省参数</h4><ul>
-<li>在参数后使用赋值语句，可以指定参数的缺省值<pre><code class="python3">def print_info(name, gender=True):
-  gender_text = &quot;男生&quot;
-  if not gender:
-      gender_text = &quot;女生&quot;
-  print(&quot;%s 是 %s&quot; % (name, gender_text))</code></pre>
+<li><p>在参数后使用赋值语句，可以指定参数的缺省值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def print_info(name, gender&#x3D;True):</span><br><span class="line">    gender_text &#x3D; &quot;男生&quot;</span><br><span class="line">    if not gender:</span><br><span class="line">        gender_text &#x3D; &quot;女生&quot;</span><br><span class="line">    print(&quot;%s 是 %s&quot; % (name, gender_text))</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+<li><p>缺省参数，需要使用最常见的值作为默认值。</p>
+</li>
+<li><p>如果一个参数的值不能确定，则不应该设置默认值，具体的数值在调用函数时，由外界传递。</p>
+<h4 id="8-10-3-注意"><a href="#8-10-3-注意" class="headerlink" title="8.10.3. 注意"></a>8.10.3. 注意</h4></li>
+<li><p>缺省参数的定义位置</p>
 <ul>
-<li>缺省参数，需要使用最常见的值作为默认值。</li>
-<li>如果一个参数的值不能确定，则不应该设置默认值，具体的数值在调用函数时，由外界传递。<h4 id="8-10-3-注意"><a href="#8-10-3-注意" class="headerlink" title="8.10.3. 注意"></a>8.10.3. 注意</h4></li>
-<li>缺省参数的定义位置<ul>
-<li>必须保证带有默认值的缺省参数在参数列表末尾。<pre><code class="python3"># 错误的写法
-def print_info(name, gender=True, title):</code></pre>
-</li>
+<li>必须保证带有默认值的缺省参数在参数列表末尾。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 错误的写法</span><br><span class="line">def print_info(name, gender&#x3D;True, title):</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li>调用带有多个缺省参数的函数<ul>
-<li>在调用函数时，如果有多个缺省参数，需要指定参数名，这样解释器才能够知道参数的对应关系。<pre><code class="python3">print_info(&quot;老王&quot;, gender = False)</code></pre>
+<li><p>调用带有多个缺省参数的函数</p>
+<ul>
+<li>在调用函数时，如果有多个缺省参数，需要指定参数名，这样解释器才能够知道参数的对应关系。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print_info(&quot;老王&quot;, gender &#x3D; False)</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
 </ul>
 <h3 id="8-11-多值参数"><a href="#8-11-多值参数" class="headerlink" title="8.11. 多值参数"></a>8.11. 多值参数</h3><ul>
-<li><p>定义支持多值参数的函数</p>
-</li>
-<li><p>有时可能需要一个函数能够处理的参数个数是不确定的，这个时候，就可以使用多值参数</p>
-</li>
-<li><p>python中有两种多值参数：</p>
-<ul>
+<li>定义支持多值参数的函数</li>
+<li>有时可能需要一个函数能够处理的参数个数是不确定的，这个时候，就可以使用多值参数</li>
+<li>python中有两种多值参数：<ul>
 <li>参数名前增加一个 * 可以接收元组</li>
 <li>参数名前增加两个 ** 可以接收字典</li>
 </ul>
 </li>
-<li><p>一般在给多值参数命名时，习惯使用以下两个名字</p>
-<ul>
+<li>一般在给多值参数命名时，习惯使用以下两个名字<ul>
 <li>*args —— 存放元组参数，注意前面有一个 *</li>
 <li>**kwargs —— 存放字典参数，注意前面有两个 *</li>
 </ul>
 </li>
-<li><p>args是arguments的缩写，有变量的含义</p>
-</li>
-<li><p>kw是keyword的缩写，kwargs可以记忆键值对参数</p>
-<pre><code class="python3">def demo(num, *args, **kwargs):
-    print(num)
-    print(args)
-    print(kwargs)
+<li>args是arguments的缩写，有变量的含义</li>
+<li>kw是keyword的缩写，kwargs可以记忆键值对参数<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def demo(num, *args, **kwargs):</span><br><span class="line">    print(num)</span><br><span class="line">    print(args)</span><br><span class="line">    print(kwargs)</span><br><span class="line"></span><br><span class="line">demo(1, 2, 3, 4, 5, name &#x3D; &quot;小明&quot;, age &#x3D; 18, gender &#x3D; True)</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">输结果为：</span><br><span class="line">1</span><br><span class="line">(2, 3, 4, 5)</span><br><span class="line">&#123;&#39;age&#39;: 18, &#39;name&#39;: &#39;小明&#39;&#125;</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
 
-demo(1, 2, 3, 4, 5, name = &quot;小明&quot;, age = 18, gender = True)
-&quot;&quot;&quot;
-输结果为：
-1
-(2, 3, 4, 5)
-&#123;&#39;age&#39;: 18, &#39;name&#39;: &#39;小明&#39;&#125;
-&quot;&quot;&quot;</code></pre>
 </li>
 </ul>
 <h3 id="8-12-元组和字典的拆包"><a href="#8-12-元组和字典的拆包" class="headerlink" title="8.12. 元组和字典的拆包"></a>8.12. 元组和字典的拆包</h3><ul>
@@ -2413,14 +2149,8 @@ demo(1, 2, 3, 4, 5, name = &quot;小明&quot;, age = 18, gender = True)
 </li>
 <li>就可以使用拆包，简化参数的传递，拆包的方式是：<ul>
 <li>在元组变量前，增加一个 *</li>
-<li>在字典变量前，增加两个 *<pre><code class="python3">def demo(*args, **kwargs):
-  print(args)
-  print(kwargs)
-# 需要将一个元组变量/字典变量传递给函数对应的参数
-gl_nums = (1, 2, 3)
-gl_xiaoming = &#123;&quot;name&quot;: &quot;小明&quot;, &quot;age&quot;: 18&#125;
-demo(gl_nums, gl_xiaoming)  # 会把 num_tuple 和 xiaoming 作为元组传递给 args
-demo(*gl_nums, **gl_xiaoming)  # 将元组变量和字典变量传递给函数对应的参数</code></pre>
+<li>在字典变量前，增加两个 *<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def demo(*args, **kwargs):</span><br><span class="line">    print(args)</span><br><span class="line">    print(kwargs)</span><br><span class="line"># 需要将一个元组变量&#x2F;字典变量传递给函数对应的参数</span><br><span class="line">gl_nums &#x3D; (1, 2, 3)</span><br><span class="line">gl_xiaoming &#x3D; &#123;&quot;name&quot;: &quot;小明&quot;, &quot;age&quot;: 18&#125;</span><br><span class="line">demo(gl_nums, gl_xiaoming)  # 会把 num_tuple 和 xiaoming 作为元组传递给 args</span><br><span class="line">demo(*gl_nums, **gl_xiaoming)  # 将元组变量和字典变量传递给函数对应的参数</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
@@ -2433,13 +2163,8 @@ demo(*gl_nums, **gl_xiaoming)  # 将元组变量和字典变量传递给函数�
 </ul>
 <h4 id="8-13-2-代码特点"><a href="#8-13-2-代码特点" class="headerlink" title="8.13.2. 代码特点"></a>8.13.2. 代码特点</h4><ul>
 <li>函数内部的代码是相同的，只是针对参数不同，处理的结果不同。</li>
-<li>当参数满足一个条件时，函数不再执行，通常被称为递归的出口，否则会出现死循环。<pre><code class="python3">def sum_numbers(num):
-  print(num)
-  #递归的出口很重要，否则会出现死循环
-  if num == 1:
-      return
-  sum_numbers(num - 1)
-sum_numbers(3)</code></pre>
+<li>当参数满足一个条件时，函数不再执行，通常被称为递归的出口，否则会出现死循环。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">def sum_numbers(num):</span><br><span class="line">    print(num)</span><br><span class="line">    #递归的出口很重要，否则会出现死循环</span><br><span class="line">    if num &#x3D;&#x3D; 1:</span><br><span class="line">        return</span><br><span class="line">    sum_numbers(num - 1)</span><br><span class="line">sum_numbers(3)</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="8-14-Python内置函数"><a href="#8-14-Python内置函数" class="headerlink" title="8.14. Python内置函数"></a>8.14. Python内置函数</h3><ul>
@@ -2487,7 +2212,8 @@ sum_numbers(3)</code></pre>
 </li>
 </ul>
 </li>
-<li>格式<pre><code class="python3">name_list = [&quot;zhansan&quot;, &quot;lisi&quot;, &quot;wangwu&quot;]</code></pre>
+<li>格式<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">name_list &#x3D; [&quot;zhansan&quot;, &quot;lisi&quot;, &quot;wangwu&quot;]</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="9-2-列表常用操作"><a href="#9-2-列表常用操作" class="headerlink" title="9.2. 列表常用操作"></a>9.2. 列表常用操作</h3><ul>
@@ -2550,13 +2276,8 @@ sum_numbers(3)</code></pre>
 </ul>
 </li>
 </ul>
-<h3 id="10-2-格式"><a href="#10-2-格式" class="headerlink" title="10.2. 格式"></a>10.2. 格式</h3><pre><code class="python3">info_tuple = (&quot;zhangsan&quot;, 18, 1.75)
+<h3 id="10-2-格式"><a href="#10-2-格式" class="headerlink" title="10.2. 格式"></a>10.2. 格式</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">info_tuple &#x3D; (&quot;zhangsan&quot;, 18, 1.75)</span><br><span class="line"></span><br><span class="line"># 创建空元组</span><br><span class="line">info_tuple2 &#x3D; ()</span><br><span class="line"></span><br><span class="line"># 创建一个只包含一个元素的元组</span><br><span class="line">info_tuple3 &#x3D; (99,)  # 元组中，只包含一个元素时，需要在元素后面添加逗号</span><br></pre></td></tr></table></figure>
 
-# 创建空元组
-info_tuple2 = ()
-
-# 创建一个只包含一个元素的元组
-info_tuple3 = (99,)  # 元组中，只包含一个元素时，需要在元素后面添加逗号</code></pre>
 <h3 id="10-3-元组常用操作"><a href="#10-3-元组常用操作" class="headerlink" title="10.3. 元组常用操作"></a>10.3. 元组常用操作</h3><ul>
 <li>在ipython3中定义一个元组，例如：info = ()</li>
 <li>输入 info. 按下 TAB 键，ipython会提示元组能够使用的函数如下<ul>
@@ -2568,12 +2289,7 @@ info_tuple3 = (99,)  # 元组中，只包含一个元素时，需要在元素后
 <h3 id="10-4-应用场景"><a href="#10-4-应用场景" class="headerlink" title="10.4. 应用场景"></a>10.4. 应用场景</h3><ul>
 <li>尽管可以使用for in遍历元组，但是在开发中，更多的应用场景是<ul>
 <li>1、函数的参数和返回值，一个函数可以接收任意多个参数，或者一次返回多个数据</li>
-<li>2、格式字符串，格式化字符串后面的 () 本质上就是一个元组，格式字符可以拼接生成一个新的字符串<pre><code class="python3">info = (&quot;zhangsan&quot;, 18)
-print(&quot;%s 的年龄是 %d&quot; % info)
-# 通过格式字符串拼接生成一个新的字符串
-info_str = &quot;%s 的年龄是 %d&quot; % info
-print(into_str)</code></pre>
-</li>
+<li>2、格式字符串，格式化字符串后面的 () 本质上就是一个元组，格式字符可以拼接生成一个新的字符串<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">info &#x3D; (&quot;zhangsan&quot;, 18)</span><br><span class="line">print(&quot;%s 的年龄是 %d&quot; % info)</span><br><span class="line"># 通过格式字符串拼接生成一个新的字符串</span><br><span class="line">info_str &#x3D; &quot;%s 的年龄是 %d&quot; % info</span><br><span class="line">print(into_str)</span><br></pre></td></tr></table></figure></li>
 <li>3.让列表不可以被修改，以保护数据安全</li>
 </ul>
 </li>
@@ -2610,26 +2326,10 @@ print(into_str)</code></pre>
 </li>
 <li>因为字典是一个无序的数据集合，使用print函数输出字典时，通常输出的顺序和定义的顺序是不一致的</li>
 </ul>
-<h3 id="11-2-格式"><a href="#11-2-格式" class="headerlink" title="11.2. 格式"></a>11.2. 格式</h3><pre><code class="python3">xiaoming = &#123;&quot;name&quot;: &quot;小明&quot;,
-            &quot;age&quot;: 18,
-            &quot;gender&quot;: True,
-            &quot;height&quot;: 1.75&#125;</code></pre>
-<h3 id="11-3-字典的使用"><a href="#11-3-字典的使用" class="headerlink" title="11.3. 字典的使用"></a>11.3. 字典的使用</h3><pre><code class="Python3">xiaoming_dict = &#123;&quot;name&quot;: &quot;小明&quot;&#125;
-# 1.取值，在取值的时候，如果指定的key不存在，程序会报错
-print(xiaoming_dict[&quot;name&quot;])
+<h3 id="11-2-格式"><a href="#11-2-格式" class="headerlink" title="11.2. 格式"></a>11.2. 格式</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xiaoming &#x3D; &#123;&quot;name&quot;: &quot;小明&quot;,</span><br><span class="line">            &quot;age&quot;: 18,</span><br><span class="line">            &quot;gender&quot;: True,</span><br><span class="line">            &quot;height&quot;: 1.75&#125;</span><br></pre></td></tr></table></figure>
 
-# 2.增加/修改
-# 如果key不存在，会新增键值对
-xiaoming_dict[&quot;age&quot;] = 18
-# 如果key存在, 会修改已经存在的键值对
-xiaoming_dict[&quot;name&quot;] = &quot;小小明&quot;
+<h3 id="11-3-字典的使用"><a href="#11-3-字典的使用" class="headerlink" title="11.3. 字典的使用"></a>11.3. 字典的使用</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xiaoming_dict &#x3D; &#123;&quot;name&quot;: &quot;小明&quot;&#125;</span><br><span class="line"># 1.取值，在取值的时候，如果指定的key不存在，程序会报错</span><br><span class="line">print(xiaoming_dict[&quot;name&quot;])</span><br><span class="line"></span><br><span class="line"># 2.增加&#x2F;修改</span><br><span class="line"># 如果key不存在，会新增键值对</span><br><span class="line">xiaoming_dict[&quot;age&quot;] &#x3D; 18</span><br><span class="line"># 如果key存在, 会修改已经存在的键值对</span><br><span class="line">xiaoming_dict[&quot;name&quot;] &#x3D; &quot;小小明&quot;</span><br><span class="line"></span><br><span class="line"># 3.删除</span><br><span class="line">xiaoming_dict.pop(&quot;name&quot;)</span><br><span class="line"># 在删除指定键值对的时候，如果指定的key不存在，程序会报错</span><br><span class="line">xiaoming_dict.pop(&quot;name123&quot;)</span><br><span class="line"></span><br><span class="line">print(xiaoming_dict)</span><br></pre></td></tr></table></figure>
 
-# 3.删除
-xiaoming_dict.pop(&quot;name&quot;)
-# 在删除指定键值对的时候，如果指定的key不存在，程序会报错
-xiaoming_dict.pop(&quot;name123&quot;)
-
-print(xiaoming_dict)</code></pre>
 <h3 id="11-4-字典常用操作"><a href="#11-4-字典常用操作" class="headerlink" title="11.4. 字典常用操作"></a>11.4. 字典常用操作</h3><ul>
 <li><p>在ipython3中定义一个字典，例如：xiaoming = {}</p>
 </li>
@@ -2655,18 +2355,13 @@ print(xiaoming_dict)</code></pre>
 </ul>
 </li>
 </ul>
-<h3 id="11-5-字典的循环遍历"><a href="#11-5-字典的循环遍历" class="headerlink" title="11.5. 字典的循环遍历"></a>11.5. 字典的循环遍历</h3><pre><code class="python3"># for 循环内部使用的‘key的变量’ in 字典
-for k in xiaoming:
-    print(&quot;%s: %s&quot; % (k, xiaoming[k]))</code></pre>
+<h3 id="11-5-字典的循环遍历"><a href="#11-5-字典的循环遍历" class="headerlink" title="11.5. 字典的循环遍历"></a>11.5. 字典的循环遍历</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># for 循环内部使用的‘key的变量’ in 字典</span><br><span class="line">for k in xiaoming:</span><br><span class="line">    print(&quot;%s: %s&quot; % (k, xiaoming[k]))</span><br></pre></td></tr></table></figure>
+
 <h3 id="11-6-应用场景"><a href="#11-6-应用场景" class="headerlink" title="11.6. 应用场景"></a>11.6. 应用场景</h3><ul>
 <li>尽管可以使用 for in遍历字典，但是在开发中，更多的应用场景是：<ul>
 <li>使用多个键值对，存储描述一个物体的相关信息——描述更复杂的数据信息</li>
-<li>将多个字典放在一个列表中，再进行遍历，在循环体内部针对每一个字典进行相同的处理<pre><code class="Python3">card_list = [&#123;&quot;name&quot;: &quot;张三&quot;,
-        &quot;qq&quot;: &quot;12345&quot;,
-        &quot;phone&quot;: &quot;10000&quot;&#125;,
-        &#123;&quot;name&quot;: &quot;李四&quot;,
-        &quot;qq&quot;: &quot;54321&quot;,
-        &quot;phone&quot;: &quot;10086&quot;&#125;]</code></pre>
+<li>将多个字典放在一个列表中，再进行遍历，在循环体内部针对每一个字典进行相同的处理<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">card_list &#x3D; [&#123;&quot;name&quot;: &quot;张三&quot;,</span><br><span class="line">            &quot;qq&quot;: &quot;12345&quot;,</span><br><span class="line">            &quot;phone&quot;: &quot;10000&quot;&#125;,</span><br><span class="line">            &#123;&quot;name&quot;: &quot;李四&quot;,</span><br><span class="line">            &quot;qq&quot;: &quot;54321&quot;,</span><br><span class="line">            &quot;phone&quot;: &quot;10086&quot;&#125;]</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
@@ -2680,10 +2375,7 @@ for k in xiaoming:
 </ul>
 </li>
 <li>可以使用索引获取一个字符串中指定位置的字符，索引计数从0开始</li>
-<li>也可以使用for循环遍历字符串中每一个字符<pre><code class="python3">string = &quot;hello python&quot;
-for c in string:
-  print(c)</code></pre>
-</li>
+<li>也可以使用for循环遍历字符串中每一个字符<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string &#x3D; &quot;hello python&quot;</span><br><span class="line">for c in string:</span><br><span class="line">    print(c)</span><br></pre></td></tr></table></figure></li>
 <li>字符串的索引值是从0开始的</li>
 <li><code>(字符串)</code>获取字符串的长度</li>
 <li><code>字符串.count(字符串)</code>小字符串在大字符串中出现的次数</li>
@@ -2879,8 +2571,9 @@ for c in string:
 <li><code>\&#39;&#39;</code> 双引号</li>
 <li><code>\n</code> 换行</li>
 <li><code>\t</code> 横向制表符</li>
-<li><code>\r</code> 回车<pre><code class="python3">print(&quot;1\t2\t3&quot;)
-print(&quot;10\t20\t30&quot;)</code></pre>
+<li><code>\r</code> 回车<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">print(&quot;1\t2\t3&quot;)</span><br><span class="line">print(&quot;10\t20\t30&quot;)</span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <!--more-->
@@ -2923,74 +2616,70 @@ print(&quot;10\t20\t30&quot;)</code></pre>
 </ul>
 <a id="more"></a>
 <h2 id="快速生成HTML结构语法"><a href="#快速生成HTML结构语法" class="headerlink" title="快速生成HTML结构语法"></a>快速生成HTML结构语法</h2><h3 id="生成标签"><a href="#生成标签" class="headerlink" title="生成标签"></a>生成标签</h3><ul>
-<li>直接输入标签名然后按<code>tab</code>键<pre><code class="html">&lt;tab&gt;&lt;/tab&gt;</code></pre>
+<li>直接输入标签名然后按<code>tab</code>键<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tab</span>&gt;</span><span class="tag">&lt;/<span class="name">tab</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="生成多个相同标签"><a href="#生成多个相同标签" class="headerlink" title="生成多个相同标签"></a>生成多个相同标签</h3><ul>
 <li>使用<code>*</code>符号</li>
-<li>例如生成3个<code>div</code>标签，输入<code>div*3</code>然后按<code>tab</code>键<pre><code class="html">&lt;div&gt;&lt;/div&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;div&gt;&lt;/div&gt;</code></pre>
+<li>例如生成3个<code>div</code>标签，输入<code>div*3</code>然后按<code>tab</code>键<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="生成有父子级关系的标签"><a href="#生成有父子级关系的标签" class="headerlink" title="生成有父子级关系的标签"></a>生成有父子级关系的标签</h3><ul>
 <li>使用<code>&gt;</code>符号</li>
-<li>例如输入<code>div&gt;p</code>，按<code>tab</code>键，<code>div</code>为父标签，<code>p</code>为子标签<pre><code class="html">&lt;div&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;/div&gt;</code></pre>
+<li>例如输入<code>div&gt;p</code>，按<code>tab</code>键，<code>div</code>为父标签，<code>p</code>为子标签<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="生成有兄弟关系的标签"><a href="#生成有兄弟关系的标签" class="headerlink" title="生成有兄弟关系的标签"></a>生成有兄弟关系的标签</h3><ul>
 <li>使用<code>+</code>符号</li>
-<li>例如输入<code>div+p</code>，按<code>tab</code>键<pre><code class="html">&lt;div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;/p&gt;</code></pre>
+<li>例如输入<code>div+p</code>，按<code>tab</code>键<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="生成带有类名的标签"><a href="#生成带有类名的标签" class="headerlink" title="生成带有类名的标签"></a>生成带有类名的标签</h3><ul>
 <li>使用<code>.</code>符号</li>
-<li>例如输入<code>p.phd</code>，按<code>tab</code>键<pre><code class="html">&lt;p class=&quot;phd&quot;&gt;&lt;/p&gt;</code></pre>
+<li>例如输入<code>p.phd</code>，按<code>tab</code>键<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;phd&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="生成带有id的标签"><a href="#生成带有id的标签" class="headerlink" title="生成带有id的标签"></a>生成带有id的标签</h3><ul>
 <li>使用<code>#</code>符号</li>
-<li>例如输入<code>p#phd</code>，按<code>tab</code>键<pre><code class="html">&lt;p id=&quot;phd&quot;&gt;&lt;/p&gt;</code></pre>
+<li>例如输入<code>p#phd</code>，按<code>tab</code>键<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;phd&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="生成带有类名或id顺序的多个相同标签"><a href="#生成带有类名或id顺序的多个相同标签" class="headerlink" title="生成带有类名或id顺序的多个相同标签"></a>生成带有类名或id顺序的多个相同标签</h3><ul>
-<li>使用<code>$</code>符号</li>
-<li>例如输入<code>p.phd$*3</code>，按<code>tab</code>键，<code>$</code>表示序号<pre><code class="html">&lt;p class=&quot;phd1&quot;&gt;&lt;/p&gt;
-&lt;p class=&quot;phd2&quot;&gt;&lt;/p&gt;
-&lt;p class=&quot;phd3&quot;&gt;&lt;/p&gt;</code></pre>
+<li><p>使用<code>$</code>符号</p>
 </li>
-</ul>
-<ul>
-<li>例如输入<code>p#phd$*3</code>，按<code>tab</code>键，<code>$</code>表示序号<pre><code class="html">&lt;p id=&quot;phd1&quot;&gt;&lt;/p&gt;
-&lt;p id=&quot;phd2&quot;&gt;&lt;/p&gt;
-&lt;p id=&quot;phd3&quot;&gt;&lt;/p&gt;</code></pre>
+<li><p>例如输入<code>p.phd$*3</code>，按<code>tab</code>键，<code>$</code>表示序号</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;phd1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;phd2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;phd3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例如输入<code>p#phd$*3</code>，按<code>tab</code>键，<code>$</code>表示序号</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;phd1&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;phd2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;phd3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="生成带有内容的标签"><a href="#生成带有内容的标签" class="headerlink" title="生成带有内容的标签"></a>生成带有内容的标签</h3><ul>
 <li>使用<code>&#123;&#125;</code>符号</li>
-<li>例如输入<code>p&#123;无所谓&#125;</code>，按<code>tab</code>键<pre><code class="html">&lt;p&gt;无所谓&lt;/p&gt;</code></pre>
-</li>
-<li>例如输入<code>p&#123;无所谓$&#125;*3</code>，按<code>tab</code>键<pre><code class="html">&lt;p&gt;无所谓1&lt;/p&gt;
-&lt;p&gt;无所谓2&lt;/p&gt;
-&lt;p&gt;无所谓3&lt;/p&gt;</code></pre>
+<li>例如输入<code>p&#123;无所谓&#125;</code>，按<code>tab</code>键<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>无所谓<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>例如输入<code>p&#123;无所谓$&#125;*3</code>，按<code>tab</code>键<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>无所谓1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>无所谓2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>无所谓3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="快速生成CSS样式语法"><a href="#快速生成CSS样式语法" class="headerlink" title="快速生成CSS样式语法"></a>快速生成CSS样式语法</h2><h3 id="直接输入每个单词的首字母，然后按tab键"><a href="#直接输入每个单词的首字母，然后按tab键" class="headerlink" title="直接输入每个单词的首字母，然后按tab键"></a>直接输入每个单词的首字母，然后按<code>tab</code>键</h3><ul>
-<li>例如输入<code>w</code>，按<code>tab</code>键<pre><code class="html">width: ;</code></pre>
-</li>
-<li>例如输入<code>ti</code>，按<code>tab</code>键<pre><code class="html">text-indent: ;</code></pre>
+<li>例如输入<code>w</code>，按<code>tab</code>键<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">width: ;</span><br></pre></td></tr></table></figure></li>
+<li>例如输入<code>ti</code>，按<code>tab</code>键<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">text-indent: ;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="可以把值也一起输入"><a href="#可以把值也一起输入" class="headerlink" title="可以把值也一起输入"></a>可以把值也一起输入</h3><ul>
 <li>可以不给数值加上单位，数值不加单位的默认单位为<code>px</code></li>
-<li>例如输入<code>w100</code>或<code>w100px</code>，按<code>tab</code>键<pre><code class="html">width: 100px;</code></pre>
-</li>
-<li>例如输入<code>ti2</code>，按<code>tab</code>键<pre><code class="html">text-indent: 2px;</code></pre>
-</li>
-<li>例如输入<code>tac</code>，按<code>tab</code>键<pre><code class="html">text-align: center;</code></pre>
+<li>例如输入<code>w100</code>或<code>w100px</code>，按<code>tab</code>键<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">width: 100px;</span><br></pre></td></tr></table></figure></li>
+<li>例如输入<code>ti2</code>，按<code>tab</code>键<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">text-indent: 2px;</span><br></pre></td></tr></table></figure></li>
+<li>例如输入<code>tac</code>，按<code>tab</code>键<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">text-align: center;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <!--more-->
@@ -3008,44 +2697,40 @@ print(&quot;10\t20\t30&quot;)</code></pre>
     <title>GitHub和git的相关操作</title>
     <url>/2021/02/16/GitHub%E5%92%8Cgit%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h2 id="一、初始化一个git仓库"><a href="#一、初始化一个git仓库" class="headerlink" title="一、初始化一个git仓库"></a>一、初始化一个git仓库</h2><ul>
-<li>将当前文件夹作为git仓库<pre><code>git init</code></pre>
-</li>
-<li>或者将当前文件夹下的xxx文件夹作为git仓库<pre><code>git init xxx</code></pre>
-</li>
+<li>将当前文件夹作为git仓库<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
+<li>或者将当前文件夹下的xxx文件夹作为git仓库<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init xxx</span><br></pre></td></tr></table></figure></li>
 <li>初始化后会出现一个名为<code>.git</code>的隐藏文件夹</li>
 </ul>
 <a id="more"></a>
 
 <h2 id="二、添加远程仓库GitHub"><a href="#二、添加远程仓库GitHub" class="headerlink" title="二、添加远程仓库GitHub"></a>二、添加远程仓库GitHub</h2><ul>
-<li>给远程仓库<code>git@github.com:phd99/test.git</code>设置一个别名<code>test</code><pre><code>git remote add 别名 git@github.com:phd99/test.git</code></pre>
-</li>
-<li>查看当前设置了哪些远程仓库的别名<pre><code>git remote -v</code></pre>
-</li>
-<li>删除远程仓库的别名<pre><code>git remote rm [别名]</code></pre>
+<li>给远程仓库<code>git@github.com:phd99/test.git</code>设置一个别名<code>test</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add 别名 git@github.com:phd99&#x2F;test.git</span><br></pre></td></tr></table></figure></li>
+<li>查看当前设置了哪些远程仓库的别名<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure></li>
+<li>删除远程仓库的别名<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote rm [别名]</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="三、配置验证信息"><a href="#三、配置验证信息" class="headerlink" title="三、配置验证信息"></a>三、配置验证信息</h2><ul>
-<li>生成<code>SSH</code>。创建过程中会要求设置密码，可以不设置密码，直接按回车键<pre><code>ssh-keygen -t rsa -C &quot;email&quot;</code></pre>
-</li>
+<li>生成<code>SSH</code>。创建过程中会要求设置密码，可以不设置密码，直接按回车键<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email&quot;</span><br></pre></td></tr></table></figure></li>
 <li><code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥，默认位置在<code>C:\Users\用户名\.ssh</code>中。</li>
 <li>将公钥添加到<code>github</code>中<ul>
 <li><code>Settings</code>-&gt;<code>SSH and GPG keys</code>-&gt;<code>New SSH key</code></li>
 <li>将<code>id_rsa.pub</code>公钥文件中的内容复制到<code>Key</code>中</li>
 <li>公钥名称任意</li>
-<li>查看是否添加成功<pre><code>ssh -T git@github.com</code></pre>
+<li>查看是否添加成功<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="四、克隆远程仓库中的项目"><a href="#四、克隆远程仓库中的项目" class="headerlink" title="四、克隆远程仓库中的项目"></a>四、克隆远程仓库中的项目</h2><ul>
-<li>克隆默认分支中的项目<pre><code>git clone https://github.com/phd99/test.git</code></pre>
-</li>
-<li>克隆指定分支中的项目<pre><code>git clone -b 分支名 https://github.com/phd99/test.git</code></pre>
+<li>克隆默认分支中的项目<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;phd99&#x2F;test.git</span><br></pre></td></tr></table></figure></li>
+<li>克隆指定分支中的项目<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone -b 分支名 https:&#x2F;&#x2F;github.com&#x2F;phd99&#x2F;test.git</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="五、下载远程仓库中的项目"><a href="#五、下载远程仓库中的项目" class="headerlink" title="五、下载远程仓库中的项目"></a>五、下载远程仓库中的项目</h2><ul>
-<li>下载远程仓库中的项目并和本地仓库中的项目合并<pre><code>git pull origin myblog</code></pre>
-</li>
+<li>下载远程仓库中的项目并和本地仓库中的项目合并<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git pull origin myblog</span><br></pre></td></tr></table></figure></li>
 <li><code>pull</code>和<code>clone</code>的区别<ul>
 <li><code>clone</code>是从无到有的过程</li>
 <li><code>pull</code>是已有本地仓库，想获取最新的项目内容</li>
@@ -3053,14 +2738,16 @@ print(&quot;10\t20\t30&quot;)</code></pre>
 </li>
 </ul>
 <h2 id="六、上传文件步骤"><a href="#六、上传文件步骤" class="headerlink" title="六、上传文件步骤"></a>六、上传文件步骤</h2><h3 id="6-1-将内容写入暂存区"><a href="#6-1-将内容写入暂存区" class="headerlink" title="6.1. 将内容写入暂存区"></a>6.1. 将内容写入暂存区</h3><ul>
-<li><code>.</code>表示将文件夹中的所有内容都写入暂存区<pre><code>git add .</code></pre>
-<h3 id="6-2-将暂存区内容添加到本地仓库中"><a href="#6-2-将暂存区内容添加到本地仓库中" class="headerlink" title="6.2. 将暂存区内容添加到本地仓库中"></a>6.2. 将暂存区内容添加到本地仓库中</h3><pre><code>git commit -m [备注信息]</code></pre>
+<li><code>.</code>表示将文件夹中的所有内容都写入暂存区<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-将暂存区内容添加到本地仓库中"><a href="#6-2-将暂存区内容添加到本地仓库中" class="headerlink" title="6.2. 将暂存区内容添加到本地仓库中"></a>6.2. 将暂存区内容添加到本地仓库中</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git commit -m [备注信息]</span><br></pre></td></tr></table></figure>
 <h3 id="6-3-上传代码到远程仓库中并合并"><a href="#6-3-上传代码到远程仓库中并合并" class="headerlink" title="6.3. 上传代码到远程仓库中并合并"></a>6.3. 上传代码到远程仓库中并合并</h3></li>
 <li>使用<code>-u</code>后，以后可以直接<code>git push</code>省略了后面的内容</li>
-<li>若<code>本地分支名</code>和<code>远程分支名</code>相同，则可以省略<code>远程分支名</code>不写<pre><code>git push -u &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</code></pre>
+<li>若<code>本地分支名</code>和<code>远程分支名</code>相同，则可以省略<code>远程分支名</code>不写<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push -u &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-<h2 id="六、查看当前的本地分支名"><a href="#六、查看当前的本地分支名" class="headerlink" title="六、查看当前的本地分支名"></a>六、查看当前的本地分支名</h2><pre><code>git branch</code></pre>
+<h2 id="六、查看当前的本地分支名"><a href="#六、查看当前的本地分支名" class="headerlink" title="六、查看当前的本地分支名"></a>六、查看当前的本地分支名</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
 <h2 id="七、修改GitHub仓库的默认分支"><a href="#七、修改GitHub仓库的默认分支" class="headerlink" title="七、修改GitHub仓库的默认分支"></a>七、修改GitHub仓库的默认分支</h2><ul>
 <li>进入仓库-&gt;<code>Settings</code>-&gt;<code>Branches</code>-&gt;<code>Default branch</code></li>
 </ul>
@@ -3092,104 +2779,107 @@ print(&quot;10\t20\t30&quot;)</code></pre>
 <h2 id="结构标签-骨架标签"><a href="#结构标签-骨架标签" class="headerlink" title="结构标签(骨架标签)"></a>结构标签(骨架标签)</h2><ul>
 <li>每个网页都有一个基本的结构标签</li>
 <li>HTML标签<ul>
-<li>根标签，所有html语言都在其内部<pre><code class="html">&lt;html&gt;&lt;/html&gt;</code></pre>
-</li>
+<li>根标签，所有html语言都在其内部<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>网页头部<ul>
-<li>在头部中一定要设置标题<code>title</code><pre><code class="html">&lt;head&gt;&lt;/head&gt;</code></pre>
-</li>
+<li>在头部中一定要设置标题<code>title</code><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>网页标题<ul>
-<li>当前网页的名字<pre><code class="html">&lt;title&gt;&lt;/title&gt;</code></pre>
-</li>
+<li>当前网页的名字<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>网页主体<ul>
-<li>页面中的内容都在主体中<pre><code class="html">&lt;body&gt;&lt;/body&gt;</code></pre>
-</li>
+<li>页面中的内容都在主体中<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li>范例<pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;网页标题&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  页面内容
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>网页标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    页面内容</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="lt-DOCTYPE-gt"><a href="#lt-DOCTYPE-gt" class="headerlink" title="&lt;!DOCTYPE&gt;"></a>&lt;!DOCTYPE&gt;</h2><ul>
 <li>文档类型声明标签</li>
 <li>告诉浏览器使用哪个版本的<code>HTML</code>来显示网页</li>
-<li>使用<code>HTML5</code>版本来显示网页<pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+<li>使用<code>HTML5</code>版本来显示网页<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="lang"><a href="#lang" class="headerlink" title="lang"></a>lang</h2><ul>
 <li>定义当前文档显示的语言</li>
 <li>若需要使用浏览器翻译当前网页，则需要用到</li>
 <li><code>en</code>为英语</li>
-<li><code>zh-CN</code>为中文<pre><code class="html">&lt;html lang=&quot;en&quot;&gt;</code></pre>
+<li><code>zh-CN</code>为中文<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="charset"><a href="#charset" class="headerlink" title="charset"></a>charset</h2><ul>
 <li>规定<code>HTML</code>文档使用的字符编码</li>
 <li>UTF-8为万国码，基本包含了所有国家的字符</li>
 <li>若不设置编码格式，可能会出现乱码</li>
-<li>写在<code>title</code>标签中<pre><code class="HTML">&lt;title&gt;
-&lt;meta charset=&quot;UTF-8&quot;&gt;
-&lt;/title&gt;</code></pre>
+<li>写在<code>title</code>标签中<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h2><ul>
 <li>共有6级，<code>h1~h6</code></li>
-<li>一个标题单独占一行<pre><code class="HTML">&lt;h1&gt;1&lt;/h1&gt;
-&lt;h2&gt;2&lt;/h2&gt;
-···</code></pre>
+<li>一个标题单独占一行<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">···</span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="段落标签"><a href="#段落标签" class="headerlink" title="段落标签"></a>段落标签</h2><ul>
 <li>将文字分段</li>
-<li>段落之间有间距<pre><code class="HTML">&lt;p&gt;一个段落&lt;p&gt;</code></pre>
+<li>段落之间有间距<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>一个段落<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="换行标签"><a href="#换行标签" class="headerlink" title="换行标签"></a>换行标签</h2><ul>
-<li>换行<pre><code class="HTML">&lt;br /&gt;</code></pre>
+<li>换行<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="加粗标签"><a href="#加粗标签" class="headerlink" title="加粗标签"></a>加粗标签</h2><ul>
-<li>将文字加粗<pre><code class="HTML">&lt;strong&gt;加粗&lt;/strong&gt;
-&lt;b&gt;加粗&lt;/b&gt;</code></pre>
+<li>将文字加粗<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">strong</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="倾斜标签"><a href="#倾斜标签" class="headerlink" title="倾斜标签"></a>倾斜标签</h2><ul>
-<li>将文字倾斜<pre><code class="HTML">&lt;em&gt;倾斜&lt;/em&gt;
-&lt;i&gt;倾斜&lt;/i&gt;</code></pre>
+<li>将文字倾斜<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">em</span>&gt;</span>倾斜<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span>&gt;</span>倾斜<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="删除线标签"><a href="#删除线标签" class="headerlink" title="删除线标签"></a>删除线标签</h2><ul>
-<li>文字中间有一条线<pre><code class="HTML">&lt;del&gt;删除线&lt;/del&gt;
-&lt;s&gt;删除线&lt;/s&gt;</code></pre>
+<li>文字中间有一条线<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">del</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">del</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">s</span>&gt;</span>删除线<span class="tag">&lt;/<span class="name">s</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="下划线标签"><a href="#下划线标签" class="headerlink" title="下划线标签"></a>下划线标签</h2><ul>
-<li>文字下面有一条线<pre><code class="HTML">&lt;ins&gt;下划线&lt;/ins&gt;
-&lt;u&gt;下划线&lt;/u&gt;</code></pre>
+<li>文字下面有一条线<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ins</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">ins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">u</span>&gt;</span>下划线<span class="tag">&lt;/<span class="name">u</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="盒子标签"><a href="#盒子标签" class="headerlink" title="盒子标签"></a>盒子标签</h2><ul>
 <li><code>div</code><ul>
 <li>独占一行，一行只能有一个<code>div</code></li>
-<li>大盒子<pre><code class="HTML">&lt;div&gt;大盒子&lt;/div&gt;</code></pre>
-</li>
+<li>大盒子<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>大盒子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><code>span</code><ul>
 <li>一行可以有多个<code>span</code></li>
-<li>小盒子<pre><code class="HTML">&lt;span&gt;小盒子&lt;/span&gt;</code></pre>
+<li>小盒子<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>小盒子<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 </li>
@@ -3226,7 +2916,9 @@ print(&quot;10\t20\t30&quot;)</code></pre>
 </li>
 </ul>
 </li>
-<li>范例<pre><code class="HTML">&lt;img src=&quot;./image/1.jpg&quot; alt=&quot;替换文本&quot; title=&quot;提示文本&quot; width=&quot;250&quot; height=&quot;250&quot; border=&quot;3&quot; /&gt;</code></pre>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;./image/1.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;替换文本&quot;</span> <span class="attr">title</span>=<span class="string">&quot;提示文本&quot;</span> <span class="attr">width</span>=<span class="string">&quot;250&quot;</span> <span class="attr">height</span>=<span class="string">&quot;250&quot;</span> <span class="attr">border</span>=<span class="string">&quot;3&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h2><ul>
@@ -3272,46 +2964,39 @@ print(&quot;10\t20\t30&quot;)</code></pre>
 <li><code>_blank</code>在新窗口中打开</li>
 </ul>
 </li>
-<li>范例<pre><code class="HTML">&lt;a href=&quot;https://www.phd99.com&quot; target=&quot;_parent&quot;&gt;新页面&lt;/a&gt;</code></pre>
-</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.phd99.com&quot;</span> <span class="attr">target</span>=<span class="string">&quot;_parent&quot;</span>&gt;</span>新页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>锚点链接<ul>
-<li>点击时可以直接定位到页面中的某个位置<pre><code class="HTML">&lt;a href=&quot;#phd&quot;&gt;跳转到id属性值为phd的标签处&lt;/a&gt;</code></pre>
+<li>点击时可以直接定位到页面中的某个位置<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#phd&quot;</span>&gt;</span>跳转到id属性值为phd的标签处<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="注释标签"><a href="#注释标签" class="headerlink" title="注释标签"></a>注释标签</h2><ul>
-<li>快捷键<code>ctrl + /</code><pre><code class="HTML">&lt;!-- 这是一个注释 --&gt;</code></pre>
+<li>快捷键<code>ctrl + /</code><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 这是一个注释 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><ul>
-<li>空格<code>&amp;nbsp;</code><pre><code>&amp;nbsp;</code></pre>
-</li>
-<li>大于<pre><code>&amp;lt;</code></pre>
-</li>
-<li>小于<pre><code>&amp;gt;</code></pre>
-</li>
-<li>和<pre><code>&amp;amp;</code></pre>
-</li>
-<li>人民币<pre><code>&amp;yen;</code></pre>
-</li>
-<li>版权<pre><code>&amp;copy;</code></pre>
-</li>
-<li>注册商标<pre><code>&amp;reg;</code></pre>
-</li>
-<li>摄氏度<pre><code>&amp;deg;</code></pre>
-</li>
-<li>正负号<pre><code>&amp;plusmn;</code></pre>
-</li>
-<li>乘号<pre><code>&amp;times;</code></pre>
-</li>
-<li>除号<pre><code>&amp;divide;</code></pre>
-</li>
-<li>平方<pre><code>&amp;sup2;</code></pre>
-</li>
-<li>立方<pre><code>&amp;sup3;</code></pre>
+<li>空格<code>&amp;nbsp;</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;nbsp;</span><br></pre></td></tr></table></figure></li>
+<li>大于<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;</span><br></pre></td></tr></table></figure></li>
+<li>小于<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;</span><br></pre></td></tr></table></figure></li>
+<li>和<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;</span><br></pre></td></tr></table></figure></li>
+<li>人民币<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;yen;</span><br></pre></td></tr></table></figure></li>
+<li>版权<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;copy;</span><br></pre></td></tr></table></figure></li>
+<li>注册商标<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;reg;</span><br></pre></td></tr></table></figure></li>
+<li>摄氏度<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;deg;</span><br></pre></td></tr></table></figure></li>
+<li>正负号<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;plusmn;</span><br></pre></td></tr></table></figure></li>
+<li>乘号<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;times;</span><br></pre></td></tr></table></figure></li>
+<li>除号<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;divide;</span><br></pre></td></tr></table></figure></li>
+<li>平方<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;sup2;</span><br></pre></td></tr></table></figure></li>
+<li>立方<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;sup3;</span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h2><ul>
@@ -3324,16 +3009,8 @@ print(&quot;10\t20\t30&quot;)</code></pre>
 <li><code>border</code>，设置表格是否有边框</li>
 <li><code>cellpadding</code>，文字和单元格边框之间的距离</li>
 <li><code>cellspacing</code>，单元格之间的距离</li>
-<li><code>width</code>，表格的宽度<pre><code class="html">&lt;table align=&quot;center&quot; border=&quot;1&quot; width=&quot;200&quot; cellpadding=&quot;1&quot; cellspacing=&quot;1&quot;&gt;
-&lt;tr&gt;
-    &lt;th&gt;第1行第1列&lt;/th&gt;
-    &lt;th&gt;第1行第2列&lt;/th&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-    &lt;td&gt;第2行第1列&lt;/td&gt;
-    &lt;td&gt;第2行第2列&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;</code></pre>
+<li><code>width</code>，表格的宽度<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span> <span class="attr">cellpadding</span>=<span class="string">&quot;1&quot;</span> <span class="attr">cellspacing</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>第1行第1列<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>第1行第2列<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>第2行第1列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>第2行第2列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
@@ -3344,52 +3021,32 @@ print(&quot;10\t20\t30&quot;)</code></pre>
 </ul>
 <h3 id="表格主题标签"><a href="#表格主题标签" class="headerlink" title="表格主题标签"></a>表格主题标签</h3><ul>
 <li><code>&lt;tbody&gt;</code></li>
-<li>主体区域，表格的内容部分<pre><code class="html">&lt;table align=&quot;center&quot; border=&quot;1&quot; width=&quot;200&quot; cellpadding=&quot;1&quot; cellspacing=&quot;1&quot;&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;第1行第1列&lt;/th&gt;
-          &lt;th&gt;第1行第2列&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;第2行第1列&lt;/td&gt;
-          &lt;td&gt;第2行第2列&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
+<li>主体区域，表格的内容部分<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span> <span class="attr">cellpadding</span>=<span class="string">&quot;1&quot;</span> <span class="attr">cellspacing</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>第1行第1列<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>第1行第2列<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>第2行第1列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>第2行第2列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
 <li>无顺序</li>
 <li>用<code>&lt;ul&gt;</code>表示无序列表，<code>&lt;ul&gt;</code>标签中只能有<code>&lt;li&gt;</code>标签</li>
-<li>用<code>&lt;li&gt;</code>表示列表中的一项，<code>&lt;li&gt;</code>标签中放其他标签<pre><code class="html">&lt;ul&gt;
-   &lt;li&gt;啊啊&lt;/li&gt;
-   &lt;li&gt;嗯嗯&lt;/li&gt;
-   &lt;li&gt;嘿嘿&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+<li>用<code>&lt;li&gt;</code>表示列表中的一项，<code>&lt;li&gt;</code>标签中放其他标签<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span>&gt;</span>啊啊<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span>&gt;</span>嗯嗯<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span>&gt;</span>嘿嘿<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><ul>
 <li>有顺序</li>
 <li>用<code>&lt;ol&gt;</code>表示有序列表，<code>&lt;ol&gt;</code>标签中只能有<code>&lt;li&gt;</code>标签</li>
-<li>用<code>&lt;li&gt;</code>表示列表中的一项<pre><code class="html">&lt;ol&gt;
-   &lt;li&gt;张三&lt;/li&gt;
-   &lt;li&gt;李四&lt;/li&gt;
-   &lt;li&gt;王五&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
+<li>用<code>&lt;li&gt;</code>表示列表中的一项<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span>&gt;</span>李四<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span>&gt;</span>王五<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h3 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h3><ul>
 <li>对列表中的信息有一个整体的描述</li>
 <li>用<code>&lt;dl&gt;</code>表示自定义列表，<code>&lt;dl&gt;</code>标签中只能有<code>&lt;dt&gt;</code>和<code>&lt;dd&gt;</code>标签</li>
 <li>用<code>&lt;dt&gt;</code>表示最上面的描述标题</li>
-<li>用<code>&lt;dd&gt;</code>表示描述标题下面的每一个小标题<pre><code class="html">&lt;dl&gt;
-  &lt;dt&gt;服务支持&lt;/dt&gt;
-  &lt;dd&gt;售后政策&lt;/dd&gt;
-  &lt;dd&gt;自助服务&lt;/dd&gt;
-  &lt;dd&gt;相关下载&lt;/dd&gt;
-&lt;/dl&gt;</code></pre>
+<li>用<code>&lt;dd&gt;</code>表示描述标题下面的每一个小标题<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>服务支持<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>售后政策<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>自助服务<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>相关下载<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><h3 id="表单域"><a href="#表单域" class="headerlink" title="表单域"></a>表单域</h3><ul>
@@ -3422,11 +3079,8 @@ print(&quot;10\t20\t30&quot;)</code></pre>
 </ul>
 </li>
 <li><code>maxlength</code>属性值<ul>
-<li>规定输入字段中的字符的最大长度<pre><code class="html">&lt;form action=&quot;test.php&quot; method=&quot;post&quot; name=&quot;1&quot;&gt;
-&lt;input type=&quot;text&quot; maxlength=&quot;10&quot;&gt;&lt;br&gt;
-男&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;男&quot; checked=&quot;checked&quot;&gt;
-女&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;女&quot;&gt;
-&lt;/form&gt;</code></pre>
+<li>规定输入字段中的字符的最大长度<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;test.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">name</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">maxlength</span>=<span class="string">&quot;10&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    男<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;男&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;checked&quot;</span>&gt;</span></span><br><span class="line">    女<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;女&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
@@ -3434,14 +3088,8 @@ print(&quot;10\t20\t30&quot;)</code></pre>
 <h4 id="select"><a href="#select" class="headerlink" title="select"></a>select</h4><ul>
 <li>下拉表单元素</li>
 <li><code>&lt;option&gt;</code>标签用来表示下拉列表中的选项</li>
-<li><code>selected</code>属性设置默认选择<pre><code class="html">&lt;form&gt;
-  &lt;select&gt;
-      &lt;option&gt;学生&lt;/option&gt;
-      &lt;option&gt;警察&lt;/option&gt;
-      &lt;option&gt;医生&lt;/option&gt;
-      &lt;option selected=&quot;selected&quot;&gt;教师&lt;/option&gt;
-  &lt;/select&gt;
-&lt;/form&gt;</code></pre>
+<li><code>selected</code>属性设置默认选择<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span>&gt;</span>学生<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span>&gt;</span>警察<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span>&gt;</span>医生<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">selected</span>=<span class="string">&quot;selected&quot;</span>&gt;</span>教师<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h4 id="textarea"><a href="#textarea" class="headerlink" title="textarea"></a>textarea</h4><ul>
@@ -3450,11 +3098,9 @@ print(&quot;10\t20\t30&quot;)</code></pre>
 <li>常见于留言板、评论</li>
 <li>属性<ul>
 <li><code>cols</code>一行显示的字符数</li>
-<li><code>rows</code>显示的行数<pre><code class="html">&lt;form&gt;
-&lt;textarea cols=&quot;10&quot; rows=&quot;2&quot;&gt;
-    内容
-&lt;/textarea&gt;
-&lt;/form&gt;</code></pre>
+<li><code>rows</code>显示的行数<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">cols</span>=<span class="string">&quot;10&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;2&quot;</span>&gt;</span></span><br><span class="line">        内容</span><br><span class="line">    <span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 </li>
@@ -3462,15 +3108,12 @@ print(&quot;10\t20\t30&quot;)</code></pre>
 <h2 id="标注标签"><a href="#标注标签" class="headerlink" title="标注标签"></a>标注标签</h2><ul>
 <li><code>&lt;label&gt;</code></li>
 <li>当点击label标签对应的位置时，其完成的功能就是与for属性值相同的id属性值对应的其他标签所完成的功能。</li>
-<li>鼠标点击“男”的位置，也能实现单选功能<pre><code class="html">&lt;form action=&quot;test.php&quot; method=&quot;post&quot; name=&quot;1&quot;&gt;
-  &lt;label for=&quot;nan&quot;&gt;男&lt;/label&gt;
-  &lt;input id=&quot;nan&quot; type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;男&quot; checked=&quot;checked&quot;&gt;
-  &lt;label for=&quot;nu&quot;&gt;女&lt;/label&gt;
-  &lt;input id=&quot;nu&quot; type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;女&quot;&gt;
-&lt;/form&gt;</code></pre>
+<li>鼠标点击“男”的位置，也能实现单选功能<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;test.php&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">name</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;nan&quot;</span>&gt;</span>男<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;nan&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;男&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;checked&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;nu&quot;</span>&gt;</span>女<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;nu&quot;</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;女&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-<h2 id="水平线标签"><a href="#水平线标签" class="headerlink" title="水平线标签"></a>水平线标签</h2><pre><code class="html">&lt;hr&gt;</code></pre>
+<h2 id="水平线标签"><a href="#水平线标签" class="headerlink" title="水平线标签"></a>水平线标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <!--more-->
 ]]></content>
       <categories>
@@ -3561,70 +3204,56 @@ print(&quot;10\t20\t30&quot;)</code></pre>
 <li>安装 <a href="http://git-scm.com/">Git</a></li>
 <li>安装 <a href="https://hexo.io/zh-cn/">Hexo</a><ul>
 <li>鼠标右键打开<code>git bash</code></li>
-<li>在<code>在git bash</code>中输入下列命令<pre><code>npm install -g hexo-cli</code></pre>
+<li>在<code>在git bash</code>中输入下列命令<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 <a id="more"></a></li>
 </ul>
 </li>
-<li>安装<code>hexo-deployer-git</code><pre><code>npm install hexo-deployer-git --save</code></pre>
-</li>
+<li>安装<code>hexo-deployer-git</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
 <li>查看版本<ul>
-<li>查看<code>node</code>的版本<pre><code>node -v</code></pre>
-</li>
-<li>查看<code>npm</code>的版本<pre><code>npm -v</code></pre>
-</li>
-<li>查看<code>hexo</code>的版本<pre><code>hexo -v</code></pre>
+<li>查看<code>node</code>的版本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure></li>
+<li>查看<code>npm</code>的版本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure></li>
+<li>查看<code>hexo</code>的版本<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="新建网站"><a href="#新建网站" class="headerlink" title="新建网站"></a>新建网站</h2><ul>
-<li>初始化<code>hexo</code>，在<code>git bash</code>中输入如下命令。<code>***</code>是文件夹名称，名称任意，如果为空，则默认在当前的文件夹下建立网站。以后的博客内容都在该文件夹中。<pre><code>hexo init ***</code></pre>
-</li>
-<li>进入<code>***</code>文件夹<pre><code>cd ***</code></pre>
-</li>
-<li>在<code>***</code>文件夹下执行<pre><code>npm install</code></pre>
-</li>
-<li>生成静态文件<pre><code>hexo generate</code></pre>
-</li>
-<li>启动服务器<pre><code>hexo server</code></pre>
-</li>
+<li>初始化<code>hexo</code>，在<code>git bash</code>中输入如下命令。<code>***</code>是文件夹名称，名称任意，如果为空，则默认在当前的文件夹下建立网站。以后的博客内容都在该文件夹中。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init ***</span><br></pre></td></tr></table></figure></li>
+<li>进入<code>***</code>文件夹<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd ***</span><br></pre></td></tr></table></figure></li>
+<li>在<code>***</code>文件夹下执行<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+<li>生成静态文件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></li>
+<li>启动服务器<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></li>
 <li>访问网站，默认情况下，访问网址为：<a href="http://localhost:4000/">http://localhost:4000/</a></li>
 </ul>
 <h2 id="生成SSH"><a href="#生成SSH" class="headerlink" title="生成SSH"></a>生成SSH</h2><ul>
-<li>配置<code>git</code>用户名。<code>-–global</code>参数，用了这个参数，表示你这台机器上所有的<code>Git</code>仓库都会使用这个配置，也可以对某个仓库指定不同的用户名和<code>Email</code>地址，我配置的用户名和邮箱与<code>github</code>和<code>coding</code>平台的相同。<pre><code>git config --global user.name &quot;name&quot;</code></pre>
-</li>
-<li>配置<code>git</code>邮箱<pre><code>git config --global user.email &quot;email&quot;</code></pre>
-</li>
-<li>查看用户配置<pre><code>git config --global -l</code></pre>
-</li>
-<li>创建<code>SSH</code>。创建过程中会要求设置密码，可以不设置密码，直接按回车键<pre><code>ssh-keygen -t rsa -C &quot;email&quot;</code></pre>
-</li>
+<li>配置<code>git</code>用户名。<code>-–global</code>参数，用了这个参数，表示你这台机器上所有的<code>Git</code>仓库都会使用这个配置，也可以对某个仓库指定不同的用户名和<code>Email</code>地址，我配置的用户名和邮箱与<code>github</code>和<code>coding</code>平台的相同。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;name&quot;</span><br></pre></td></tr></table></figure></li>
+<li>配置<code>git</code>邮箱<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;email&quot;</span><br></pre></td></tr></table></figure></li>
+<li>查看用户配置<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure></li>
+<li>创建<code>SSH</code>。创建过程中会要求设置密码，可以不设置密码，直接按回车键<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email&quot;</span><br></pre></td></tr></table></figure></li>
 <li><code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥，默认位置在<code>C:\Users\用户名\.ssh</code>中。</li>
 <li>将公钥添加到<code>github</code>中<ul>
 <li><code>Settings</code>-&gt;<code>SSH and GPG keys</code>-&gt;<code>New SSH key</code></li>
 <li>将<code>id_rsa.pub</code>公钥文件中的内容复制到<code>Key</code>中</li>
 <li>公钥名称任意</li>
-<li>查看是否添加成功<pre><code>ssh -T git@github.com</code></pre>
-</li>
+<li>查看是否添加成功<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li>将公钥添加到<code>coding</code>中<ul>
 <li>个人账户设置-&gt;<code>SSH</code>公钥-&gt;新增公钥</li>
 <li>将<code>id_rsa.pub</code>公钥文件中的内容复制到公钥内容中</li>
 <li>公钥名称任意</li>
-<li>查看是否添加成功<pre><code>ssh -T git@git.coding.net</code></pre>
+<li>查看是否添加成功<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@git.coding.net</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </li>
 </ul>
 <h2 id="将博客部署到-github"><a href="#将博客部署到-github" class="headerlink" title="将博客部署到 github"></a>将博客部署到 <a href="https://github.com/">github</a></h2><ul>
 <li>在<code>github</code>中创建一个仓库，仓库名称为<code>***.github.io</code>,<code>***</code>为<code>github</code>的用户名。</li>
-<li>打开站点配置文件<code>_config.yml</code>，添加下列内容<pre><code>deploy:
-type: git
-repo:
-  github: git@github.com:phd99/phd99.github.io.git,master</code></pre>
-</li>
-<li>将博客内容部署到<code>github</code>，- 部署成功后，可以访问<code>http://***.github.io</code>查看自己的个人博客<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></pre>
+<li>打开站点配置文件<code>_config.yml</code>，添加下列内容<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">    github: git@github.com:phd99&#x2F;phd99.github.io.git,master</span><br></pre></td></tr></table></figure></li>
+<li>将博客内容部署到<code>github</code>，- 部署成功后，可以访问<code>http://***.github.io</code>查看自己的个人博客<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="将博客部署到-coding"><a href="#将博客部署到-coding" class="headerlink" title="将博客部署到 coding"></a>将博客部署到 <a href="https://coding.net/">coding</a></h2><ul>
@@ -3635,13 +3264,9 @@ repo:
 <li>部署成功后会提供一个网络地址，使用该<code>url</code>查看自己的博客</li>
 </ul>
 </li>
-<li>打开站点配置文件<code>_config.yml</code>，修改下列内容<pre><code>deploy:
-type: git
-repo:
-  coding: git@e.coding.net:phd99/phd99/phd99.git,master
-  github: git@github.com:phd99/phd99.github.io.git,master</code></pre>
-</li>
-<li>将博客内容部署到<code>coding</code>，- 部署成功后，可以访问coding提供的网络地址来查看个人博客<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></pre>
+<li>打开站点配置文件<code>_config.yml</code>，修改下列内容<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">    coding: git@e.coding.net:phd99&#x2F;phd99&#x2F;phd99.git,master</span><br><span class="line">    github: git@github.com:phd99&#x2F;phd99.github.io.git,master</span><br></pre></td></tr></table></figure></li>
+<li>将博客内容部署到<code>coding</code>，- 部署成功后，可以访问coding提供的网络地址来查看个人博客<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h2 id="设置个人域名"><a href="#设置个人域名" class="headerlink" title="设置个人域名"></a>设置个人域名</h2><ul>
@@ -3662,12 +3287,9 @@ repo:
 </ul>
 </li>
 <li>在博客根目录下<code>source</code>文件夹中创建一个文件，名称为<code>CNAME</code>，没有后缀</li>
-<li>编辑<code>CNAME</code>文件，将购买的域名输入到该文件内<pre><code>www.phd99.com</code></pre>
-</li>
-<li>重新部署一下，过一会儿就可以通过访问购买的域名来查看个人博客了<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></pre>
-</li>
-</ul>
-<h3 id="coding中的设置"><a href="#coding中的设置" class="headerlink" title="coding中的设置"></a>coding中的设置</h3><ul>
+<li>编辑<code>CNAME</code>文件，将购买的域名输入到该文件内<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">www.phd99.com</span><br></pre></td></tr></table></figure></li>
+<li>重新部署一下，过一会儿就可以通过访问购买的域名来查看个人博客了<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="coding中的设置"><a href="#coding中的设置" class="headerlink" title="coding中的设置"></a>coding中的设置</h3></li>
 <li>登录<code>coding</code>-&gt;进入项目-&gt;持续部署-&gt;静态网站-&gt;自定义域名-&gt;新建域名-&gt;输入购买的域名-&gt;确定</li>
 <li>添加域名后，网站会自动重新部署，并且同时去申请<code>SSL</code>证书<ul>
 <li>申请证书时，会提供一些信息，需要给域名添加一条记录，添加之后，过一会儿，<code>SSL</code>证书就申请成功了，此时域名也添加成功了</li>
