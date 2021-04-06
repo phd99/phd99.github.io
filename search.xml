@@ -1,6 +1,406 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>碗</title>
+    <url>/2021/04/06/%E7%A2%97/</url>
+    <content><![CDATA[<h5 id="来源：四川教育发布（微信公众号）"><a href="#来源：四川教育发布（微信公众号）" class="headerlink" title="来源：四川教育发布（微信公众号）"></a>来源：四川教育发布（微信公众号）</h5><h5 id="文章名：一段感情是好是坏，就看这三点"><a href="#文章名：一段感情是好是坏，就看这三点" class="headerlink" title="文章名：一段感情是好是坏，就看这三点"></a>文章名：一段感情是好是坏，就看这三点</h5><hr>
+<ul>
+<li>一段感情是好是坏，就看这三点<ul>
+<li>始于五官，忠于三观</li>
+<li>我是爱你的，你也是自由的</li>
+<li>好的感情，互相滋养</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>&emsp;&emsp;有个人去买碗，他拿起一只碗去敲打另一只碗，听完声音后说：“这碗不行。”</p>
+<p>&emsp;&emsp;老板问：“你这是做啥？”</p>
+<p>&emsp;&emsp;他回答：“两只碗碰撞，发出清脆悦耳的声音，就是好碗。”</p>
+<p>&emsp;&emsp;老板立即提给他一只碗。</p>
+<p>&emsp;&emsp;没想到，这只碗与其他碗相撞，都发出了清脆的响声。</p>
+<p>&emsp;&emsp;老板解释说：“你一开始拿的就是个次品，你想得到一只好碗，要保证手上拿的也是好的。”</p>
+<p>&emsp;&emsp;想要得到什么东西，最好的办法是让自己配得上它。</p>
+<p>&emsp;&emsp;感情也是如此，你成为了怎样的人，才能遇见怎样的人。</p>
+<p>&emsp;&emsp;理智地选择爱情，真诚地经营爱情，有能力承担选择的代价。</p>
+<p>&emsp;&emsp;你们独立又亲密，相爱又自由，懂得疼爱和分担，没有斗智斗勇，只有相辅相成。</p>
+<p>&emsp;&emsp;最后的结果，一定是朝着幸福的方向前进。</p>
+<p>&emsp;&emsp;“一诺千金，相守一生”不是传说，而是一个励志的故事。幸福的感情，都是为有心人准备的。</p>
+]]></content>
+      <categories>
+        <category>文摘</category>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>网络文摘</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之面向对象三大特征</title>
+    <url>/2021/04/06/Java%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/</url>
+    <content><![CDATA[<h2 id="一、封装"><a href="#一、封装" class="headerlink" title="一、封装"></a>一、封装</h2><h3 id="1-1-private关键字"><a href="#1-1-private关键字" class="headerlink" title="1.1. private关键字"></a>1.1. private关键字</h3><ul>
+<li>private是一个权限修饰符</li>
+<li>可以修饰成员（成员变量和成员方法）</li>
+<li>作用是保护成员不被别的类使用，被private修饰的成员只在本类中才能访问</li>
+<li>针对private修饰的成员变量，如果需要被其他类使用，提供相应的操作<ul>
+<li>提供“get变量名()”方法，用于获取成员变量的值，方法用public修饰</li>
+<li>提供“set变量名(参数)”方法，用于设置成员变量的值，方法用public修饰</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-2-private关键字的使用"><a href="#1-2-private关键字的使用" class="headerlink" title="1.2. private关键字的使用"></a>1.2. private关键字的使用</h3><ul>
+<li>一个标准类的编写<ul>
+<li>把成员变量用private修饰。</li>
+<li>提供对应的getXxx()/setXxx()方法。</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-this关键字"><a href="#1-3-this关键字" class="headerlink" title="1.3. this关键字"></a>1.3. this关键字</h3><ul>
+<li>this代表所在类的对象引用，方法被哪个对象调用，this就代表哪个对象</li>
+<li>this修饰的变量用于指代成员变量</li>
+<li>方法的形参如果与成员变量同名，不带this修饰的变量指的是形参，而不是成员变量</li>
+<li>方法的形参没有与成员变量同名，不带this修饰的变量指的是成员变量</li>
+<li>什么时候使用this<ul>
+<li>当局部变量与成员变量名相同时，用this.变量名指代成员变量</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-4-封装概述"><a href="#1-4-封装概述" class="headerlink" title="1.4. 封装概述"></a>1.4. 封装概述</h3><ul>
+<li>是面向对象三大特征之一（封装、继承、多态）</li>
+<li>是面向对象编程语言对客观世界的模拟，客观世界里成员变量都是隐藏在对象内部的，外界是无法直接操作的</li>
+</ul>
+<h3 id="1-5-封装原则"><a href="#1-5-封装原则" class="headerlink" title="1.5. 封装原则"></a>1.5. 封装原则</h3><ul>
+<li>将类的某些信息隐藏在类内部，不允许外部程序直接访问，而是通过成员变量private，提供对应的getXxx()/setXxx()方法</li>
+</ul>
+<h3 id="1-6-封装好处"><a href="#1-6-封装好处" class="headerlink" title="1.6. 封装好处"></a>1.6. 封装好处</h3><ul>
+<li>(1)通过方法来控制成员变量的操作，提高了代码的安全性</li>
+<li>(2)把代码用方法进行封装，提高了代码的复用性</li>
+</ul>
+<h2 id="二、继承"><a href="#二、继承" class="headerlink" title="二、继承"></a>二、继承</h2><h3 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1. 概述"></a>2.1. 概述</h3><ul>
+<li>继承是面向对象三大特征之一，可以使得子类具有父类的属性和方法，还可以在子类中重新定义，追加属性和方法</li>
+</ul>
+<h3 id="2-2-继承的格式"><a href="#2-2-继承的格式" class="headerlink" title="2.2. 继承的格式"></a>2.2. 继承的格式</h3><ul>
+<li>格式：public class 子类名 extends 父类名{}</li>
+<li>范例：public class Zi extends Fu{}</li>
+<li>Fu：是父类，也被称为基类、超类</li>
+<li>Zi：是子类，也被称为派生类</li>
+</ul>
+<h3 id="2-3-继承中子类的特点"><a href="#2-3-继承中子类的特点" class="headerlink" title="2.3. 继承中子类的特点"></a>2.3. 继承中子类的特点</h3><ul>
+<li>子类可以有父类的内容</li>
+<li>子类还可以有自己特有的内容</li>
+</ul>
+<h3 id="2-4-继承的优点"><a href="#2-4-继承的优点" class="headerlink" title="2.4. 继承的优点"></a>2.4. 继承的优点</h3><ul>
+<li>提高了代码的复用性（多个类相同的成员可以放到同一个类中）</li>
+<li>提高了代码的维护性（如果方法的代码需要修改，修改一处即可）</li>
+</ul>
+<h3 id="2-5-继承的弊端"><a href="#2-5-继承的弊端" class="headerlink" title="2.5. 继承的弊端"></a>2.5. 继承的弊端</h3><ul>
+<li>继承让类与类之间产生了关系，类的耦合性增强了，当父类发生变化时子类实现也不得不跟着变化，削弱了子类的独立性</li>
+</ul>
+<h3 id="2-6-什么时候使用继承"><a href="#2-6-什么时候使用继承" class="headerlink" title="2.6. 什么时候使用继承"></a>2.6. 什么时候使用继承</h3><ul>
+<li>继承体现的关系：什么是什么的一种</li>
+<li>假设法：我有两个类A和B，如果他们满足A是B的一种，或者B是A的一种，就说明他们存在继承关系，这个时候就可以考虑使用继承来体现，否则就不能滥用继承</li>
+<li>举例：苹果和水果、猫和动物都是继承关系</li>
+</ul>
+<h3 id="2-7-继承中变量的访问特点"><a href="#2-7-继承中变量的访问特点" class="headerlink" title="2.7. 继承中变量的访问特点"></a>2.7. 继承中变量的访问特点</h3><ul>
+<li>在子类方法中访问一个变量的步骤<ul>
+<li>(1)子类局部范围找</li>
+<li>(2)子类成员范围找</li>
+<li>(3)父类成员范围找</li>
+<li>(4)如果没有就报错（不考虑父亲的父亲……）</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-8-Super"><a href="#2-8-Super" class="headerlink" title="2.8. Super"></a>2.8. Super</h3><ul>
+<li><code>super</code>关键字的用法和this关键字的用法相似</li>
+<li><code>this</code>关键字指向调用该方法的对象一般我们是在当前类中使用this关键字，所有我们常说this代表本类对象的引用</li>
+<li><code>super</code>代表父类存储空间的标识（可以理解为父类对象引用）</li>
+<li><code>this</code><ul>
+<li>访问成员变量：this.成员变量访问本类成员变量</li>
+<li>访问构造方法：this(……)访问本类构造方法</li>
+<li>访问成员方法：this.成员方法(……)访问本类成员方法</li>
+</ul>
+</li>
+<li><code>super</code><ul>
+<li>访问成员变量：super.成员变量访问父类成员变量</li>
+<li>访问构造方法：super(……)访问父类构造方法</li>
+<li>访问成员方法：super.成员方法(……)访问父类成员方法</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-9-继承中构造方法的访问特点"><a href="#2-9-继承中构造方法的访问特点" class="headerlink" title="2.9. 继承中构造方法的访问特点"></a>2.9. 继承中构造方法的访问特点</h3><ul>
+<li>子类中所有的构造方法默认都会访问父类中无参的构造方法，原因如下<ul>
+<li>(1)因为子类会继承父类中的数据，可能还会使用父类的数据。所以，子类初始化之前，一定要先完成父类数据的初始化</li>
+<li>(2)每一个子类构造方法的第一条语句默认都是super()</li>
+</ul>
+</li>
+<li>如果父类中没有无参构造方法，只有带参构造方法，解决办法如下<ul>
+<li>(1)通过使用super关键字去显示的调用父类的带参构造方法</li>
+<li>(2)在父类中自己提供一个无参构造方法</li>
+</ul>
+</li>
+<li>建议自己给出无参构造方法</li>
+</ul>
+<h3 id="2-10-继承中成员方法的访问特点"><a href="#2-10-继承中成员方法的访问特点" class="headerlink" title="2.10. 继承中成员方法的访问特点"></a>2.10. 继承中成员方法的访问特点</h3><ul>
+<li>通过子类对象访问一个方法的步骤<ul>
+<li>(1)子类成员范围找</li>
+<li>(2)父类成员范围找</li>
+<li>(3)如果都没有就报错（不考虑父亲的父亲……）</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-11-方法重写"><a href="#2-11-方法重写" class="headerlink" title="2.11. 方法重写"></a>2.11. 方法重写</h3><ul>
+<li>概述<ul>
+<li>子类中出现了和父类中一模一样的方法声明</li>
+</ul>
+</li>
+<li>应用<ul>
+<li>当子类需要父类的功能，而功能主体子类有自己特有内容时，可以重写父类中的方法，这样，即沿袭了父类的功能，又定义了子类特有的内容</li>
+</ul>
+</li>
+<li>如何检验是否是重写的方法<ul>
+<li>使用@Override，它是一个注解，可以帮助我们检查重写方法的方法什么的正确性</li>
+</ul>
+</li>
+<li>方法重写注意事项<ul>
+<li>私有方法不能被重写（父类私有成员子类是不能继承的）</li>
+<li>子类方法访问权限不能更低（public &gt; 默认 &gt; 私有）</li>
+</ul>
+</li>
+<li>Java中继承的主要事项<ul>
+<li>Java中类只支持单继承，不支持多继承</li>
+<li>Java中类支持多层继承，例如：儿子继承了爸爸，爸爸继承了爷爷</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、多态"><a href="#三、多态" class="headerlink" title="三、多态"></a>三、多态</h2><h3 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1. 概述"></a>3.1. 概述</h3><ul>
+<li>同一个对象，在不同时刻表现出来的不同形态</li>
+<li>举例：<ul>
+<li>猫是猫：猫 cat = new 猫();</li>
+<li>猫是动物：动物 animal = new 猫();</li>
+<li>这里猫在不同的时刻表现出来了不同的形态，这就是多态</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-多态的前提和体现"><a href="#3-2-多态的前提和体现" class="headerlink" title="3.2. 多态的前提和体现"></a>3.2. 多态的前提和体现</h3><ul>
+<li>1.有继承/实现关系</li>
+<li>2.有方法重写</li>
+<li>3.有父类引用指向子类对象</li>
+<li>满足这三个现象就称之为多态</li>
+</ul>
+<h3 id="3-3-多态中成员访问特点"><a href="#3-3-多态中成员访问特点" class="headerlink" title="3.3. 多态中成员访问特点"></a>3.3. 多态中成员访问特点</h3><ul>
+<li>成员变量：编译看左边，执行看左边</li>
+<li>成员方法：编译看左边，执行看右边</li>
+<li>为什么成员变量和成员方法的访问不一样呢？<ul>
+<li>因为成员方法有重写，而成员变量没有</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-多态的好处"><a href="#3-4-多态的好处" class="headerlink" title="3.4. 多态的好处"></a>3.4. 多态的好处</h3><ul>
+<li>提高了程序的扩展性</li>
+<li>具体体现在定义方法的时候，使用父类型作为参数，将来在使用的时候，使用具体的子类型参与操作</li>
+<li>例如<ul>
+<li>在定义时：变量为父类 动物 animal = new 猫();</li>
+<li>在执行时：执行的是子类中重写的方法</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-5-多态的弊端"><a href="#3-5-多态的弊端" class="headerlink" title="3.5. 多态的弊端"></a>3.5. 多态的弊端</h3><ul>
+<li>不能使用子类的特有功能</li>
+</ul>
+<h3 id="3-6-多态中的转型"><a href="#3-6-多态中的转型" class="headerlink" title="3.6. 多态中的转型"></a>3.6. 多态中的转型</h3><h4 id="3-6-1-向上转型"><a href="#3-6-1-向上转型" class="headerlink" title="3.6.1. 向上转型"></a>3.6.1. 向上转型</h4><ul>
+<li>从子类到父类</li>
+<li>父类引用指向子类对象</li>
+<li>范例<ul>
+<li><code>Animal a = new Cat();</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="3-6-2-向下转型"><a href="#3-6-2-向下转型" class="headerlink" title="3.6.2. 向下转型"></a>3.6.2. 向下转型</h4><ul>
+<li>从父类到子类</li>
+<li>父类引用转为子类对象</li>
+<li>范例<ul>
+<li><code>Cat c = (Cat)a;</code></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之泛型</title>
+    <url>/2021/04/06/Java%E4%B9%8B%E6%B3%9B%E5%9E%8B/</url>
+    <content><![CDATA[<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><ul>
+<li>泛型是JDK5中引入的特性，它提供了编译时类型安全检测机制，该机制允许在编译时检测到非法的类型。它的本质是参数化类型，也就是说所操作的数据类型被指定为一个参数。</li>
+<li>一提到参数，最熟悉的就是定义方法时有形参，然后调用此方法时传递实参。那么参数化类型怎么理解呢？</li>
+<li>顾名思义，就是将类型由原来的具体的类型参数化，然后在使用/调用时传入具体的类型。</li>
+<li>这种参数类型可以用在类、方法和接口中，分别被称为泛型类、泛型方法、泛型接口。</li>
+</ul>
+<h2 id="二、泛型定义格式"><a href="#二、泛型定义格式" class="headerlink" title="二、泛型定义格式"></a>二、泛型定义格式</h2><ul>
+<li>&lt;类型&gt;:指定一种类型的格式。这里的类型可以看成是形参。</li>
+<li>&lt;类型1，类型2，……&gt;:指定多种类型的格式，多种类型之间用逗号隔开，这里的类型可以看成是形参。</li>
+<li>将来具体调用的时候给定的类型可以看成是实参，并且实参的类型只能是引用数据类型。</li>
+</ul>
+<h2 id="三、泛型的好处"><a href="#三、泛型的好处" class="headerlink" title="三、泛型的好处"></a>三、泛型的好处</h2><ul>
+<li>把运行时期的问题提前到了编译期间。</li>
+<li>避免了强制类型转换。</li>
+</ul>
+<h2 id="四、泛型类"><a href="#四、泛型类" class="headerlink" title="四、泛型类"></a>四、泛型类</h2><ul>
+<li>泛型类的定义格式<ul>
+<li>格式：<code>修饰符 class 类型&lt;类型&gt;&#123;&#125;</code></li>
+<li>范例：<code>public class Generic&lt;T&gt;&#123;&#125;</code><ul>
+<li>此处T可以随便写为任意标识，常见的如T、E、K、V等形式的参数常用于表示泛型。<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Generic</span>&lt;<span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> T t;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getT</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setT</span><span class="params">(T t)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.t = t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="五、泛型方法"><a href="#五、泛型方法" class="headerlink" title="五、泛型方法"></a>五、泛型方法</h2><ul>
+<li>泛型方法的定义格式<ul>
+<li>格式：修饰符&lt;类型&gt;返回值类型 方法名(类型 变量名){}</li>
+<li>范例：<code>public &lt;T&gt; void show(T t)&#123;&#125;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="六、泛型接口"><a href="#六、泛型接口" class="headerlink" title="六、泛型接口"></a>六、泛型接口</h2><ul>
+<li>泛型接口的定义格式<ul>
+<li>格式：<code>修饰符 interface 接口名&lt;类型&gt;&#123;&#125;</code></li>
+<li>范例：<code>public interface Generic&lt;T&gt;&#123;&#125;</code></li>
+</ul>
+</li>
+<li>泛型接口的实现<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericImpl</span>&lt;<span class="title">T</span>&gt; <span class="keyword">implements</span> <span class="title">Generic</span>&lt;<span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(T t)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="七、类型通配符"><a href="#七、类型通配符" class="headerlink" title="七、类型通配符"></a>七、类型通配符</h2><ul>
+<li>为了表示各种泛型List的父类，可以使用类型通配符<ul>
+<li>类型通配符：&lt;?&gt;</li>
+<li>List&lt;?&gt;：表示元素类型未知的List，它的元素可以匹配任何的类型。</li>
+</ul>
+</li>
+<li>这种带通配符的List仅表示它是各种泛型List的父类，并不能把元素添加到其中。<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;?&gt; list1 = <span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">List&lt;?&gt; list2 = <span class="keyword">new</span> ArrayList&lt;Number&gt;();</span><br></pre></td></tr></table></figure></li>
+<li>如果说我们不希望List&lt;?&gt;是任何泛型List的父类，只希望它代表某一类泛型List的父类，可以使用类型通配符的上限<ul>
+<li>类型通配符上限：&lt;?extends 类型&gt;<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;? extends Number&gt;：它表示的类型是Number或者其子类型</span><br><span class="line">List&lt;? extends Number&gt; list3 = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">List&lt;? extends Number&gt; list4 = <span class="keyword">new</span> ArrayList&lt;Number&gt;();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>除了可以指定类型通配符的上限，我们也可以指定类型通配符的下限<ul>
+<li>类型通配符下限：&lt;?super 类型&gt;<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;? <span class="keyword">super</span> Number&gt;：它表示的类型是Number或者其父类型</span><br><span class="line">List&lt;? <span class="keyword">super</span> Number&gt; list5 = <span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">List&lt;? <span class="keyword">super</span> Number&gt; list6 = <span class="keyword">new</span> ArrayList&lt;Number&gt;();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之反射</title>
+    <url>/2021/04/06/Java%E4%B9%8B%E5%8F%8D%E5%B0%84/</url>
+    <content><![CDATA[<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><ul>
+<li>Java反射机制是指在运行时去获取一个类的变量和方法信息，然后通过获取到的信息来创建对象、调用方法的一种机制。由于这种动态性，可以极大的增强程序的灵活性，程序不用在编译期就完成确定，在运行期仍然可以扩展</li>
+</ul>
+<h2 id="二、获取Class类的对象"><a href="#二、获取Class类的对象" class="headerlink" title="二、获取Class类的对象"></a>二、获取Class类的对象</h2><h3 id="2-1-简介"><a href="#2-1-简介" class="headerlink" title="2.1. 简介"></a>2.1. 简介</h3><ul>
+<li>我们要想通过反射区使用一个类，首先我们要获取到该类的字节码文件对象，也就是类型为Class类型的对象</li>
+</ul>
+<h3 id="2-2-有三种方式获取Class类型的对象"><a href="#2-2-有三种方式获取Class类型的对象" class="headerlink" title="2.2. 有三种方式获取Class类型的对象"></a>2.2. 有三种方式获取Class类型的对象</h3><ul>
+<li>(1)使用类的class属性来获取该类对应的Class对象<ul>
+<li>举例：Student.class将会返回Student类对应的Class对象<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;Student&gt; c1 = Student.class;</span><br><span class="line">System.out.println(c1);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>(2)调用对象的getClass()方法，返回该对象所属类对应的Class对象<ul>
+<li>该方法是Object类中的方法，所有的Java对象都可以调用该方法<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Student s = <span class="keyword">new</span> Student();</span><br><span class="line">Class&lt;? extends Student&gt; c2 = s.getClass();</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>(3)使用Class类中的静态方法forName(String className)，该方法需要传入字符串参数，该字符串参数的值是某个类的全路径，也就是完整包名的路径<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;?&gt; c3 = Class.forName(<span class="string">&quot;com.study_1.abc&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="三、反射获取构造方法并使用"><a href="#三、反射获取构造方法并使用" class="headerlink" title="三、反射获取构造方法并使用"></a>三、反射获取构造方法并使用</h2><h3 id="3-1-Class类中用于获取构造方法的方法"><a href="#3-1-Class类中用于获取构造方法的方法" class="headerlink" title="3.1. Class类中用于获取构造方法的方法"></a>3.1. Class类中用于获取构造方法的方法</h3><ul>
+<li>返回所有公共构造方法对象的数组<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Constructor&lt;?&gt;[] getConstructors()</span><br></pre></td></tr></table></figure></li>
+<li>返回所有构造方法对象的数组<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Constructor&lt;?&gt;[] getDeclareConstructors()</span><br></pre></td></tr></table></figure></li>
+<li>返回单个公共构造方法对象<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Constructor&lt;?&gt; getConstructor(Class&lt;?&gt;...parameterTypes)</span><br></pre></td></tr></table></figure></li>
+<li>返回单个构造方法对象<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Constructor&lt;?&gt; getDeclaredConstructor(Class&lt;?&gt;...parameterTypes)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-2-Constructor类中用于创建对象的方法"><a href="#3-2-Constructor类中用于创建对象的方法" class="headerlink" title="3.2. Constructor类中用于创建对象的方法"></a>3.2. Constructor类中用于创建对象的方法</h3><ul>
+<li>根据指定的构造方法创建对象<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">T <span class="title">newInstance</span><span class="params">(Object...initargs)</span></span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-3-反射获取构造方法并使用练习"><a href="#3-3-反射获取构造方法并使用练习" class="headerlink" title="3.3. 反射获取构造方法并使用练习"></a>3.3. 反射获取构造方法并使用练习</h3><ul>
+<li>通过反射实现如下操作<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Student s = <span class="keyword">new</span> Student(<span class="string">&quot;张三&quot;</span>, <span class="number">19</span>, <span class="string">&quot;成都&quot;</span>);</span><br><span class="line">System.out.println(s);</span><br></pre></td></tr></table></figure></li>
+<li>基本数据类型也可以通过.class得到对应的Class类型</li>
+<li>实现<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取Class对象</span></span><br><span class="line">Class&lt;?&gt; c = Class.forName(<span class="string">&quot;a.Student&quot;</span>)</span><br><span class="line"><span class="comment">//获取无参构造方法，基本数据类型也可以通过.c;ass得到对应的Class类型</span></span><br><span class="line">Constructor&lt;?&gt; con = c.getConstructor(String.class, <span class="keyword">int</span>.class. String.class);</span><br><span class="line"><span class="comment">//通过无参构造方法创建一个对象</span></span><br><span class="line">Object obj = con.newInstance(<span class="string">&quot;张三&quot;</span>, <span class="number">19</span>, <span class="string">&quot;成都&quot;</span>);</span><br><span class="line">System.out.println(obj);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="四、反射获取成员变量并使用"><a href="#四、反射获取成员变量并使用" class="headerlink" title="四、反射获取成员变量并使用"></a>四、反射获取成员变量并使用</h2><h3 id="4-1-Class类中用于获取成员变量的方法"><a href="#4-1-Class类中用于获取成员变量的方法" class="headerlink" title="4.1. Class类中用于获取成员变量的方法"></a>4.1. Class类中用于获取成员变量的方法</h3><ul>
+<li>返回所有公共成员变量对象的数组<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Field[] getFields()</span><br></pre></td></tr></table></figure></li>
+<li>返回所有成员变量对象的数组<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Field[] getDeclaredFields()</span><br></pre></td></tr></table></figure></li>
+<li>返回单个公共成员变量对象<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Field <span class="title">getField</span><span class="params">(String name)</span></span></span><br></pre></td></tr></table></figure></li>
+<li>返回单个成员变量对象<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Field <span class="title">getDeclaredField</span><span class="params">(String name)</span></span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="4-2-Field类中用于给成员变量赋值的方法"><a href="#4-2-Field类中用于给成员变量赋值的方法" class="headerlink" title="4.2. Field类中用于给成员变量赋值的方法"></a>4.2. Field类中用于给成员变量赋值的方法</h3><ul>
+<li>给obj对象的成员变量赋值为value，什么成员变量使用了这个方法就是给什么成员变量赋值<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(Object obj, Object value)</span></span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="4-3-反射获取成员变量并使用练习"><a href="#4-3-反射获取成员变量并使用练习" class="headerlink" title="4.3. 反射获取成员变量并使用练习"></a>4.3. 反射获取成员变量并使用练习</h3><ul>
+<li>通过反射实现如下操作<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Student s = <span class="keyword">new</span> Student();</span><br><span class="line">s.name = <span class="string">&quot;张三&quot;</span>;<span class="comment">//私有的</span></span><br></pre></td></tr></table></figure></li>
+<li>实现<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;?&gt; c = Class.forName(<span class="string">&quot;a.Student&quot;</span>);</span><br><span class="line">Constructor&lt;?&gt; con = c.getConstructor();</span><br><span class="line">Object obj = con.newInstance();</span><br><span class="line">Field nameField = c.getDeclareField(<span class="string">&quot;name&quot;</span>);</span><br><span class="line"><span class="comment">//public voidAccessible(boolean flag)：值为true时，会取消访问检查。</span></span><br><span class="line">nameField.setAccessible(<span class="keyword">true</span>);</span><br><span class="line"><span class="comment">//给对象的成员变量赋值，nameField为对象obj的成员变量</span></span><br><span class="line">nameField.set(obj, <span class="string">&quot;张三&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="五、反射获取成员方法并使用"><a href="#五、反射获取成员方法并使用" class="headerlink" title="五、反射获取成员方法并使用"></a>五、反射获取成员方法并使用</h2><h3 id="5-1-Class类中用于获取成员方法的方法"><a href="#5-1-Class类中用于获取成员方法的方法" class="headerlink" title="5.1. Class类中用于获取成员方法的方法"></a>5.1. Class类中用于获取成员方法的方法</h3><ul>
+<li>返回所有公共成员方法对象的数组，包括继承的<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Method[] getMethods()</span><br></pre></td></tr></table></figure></li>
+<li>返回所有成员方法对象的数组，不包括继承的<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Method[] getDeclaredMethods()</span><br></pre></td></tr></table></figure></li>
+<li>返回单个公共成员方法对象<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Method <span class="title">getMethod</span><span class="params">(String name, Class&lt;?&gt;...parameterTypes)</span>：</span></span><br></pre></td></tr></table></figure></li>
+<li>返回单个成员方法对象<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Method <span class="title">getDeclaredMethod</span><span class="params">(String name, Class&lt;?&gt;...parameterTypes)</span></span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="5-2-Method类中用于调用成员方法的方法"><a href="#5-2-Method类中用于调用成员方法的方法" class="headerlink" title="5.2. Method类中用于调用成员方法的方法"></a>5.2. Method类中用于调用成员方法的方法</h3><ul>
+<li>调用obj对象的成员方法，参数是args，返回值是Object类型<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">Object <span class="title">invoke</span><span class="params">(Object obj, Object...args)</span>：</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="5-3-反射获取成员方法并使用练习"><a href="#5-3-反射获取成员方法并使用练习" class="headerlink" title="5.3. 反射获取成员方法并使用练习"></a>5.3. 反射获取成员方法并使用练习</h3><ul>
+<li>通过反射实现如下操作<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Student s = <span class="keyword">new</span> Student();</span><br><span class="line">s.method1();</span><br><span class="line">s.method2(<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">String ss = s.method3(<span class="string">&quot;张三&quot;</span>, <span class="number">19</span>);<span class="comment">//method3方法有返回值</span></span><br><span class="line">s.function();<span class="comment">//function方法是私有的</span></span><br></pre></td></tr></table></figure></li>
+<li>实现<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//获取Class对象</span></span><br><span class="line">Class&lt;?&gt; c = Class.forName(<span class="string">&quot;a.Student&quot;</span>);</span><br><span class="line"><span class="comment">//Student s = new Student();</span></span><br><span class="line">Constructor&lt;?&gt; con = c.getConstructor();</span><br><span class="line">Object obj = con.newInstance();</span><br><span class="line"><span class="comment">//s.method1()</span></span><br><span class="line">Method m1 = c.getMethod(<span class="string">&quot;method1&quot;</span>);</span><br><span class="line">m1.invoke(obj);</span><br><span class="line"><span class="comment">//s.method2(&quot;张三&quot;);</span></span><br><span class="line">Method m2 = c.getMethod(<span class="string">&quot;method2&quot;</span>, String.class);</span><br><span class="line">m2.invoke(obj);</span><br><span class="line"><span class="comment">//String ss = s.method3(&quot;张三&quot;, 30);//method3方法有返回值</span></span><br><span class="line">Method m3 = c.getMethod(<span class="string">&quot;method3&quot;</span>, String.class, <span class="keyword">int</span>.class);</span><br><span class="line">Object o = m3.invoke(obj, <span class="string">&quot;张三&quot;</span>, <span class="number">19</span>);</span><br><span class="line"><span class="comment">//s.function();//function方法是私有的</span></span><br><span class="line">Method m4 = c.getDeclaredMethod(<span class="string">&quot;function&quot;</span>);</span><br><span class="line">m4.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">m4.invoke(obj);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="六、反射练习"><a href="#六、反射练习" class="headerlink" title="六、反射练习"></a>六、反射练习</h2><h3 id="6-1-练习1"><a href="#6-1-练习1" class="headerlink" title="6.1. 练习1"></a>6.1. 练习1</h3><ul>
+<li>我有一个ArrayList<Integer>集合，现在我想在这个集合中添加一个字符串数据，如何实现？<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建集合</span></span><br><span class="line">ArrayList&lt;Integer&gt; array = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line"><span class="comment">//得到Class对象</span></span><br><span class="line">Class&lt;? extends ArrayList&gt; c = array.getClass();</span><br><span class="line"><span class="comment">//得到add方法，add方法的参数类型为Object类型</span></span><br><span class="line">Method m = c.getMethod(<span class="string">&quot;add&quot;</span>, Object.class);</span><br><span class="line"><span class="comment">//在集合中添加字符串</span></span><br><span class="line">m.invoke(array, <span class="string">&quot;hello&quot;</span>);</span><br><span class="line">m.invoke(array, <span class="string">&quot;world&quot;</span>);</span><br><span class="line">m.invoke(array, <span class="string">&quot;java&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="6-2-练习2"><a href="#6-2-练习2" class="headerlink" title="6.2. 练习2"></a>6.2. 练习2</h3><ul>
+<li>通过配置文件运行类中的方法，只需修改文件，就可以使用同样的代码执行不同类中的方法<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//配置文件中的内容</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    class.txt//文件名</span></span><br><span class="line"><span class="comment">    className=com.itheima.Student</span></span><br><span class="line"><span class="comment">    methodName=study</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//加载数据</span></span><br><span class="line">Properties prop = <span class="keyword">new</span> Properties();</span><br><span class="line">FileReader fr = <span class="keyword">new</span> FileReader(<span class="string">&quot;class.txt&quot;</span>);</span><br><span class="line">prop.load(fr);</span><br><span class="line">fr.close();</span><br><span class="line">String className = prop.getProperty(<span class="string">&quot;className&quot;</span>);</span><br><span class="line">String methodName = prop.getProperty(<span class="string">&quot;methodName&quot;</span>);</span><br><span class="line"><span class="comment">//通过反射来使用</span></span><br><span class="line">Class&lt;?&gt; c = Class.forName(className);</span><br><span class="line"><span class="comment">//等同于Class&lt;?&gt; c = Class.forName(&quot;com.itheima.Student&quot;);</span></span><br><span class="line"><span class="comment">//通过无参构造方法创建一个对象</span></span><br><span class="line">Constructor&lt;?&gt; con = c.getConstructor();</span><br><span class="line">Object obj = con.newInstance();</span><br><span class="line"><span class="comment">//调用方法</span></span><br><span class="line">Method m = c.getMethod(methodName);<span class="comment">//study</span></span><br><span class="line">m.invoke(obj);</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java之类</title>
     <url>/2021/03/31/Java%E4%B9%8B%E7%B1%BB/</url>
     <content><![CDATA[<h2 id="一、类的介绍"><a href="#一、类的介绍" class="headerlink" title="一、类的介绍"></a>一、类的介绍</h2><h3 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1. 概述"></a>1.1. 概述</h3><ul>
@@ -3197,6 +3597,7 @@
 ]]></content>
       <categories>
         <category>文摘</category>
+        <category>书籍</category>
       </categories>
       <tags>
         <tag>书籍</tag>
