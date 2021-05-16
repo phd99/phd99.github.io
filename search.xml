@@ -577,11 +577,43 @@
 </ul>
 <h3 id="4-12-复制文件常用方式"><a href="#4-12-复制文件常用方式" class="headerlink" title="4.12. 复制文件常用方式"></a>4.12. 复制文件常用方式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(<span class="string">&quot;a.java&quot;</span>));</span><br><span class="line">    BufferedWriter bw = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> FileWriter(<span class="string">&quot;a.java&quot;</span>));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span>((line = br.readLine()) != <span class="keyword">null</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        bw.write(line);</span><br><span class="line">        bw.newLine();</span><br><span class="line">        bw.flush();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    bw.close();</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="五、IO流小结"><a href="#五、IO流小结" class="headerlink" title="五、IO流小结"></a>五、IO流小结</h2><h3 id="5-1-字节流"><a href="#5-1-字节流" class="headerlink" title="5.1. 字节流"></a>5.1. 字节流</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TD</span><br><span class="line">  a[字节流]</span><br><span class="line">  b[字节输入流InputStream]</span><br><span class="line">  c[字节输出流OutputStream]</span><br><span class="line">  d[FileInputStream]</span><br><span class="line">  e[BufferInputStream]</span><br><span class="line">  f[FileOutputStream]</span><br><span class="line">  g[BufferOutputStream]</span><br><span class="line"></span><br><span class="line">  a--&gt;b</span><br><span class="line">  a--&gt;c</span><br><span class="line">  b--&gt;d</span><br><span class="line">  b--&gt;e</span><br><span class="line">  c--&gt;f</span><br><span class="line">  c--&gt;g</span><br></pre></td></tr></table></figure>
+<h2 id="五、IO流小结"><a href="#五、IO流小结" class="headerlink" title="五、IO流小结"></a>五、IO流小结</h2><h3 id="5-1-字节流"><a href="#5-1-字节流" class="headerlink" title="5.1. 字节流"></a>5.1. 字节流</h3><pre class="mermaid">graph TD
+  a[字节流]
+  b[字节输入流InputStream]
+  c[字节输出流OutputStream]
+  d[FileInputStream]
+  e[BufferInputStream]
+  f[FileOutputStream]
+  g[BufferOutputStream]
+
+  a-->b
+  a-->c
+  b-->d
+  b-->e
+  c-->f
+  c-->g</pre>
 <ul>
 <li>字节流可以复制任意文件数据，有4种方式，一般采用字节缓冲流一次读写一个字节数组的方式</li>
 </ul>
-<h3 id="5-2-字符流"><a href="#5-2-字符流" class="headerlink" title="5.2. 字符流"></a>5.2. 字符流</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TD</span><br><span class="line">  a[字符流]</span><br><span class="line">  b[字符输入流Reader]</span><br><span class="line">  c[字符输出流Writer]</span><br><span class="line">  d[InputStreamReader]</span><br><span class="line">  e[BufferedReader]</span><br><span class="line">  f[FileReader]</span><br><span class="line">  g[OutputStreamWriter]</span><br><span class="line">  h[BufferedWriter]</span><br><span class="line">  i[FileWriter]</span><br><span class="line"></span><br><span class="line">  a--&gt;b</span><br><span class="line">  a--&gt;c</span><br><span class="line">  b--&gt;d</span><br><span class="line">  b--&gt;e</span><br><span class="line">  d--&gt;f</span><br><span class="line">  c--&gt;g</span><br><span class="line">  c--&gt;h</span><br><span class="line">  g--&gt;i</span><br></pre></td></tr></table></figure>
+<h3 id="5-2-字符流"><a href="#5-2-字符流" class="headerlink" title="5.2. 字符流"></a>5.2. 字符流</h3><pre class="mermaid">graph TD
+  a[字符流]
+  b[字符输入流Reader]
+  c[字符输出流Writer]
+  d[InputStreamReader]
+  e[BufferedReader]
+  f[FileReader]
+  g[OutputStreamWriter]
+  h[BufferedWriter]
+  i[FileWriter]
+
+  a-->b
+  a-->c
+  b-->d
+  b-->e
+  d-->f
+  c-->g
+  c-->h
+  g-->i</pre>
 <ul>
 <li><code>String readLine();</code><ul>
 <li>一次读取一个字符串`</li>
@@ -899,7 +931,32 @@
 <li>Java语言随着这些年的发展已经成为了一门影响深远的编程语言，无数平台，系统都采用Java语言编写，但是，伴随着发展，Java也越来越庞大，逐渐发展成为一门“臃肿”的语言，而且，无论是运行一个大型的软件系统，还是运行一个小的程序，即时程序只需要使用Java的部分核心功能，JVM也要加载整个JRE环节。为了给Java“廋身”，让Java实现轻量化，Java9正式的推出了模块化系统，Java被拆分为N多个模块，并允许Java程序可以根据需要选择加载程序必须的Java模块，这样就可以让Java以轻量化的方式来运行。</li>
 <li>其实，Java7的时候已经提出了模块化的概念，但由于其过于复杂，Java7、Java8都一直未能真正推出，直到Java9才真正成熟起来。对于Java语言来说，模块化系统是一次真正的自我革新，这种革新使得“古老而庞大”的Java语言重新焕发年轻的活力。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TD</span><br><span class="line">  subgraph 项目Project</span><br><span class="line">    subgraph 模块1</span><br><span class="line">      subgraph 包1</span><br><span class="line">        a5[1.java]</span><br><span class="line">        a6[2.java]</span><br><span class="line">        a5---a6</span><br><span class="line">      end</span><br><span class="line">      subgraph 包2</span><br><span class="line">        a1[...]</span><br><span class="line">        a2[...]</span><br><span class="line">        a1---a2</span><br><span class="line">      end</span><br><span class="line">    end</span><br><span class="line">    subgraph 模块2</span><br><span class="line">      d[包1]</span><br><span class="line">      h[...]</span><br><span class="line">      d---h</span><br><span class="line">    end</span><br><span class="line">    subgraph 模块3</span><br><span class="line">      f[包2]</span><br><span class="line">      i[...]</span><br><span class="line">      f---i</span><br><span class="line">    end</span><br><span class="line">  end</span><br></pre></td></tr></table></figure>
+  <pre class="mermaid">  graph TD
+    subgraph 项目Project
+      subgraph 模块1
+        subgraph 包1
+          a5[1.java]
+          a6[2.java]
+          a5---a6
+        end
+        subgraph 包2
+          a1[...]
+          a2[...]
+          a1---a2
+        end
+      end
+      subgraph 模块2
+        d[包1]
+        h[...]
+        d---h
+      end
+      subgraph 模块3
+        f[包2]
+        i[...]
+        f---i
+      end
+    end</pre>
+
 
 <h2 id="二、模块的基本使用步骤"><a href="#二、模块的基本使用步骤" class="headerlink" title="二、模块的基本使用步骤"></a>二、模块的基本使用步骤</h2><ul>
 <li>(1)创建模块<ul>
@@ -1093,7 +1150,17 @@
     <content><![CDATA[<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><ul>
 <li>异常（Exception）就是程序出现了不正常的情况</li>
 </ul>
-<h2 id="二、异常体系"><a href="#二、异常体系" class="headerlink" title="二、异常体系"></a>二、异常体系</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TD</span><br><span class="line">  a(Throwable)</span><br><span class="line">  b(Error)</span><br><span class="line">  c(Exception)</span><br><span class="line">  d(RuntimeException)</span><br><span class="line">  e(非RuntimeException)</span><br><span class="line">  a--&gt;b</span><br><span class="line">  a--&gt;c</span><br><span class="line">  c--&gt;d</span><br><span class="line">  c--&gt;e</span><br></pre></td></tr></table></figure>
+<h2 id="二、异常体系"><a href="#二、异常体系" class="headerlink" title="二、异常体系"></a>二、异常体系</h2><pre class="mermaid">graph TD
+  a(Throwable)
+  b(Error)
+  c(Exception)
+  d(RuntimeException)
+  e(非RuntimeException)
+  a-->b
+  a-->c
+  c-->d
+  c-->e</pre>
+
 <ul>
 <li><code>Error</code>：严重问题，不需要处理</li>
 <li><code>Exception</code>：称为异常类，它表示程序本身可以处理的问题<ul>
@@ -1226,7 +1293,34 @@
 </ul>
 </li>
 </ul>
-<h3 id="1-4-集合类体系结构"><a href="#1-4-集合类体系结构" class="headerlink" title="1.4. 集合类体系结构"></a>1.4. 集合类体系结构</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TD</span><br><span class="line">  a[集合]</span><br><span class="line">  b[Collection单列]</span><br><span class="line">  c[Map双列]</span><br><span class="line">  d[List可重复]</span><br><span class="line">  e[Set不可重复]</span><br><span class="line">  f(HashMap)</span><br><span class="line">  g(...)</span><br><span class="line">  h(ArrayList)</span><br><span class="line">  i(LinkedList)</span><br><span class="line">  j(HashSet)</span><br><span class="line">  k(TreeSet)</span><br><span class="line">  l(...)</span><br><span class="line">  m(...)</span><br><span class="line"></span><br><span class="line">  a--&gt;b</span><br><span class="line">  a--&gt;c</span><br><span class="line">  b--&gt;d</span><br><span class="line">  b--&gt;e</span><br><span class="line">  c--&gt;f</span><br><span class="line">  c--&gt;g</span><br><span class="line">  d--&gt;h</span><br><span class="line">  d--&gt;i</span><br><span class="line">  d--&gt;l</span><br><span class="line">  e--&gt;j</span><br><span class="line">  e--&gt;k</span><br><span class="line">  e--&gt;m</span><br></pre></td></tr></table></figure>
+<h3 id="1-4-集合类体系结构"><a href="#1-4-集合类体系结构" class="headerlink" title="1.4. 集合类体系结构"></a>1.4. 集合类体系结构</h3><pre class="mermaid">graph TD
+  a[集合]
+  b[Collection单列]
+  c[Map双列]
+  d[List可重复]
+  e[Set不可重复]
+  f(HashMap)
+  g(...)
+  h(ArrayList)
+  i(LinkedList)
+  j(HashSet)
+  k(TreeSet)
+  l(...)
+  m(...)
+
+  a-->b
+  a-->c
+  b-->d
+  b-->e
+  c-->f
+  c-->g
+  d-->h
+  d-->i
+  d-->l
+  e-->j
+  e-->k
+  e-->m</pre>
+
 <ul>
 <li>矩形框为接口</li>
 <li>圆角框为实现类</li>

@@ -160,7 +160,34 @@
 </ul>
 </li>
 </ul>
-<h3 id="1-4-集合类体系结构"><a href="#1-4-集合类体系结构" class="headerlink" title="1.4. 集合类体系结构"></a>1.4. 集合类体系结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">  a[集合]</span><br><span class="line">  b[Collection单列]</span><br><span class="line">  c[Map双列]</span><br><span class="line">  d[List可重复]</span><br><span class="line">  e[Set不可重复]</span><br><span class="line">  f(HashMap)</span><br><span class="line">  g(...)</span><br><span class="line">  h(ArrayList)</span><br><span class="line">  i(LinkedList)</span><br><span class="line">  j(HashSet)</span><br><span class="line">  k(TreeSet)</span><br><span class="line">  l(...)</span><br><span class="line">  m(...)</span><br><span class="line"></span><br><span class="line">  a--&gt;b</span><br><span class="line">  a--&gt;c</span><br><span class="line">  b--&gt;d</span><br><span class="line">  b--&gt;e</span><br><span class="line">  c--&gt;f</span><br><span class="line">  c--&gt;g</span><br><span class="line">  d--&gt;h</span><br><span class="line">  d--&gt;i</span><br><span class="line">  d--&gt;l</span><br><span class="line">  e--&gt;j</span><br><span class="line">  e--&gt;k</span><br><span class="line">  e--&gt;m</span><br></pre></td></tr></table></figure>
+<h3 id="1-4-集合类体系结构"><a href="#1-4-集合类体系结构" class="headerlink" title="1.4. 集合类体系结构"></a>1.4. 集合类体系结构</h3><pre class="mermaid">graph TD
+  a[集合]
+  b[Collection单列]
+  c[Map双列]
+  d[List可重复]
+  e[Set不可重复]
+  f(HashMap)
+  g(...)
+  h(ArrayList)
+  i(LinkedList)
+  j(HashSet)
+  k(TreeSet)
+  l(...)
+  m(...)
+
+  a-->b
+  a-->c
+  b-->d
+  b-->e
+  c-->f
+  c-->g
+  d-->h
+  d-->i
+  d-->l
+  e-->j
+  e-->k
+  e-->m</pre>
+
 <ul>
 <li>矩形框为接口</li>
 <li>圆角框为实现类</li>
@@ -546,7 +573,18 @@
 
   }
 }
-window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="000993SC4KERj4" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script src="stylesheet" href="/css/myself.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      true && mermaid.init()
+    })
+  }
+}</script></div><div class="aplayer no-destroy" data-id="000993SC4KERj4" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
   'title',
   '#config-diff',
   '#body-wrap',
