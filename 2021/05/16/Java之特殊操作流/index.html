@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Java之特殊操作流 | phd</title><meta name="keywords" content="Java"><meta name="author" content="phd,310619242@qq.com"><meta name="copyright" content="phd"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、标准输入输出流1.1. System类中有两个静态的成员变量 标准输入流，通常该流对应于键盘输入或由主机环境或用户指定的另一个输入源1public static final InputStream in 标准输出流，通常该流对应于显示输出或由主机环境或用户指定的另一个输出目标1public static final PrintStream out    1.2. 自己实现键盘录入数据 范例1B">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java之特殊操作流">
+<meta property="og:url" content="http://phd99.com/2021/05/16/Java%E4%B9%8B%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C%E6%B5%81/index.html">
+<meta property="og:site_name" content="phd">
+<meta property="og:description" content="一、标准输入输出流1.1. System类中有两个静态的成员变量 标准输入流，通常该流对应于键盘输入或由主机环境或用户指定的另一个输入源1public static final InputStream in 标准输出流，通常该流对应于显示输出或由主机环境或用户指定的另一个输出目标1public static final PrintStream out    1.2. 自己实现键盘录入数据 范例1B">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg">
+<meta property="article:published_time" content="2021-05-16T02:54:09.000Z">
+<meta property="article:modified_time" content="2021-05-16T02:55:15.543Z">
+<meta property="article:author" content="phd">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg"><link rel="shortcut icon" href="/img/logo.png"><link rel="canonical" href="http://phd99.com/2021/05/16/Java%E4%B9%8B%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C%E6%B5%81/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-05-16 10:55:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="phd" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/phd99/img/touxiang1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">phd</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Java之特殊操作流</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-05-16T02:54:09.000Z" title="发表于 2021-05-16 10:54:09">2021-05-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-16T02:55:15.543Z" title="更新于 2021-05-16 10:55:15">2021-05-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Java之特殊操作流"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="一、标准输入输出流"><a href="#一、标准输入输出流" class="headerlink" title="一、标准输入输出流"></a>一、标准输入输出流</h2><h3 id="1-1-System类中有两个静态的成员变量"><a href="#1-1-System类中有两个静态的成员变量" class="headerlink" title="1.1. System类中有两个静态的成员变量"></a>1.1. System类中有两个静态的成员变量</h3><ul>
+<li>标准输入流，通常该流对应于键盘输入或由主机环境或用户指定的另一个输入源<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> InputStream in</span><br></pre></td></tr></table></figure></li>
+<li>标准输出流，通常该流对应于显示输出或由主机环境或用户指定的另一个输出目标<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> PrintStream out</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-2-自己实现键盘录入数据"><a href="#1-2-自己实现键盘录入数据" class="headerlink" title="1.2. 自己实现键盘录入数据"></a>1.2. 自己实现键盘录入数据</h3><ul>
+<li>范例<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</span><br></pre></td></tr></table></figure></li>
+<li>写起来太麻烦了，Java就提供了一个类实现键盘录入<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br></pre></td></tr></table></figure></li>
+<li>输出语句的本质：是一个标准的输出流<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PrintStream ps = System.out;</span><br><span class="line">PrintStream类有的方法，System.out都可以使用</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="二、打印流"><a href="#二、打印流" class="headerlink" title="二、打印流"></a>二、打印流</h2><h3 id="2-1-打印流分类"><a href="#2-1-打印流分类" class="headerlink" title="2.1. 打印流分类"></a>2.1. 打印流分类</h3><ul>
+<li>字节打印流<ul>
+<li><code>PrintStream</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PrintStream ps =<span class="keyword">new</span> PrintStream(<span class="string">&quot;a.java&quot;</span>);</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>字符打印流<ul>
+<li><code>PrintWriter</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PrintWriter pw = <span class="keyword">new</span> PrintWriter(<span class="string">&quot;a.java&quot;</span>);</span><br><span class="line">PrintWriter pw = <span class="keyword">new</span> PrintWriter(<span class="keyword">new</span> FileWriter(<span class="string">&quot;a.java&quot;</span>), <span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-打印流的特点"><a href="#2-2-打印流的特点" class="headerlink" title="2.2. 打印流的特点"></a>2.2. 打印流的特点</h3><ul>
+<li>只负责输出数据，不负责读取数据</li>
+<li>有自己的特有方法</li>
+</ul>
+<h3 id="2-3-字节打印流"><a href="#2-3-字节打印流" class="headerlink" title="2.3. 字节打印流"></a>2.3. 字节打印流</h3><ul>
+<li><code>PrintStream(String fileName)</code><ul>
+<li>使用指定的文件名创建新的打印流</li>
+</ul>
+</li>
+<li>使用继承父类的方法写数据，查看的时候会转码（write）；使用自己的特有方法写数据，查看的数据原样输出(printf)</li>
+</ul>
+<h3 id="2-4-字符打印流"><a href="#2-4-字符打印流" class="headerlink" title="2.4. 字符打印流"></a>2.4. 字符打印流</h3><ul>
+<li><code>PrintWriter(String fileName)</code><ul>
+<li>使用指定的文件名创建一个新的PrintWriter，而不会自动执行刷新。</li>
+</ul>
+</li>
+<li><code>PrintWriter(Writer out, boolean autoFlush)</code><ul>
+<li>创建一个新的PrintWriter，out：字符输出流。autoFlush：一个布尔值，如果为真，则println、printf或format方法将刷新输出缓冲区。即会自动执行刷新</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、对象序列化和反序列化"><a href="#三、对象序列化和反序列化" class="headerlink" title="三、对象序列化和反序列化"></a>三、对象序列化和反序列化</h2><h3 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1. 概述"></a>3.1. 概述</h3><ul>
+<li>对象序列化就是将对象保存到磁盘中，或者在网络中传输对象</li>
+<li>就是把一个对象的内容写到了一个文件中</li>
+<li>这种机制就是使用一个字节序列表示一个对象，该字节序列包含：对象的类型、对象的数据和对象中存储的属性等信息</li>
+<li>字节序列写到文件之后，相当于文件中持久保存了一个对象的信息</li>
+<li>要实现序列化和反序列化就要使用对象序列化流和对象反序列化流：<ul>
+<li>对象序列化流：<code>ObjectOutStream</code></li>
+<li>对象反序列化流：<code>ObjectInputStream</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-对象序列化流"><a href="#3-2-对象序列化流" class="headerlink" title="3.2. 对象序列化流"></a>3.2. 对象序列化流</h3><h4 id="3-2-1-简介"><a href="#3-2-1-简介" class="headerlink" title="3.2.1. 简介"></a>3.2.1. 简介</h4><ul>
+<li>将Java对象的原始数据类型和图形写入OutputStream，可以使用ObjectInputStream获取（重构）对象，可以通过使用流的文件来实现对象的持久存储。如果流是网络套接字流，则可以在另一个主机上或另一个进程中重构对象</li>
+</ul>
+<h4 id="3-2-2-构造方法"><a href="#3-2-2-构造方法" class="headerlink" title="3.2.2. 构造方法"></a>3.2.2. 构造方法</h4><ul>
+<li><code>ObjectOutputStream(OutputStream out)</code><ul>
+<li>创建一个写入指定的OutputStream的ObjectOutputStream</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-3-序列化对象的方法"><a href="#3-2-3-序列化对象的方法" class="headerlink" title="3.2.3. 序列化对象的方法"></a>3.2.3. 序列化对象的方法</h4><ul>
+<li><code>void writeObject(Object obj)</code><ul>
+<li>将指定的对象写入ObjectOutputStream</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-4-注意"><a href="#3-2-4-注意" class="headerlink" title="3.2.4. 注意"></a>3.2.4. 注意</h4><ul>
+<li>一个对象要想被序列化，该对象所属的类必须实现Serializable接口。</li>
+<li>Serializable是一个标记接口，实现该接口，不需要重写任何方法。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectOutputStreamDemo</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//创建一个写入指定的OutputStream的ObjectOutputStream</span></span><br><span class="line">        ObjectOutputStream oos = <span class="keyword">new</span> ObjectOutputStream(<span class="string">&quot;a.txt&quot;</span>);</span><br><span class="line">        <span class="comment">//创建对象</span></span><br><span class="line">        Student s = <span class="keyword">new</span> Student(<span class="string">&quot;阿萨科斯塔&quot;</span>, <span class="number">30</span>);</span><br><span class="line">        <span class="comment">//void writeObject(Object obj)，将指定的对象写入ObjectOutputStream</span></span><br><span class="line">        oss.writeObject(s);</span><br><span class="line">        <span class="comment">//释放资源</span></span><br><span class="line">        oos.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function">pubic <span class="title">Student</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-3-对象反序列化流"><a href="#3-3-对象反序列化流" class="headerlink" title="3.3. 对象反序列化流"></a>3.3. 对象反序列化流</h3><h4 id="3-3-1-简介"><a href="#3-3-1-简介" class="headerlink" title="3.3.1. 简介"></a>3.3.1. 简介</h4><ul>
+<li><code>ObjectInputStream</code>反序列化先前使用<code>ObjectOutputStream</code>编写的原始数据和对象</li>
+</ul>
+<h4 id="3-3-2-构造方法"><a href="#3-3-2-构造方法" class="headerlink" title="3.3.2. 构造方法"></a>3.3.2. 构造方法</h4><ul>
+<li><code>ObjectInputStream(InputStream in)</code><ul>
+<li>创建从指定的InputStream读取的ObjectInputStream</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-3-3-反序列化对象的方法"><a href="#3-3-3-反序列化对象的方法" class="headerlink" title="3.3.3. 反序列化对象的方法"></a>3.3.3. 反序列化对象的方法</h4><ul>
+<li><code>Object readObject()</code><ul>
+<li>从ObjectInputStream读取一个对象<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//创建从指定的InputStream读取的ObjectInputStream</span></span><br><span class="line">    ObjectInputStream ois = <span class="keyword">new</span> ObjectInputStream(<span class="keyword">new</span> FileInputStream(<span class="string">&quot;a.txt&quot;</span>));</span><br><span class="line">    <span class="comment">//Object readObject()：从ObjectInputStream读取一个对象</span></span><br><span class="line">    Object obj = ois.readObject();</span><br><span class="line">    Student s = (Student)obj;</span><br><span class="line">    System.out.println(s.getName() + <span class="string">&quot;,&quot;</span> + s.getAge());</span><br><span class="line">    <span class="comment">//释放资源</span></span><br><span class="line">    ois.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-3-4-对象序列化的问题"><a href="#3-3-4-对象序列化的问题" class="headerlink" title="3.3.4. 对象序列化的问题"></a>3.3.4. 对象序列化的问题</h4><ul>
+<li>(1)用对象序列化流序列化了一个对象后，假如我们修改了对象所属的类文件，读取数据会不会出现问题呢？<ul>
+<li>会出现问题，抛出<code>InvalidClassException</code>异常</li>
+</ul>
+</li>
+<li>(2)如果出现问题了，如何解决呢？<ul>
+<li>给对象所属的类加一个<code>serialVersionUID</code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">42L</span>;`</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>(3)如果一个对中的某个成员变量的值不想被序列化，又该如何实现呢？<ul>
+<li>给该成员变量加transient关键字修饰，该关键字标记的成员变量不参与序列化过程</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:310619242@qq.com">phd</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://phd99.com/2021/05/16/Java%E4%B9%8B%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C%E6%B5%81/">http://phd99.com/2021/05/16/Java%E4%B9%8B%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C%E6%B5%81/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://phd99.com" target="_blank">phd</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/05/16/Java%E4%B9%8BProperties/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Java之Properties</div></div></a></div><div class="next-post pull-right"><a href="/2021/05/16/Java%E4%B9%8BIO%E6%B5%81/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Java之IO流</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/05/16/Java之Properties/" title="Java之Properties"><img class="cover" src="https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-16</div><div class="title">Java之Properties</div></div></a></div><div><a href="/2021/05/16/Java之IO流/" title="Java之IO流"><img class="cover" src="https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-16</div><div class="title">Java之IO流</div></div></a></div><div><a href="/2021/05/16/Java基础/" title="Java相关"><img class="cover" src="https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-16</div><div class="title">Java相关</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/phd99/img/touxiang1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">phd</div><div class="author-info__description">宝剑锋从磨砺出，梅花香自苦寒来</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/phd99"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:310619242@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="rss"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81"><span class="toc-number">1.</span> <span class="toc-text">一、标准输入输出流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-System%E7%B1%BB%E4%B8%AD%E6%9C%89%E4%B8%A4%E4%B8%AA%E9%9D%99%E6%80%81%E7%9A%84%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. System类中有两个静态的成员变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E8%87%AA%E5%B7%B1%E5%AE%9E%E7%8E%B0%E9%94%AE%E7%9B%98%E5%BD%95%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">1.2.</span> <span class="toc-text">1.2. 自己实现键盘录入数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%89%93%E5%8D%B0%E6%B5%81"><span class="toc-number">2.</span> <span class="toc-text">二、打印流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%89%93%E5%8D%B0%E6%B5%81%E5%88%86%E7%B1%BB"><span class="toc-number">2.1.</span> <span class="toc-text">2.1. 打印流分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%89%93%E5%8D%B0%E6%B5%81%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.2.</span> <span class="toc-text">2.2. 打印流的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%AD%97%E8%8A%82%E6%89%93%E5%8D%B0%E6%B5%81"><span class="toc-number">2.3.</span> <span class="toc-text">2.3. 字节打印流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E5%AD%97%E7%AC%A6%E6%89%93%E5%8D%B0%E6%B5%81"><span class="toc-number">2.4.</span> <span class="toc-text">2.4. 字符打印流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AF%B9%E8%B1%A1%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">三、对象序列化和反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E6%A6%82%E8%BF%B0"><span class="toc-number">3.1.</span> <span class="toc-text">3.1. 概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%AF%B9%E8%B1%A1%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81"><span class="toc-number">3.2.</span> <span class="toc-text">3.2. 对象序列化流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-%E7%AE%80%E4%BB%8B"><span class="toc-number">3.2.1.</span> <span class="toc-text">3.2.1. 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.2.</span> <span class="toc-text">3.2.2. 构造方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-%E5%BA%8F%E5%88%97%E5%8C%96%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.3.</span> <span class="toc-text">3.2.3. 序列化对象的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-4-%E6%B3%A8%E6%84%8F"><span class="toc-number">3.2.4.</span> <span class="toc-text">3.2.4. 注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%AF%B9%E8%B1%A1%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%B5%81"><span class="toc-number">3.3.</span> <span class="toc-text">3.3. 对象反序列化流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1-%E7%AE%80%E4%BB%8B"><span class="toc-number">3.3.1.</span> <span class="toc-text">3.3.1. 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-number">3.3.2.</span> <span class="toc-text">3.3.2. 构造方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">3.3.3.</span> <span class="toc-text">3.3.3. 反序列化对象的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4-%E5%AF%B9%E8%B1%A1%E5%BA%8F%E5%88%97%E5%8C%96%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">3.3.4.</span> <span class="toc-text">3.3.4. 对象序列化的问题</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/05/16/%E6%89%80%E6%9C%89%E7%9A%84%E9%81%87%E8%A7%81%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B8%80%E7%A7%8D%E5%81%BF%E8%BF%98/" title="所有的遇见，都是一种偿还"><img src="https://cdn.jsdelivr.net/gh/phd99/img/img/wenzhai3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="所有的遇见，都是一种偿还"/></a><div class="content"><a class="title" href="/2021/05/16/%E6%89%80%E6%9C%89%E7%9A%84%E9%81%87%E8%A7%81%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B8%80%E7%A7%8D%E5%81%BF%E8%BF%98/" title="所有的遇见，都是一种偿还">所有的遇见，都是一种偿还</a><time datetime="2021-05-16T07:24:06.000Z" title="发表于 2021-05-16 15:24:06">2021-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/16/Java%E4%B9%8BProperties/" title="Java之Properties"><img src="https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之Properties"/></a><div class="content"><a class="title" href="/2021/05/16/Java%E4%B9%8BProperties/" title="Java之Properties">Java之Properties</a><time datetime="2021-05-16T03:00:00.000Z" title="发表于 2021-05-16 11:00:00">2021-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/16/Java%E4%B9%8B%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C%E6%B5%81/" title="Java之特殊操作流"><img src="https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之特殊操作流"/></a><div class="content"><a class="title" href="/2021/05/16/Java%E4%B9%8B%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C%E6%B5%81/" title="Java之特殊操作流">Java之特殊操作流</a><time datetime="2021-05-16T02:54:09.000Z" title="发表于 2021-05-16 10:54:09">2021-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/16/Java%E4%B9%8BIO%E6%B5%81/" title="Java之IO流"><img src="https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java之IO流"/></a><div class="content"><a class="title" href="/2021/05/16/Java%E4%B9%8BIO%E6%B5%81/" title="Java之IO流">Java之IO流</a><time datetime="2021-05-16T02:00:01.000Z" title="发表于 2021-05-16 10:00:01">2021-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/16/Java%E5%9F%BA%E7%A1%80/" title="Java相关"><img src="https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java相关"/></a><div class="content"><a class="title" href="/2021/05/16/Java%E5%9F%BA%E7%A1%80/" title="Java相关">Java相关</a><time datetime="2021-05-16T00:09:09.000Z" title="发表于 2021-05-16 08:09:09">2021-05-16</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/gh/phd99/img/img/java1.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 By phd</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="000993SC4KERj4" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
