@@ -931,31 +931,31 @@
 <li>Java语言随着这些年的发展已经成为了一门影响深远的编程语言，无数平台，系统都采用Java语言编写，但是，伴随着发展，Java也越来越庞大，逐渐发展成为一门“臃肿”的语言，而且，无论是运行一个大型的软件系统，还是运行一个小的程序，即时程序只需要使用Java的部分核心功能，JVM也要加载整个JRE环节。为了给Java“廋身”，让Java实现轻量化，Java9正式的推出了模块化系统，Java被拆分为N多个模块，并允许Java程序可以根据需要选择加载程序必须的Java模块，这样就可以让Java以轻量化的方式来运行。</li>
 <li>其实，Java7的时候已经提出了模块化的概念，但由于其过于复杂，Java7、Java8都一直未能真正推出，直到Java9才真正成熟起来。对于Java语言来说，模块化系统是一次真正的自我革新，这种革新使得“古老而庞大”的Java语言重新焕发年轻的活力。</li>
 </ul>
-  <pre class="mermaid">  graph TD
-    subgraph 项目Project
-      subgraph 模块1
-        subgraph 包1
-          a5[1.java]
-          a6[2.java]
-          a5---a6
-        end
-        subgraph 包2
-          a1[...]
-          a2[...]
-          a1---a2
-        end
+<pre class="mermaid">graph TD
+  subgraph 项目Project
+    subgraph 模块1
+      subgraph 包1
+        a5[1.java]
+        a6[2.java]
+        a5---a6
       end
-      subgraph 模块2
-        d[包1]
-        h[...]
-        d---h
+      subgraph 包2
+        a1[...]
+        a2[...]
+        a1---a2
       end
-      subgraph 模块3
-        f[包2]
-        i[...]
-        f---i
-      end
-    end</pre>
+    end
+    subgraph 模块2
+      d[包1]
+      h[...]
+      d---h
+    end
+    subgraph 模块3
+      f[包2]
+      i[...]
+      f---i
+    end
+  end</pre>
 
 
 <h2 id="二、模块的基本使用步骤"><a href="#二、模块的基本使用步骤" class="headerlink" title="二、模块的基本使用步骤"></a>二、模块的基本使用步骤</h2><ul>
