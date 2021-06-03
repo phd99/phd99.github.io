@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2021-05-16T07:46:57.557Z</updated>
+  <updated>2021-06-03T13:24:24.417Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -17,11 +17,114 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CSS的元素显示模式</title>
+    <link href="http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/</id>
+    <published>2021-06-03T13:21:11.000Z</published>
+    <updated>2021-06-03T13:24:24.417Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;指元素以什么方式显示到页面中&lt;/li&gt;
+&lt;li&gt;HTML元素分为块元素和行内元素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 </summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
+    
+    
+    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS的引入方式</title>
+    <link href="http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/"/>
+    <id>http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/</id>
+    <published>2021-06-03T12:11:36.000Z</published>
+    <updated>2021-06-03T13:24:35.695Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、内部样式表（嵌入式引入）&quot;&gt;&lt;a href=&quot;#一、内部样式表（嵌入式引入）&quot; class=&quot;headerlink&quot; title=&quot;一、内部样式表（嵌入式引入）&quot;&gt;&lt;/a&gt;一、内部样式表（嵌入式引入）&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;将所有&lt;code&gt;CSS&lt;/co</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
+    
+    
+    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS的选择器</title>
+    <link href="http://phd99.com/2021/06/02/CSS%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/"/>
+    <id>http://phd99.com/2021/06/02/CSS%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/</id>
+    <published>2021-06-02T13:01:09.000Z</published>
+    <updated>2021-06-03T13:24:37.744Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、选择器&quot;&gt;&lt;a href=&quot;#一、选择器&quot; class=&quot;headerlink&quot; title=&quot;一、选择器&quot;&gt;&lt;/a&gt;一、选择器&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;选择器就是根据不同的需求把想要的标签选出来，进行样式的设置&lt;/li&gt;
+&lt;li&gt;选择器按类型可以分为基础选</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
+    
+    
+    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS的相关属性</title>
+    <link href="http://phd99.com/2021/06/02/CSS%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7/"/>
+    <id>http://phd99.com/2021/06/02/CSS%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7/</id>
+    <published>2021-06-02T12:19:10.000Z</published>
+    <updated>2021-06-03T13:24:39.342Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、字体属性&quot;&gt;&lt;a href=&quot;#一、字体属性&quot; class=&quot;headerlink&quot; title=&quot;一、字体属性&quot;&gt;&lt;/a&gt;一、字体属性&lt;/h2&gt;&lt;h3 id=&quot;1-1-简介&quot;&gt;&lt;a href=&quot;#1-1-简介&quot; class=&quot;headerlink&quot; titl</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
+    
+    
+    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>所有的遇见，都是一种偿还</title>
     <link href="http://phd99.com/2021/05/16/%E6%89%80%E6%9C%89%E7%9A%84%E9%81%87%E8%A7%81%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B8%80%E7%A7%8D%E5%81%BF%E8%BF%98/"/>
     <id>http://phd99.com/2021/05/16/%E6%89%80%E6%9C%89%E7%9A%84%E9%81%87%E8%A7%81%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B8%80%E7%A7%8D%E5%81%BF%E8%BF%98/</id>
     <published>2021-05-16T07:24:06.000Z</published>
-    <updated>2021-05-16T07:46:57.557Z</updated>
+    <updated>2021-05-22T14:48:28.483Z</updated>
     
     
       
@@ -403,100 +506,6 @@
     <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Java反射机制是指在运行时去获取一个类的变量和方法信息，然后通过获取到的信息来创建对象、调用方法的一种机制。由</summary>
       
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之类</title>
-    <link href="http://phd99.com/2021/03/31/Java%E4%B9%8B%E7%B1%BB/"/>
-    <id>http://phd99.com/2021/03/31/Java%E4%B9%8B%E7%B1%BB/</id>
-    <published>2021-03-31T13:36:47.721Z</published>
-    <updated>2021-04-03T03:04:33.636Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;一、类的介绍&quot;&gt;&lt;a href=&quot;#一、类的介绍&quot; class=&quot;headerlink&quot; title=&quot;一、类的介绍&quot;&gt;&lt;/a&gt;一、类的介绍&lt;/h2&gt;&lt;h3 id=&quot;1-1-概述&quot;&gt;&lt;a href=&quot;#1-1-概述&quot; class=&quot;headerlink&quot; title=&quot;1.1. 概述&quot;&gt;&lt;/a&gt;1.1. 概述&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;类是对现实生活中一类具有共同属性和行为的事物的抽象&lt;/li&gt;
-&lt;li&gt;对象是计算机中具体的数据信息，而类是这个信息的数据类型&lt;/li&gt;
-&lt;li&gt;java程序中最基本的组成单位是类&lt;/li&gt;
-&lt;li&gt;类的定义格式&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;public class 类名&amp;#123;&amp;#125;&lt;/code&gt;</summary>
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之方法</title>
-    <link href="http://phd99.com/2021/03/31/Java%E4%B9%8B%E6%96%B9%E6%B3%95/"/>
-    <id>http://phd99.com/2021/03/31/Java%E4%B9%8B%E6%96%B9%E6%B3%95/</id>
-    <published>2021-03-31T13:34:53.727Z</published>
-    <updated>2021-04-03T03:04:22.055Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;方法是将具有独立功能的代码块组织成为一个整体，使其具有特殊功能的代码集。&lt;/li&gt;
-&lt;li&gt;方法必须先创建才可以使用，该过程称为方法定义&lt;/li&gt;
-&lt;li&gt;方法创建后并不是直接运行的，需要手动使用后才执行，该过程称为方法调用</summary>
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之标识符</title>
-    <link href="http://phd99.com/2021/03/31/Java%E4%B9%8B%E6%A0%87%E8%AF%86%E7%AC%A6/"/>
-    <id>http://phd99.com/2021/03/31/Java%E4%B9%8B%E6%A0%87%E8%AF%86%E7%AC%A6/</id>
-    <published>2021-03-31T13:06:18.011Z</published>
-    <updated>2021-04-03T03:04:07.760Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;标识符就是给类、方法、变量等起名字的符号</summary>
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之类加载</title>
-    <link href="http://phd99.com/2021/03/31/Java%E4%B9%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD/"/>
-    <id>http://phd99.com/2021/03/31/Java%E4%B9%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD/</id>
-    <published>2021-03-31T12:10:21.000Z</published>
-    <updated>2021-04-03T03:03:40.664Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过类的加载、类的连接、类的初始化这三个步骤来对类进行初始化。如果不出现以外情况，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或者类初始化。</summary>
     
     
     

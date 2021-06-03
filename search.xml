@@ -1,10 +1,463 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS的元素显示模式</title>
+    <url>/2021/06/03/CSS%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><ul>
+<li>指元素以什么方式显示到页面中</li>
+<li>HTML元素分为块元素和行内元素</li>
+</ul>
+<h2 id="二、块元素"><a href="#二、块元素" class="headerlink" title="二、块元素"></a>二、块元素</h2><ul>
+<li>常见块元素：<code>&lt;h1&gt;~&lt;h6&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;div&gt;</code>、<code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code>、<code>&lt;li&gt;</code></li>
+<li>独占一行</li>
+<li>可以设置高度、宽度、外边距、内边距</li>
+<li>宽度默认是容器（父级宽度）的100%</li>
+<li>是一个容器或盒子，里面可以放行内或者块级元素<ul>
+<li>文字类的元素内不能放块级元素，包括<code>&lt;p&gt;</code>、<code>&lt;h1&gt;~&lt;h6&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="三、行内元素（内联元素）"><a href="#三、行内元素（内联元素）" class="headerlink" title="三、行内元素（内联元素）"></a>三、行内元素（内联元素）</h2><ul>
+<li>常见行内元素：<code>&lt;a&gt;</code>、<code>&lt;strong&gt;</code>、<code>&lt;b&gt;</code>、<code>&lt;em&gt;</code>、<code>&lt;i&gt;</code>、<code>&lt;del&gt;</code>、<code>&lt;s&gt;</code>、<code>&lt;ins&gt;</code>、<code>&lt;u&gt;</code>、<code>&lt;span&gt;</code></li>
+<li>一行可以显示多个行内元素</li>
+<li>直接设置宽高是无效的</li>
+<li>默认宽度就是其内容本身的宽度</li>
+<li>行内元素中只能放文本或其他行内元素</li>
+<li>链接中不能再放链接</li>
+<li>链接<code>&lt;a&gt;</code>中可以放块级元素，前提是将<code>&lt;a&gt;</code>转换成块级元素<ul>
+<li>如何将<code>&lt;a&gt;</code>转换成块级元素</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="四、行内块元素"><a href="#四、行内块元素" class="headerlink" title="四、行内块元素"></a>四、行内块元素</h2><ul>
+<li>常见行内块元素：<code>&lt;img/&gt;</code>、<code>&lt;input&gt;</code>、<code>&lt;td&gt;</code></li>
+<li>一行可以显示多个行内块元素，元素之间有空白缝隙</li>
+<li>默认宽度是其内容本身的宽度</li>
+<li>可以设置高度、宽度、外边距、内边距</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS的引入方式</title>
+    <url>/2021/06/03/CSS%E7%9A%84%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="一、内部样式表（嵌入式引入）"><a href="#一、内部样式表（嵌入式引入）" class="headerlink" title="一、内部样式表（嵌入式引入）"></a>一、内部样式表（嵌入式引入）</h2><ul>
+<li>将所有<code>CSS</code>代码单独放到一个<code>&lt;style&gt;</code>标签中</li>
+<li>只能影响一个页面中的一个标签中的一个</li>
+</ul>
+<h2 id="二、行内样式表"><a href="#二、行内样式表" class="headerlink" title="二、行内样式表"></a>二、行内样式表</h2><ul>
+<li>在元素标签内部的style属性中设置CSS样式</li>
+<li>适合于修改样式比较少的情况下</li>
+<li>只能影响一个页面</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&quot;color: red; font-size: 10px;&quot;</span>&gt;</span>考个卵的研究生<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="三、外部样式表"><a href="#三、外部样式表" class="headerlink" title="三、外部样式表"></a>三、外部样式表</h2><ul>
+<li>常用的<code>CSS</code>引入方式</li>
+<li>适合于样式比较多的情况</li>
+<li>将样式单独写到<code>CSS</code>文件中，将<code>CSS</code>文件引入到<code>HTML</code>中</li>
+<li>影响多个页面</li>
+<li>在<code>HTML</code>中使用<code>&lt;link&gt;</code>标签引入<code>CSS</code>文件<ul>
+<li><code>rel</code>定义当前文件与被链接文件之间的关系，<code>stylesheet</code>表示被链接的文件是一个样式表文件</li>
+<li><code>href</code>为被链接的文件的路径，相对路径和绝对路径都可以</li>
+</ul>
+</li>
+<li>范例<ul>
+<li><code>HTML</code>文件<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">table</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span> <span class="attr">cellpadding</span>=<span class="string">&quot;1&quot;</span> <span class="attr">cellspacing</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">th</span>&gt;</span>第1行第1列<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">th</span>&gt;</span>第1行第2列<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">td</span>&gt;</span>第2行第1列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">td</span>&gt;</span>第2行第2列<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><code>CSS</code>文件<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">table</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS的选择器</title>
+    <url>/2021/06/02/CSS%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="一、选择器"><a href="#一、选择器" class="headerlink" title="一、选择器"></a>一、选择器</h2><ul>
+<li>选择器就是根据不同的需求把想要的标签选出来，进行样式的设置</li>
+<li>选择器按类型可以分为基础选择器和复合选择器</li>
+<li>规范：<code>选择器&#123;属性1:xxx;属性2:xxx&#125;</code></li>
+</ul>
+<h2 id="二、基础选择器"><a href="#二、基础选择器" class="headerlink" title="二、基础选择器"></a>二、基础选择器</h2><h3 id="2-1-简介"><a href="#2-1-简介" class="headerlink" title="2.1. 简介"></a>2.1. 简介</h3><ul>
+<li>基础选择器包括<ul>
+<li>标签选择器</li>
+<li>类选择器</li>
+<li>id选择器</li>
+<li>通配符选择器</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-标签选择器"><a href="#2-2-标签选择器" class="headerlink" title="2.2. 标签选择器"></a>2.2. 标签选择器</h3><ul>
+<li>标签选择器是指用HTML标签名称作为选择器，为页面中某一类标签指定统一的CSS样式</li>
+<li>能为页面中同类型的得到标签统一设置样式</li>
+<li>只能选择全部的当前标签，不能单独设置某一个标签的样式</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  p &#123;</span><br><span class="line">    color: red;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-3-类选择器"><a href="#2-3-类选择器" class="headerlink" title="2.3. 类选择器"></a>2.3. 类选择器</h3><ul>
+<li>以<code>.</code>开头</li>
+<li>可以单独选择一个或者某几个标签</li>
+<li>开发中最常用</li>
+<li>可以给标签设置多个类名，类名之间用空格隔开</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.red</span> &#123;</span></span><br><span class="line">    color: red;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="css">  <span class="selector-class">.wusuowei</span> &#123;</span></span><br><span class="line">    background-color: blue;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&#x27;red wusuowei&#x27;</span>&gt;</span> 红色 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-4-id选择器"><a href="#2-4-id选择器" class="headerlink" title="2.4. id选择器"></a>2.4. id选择器</h3><ul>
+<li>以<code>#</code>开头</li>
+<li>只能调用一次</li>
+<li>是唯一的，不能再有相同的id，只有一个</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-id">#zhangsan</span> &#123;</span></span><br><span class="line">    color: red;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&#x27;zhangsan&#x27;</span>&gt;</span> 红色 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-5-通配符选择器"><a href="#2-5-通配符选择器" class="headerlink" title="2.5. 通配符选择器"></a>2.5. 通配符选择器</h3><ul>
+<li>使用<code>*</code>定义</li>
+<li>修改页面中所有标签的样式</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">  * &#123;</span><br><span class="line">      color: black;</span><br><span class="line">      &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="三、复合选择器"><a href="#三、复合选择器" class="headerlink" title="三、复合选择器"></a>三、复合选择器</h2><h3 id="3-1-简介"><a href="#3-1-简介" class="headerlink" title="3.1. 简介"></a>3.1. 简介</h3><ul>
+<li>复合选择器是基本选择器进行组合形成的</li>
+<li>复合选择器包括<ul>
+<li>后代选择器</li>
+<li>子选择器</li>
+<li>并集选择器</li>
+<li>伪类选择器</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-后代选择器（包含选择器）"><a href="#3-2-后代选择器（包含选择器）" class="headerlink" title="3.2. 后代选择器（包含选择器）"></a>3.2. 后代选择器（包含选择器）</h3><ul>
+<li>用来选择父元素中的子元素，包含孙子、重孙子中的该标签</li>
+<li>语法：<code>元素1 元素2 元素3 &#123;样式&#125;</code><ul>
+<li>表示给元素1中的元素2中的元素3设置样式，即最终选择的是元素3</li>
+<li>把外层标签写在前面，内层标签写在后面，中间用空格分隔</li>
+</ul>
+</li>
+<li>若当前选择的子元素的子元素中也有该标签，则也会被影响</li>
+<li>范例<ul>
+<li>将<code>ul</code>下面的所有的<code>p</code>标签中的内容设置为红色<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>https://www.phd99.com/<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        ul p &#123;</span><br><span class="line">            color: red;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>我被影响了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>我也被影响了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-3-子选择器（子元素选择器）"><a href="#3-3-子选择器（子元素选择器）" class="headerlink" title="3.3. 子选择器（子元素选择器）"></a>3.3. 子选择器（子元素选择器）</h3><ul>
+<li>只能选择距离元素最近的一级子元素，即只能选择儿子</li>
+<li>语法：<code>元素1&gt;元素2&gt;元素3 &#123;样式&#125;</code><ul>
+<li>表示给元素1中的元素2中的元素3设置样式，即最终选择的是元素3</li>
+<li>元素1是父级，元素2是子级，元素1和元素2之间用<code>&gt;</code>隔开</li>
+</ul>
+</li>
+<li>若当前选择的子元素的子元素中也有该标签，则不会被影响</li>
+<li>范例<ul>
+<li>只将<code>ul</code>标签的下一级子元素中的所有的<code>p</code>标签中的内容设置为红色<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>https://www.phd99.com/<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        ul p &#123;</span><br><span class="line">            color: red;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>我被影响了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>我被影响了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>我没有被影响<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-并集选择器"><a href="#3-4-并集选择器" class="headerlink" title="3.4. 并集选择器"></a>3.4. 并集选择器</h3><ul>
+<li>可以同时给多组不同的标签设置相同的样式</li>
+<li>语法：<code>元素1,元素2,元素3 &#123;样式&#125;</code><ul>
+<li>表示给元素1和元素2设置相同的样式</li>
+<li>元素之间用<code>,</code>隔开</li>
+</ul>
+</li>
+<li>范例<ul>
+<li>将<code>ul</code>标签的下一级子元素中的所有的<code>p</code>标签和<code>ol</code>标签中的所有内容设置为红色<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>https://www.phd99.com/<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        ul&gt;p,ol &#123;</span><br><span class="line">            color: red;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>我被影响了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>我被影响了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>我没有被影响<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>我被影响了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>我被影响了<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-5-伪类选择器"><a href="#3-5-伪类选择器" class="headerlink" title="3.5. 伪类选择器"></a>3.5. 伪类选择器</h3><ul>
+<li>用于给选择器添加特殊的效果，例如鼠标经过时颜色改变</li>
+<li>用<code>:</code>表示</li>
+</ul>
+<h4 id="3-5-1-链接伪类选择器"><a href="#3-5-1-链接伪类选择器" class="headerlink" title="3.5.1. 链接伪类选择器"></a>3.5.1. 链接伪类选择器</h4><ul>
+<li><code>a:link</code>选择所有未被访问的链接</li>
+<li><code>a:visited</code>选择所有已被访问的链接</li>
+<li><code>a:hover</code>选择鼠标指针位于其上的链接</li>
+<li><code>a:active</code>选择活动链接，就是鼠标按下且未弹起的链接</li>
+<li>为了确保生效，应按照固定的顺序声明<code>LVHA</code><ul>
+<li>1.<code>link</code></li>
+<li>2.<code>visited</code></li>
+<li>3.<code>hover</code></li>
+<li>4.<code>active</code></li>
+</ul>
+</li>
+<li><code>&lt;a&gt;</code>链接标签具有默认的样式，在设置样式时，需要单独进行设置</li>
+<li>范例<ul>
+<li>将未被访问的链接的字体颜色设置为黑色并去掉下划线</li>
+<li>将已经被访问的链接的字体颜色设置为红色</li>
+<li>将鼠标位于其上的链接的字体颜色设置为黄色</li>
+<li>将鼠标按下且未弹起的链接的字体颜色设置为蓝色<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>https://www.phd99.com/<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123;</span></span><br><span class="line">            color: black;</span><br><span class="line"><span class="css">            <span class="selector-tag">text-decoration</span>: <span class="selector-tag">none</span>; <span class="comment">/*去掉链接的下划线*/</span></span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123;</span></span><br><span class="line">            color: red;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line">            color: yellow;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123;</span></span><br><span class="line">            color: blue;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.phd99.com/&quot;</span>&gt;</span>phd99<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-5-2-focus伪类选择器"><a href="#3-5-2-focus伪类选择器" class="headerlink" title="3.5.2. :focus伪类选择器"></a>3.5.2. <code>:focus</code>伪类选择器</h4><ul>
+<li><code>:focus</code>伪类选择器用于选取获得焦点的表单元素，焦点就是光标</li>
+<li>一般只有<code>&lt;input&gt;</code>类表单元素才能获取焦点，所以该选择器主要用于表单元素</li>
+<li>范例<ul>
+<li>将获得焦点的表单元素的背景颜色设置为红色<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>https://www.phd99.com/<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">input</span><span class="selector-pseudo">:focus</span> &#123;</span></span><br><span class="line">            background-color: red;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS的相关属性</title>
+    <url>/2021/06/02/CSS%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="一、字体属性"><a href="#一、字体属性" class="headerlink" title="一、字体属性"></a>一、字体属性</h2><h3 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1. 简介"></a>1.1. 简介</h3><ul>
+<li>字体的属性<ul>
+<li>风格</li>
+<li>大小</li>
+<li>粗细</li>
+<li>样式</li>
+</ul>
+</li>
+<li>也可以写成复合属性</li>
+</ul>
+<h3 id="1-2-字体风格"><a href="#1-2-字体风格" class="headerlink" title="1.2. 字体风格"></a>1.2. 字体风格</h3><ul>
+<li>用<code>font-family</code>定义字体风格</li>
+<li>可以同时设置多个字体，先查询前面的字体，若前面的字体不存在，则查询后面的字体，若都不存在，则使用浏览器的默认字体。</li>
+<li>字体之间用英文逗号隔开</li>
+<li>可以用英文也可以用中文</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">p &#123;</span><br><span class="line">  font-family: &#x27;Microsoft Yahei&#x27;, Arial, &#x27;微软雅黑&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-3-字体大小"><a href="#1-3-字体大小" class="headerlink" title="1.3. 字体大小"></a>1.3. 字体大小</h3><ul>
+<li>用<code>font-family</code>定义字体大小</li>
+<li>常用单位为px，像素</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">p &#123;</span><br><span class="line">  font-size: 20px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-4-字体粗细"><a href="#1-4-字体粗细" class="headerlink" title="1.4. 字体粗细"></a>1.4. 字体粗细</h3><ul>
+<li>用<code>font-weight</code>定义字体粗细</li>
+<li><code>normal</code>==400（正常），<code>bold</code>==700（加粗）</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">p &#123;</span><br><span class="line">  font-weight: 700;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-5-字体样式"><a href="#1-5-字体样式" class="headerlink" title="1.5. 字体样式"></a>1.5. 字体样式</h3><ul>
+<li>用<code>font-style</code>定义字体样式</li>
+<li><code>normal</code>正常值</li>
+<li><code>italic</code>斜体</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">p &#123;</span><br><span class="line">  font-style: italic;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="1-6-复合属性"><a href="#1-6-复合属性" class="headerlink" title="1.6. 复合属性"></a>1.6. 复合属性</h3><ul>
+<li>用<code>font</code>定义复合属性</li>
+<li>可以将字体属性按固定的顺序写在一起</li>
+<li>按样式<code>style</code>、粗细<code>weight</code>、大小<code>size</code>、风格<code>family</code>的顺序设置，各个属性之间以空格隔开</li>
+<li>不需要设置的属性可以省略，大小和风格一定不能省略</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">p &#123;</span><br><span class="line">  font: italic 400 20px &#x27;Microsoft yahei&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="二、文本属性"><a href="#二、文本属性" class="headerlink" title="二、文本属性"></a>二、文本属性</h2><h3 id="2-1-简介"><a href="#2-1-简介" class="headerlink" title="2.1. 简介"></a>2.1. 简介</h3><ul>
+<li>文本的属性<ul>
+<li>颜色</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-颜色"><a href="#2-2-颜色" class="headerlink" title="2.2. 颜色"></a>2.2. 颜色</h3><ul>
+<li>用<code>color</code>定义文本颜色</li>
+<li>开发中常用十六进制的属性值来设置颜色</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">p &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-3-对齐"><a href="#2-3-对齐" class="headerlink" title="2.3. 对齐"></a>2.3. 对齐</h3><ul>
+<li><code>text-align</code>属性用于设置元素内文本内容的水平对齐方式</li>
+<li>默认为左对齐<code>left</code></li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">p &#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-4-装饰"><a href="#2-4-装饰" class="headerlink" title="2.4. 装饰"></a>2.4. 装饰</h3><ul>
+<li><code>text-decoration</code>属性可以给文本添加下划线<code>underline</code>、删除线<code>overline</code>、上划线<code>line-through</code></li>
+<li><code>none</code>默认值，没有装饰，链接自带下划线，可以设置成<code>none</code>来去掉下划线</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">p &#123;</span><br><span class="line">  text-decoration: underline;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-5-缩进"><a href="#2-5-缩进" class="headerlink" title="2.5. 缩进"></a>2.5. 缩进</h3><ul>
+<li><code>text-indent</code>属性用于指定文本第一行的缩进</li>
+<li><code>em</code>表示缩进1个文字大小的单位</li>
+<li><code>px</code>像素单位</li>
+<li>该属性值可以为负值</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">p &#123;</span><br><span class="line">  text-indent: 2em;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="2-6-行间距"><a href="#2-6-行间距" class="headerlink" title="2.6. 行间距"></a>2.6. 行间距</h3><ul>
+<li><code>line-height</code>属性用于设置行间的距离</li>
+<li>行间距=上间距+文本高度+下间距</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">p &#123;</span><br><span class="line">  line-height: 10px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="三、背景属性"><a href="#三、背景属性" class="headerlink" title="三、背景属性"></a>三、背景属性</h2><h3 id="3-1-简介"><a href="#3-1-简介" class="headerlink" title="3.1. 简介"></a>3.1. 简介</h3><ul>
+<li>背景属性可以给页面元素添加背景样式</li>
+<li>背景属性可以设置<ul>
+<li>背景颜色</li>
+<li>背景图片</li>
+<li>背景平铺</li>
+<li>背景图片位置</li>
+<li>背景图像固定等</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-设置背景颜色"><a href="#3-2-设置背景颜色" class="headerlink" title="3.2. 设置背景颜色"></a>3.2. 设置背景颜色</h3><ul>
+<li><code>background-color</code></li>
+<li>默认颜色为透明<code>transparent</code></li>
+<li>语法<code>background-color: 颜色;</code></li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    div &#123;</span><br><span class="line">        width: 500px;</span><br><span class="line">        height: 500px;</span><br><span class="line">        background-color: red;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-3-背景颜色半透明"><a href="#3-3-背景颜色半透明" class="headerlink" title="3.3. 背景颜色半透明"></a>3.3. 背景颜色半透明</h3><ul>
+<li>可以使背景颜色变成半透明，其他内容不受影响</li>
+<li>取值范围为：0~1</li>
+<li>半透明是<code>CSS3</code>新增的属性</li>
+<li>语法：<code>background: rgba(0, 0, 0, 0.5)</code><ul>
+<li>前三个数值用于确定颜色</li>
+<li>最后一个数值用于确定透明度<code>alpha</code></li>
+<li>可以将小数点前面的0省略掉，即<code>.5</code></li>
+</ul>
+</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    div &#123;</span><br><span class="line">        width: 1000px;</span><br><span class="line">        height: 1000px;</span><br><span class="line">        background: rgba(0, 0, 0, .1);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-4-设置背景图片"><a href="#3-4-设置背景图片" class="headerlink" title="3.4. 设置背景图片"></a>3.4. 设置背景图片</h3><ul>
+<li><code>background-image</code></li>
+<li>常用于logo、装饰性的小图片、超大的背景图片、精灵图</li>
+<li>优点是便于控制位置</li>
+<li>语法<code>background-image: url(图片位置)</code></li>
+<li>默认值为<code>none</code>，无背景图，<code>background-image: none</code></li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    div &#123;</span><br><span class="line">        width: 500px;</span><br><span class="line">        height: 500px;</span><br><span class="line"><span class="css">        <span class="selector-tag">background-image</span>: <span class="selector-tag">url</span>(<span class="selector-tag">image</span>/1<span class="selector-class">.jpg</span>);</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-5-背景图片平铺"><a href="#3-5-背景图片平铺" class="headerlink" title="3.5. 背景图片平铺"></a>3.5. 背景图片平铺</h3><ul>
+<li><code>background-repeat</code></li>
+<li>对背景图片进行平铺</li>
+<li>值<ul>
+<li><code>repeat</code>：横向和纵向都平铺（默认值）</li>
+<li><code>no-repeat</code>：不平铺</li>
+<li><code>repeat-x</code>：横向平铺</li>
+<li><code>repeat-y</code>：纵向平铺</li>
+</ul>
+</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    div &#123;</span><br><span class="line">        width: 1000px;</span><br><span class="line">        height: 1000px;</span><br><span class="line"><span class="css">        <span class="selector-tag">background-image</span>: <span class="selector-tag">url</span>(<span class="selector-tag">image</span>/1<span class="selector-class">.jpg</span>);</span></span><br><span class="line">        background-repeat: repeat-x;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-6-背景图片位置"><a href="#3-6-背景图片位置" class="headerlink" title="3.6. 背景图片位置"></a>3.6. 背景图片位置</h3><ul>
+<li><code>background-position</code></li>
+<li>设置背景图片的位置</li>
+<li>值<ul>
+<li>方位名词</li>
+<li>精确单位</li>
+<li>混合单位</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-6-1-方位名词"><a href="#3-6-1-方位名词" class="headerlink" title="3.6.1. 方位名词"></a>3.6.1. 方位名词</h4><ul>
+<li>如果设置了两个参数，则没有前后顺序</li>
+<li>如果只设置了一个参数，则第二个值默认为水平居中</li>
+<li>竖直方向的值可以为：<code>top</code>、<code>center</code>、<code>bottom</code></li>
+<li>水平方向的值可以为：<code>left</code>、<code>center</code>、<code>right</code></li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    div &#123;</span><br><span class="line">        width: 1000px;</span><br><span class="line">        height: 1000px;</span><br><span class="line">        background-color: red;</span><br><span class="line"><span class="css">        <span class="selector-tag">background-image</span>: <span class="selector-tag">url</span>(<span class="selector-tag">image</span>/1<span class="selector-class">.jpg</span>);</span></span><br><span class="line">        background-repeat: no-repeat;</span><br><span class="line">        background-position: left center;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="3-6-2-精确单位"><a href="#3-6-2-精确单位" class="headerlink" title="3.6.2. 精确单位"></a>3.6.2. 精确单位</h4><ul>
+<li>有前后顺序</li>
+<li>如果设置了两个数值，则第一个值为x轴坐标， 第二个值为y轴坐标</li>
+<li>如果只设置了一个数值，则该数值一定是x坐标，另一个数值默认为垂直居中</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    div &#123;</span><br><span class="line">        width: 1000px;</span><br><span class="line">        height: 1000px;</span><br><span class="line">        background-color: red;</span><br><span class="line"><span class="css">        <span class="selector-tag">background-image</span>: <span class="selector-tag">url</span>(<span class="selector-tag">image</span>/1<span class="selector-class">.jpg</span>);</span></span><br><span class="line">        background-repeat: no-repeat;</span><br><span class="line">        background-position: 100px 500px;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="3-6-3-混合单位"><a href="#3-6-3-混合单位" class="headerlink" title="3.6.3. 混合单位"></a>3.6.3. 混合单位</h4><ul>
+<li>有前后顺序</li>
+<li>可以将精确单位和方位名词混合使用</li>
+<li>第一个一定值是x轴坐标，第二个值一定是y轴坐标</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    div &#123;</span><br><span class="line">        width: 1000px;</span><br><span class="line">        height: 1000px;</span><br><span class="line">        background-color: red;</span><br><span class="line"><span class="css">        <span class="selector-tag">background-image</span>: <span class="selector-tag">url</span>(<span class="selector-tag">image</span>/1<span class="selector-class">.jpg</span>);</span></span><br><span class="line">        background-repeat: no-repeat;</span><br><span class="line">        background-position: 100px top;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-7-背景图像固定"><a href="#3-7-背景图像固定" class="headerlink" title="3.7. 背景图像固定"></a>3.7. 背景图像固定</h3><ul>
+<li><code>background-attachment</code></li>
+<li>可以设置背景图像是否固定或随着页面滚动</li>
+<li>属性<ul>
+<li><code>scroll</code>背景图像随对象内容滚动</li>
+<li><code>fixed</code>背景图像固定</li>
+</ul>
+</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    div &#123;</span><br><span class="line">        width: 1000px;</span><br><span class="line">        height: 1000px;</span><br><span class="line">        background-color: red;</span><br><span class="line"><span class="css">        <span class="selector-tag">background-image</span>: <span class="selector-tag">url</span>(<span class="selector-tag">image</span>/1<span class="selector-class">.jpg</span>);</span></span><br><span class="line">        background-repeat: no-repeat;</span><br><span class="line">        background-attachment: fixed;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-8-背景属性复合写法"><a href="#3-8-背景属性复合写法" class="headerlink" title="3.8. 背景属性复合写法"></a>3.8. 背景属性复合写法</h3><ul>
+<li>可以将关于背景的相关属性合并写在同一个<code>background</code>属性中</li>
+<li>简化了代码</li>
+<li>开发中常用</li>
+<li>简写时，没有特定的书写顺序<ul>
+<li>一般顺序为：背景颜色 图片地址 图片平铺 图片滚动 图片位置</li>
+<li><code>background: transparent url(1.jpg) repeat-y fixed top;</code></li>
+</ul>
+</li>
+<li>范例<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    div &#123;</span><br><span class="line">        width: 1000px;</span><br><span class="line">        height: 1000px;</span><br><span class="line"><span class="css">        <span class="selector-tag">background</span>: <span class="selector-tag">red</span> <span class="selector-tag">url</span>(<span class="selector-tag">image</span>/1<span class="selector-class">.jpg</span>) <span class="selector-tag">no-repeat</span> <span class="selector-tag">fixed</span> 100<span class="selector-tag">px</span> <span class="selector-tag">top</span>;</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>所有的遇见，都是一种偿还</title>
     <url>/2021/05/16/%E6%89%80%E6%9C%89%E7%9A%84%E9%81%87%E8%A7%81%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B8%80%E7%A7%8D%E5%81%BF%E8%BF%98/</url>
     <content><![CDATA[<h5 id="来源：十点读书（微信公众号）"><a href="#来源：十点读书（微信公众号）" class="headerlink" title="来源：十点读书（微信公众号）"></a>来源：十点读书（微信公众号）</h5><h5 id="文章名：所有的遇见，都是一种偿还"><a href="#文章名：所有的遇见，都是一种偿还" class="headerlink" title="文章名：所有的遇见，都是一种偿还"></a>文章名：<a href="https://mp.weixin.qq.com/s/QDQW7sFHGELB175GlzqnHg">所有的遇见，都是一种偿还</a></h5><hr>
-<p>&ensp;&ensp;&ensp;&ensp;当你靠自己时，你才会理解，以前能把你折磨到到崩溃的，都变成了现在强大的地方；</p>
 <p>&ensp;&ensp;&ensp;&ensp;每一次的遇见，都应该真心对待，如此在缘分散尽分别的时候，才能不留下遗憾。</p>
 <p>&ensp;&ensp;&ensp;&ensp;人这一生，大约会遇见三千万人，然而这其中的大部分人，不过是我们生命中的过客而已，最后能陪我们走完一生的人，少之又少。</p>
 <p>&ensp;&ensp;&ensp;&ensp;可无论如何，你要相信，生命中遇到的每一个人，都是有意义的。</p>
@@ -4928,8 +5381,8 @@
         <category>web开发</category>
       </categories>
       <tags>
-        <tag>HTML</tag>
         <tag>CSS</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -4943,7 +5396,7 @@
 <a id="more"></a>
 
 <h2 id="二、添加远程仓库GitHub"><a href="#二、添加远程仓库GitHub" class="headerlink" title="二、添加远程仓库GitHub"></a>二、添加远程仓库GitHub</h2><ul>
-<li>给远程仓库<code>git@github.com:phd99/test.git</code>设置一个别名<code>test</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add 别名 git@github.com:phd99&#x2F;test.git</span><br></pre></td></tr></table></figure></li>
+<li>给远程仓库<code>git@github.com:phd99/test.git</code>设置一个别名（远程主机名）<code>test</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add [别名] git@github.com:phd99&#x2F;test.git</span><br></pre></td></tr></table></figure></li>
 <li>查看当前设置了哪些远程仓库的别名<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure></li>
 <li>删除远程仓库的别名<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote rm [别名]</span><br></pre></td></tr></table></figure>
 
@@ -4969,7 +5422,7 @@
 </li>
 </ul>
 <h2 id="五、下载远程仓库中的项目"><a href="#五、下载远程仓库中的项目" class="headerlink" title="五、下载远程仓库中的项目"></a>五、下载远程仓库中的项目</h2><ul>
-<li>下载远程仓库中的项目并和本地仓库中的项目合并<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git pull origin myblog</span><br></pre></td></tr></table></figure></li>
+<li>下载远程仓库中的项目，并和本地仓库中的项目合并<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git pull origin myblog</span><br></pre></td></tr></table></figure></li>
 <li><code>pull</code>和<code>clone</code>的区别<ul>
 <li><code>clone</code>是从无到有的过程</li>
 <li><code>pull</code>是已有本地仓库，想获取最新的项目内容</li>
@@ -5230,7 +5683,7 @@
 </li>
 </ul>
 <h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><ul>
-<li>空格<code>&amp;nbsp;</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;nbsp;</span><br></pre></td></tr></table></figure></li>
+<li>空格<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;nbsp;</span><br></pre></td></tr></table></figure></li>
 <li>大于<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;</span><br></pre></td></tr></table></figure></li>
 <li>小于<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;</span><br></pre></td></tr></table></figure></li>
 <li>和<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;</span><br></pre></td></tr></table></figure></li>
