@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2021-06-03T13:24:24.417Z</updated>
+  <updated>2021-06-04T13:51:21.945Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS的三大特性</title>
+    <link href="http://phd99.com/2021/06/04/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/"/>
+    <id>http://phd99.com/2021/06/04/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/</id>
+    <published>2021-06-04T13:51:18.000Z</published>
+    <updated>2021-06-04T13:51:21.945Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、层叠性&quot;&gt;&lt;a href=&quot;#一、层叠性&quot; class=&quot;headerlink&quot; title=&quot;一、层叠性&quot;&gt;&lt;/a&gt;一、层叠性&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;多个选择器对同一元素设置了相同的样式，那么离该元素最近的样式就会覆盖其他样式，层叠就是覆盖&lt;/li&gt;
+&lt;</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
+    
+    
+    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS的元素显示模式</title>
@@ -49,7 +75,7 @@
     <link href="http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/"/>
     <id>http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/</id>
     <published>2021-06-03T12:11:36.000Z</published>
-    <updated>2021-06-03T13:24:35.695Z</updated>
+    <updated>2021-06-03T23:59:14.236Z</updated>
     
     
       
@@ -74,7 +100,7 @@
     <link href="http://phd99.com/2021/06/02/CSS%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/"/>
     <id>http://phd99.com/2021/06/02/CSS%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/</id>
     <published>2021-06-02T13:01:09.000Z</published>
-    <updated>2021-06-03T13:24:37.744Z</updated>
+    <updated>2021-06-04T00:05:13.767Z</updated>
     
     
       
@@ -480,31 +506,6 @@
       
     <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;泛型是JDK5中引入的特性，它提供了编译时类型安全检测机制，该机制允许在编译时检测到非法的类型。它的本质是参数化</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之反射</title>
-    <link href="http://phd99.com/2021/04/06/Java%E4%B9%8B%E5%8F%8D%E5%B0%84/"/>
-    <id>http://phd99.com/2021/04/06/Java%E4%B9%8B%E5%8F%8D%E5%B0%84/</id>
-    <published>2021-04-06T06:55:07.000Z</published>
-    <updated>2021-06-03T13:48:36.239Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Java反射机制是指在运行时去获取一个类的变量和方法信息，然后通过获取到的信息来创建对象、调用方法的一种机制。由</summary>
       
     
     

@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS的三大特性</title>
+    <url>/2021/06/04/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="一、层叠性"><a href="#一、层叠性" class="headerlink" title="一、层叠性"></a>一、层叠性</h2><ul>
+<li>多个选择器对同一元素设置了相同的样式，那么离该元素最近的样式就会覆盖其他样式，层叠就是覆盖</li>
+<li>就近原则</li>
+<li>若样式不冲突，即设置的样式不同，则不会层叠</li>
+<li>范例<ul>
+<li>背景颜色最终显示为蓝色，宽高都为500px<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>https://www.phd99.com/<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        div &#123;</span><br><span class="line">            background-color: red;</span><br><span class="line">            width: 500px;</span><br><span class="line">            height: 500px;</span><br><span class="line">        &#125;</span><br><span class="line">        div &#123;</span><br><span class="line">            background-color: blue;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>啦啦啦<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、继承性"><a href="#二、继承性" class="headerlink" title="二、继承性"></a>二、继承性</h2><ul>
+<li>子标签会继承父标签的某些样式</li>
+<li>会继承父标签的样式有<code>text-，font-，line-，color</code></li>
+<li>行高的继承<ul>
+<li><code>font: 10px/20px &#39;Microsoft YaHei&#39;</code></li>
+<li>字体大小为<code>10px</code>，行高为<code>20px</code></li>
+</ul>
+</li>
+<li>范例<ul>
+<li>1.行高有单位时，<code>12px/20px</code>表示子元素的文字大小为12px，行高为20px<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>https://www.phd99.com/<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">      body &#123;</span><br><span class="line">          font: 12px/20px &#x27;Microsoft YaHei&#x27;;</span><br><span class="line">      &#125;</span><br><span class="line">      div &#123;</span><br><span class="line">          font-size: 16px;</span><br><span class="line">      &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 文字大小为12px，行高为20px --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>啦啦啦<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 文字大小为16px，行高为20px --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>啦啦啦<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>2.行高没有单位时，<code>12px/1.5</code>表示子元素的文字大小为12px，行高为当前元素文字大小的1.5倍。不写单位的好处是子元素可以根据自己文字的大小自动调整行高<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>https://www.phd99.com/<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">      body &#123;</span><br><span class="line">          font: 12px/1.5 &#x27;Microsoft YaHei&#x27;;</span><br><span class="line">      &#125;</span><br><span class="line">      div &#123;</span><br><span class="line">          font-size: 16px;</span><br><span class="line">      &#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 文字大小为12px，行高为12*1.5=18px --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>啦啦啦<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 文字大小为16px，行高为16*1.5=24px --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>啦啦啦<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、优先级"><a href="#三、优先级" class="headerlink" title="三、优先级"></a>三、优先级</h2><h3 id="3-1-简介"><a href="#3-1-简介" class="headerlink" title="3.1. 简介"></a>3.1. 简介</h3><ul>
+<li>当同一个元素指定多个选择器，就会有优先级的产生<ul>
+<li>选择器相同，则执行层叠性</li>
+<li>选择器不同，则根据选择器的权重来执行，权重越高，优先级越高</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-选择器的权重"><a href="#3-2-选择器的权重" class="headerlink" title="3.2. 选择器的权重"></a>3.2. 选择器的权重</h3><ul>
+<li>继承或<code>*</code>，权重为<code>0,0,0,0</code></li>
+<li>元素选择器，权重为<code>0,0,0,1</code></li>
+<li>类选择器或伪类选择器，权重为<code>0,0,1,0</code></li>
+<li>ID选择器，权重为<code>0,1,0,0</code></li>
+<li>行内样式style=””，权重为<code>1,0,0,0</code></li>
+<li><code>!important</code>，权重为无穷大</li>
+</ul>
+<h3 id="3-3-优先级的等级判断"><a href="#3-3-优先级的等级判断" class="headerlink" title="3.3. 优先级的等级判断"></a>3.3. 优先级的等级判断</h3><ul>
+<li>从左往右进行比较</li>
+<li>例如元素选择器<code>0,0,0,1</code>和类选择器<code>0,0,1,0</code>，前两个数都是0，第三个数1&gt;0，所以类选择器的优先级高于元素选择器</li>
+</ul>
+<h3 id="3-4-权重的叠加"><a href="#3-4-权重的叠加" class="headerlink" title="3.4. 权重的叠加"></a>3.4. 权重的叠加</h3><ul>
+<li>复合选择器会有权重叠加的问题</li>
+<li>权重会进行叠加，但永远不会有进位</li>
+<li>范例<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- 权重为：0,0,0,1 + 0,0,0,1 &#x3D; 0,0,0,2 --&gt;</span><br><span class="line">ul li&#123;</span><br><span class="line">  color: green;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 权重为：0,0,1,0 + 0,0,0,1 &#x3D; 0,0,1,1 --&gt;</span><br><span class="line">.nav li&#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 结果为红色，因为是从左往右进行比较，第三个数1&gt;0，所以为红色 --&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-5-important"><a href="#3-5-important" class="headerlink" title="3.5. !important"></a>3.5. !important</h3><ul>
+<li>优先级最高</li>
+<li>如何使用<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    div &#123;</span><br><span class="line">        font-size: 16px!important;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-6-注意"><a href="#3-6-注意" class="headerlink" title="3.6. 注意"></a>3.6. 注意</h3><ul>
+<li>继承的权重是0，如果该元素没有直接选中，不管父元素权重多高，子元素得到的权重都是0<ul>
+<li>看标签执行哪个样式，先看这个标签有没有直接被选出来</li>
+</ul>
+</li>
+<li>a链接浏览器默认制定了一个样式：蓝色、有下划线</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS的元素显示模式</title>
     <url>/2021/06/03/CSS%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><ul>
@@ -65,8 +143,8 @@
 <h2 id="三、外部样式表"><a href="#三、外部样式表" class="headerlink" title="三、外部样式表"></a>三、外部样式表</h2><ul>
 <li>常用的<code>CSS</code>引入方式</li>
 <li>适合于样式比较多的情况</li>
-<li>将样式单独写到<code>CSS</code>文件中，将<code>CSS</code>文件引入到<code>HTML</code>中</li>
-<li>影响多个页面</li>
+<li>将样式单独写到<code>CSS</code>文件中，然后将<code>CSS</code>文件引入到<code>HTML</code>中</li>
+<li>可以影响多个页面</li>
 <li>在<code>HTML</code>中使用<code>&lt;link&gt;</code>标签引入<code>CSS</code>文件<ul>
 <li><code>rel</code>定义当前文件与被链接文件之间的关系，<code>stylesheet</code>表示被链接的文件是一个样式表文件</li>
 <li><code>href</code>为被链接的文件的路径，相对路径和绝对路径都可以</li>
@@ -155,7 +233,7 @@
 </li>
 <li>若当前选择的子元素的子元素中也有该标签，则也会被影响</li>
 <li>范例<ul>
-<li>将<code>ul</code>下面的所有的<code>p</code>标签中的内容设置为红色<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>https://www.phd99.com/<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        ul p &#123;</span><br><span class="line">            color: red;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>我被影响了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>我也被影响了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li>将<code>ul</code>下面的所有的<code>p</code>标签中的内容设置为红色<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>https://www.phd99.com/<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        ul p &#123;</span><br><span class="line">            color: red;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>我被影响了<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>我也被影响了<span class="tag">&lt;/<span class="name">p</span>&gt;</span> <span class="comment">&lt;!-- 也变成了红色 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
