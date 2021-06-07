@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2021-06-04T13:51:21.945Z</updated>
+  <updated>2021-06-07T15:20:55.576Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -17,11 +17,86 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CSS之圆角边框</title>
+    <link href="http://phd99.com/2021/06/07/CSS%E4%B9%8B%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/"/>
+    <id>http://phd99.com/2021/06/07/CSS%E4%B9%8B%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/</id>
+    <published>2021-06-07T14:05:16.000Z</published>
+    <updated>2021-06-07T15:20:55.576Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CSS3&lt;/code&gt;中，新增了圆角边框样式，可以使盒子边框变成圆角&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
+    
+    
+    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS之盒子模型</title>
+    <link href="http://phd99.com/2021/06/06/CSS%E4%B9%8B%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://phd99.com/2021/06/06/CSS%E4%B9%8B%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</id>
+    <published>2021-06-06T13:10:01.000Z</published>
+    <updated>2021-06-07T15:19:11.044Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、页面布局&quot;&gt;&lt;a href=&quot;#一、页面布局&quot; class=&quot;headerlink&quot; title=&quot;一、页面布局&quot;&gt;&lt;/a&gt;一、页面布局&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;页面布局要学习三大核心，盒子模型，浮动和定位，学习好盒子模型能非常好的帮助我们布局页面&lt;/li&gt;</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
+    
+    
+    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS之水平居中的方法</title>
+    <link href="http://phd99.com/2021/06/06/CSS%E4%B9%8B%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://phd99.com/2021/06/06/CSS%E4%B9%8B%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/</id>
+    <published>2021-06-06T12:18:34.000Z</published>
+    <updated>2021-06-07T15:20:42.323Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、块级盒子水平居中&quot;&gt;&lt;a href=&quot;#一、块级盒子水平居中&quot; class=&quot;headerlink&quot; title=&quot;一、块级盒子水平居中&quot;&gt;&lt;/a&gt;一、块级盒子水平居中&lt;/h2&gt;&lt;h3 id=&quot;1-1-简介&quot;&gt;&lt;a href=&quot;#1-1-简介&quot; class=&quot;</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
+    
+    
+    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS的三大特性</title>
     <link href="http://phd99.com/2021/06/04/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/"/>
     <id>http://phd99.com/2021/06/04/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/</id>
     <published>2021-06-04T13:51:18.000Z</published>
-    <updated>2021-06-04T13:51:21.945Z</updated>
+    <updated>2021-06-07T15:19:48.566Z</updated>
     
     
       
@@ -47,7 +122,7 @@
     <link href="http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/"/>
     <id>http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/</id>
     <published>2021-06-03T13:21:11.000Z</published>
-    <updated>2021-06-03T13:24:24.417Z</updated>
+    <updated>2021-06-07T15:20:31.216Z</updated>
     
     
       
@@ -75,7 +150,7 @@
     <link href="http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/"/>
     <id>http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/</id>
     <published>2021-06-03T12:11:36.000Z</published>
-    <updated>2021-06-03T23:59:14.236Z</updated>
+    <updated>2021-06-07T15:20:14.426Z</updated>
     
     
       
@@ -100,7 +175,7 @@
     <link href="http://phd99.com/2021/06/02/CSS%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/"/>
     <id>http://phd99.com/2021/06/02/CSS%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/</id>
     <published>2021-06-02T13:01:09.000Z</published>
-    <updated>2021-06-04T00:05:13.767Z</updated>
+    <updated>2021-06-07T15:20:08.864Z</updated>
     
     
       
@@ -126,7 +201,7 @@
     <link href="http://phd99.com/2021/06/02/CSS%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7/"/>
     <id>http://phd99.com/2021/06/02/CSS%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7/</id>
     <published>2021-06-02T12:19:10.000Z</published>
-    <updated>2021-06-03T13:24:39.342Z</updated>
+    <updated>2021-06-07T15:19:57.235Z</updated>
     
     
       
@@ -443,79 +518,6 @@
     
     
     <category term="礼仪" scheme="http://phd99.com/tags/%E7%A4%BC%E4%BB%AA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>碗</title>
-    <link href="http://phd99.com/2021/04/06/%E7%A2%97/"/>
-    <id>http://phd99.com/2021/04/06/%E7%A2%97/</id>
-    <published>2021-04-06T07:16:44.000Z</published>
-    <updated>2021-04-14T14:20:55.549Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h5 id=&quot;来源：四川教育发布（微信公众号）&quot;&gt;&lt;a href=&quot;#来源：四川教育发布（微信公众号）&quot; class=&quot;headerlink&quot; title=&quot;来源：四川教育发布（微信公众号）&quot;&gt;&lt;/a&gt;来源：四川教育发布（微信公众号）&lt;/h5&gt;&lt;h5 id=&quot;文章名：一段感情是</summary>
-      
-    
-    
-    
-    <category term="文摘" scheme="http://phd99.com/categories/%E6%96%87%E6%91%98/"/>
-    
-    <category term="网络" scheme="http://phd99.com/categories/%E6%96%87%E6%91%98/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="网络文摘" scheme="http://phd99.com/tags/%E7%BD%91%E7%BB%9C%E6%96%87%E6%91%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之面向对象三大特征</title>
-    <link href="http://phd99.com/2021/04/06/Java%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/"/>
-    <id>http://phd99.com/2021/04/06/Java%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81/</id>
-    <published>2021-04-06T06:56:56.000Z</published>
-    <updated>2021-06-03T13:49:16.390Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、封装&quot;&gt;&lt;a href=&quot;#一、封装&quot; class=&quot;headerlink&quot; title=&quot;一、封装&quot;&gt;&lt;/a&gt;一、封装&lt;/h2&gt;&lt;h3 id=&quot;1-1-private关键字&quot;&gt;&lt;a href=&quot;#1-1-private关键字&quot; class=&quot;headerli</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之泛型</title>
-    <link href="http://phd99.com/2021/04/06/Java%E4%B9%8B%E6%B3%9B%E5%9E%8B/"/>
-    <id>http://phd99.com/2021/04/06/Java%E4%B9%8B%E6%B3%9B%E5%9E%8B/</id>
-    <published>2021-04-06T06:56:30.000Z</published>
-    <updated>2021-06-03T13:48:49.888Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;泛型是JDK5中引入的特性，它提供了编译时类型安全检测机制，该机制允许在编译时检测到非法的类型。它的本质是参数化</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
     
   </entry>
   
