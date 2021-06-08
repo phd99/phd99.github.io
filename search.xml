@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS之文字阴影</title>
+    <url>/2021/06/08/CSS%E4%B9%8B%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1/</url>
+    <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><ul>
+<li>在<code>CSS3</code>中，可以使用<code>text-shadow</code>属性将阴影应用于文本</li>
+</ul>
+<h2 id="二、语法"><a href="#二、语法" class="headerlink" title="二、语法"></a>二、语法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">text-shadow: h-shadow v-shadow blur color;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、属性"><a href="#三、属性" class="headerlink" title="三、属性"></a>三、属性</h2><ul>
+<li><code>h-shadow</code>：必需，阴影的水平位置。允许负值。</li>
+<li><code>v-shadow</code>：必需，阴影的垂直位置。允许负值。</li>
+<li><code>blur</code>：可选。模糊程度。值越大越模糊。</li>
+<li><code>color</code>：可选。阴影的颜色。</li>
+</ul>
+<h2 id="四、范例"><a href="#四、范例" class="headerlink" title="四、范例"></a>四、范例</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .yinying &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background-color: aqua;</span><br><span class="line">        margin: 100px auto;</span><br><span class="line">        text-shadow: 9px 9px 9px black;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技术</category>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS之盒子阴影</title>
+    <url>/2021/06/08/CSS%E4%B9%8B%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1/</url>
+    <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><ul>
+<li>CSS3中新增了盒子阴影，我们可以使用box-shadow属性为盒子添加阴影</li>
+</ul>
+<h2 id="二、语法"><a href="#二、语法" class="headerlink" title="二、语法"></a>二、语法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">box-shadow: h-shadow v-shadow blur spread color inset;</span><br></pre></td></tr></table></figure>
+<h2 id="三、属性"><a href="#三、属性" class="headerlink" title="三、属性"></a>三、属性</h2><ul>
+<li><code>h-shadow</code>：必需。阴影的水平位置。允许负值。</li>
+<li><code>v-shadow</code>：必需。阴影的垂直位置。允许负值。</li>
+<li><code>blur</code>：可选。模糊程度。值越大越模糊。</li>
+<li><code>spread</code>：可选。阴影的尺寸。</li>
+<li><code>color</code>：可选。阴影的颜色。</li>
+<li><code>inset</code>：可选。将外部阴影（outset）改为内部阴影。</li>
+</ul>
+<h2 id="四、范例"><a href="#四、范例" class="headerlink" title="四、范例"></a>四、范例</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .yinying &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background-color: aqua;</span><br><span class="line">        margin: 100px auto;</span><br><span class="line">        box-shadow: 9px 9px 9px 9px rosybrown;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、阴影转换"><a href="#五、阴影转换" class="headerlink" title="五、阴影转换"></a>五、阴影转换</h2><ul>
+<li><code>inset</code>是将外部阴影改为内部阴影</li>
+<li>默认的是外部阴影，不可以写<code>ouset</code>，否则阴影无效</li>
+<li>盒子阴影不占用空间，不会影响其他盒子的排列</li>
+<li>范例<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .yinying &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background-color: aqua;</span><br><span class="line">        margin: 100px auto;</span><br><span class="line">        box-shadow: 9px 9px 9px 9px rosybrown inset;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS之圆角边框</title>
     <url>/2021/06/07/CSS%E4%B9%8B%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/</url>
     <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><ul>

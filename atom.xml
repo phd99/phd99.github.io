@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2021-06-07T15:20:55.576Z</updated>
+  <updated>2021-06-08T12:17:41.100Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS之文字阴影</title>
+    <link href="http://phd99.com/2021/06/08/CSS%E4%B9%8B%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1/"/>
+    <id>http://phd99.com/2021/06/08/CSS%E4%B9%8B%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1/</id>
+    <published>2021-06-08T13:10:01.000Z</published>
+    <updated>2021-06-08T12:17:41.100Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;在&lt;code&gt;CSS3&lt;/code&gt;中，可以使用&lt;code&gt;text-shadow&lt;/code&gt;属性将阴影应用于</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
+    
+    
+    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS之盒子阴影</title>
+    <link href="http://phd99.com/2021/06/08/CSS%E4%B9%8B%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1/"/>
+    <id>http://phd99.com/2021/06/08/CSS%E4%B9%8B%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1/</id>
+    <published>2021-06-08T12:17:06.000Z</published>
+    <updated>2021-06-08T12:18:02.655Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;CSS3中新增了盒子阴影，我们可以使用box-shadow属性为盒子添加阴影&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
+    
+    
+    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS之圆角边框</title>
@@ -470,54 +522,6 @@
     
     
     <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>低谷</title>
-    <link href="http://phd99.com/2021/04/25/%E4%BD%8E%E8%B0%B7/"/>
-    <id>http://phd99.com/2021/04/25/%E4%BD%8E%E8%B0%B7/</id>
-    <published>2021-04-25T12:11:56.000Z</published>
-    <updated>2021-04-25T12:59:05.525Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h5 id=&quot;来源：十点读书（微信公众号）&quot;&gt;&lt;a href=&quot;#来源：十点读书（微信公众号）&quot; class=&quot;headerlink&quot; title=&quot;来源：十点读书（微信公众号）&quot;&gt;&lt;/a&gt;来源：十点读书（微信公众号）&lt;/h5&gt;&lt;h5 id=&quot;文章名：人在低谷时，请默念这三句话</summary>
-      
-    
-    
-    
-    <category term="文摘" scheme="http://phd99.com/categories/%E6%96%87%E6%91%98/"/>
-    
-    <category term="网络" scheme="http://phd99.com/categories/%E6%96%87%E6%91%98/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="网络文摘" scheme="http://phd99.com/tags/%E7%BD%91%E7%BB%9C%E6%96%87%E6%91%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>个人礼仪</title>
-    <link href="http://phd99.com/2021/04/06/%E4%B8%AA%E4%BA%BA%E7%A4%BC%E4%BB%AA/"/>
-    <id>http://phd99.com/2021/04/06/%E4%B8%AA%E4%BA%BA%E7%A4%BC%E4%BB%AA/</id>
-    <published>2021-04-06T07:16:44.000Z</published>
-    <updated>2021-04-14T15:19:05.324Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、举止&quot;&gt;&lt;a href=&quot;#一、举止&quot; class=&quot;headerlink&quot; title=&quot;一、举止&quot;&gt;&lt;/a&gt;一、举止&lt;/h2&gt;&lt;h3 id=&quot;1-1-丰富自己的表情&quot;&gt;&lt;a href=&quot;#1-1-丰富自己的表情&quot; class=&quot;headerlink&quot; ti</summary>
-      
-    
-    
-    
-    <category term="修身养性" scheme="http://phd99.com/categories/%E4%BF%AE%E8%BA%AB%E5%85%BB%E6%80%A7/"/>
-    
-    <category term="礼仪" scheme="http://phd99.com/categories/%E4%BF%AE%E8%BA%AB%E5%85%BB%E6%80%A7/%E7%A4%BC%E4%BB%AA/"/>
-    
-    
-    <category term="礼仪" scheme="http://phd99.com/tags/%E7%A4%BC%E4%BB%AA/"/>
     
   </entry>
   
