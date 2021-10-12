@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2021-10-12T09:51:25.549Z</updated>
+  <updated>2021-10-12T10:03:32.361Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -21,14 +21,27 @@
     <link href="http://phd99.com/2021/10/12/%E8%B0%83%E7%94%A8%E6%94%BE%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
     <id>http://phd99.com/2021/10/12/%E8%B0%83%E7%94%A8%E6%94%BE%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</id>
     <published>2021-10-12T08:40:00.000Z</published>
-    <updated>2021-10-12T09:51:25.549Z</updated>
+    <updated>2021-10-12T10:03:32.361Z</updated>
     
     
-      
-      
-    <summary type="html">&lt;h1 id=&quot;调用放在项目中的第三方库&quot;&gt;&lt;a href=&quot;#调用放在项目中的第三方库&quot; class=&quot;headerlink&quot; title=&quot;调用放在项目中的第三方库&quot;&gt;&lt;/a&gt;调用放在项目中的第三方库&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;将项目中使用的第三方库直接放在项目中，当部署到其</summary>
-      
+    <summary type="html">&lt;h1 id=&quot;调用放在项目中的第三方库&quot;&gt;&lt;a href=&quot;#调用放在项目中的第三方库&quot; class=&quot;headerlink&quot; title=&quot;调用放在项目中的第三方库&quot;&gt;&lt;/a&gt;调用放在项目中的第三方库&lt;/h1&gt;&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;将项目中使用的第三方库直接放在项目中，当部署到其他计算机上时，直接调用项目中的第三方库，无需再安装项目中要使用的第三方库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;一、将第三方库放到项目中&quot;&gt;&lt;a href=&quot;#一、将第三方库放到项目中&quot; class=&quot;headerlink&quot; title=&quot;一、将第三方库放到项目中&quot;&gt;&lt;/a&gt;一、将第三方库放到项目中&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;步骤一：创建文件夹&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;在项目中创建一个文件夹&lt;code&gt;packages&lt;/code&gt;，文件夹名称任意&lt;ul&gt;
+&lt;li&gt;该文件夹用于存放项目中使用的所有第三方库文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;步骤二：放入第三方库文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;将项目中需要使用的所有第三方库文件放入文件夹&lt;code&gt;packages&lt;/code&gt;中</summary>
     
     
     
@@ -46,13 +59,26 @@
     <link href="http://phd99.com/2021/10/12/cx_Oracle%E5%92%8Cinstantclient/"/>
     <id>http://phd99.com/2021/10/12/cx_Oracle%E5%92%8Cinstantclient/</id>
     <published>2021-10-12T08:39:53.000Z</published>
-    <updated>2021-10-12T09:51:25.803Z</updated>
+    <updated>2021-10-12T10:03:19.142Z</updated>
     
     
-      
-      
-    <summary type="html">&lt;h1 id=&quot;cx-Oracle和instantclient&quot;&gt;&lt;a href=&quot;#cx-Oracle和instantclient&quot; class=&quot;headerlink&quot; title=&quot;cx_Oracle和instantclient&quot;&gt;&lt;/a&gt;cx_Oracle和instant</summary>
-      
+    <summary type="html">&lt;h1 id=&quot;cx-Oracle和instantclient&quot;&gt;&lt;a href=&quot;#cx-Oracle和instantclient&quot; class=&quot;headerlink&quot; title=&quot;cx_Oracle和instantclient&quot;&gt;&lt;/a&gt;cx_Oracle和instantclient&lt;/h1&gt;&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;使用cx_Oracle和instantclient连接远程oracle数据库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;一、安装instantclient&quot;&gt;&lt;a href=&quot;#一、安装instantclient&quot; class=&quot;headerlink&quot; title=&quot;一、安装instantclient&quot;&gt;&lt;/a&gt;一、安装instantclient&lt;/h2&gt;&lt;h3 id=&quot;1-1-linux下的安装配置方法一-——-修改bash-profile&quot;&gt;&lt;a href=&quot;#1-1-linux下的安装配置方法一-——-修改bash-profile&quot; class=&quot;headerlink&quot; title=&quot;1.1. linux下的安装配置方法一 —— 修改bash_profile&quot;&gt;&lt;/a&gt;1.1. &lt;code&gt;linux&lt;/code&gt;下的安装配置方法一 —— 修改&lt;code&gt;bash_profile&lt;/code&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;优点：实现简单&lt;/li&gt;
+&lt;li&gt;缺点：不方便部署到其他计算机上，因为当部署到其他计算机上时，还需要给其配置&lt;code&gt;instantclient&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;1-1-1-下载&quot;&gt;&lt;a href=&quot;#1-1-1-下载&quot; class=&quot;headerlink&quot; title=&quot;1.1.1. 下载&quot;&gt;&lt;/a&gt;1.1.1. 下载&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;在官网下载&lt;code&gt;Basic Package (RPM)&lt;/code&gt;和&lt;code&gt;SQL*Plus Package (RPM)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.oracle.com/database/technologies/instant-client/downloads.html&quot;&gt;官方下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;1-1-2-安装&quot;&gt;&lt;a href=&quot;#1-1-2-安装&quot; class=&quot;headerlink&quot; title=&quot;1.1.2. 安装&quot;&gt;&lt;/a&gt;1.1.2. 安装&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;进入管理员模式&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rpm -ivh oracle-instantclient18.5-basic-18.5.0.0.0-3.x86_64.rpm&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rpm -ivh oracle-instantclient18.5-sqlplus-18.5.0.0.0-3.x86_64.rpm&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;退出管理员模式</summary>
     
     
     
@@ -70,13 +96,13 @@
     <link href="http://phd99.com/2021/10/12/%E4%BD%BF%E7%94%A8paramiko%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/"/>
     <id>http://phd99.com/2021/10/12/%E4%BD%BF%E7%94%A8paramiko%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/</id>
     <published>2021-10-12T08:31:20.000Z</published>
-    <updated>2021-10-12T08:32:03.905Z</updated>
+    <updated>2021-10-12T10:03:44.042Z</updated>
     
     
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、安装&quot;&gt;&lt;a href=&quot;#一、安装&quot; class=&quot;headerlink&quot; title=&quot;一、安装&quot;&gt;&lt;/a&gt;一、安装&lt;/h2&gt;&lt;h3 id=&quot;1-1-若当前主机为windows&quot;&gt;&lt;a href=&quot;#1-1-若当前主机为windows&quot; class=&quot;he</summary>
-      
+    <summary type="html">&lt;h1 id=&quot;使用paramiko访问远程主机&quot;&gt;&lt;a href=&quot;#使用paramiko访问远程主机&quot; class=&quot;headerlink&quot; title=&quot;使用paramiko访问远程主机&quot;&gt;&lt;/a&gt;使用paramiko访问远程主机&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;一、安装&quot;&gt;&lt;a href=&quot;#一、安装&quot; class=&quot;headerlink&quot; title=&quot;一、安装&quot;&gt;&lt;/a&gt;一、安装&lt;/h2&gt;&lt;h3 id=&quot;1-1-若当前主机为windows&quot;&gt;&lt;a href=&quot;#1-1-若当前主机为windows&quot; class=&quot;headerlink&quot; title=&quot;1.1. 若当前主机为windows&quot;&gt;&lt;/a&gt;1.1. 若当前主机为&lt;code&gt;windows&lt;/code&gt;&lt;/h3&gt;&lt;h4 id=&quot;1-1-1-安装paramiko中要用到的库&quot;&gt;&lt;a href=&quot;#1-1-1-安装paramiko中要用到的库&quot; class=&quot;headerlink&quot; title=&quot;1.1.1. 安装paramiko中要用到的库&quot;&gt;&lt;/a&gt;1.1.1. 安装&lt;code&gt;paramiko&lt;/code&gt;中要用到的库&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;安装&lt;code&gt;bcrypy、cffi、cryptography、nacl、six&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;在终端中执行如下命令&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install bcrypy&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip install cffi&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip install cryptography&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip install pynacl&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip install six&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
@@ -94,13 +120,13 @@
     <link href="http://phd99.com/2021/10/12/%E5%9C%A8linux%E4%B8%AD%E5%AE%89%E8%A3%85python3/"/>
     <id>http://phd99.com/2021/10/12/%E5%9C%A8linux%E4%B8%AD%E5%AE%89%E8%A3%85python3/</id>
     <published>2021-10-12T08:31:14.000Z</published>
-    <updated>2021-10-12T08:31:28.721Z</updated>
+    <updated>2021-10-12T10:02:04.308Z</updated>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;1-获得root用户身份&quot;&gt;&lt;a href=&quot;#1-获得root用户身份&quot; class=&quot;headerlink&quot; title=&quot;1. 获得root用户身份&quot;&gt;&lt;/a&gt;1. 获得root用户身份&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在终端中执行如下命令&lt;figure clas</summary>
+    <summary type="html">&lt;h1 id=&quot;在Linux中安装python3&quot;&gt;&lt;a href=&quot;#在Linux中安装python3&quot; class=&quot;headerlink&quot; title=&quot;在Linux中安装python3&quot;&gt;&lt;/a&gt;在Linux中安装python3&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;1-获得</summary>
       
     
     
