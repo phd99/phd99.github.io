@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2021-06-16T09:03:12.634Z</updated>
+  <updated>2021-10-12T09:51:25.549Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -15,6 +15,130 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>调用放在项目中的第三方库</title>
+    <link href="http://phd99.com/2021/10/12/%E8%B0%83%E7%94%A8%E6%94%BE%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
+    <id>http://phd99.com/2021/10/12/%E8%B0%83%E7%94%A8%E6%94%BE%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</id>
+    <published>2021-10-12T08:40:00.000Z</published>
+    <updated>2021-10-12T09:51:25.549Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;调用放在项目中的第三方库&quot;&gt;&lt;a href=&quot;#调用放在项目中的第三方库&quot; class=&quot;headerlink&quot; title=&quot;调用放在项目中的第三方库&quot;&gt;&lt;/a&gt;调用放在项目中的第三方库&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;将项目中使用的第三方库直接放在项目中，当部署到其</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    
+    
+    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cx_Oracle和instantclient</title>
+    <link href="http://phd99.com/2021/10/12/cx_Oracle%E5%92%8Cinstantclient/"/>
+    <id>http://phd99.com/2021/10/12/cx_Oracle%E5%92%8Cinstantclient/</id>
+    <published>2021-10-12T08:39:53.000Z</published>
+    <updated>2021-10-12T09:51:25.803Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;cx-Oracle和instantclient&quot;&gt;&lt;a href=&quot;#cx-Oracle和instantclient&quot; class=&quot;headerlink&quot; title=&quot;cx_Oracle和instantclient&quot;&gt;&lt;/a&gt;cx_Oracle和instant</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    
+    
+    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用paramiko访问远程主机</title>
+    <link href="http://phd99.com/2021/10/12/%E4%BD%BF%E7%94%A8paramiko%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/"/>
+    <id>http://phd99.com/2021/10/12/%E4%BD%BF%E7%94%A8paramiko%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/</id>
+    <published>2021-10-12T08:31:20.000Z</published>
+    <updated>2021-10-12T08:32:03.905Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、安装&quot;&gt;&lt;a href=&quot;#一、安装&quot; class=&quot;headerlink&quot; title=&quot;一、安装&quot;&gt;&lt;/a&gt;一、安装&lt;/h2&gt;&lt;h3 id=&quot;1-1-若当前主机为windows&quot;&gt;&lt;a href=&quot;#1-1-若当前主机为windows&quot; class=&quot;he</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    
+    
+    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Linux中安装python3</title>
+    <link href="http://phd99.com/2021/10/12/%E5%9C%A8linux%E4%B8%AD%E5%AE%89%E8%A3%85python3/"/>
+    <id>http://phd99.com/2021/10/12/%E5%9C%A8linux%E4%B8%AD%E5%AE%89%E8%A3%85python3/</id>
+    <published>2021-10-12T08:31:14.000Z</published>
+    <updated>2021-10-12T08:31:28.721Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-获得root用户身份&quot;&gt;&lt;a href=&quot;#1-获得root用户身份&quot; class=&quot;headerlink&quot; title=&quot;1. 获得root用户身份&quot;&gt;&lt;/a&gt;1. 获得root用户身份&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;在终端中执行如下命令&lt;figure clas</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    
+    
+    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>定时任务</title>
+    <link href="http://phd99.com/2021/10/12/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
+    <id>http://phd99.com/2021/10/12/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</id>
+    <published>2021-10-12T08:19:29.000Z</published>
+    <updated>2021-10-12T08:30:12.215Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、Windows下的定时任务——schtasks&quot;&gt;&lt;a href=&quot;#一、Windows下的定时任务——schtasks&quot; class=&quot;headerlink&quot; title=&quot;一、Windows下的定时任务——schtasks&quot;&gt;&lt;/a&gt;一、Windows下的</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="可执行文件" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/"/>
+    
+    
+    <category term="bat" scheme="http://phd99.com/tags/bat/"/>
+    
+    <category term="sh" scheme="http://phd99.com/tags/sh/"/>
+    
+  </entry>
   
   <entry>
     <title>个人制作小游戏之二</title>
@@ -383,134 +507,6 @@ frame</summary>
       
       
     <summary type="html">&lt;h2 id=&quot;一、标准输入输出流&quot;&gt;&lt;a href=&quot;#一、标准输入输出流&quot; class=&quot;headerlink&quot; title=&quot;一、标准输入输出流&quot;&gt;&lt;/a&gt;一、标准输入输出流&lt;/h2&gt;&lt;h3 id=&quot;1-1-System类中有两个静态的成员变量&quot;&gt;&lt;a href=&quot;#1-1</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之IO流</title>
-    <link href="http://phd99.com/2021/05/16/Java%E4%B9%8BIO%E6%B5%81/"/>
-    <id>http://phd99.com/2021/05/16/Java%E4%B9%8BIO%E6%B5%81/</id>
-    <published>2021-05-16T02:00:01.000Z</published>
-    <updated>2021-06-03T13:49:47.187Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、IO流概述&quot;&gt;&lt;a href=&quot;#一、IO流概述&quot; class=&quot;headerlink&quot; title=&quot;一、IO流概述&quot;&gt;&lt;/a&gt;一、IO流概述&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;IO：输入/输出(Input/Output)&lt;/li&gt;
-&lt;li&gt;流：是一种抽象概念，是对</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java相关</title>
-    <link href="http://phd99.com/2021/05/16/Java%E5%9F%BA%E7%A1%80/"/>
-    <id>http://phd99.com/2021/05/16/Java%E5%9F%BA%E7%A1%80/</id>
-    <published>2021-05-16T00:09:09.000Z</published>
-    <updated>2021-06-03T13:48:23.507Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、Java介绍&quot;&gt;&lt;a href=&quot;#一、Java介绍&quot; class=&quot;headerlink&quot; title=&quot;一、Java介绍&quot;&gt;&lt;/a&gt;一、Java介绍&lt;/h2&gt;&lt;h3 id=&quot;1-1-Java语言的发展&quot;&gt;&lt;a href=&quot;#1-1-Java语言的发展&quot; c</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之String</title>
-    <link href="http://phd99.com/2021/04/25/Java%E4%B9%8BString/"/>
-    <id>http://phd99.com/2021/04/25/Java%E4%B9%8BString/</id>
-    <published>2021-04-25T13:08:12.000Z</published>
-    <updated>2021-06-03T13:49:55.143Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;String类在java.lang包下，所以使用的时候不需要导包&lt;/li&gt;
-&lt;li&gt;String类代表字符串，J</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之模块化</title>
-    <link href="http://phd99.com/2021/04/25/Java%E4%B9%8B%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
-    <id>http://phd99.com/2021/04/25/Java%E4%B9%8B%E6%A8%A1%E5%9D%97%E5%8C%96/</id>
-    <published>2021-04-25T13:06:14.000Z</published>
-    <updated>2021-06-03T13:49:20.035Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Java语言随着这些年的发展已经成为了一门影响深远的编程语言，无数平台，系统都采用Java语言编写，但是，伴随着</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之File</title>
-    <link href="http://phd99.com/2021/04/25/Java%E4%B9%8BFile/"/>
-    <id>http://phd99.com/2021/04/25/Java%E4%B9%8BFile/</id>
-    <published>2021-04-25T13:05:42.000Z</published>
-    <updated>2021-06-03T13:49:43.325Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;File是文件和目录路径名的抽象表示。&lt;/li&gt;
-&lt;li&gt;文件和目录是可以通过File封装成对象的。&lt;/li&gt;
-</summary>
       
     
     
