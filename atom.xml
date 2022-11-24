@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2021-10-12T10:03:32.361Z</updated>
+  <updated>2022-11-24T12:40:29.560Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -17,11 +17,491 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>无法访问github图片</title>
+    <link href="http://phd99.com/2022/11/24/%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub%E5%9B%BE%E7%89%87/"/>
+    <id>http://phd99.com/2022/11/24/%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub%E5%9B%BE%E7%89%87/</id>
+    <published>2022-11-24T10:57:11.000Z</published>
+    <updated>2022-11-24T12:40:29.560Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;解决办法&quot;&gt;&lt;a href=&quot;#解决办法&quot; class=&quot;headerlink&quot; title=&quot;解决办法&quot;&gt;&lt;/a&gt;解决办法&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;在&lt;code&gt;host&lt;/code&gt;文件中添加如下内容并保存&lt;figure class=&quot;highlight p</summary>
+      
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="github" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/github/"/>
+    
+    
+    <category term="github" scheme="http://phd99.com/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Hexo和github page和coding page搭建个人博客</title>
+    <link href="http://phd99.com/2022/11/24/%E4%BD%BF%E7%94%A8Hexo%E5%92%8Cgithub-page%E5%92%8Ccoding-page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://phd99.com/2022/11/24/%E4%BD%BF%E7%94%A8Hexo%E5%92%8Cgithub-page%E5%92%8Ccoding-page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</id>
+    <published>2022-11-24T08:25:51.032Z</published>
+    <updated>2021-10-12T09:55:54.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、搭建环境&quot;&gt;&lt;a href=&quot;#一、搭建环境&quot; class=&quot;headerlink&quot; title=&quot;一、搭建环境&quot;&gt;&lt;/a&gt;一、搭建环境&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Windows&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;二、安装&quot;&gt;&lt;a href=&quot;#二、安装&quot; class=&quot;headerlink&quot; title=&quot;二、安装&quot;&gt;&lt;/a&gt;二、安装&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;安装 &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Node.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;安装 &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;安装 &lt;a href=&quot;https://hexo.io/zh-cn/&quot;&gt;Hexo&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;鼠标右键打开&lt;code&gt;git bash&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在&lt;code&gt;在git bash&lt;/code&gt;中输入下列命令&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install -g hexo-cli&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Hexo" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="http://phd99.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>你要去相信,没有到不了的明天</title>
+    <link href="http://phd99.com/2022/11/24/%E4%BD%A0%E8%A6%81%E5%8E%BB%E7%9B%B8%E4%BF%A1-%E6%B2%A1%E6%9C%89%E5%88%B0%E4%B8%8D%E4%BA%86%E7%9A%84%E6%98%8E%E5%A4%A9/"/>
+    <id>http://phd99.com/2022/11/24/%E4%BD%A0%E8%A6%81%E5%8E%BB%E7%9B%B8%E4%BF%A1-%E6%B2%A1%E6%9C%89%E5%88%B0%E4%B8%8D%E4%BA%86%E7%9A%84%E6%98%8E%E5%A4%A9/</id>
+    <published>2022-11-24T08:25:51.030Z</published>
+    <updated>2021-04-11T03:52:26.000Z</updated>
+    
+    
+    <summary type="html">&lt;h5 id=&quot;书名：你要去相信，没有到不了的明天&quot;&gt;&lt;a href=&quot;#书名：你要去相信，没有到不了的明天&quot; class=&quot;headerlink&quot; title=&quot;书名：你要去相信，没有到不了的明天&quot;&gt;&lt;/a&gt;书名：你要去相信，没有到不了的明天&lt;/h5&gt;&lt;h5 id=&quot;作者：卢思浩&quot;&gt;&lt;a href=&quot;#作者：卢思浩&quot; class=&quot;headerlink&quot; title=&quot;作者：卢思浩&quot;&gt;&lt;/a&gt;作者：卢思浩&lt;/h5&gt;&lt;hr&gt;
+&lt;h5 id=&quot;1&quot;&gt;&lt;a href=&quot;#1&quot; class=&quot;headerlink&quot; title=&quot;1&quot;&gt;&lt;/a&gt;1&lt;/h5&gt;&lt;p&gt;&amp;emsp;&amp;emsp;人就是这样，拥有的时候不知道珍惜，失去之后追悔莫及。我们一再地追忆旧时光，为一部部系列电影埋单，为一次次的错过和分开难过，却从没想过我们挥霍的今天，正在变成以后再也回不去的旧时光。&lt;/p&gt;
+&lt;hr&gt;</summary>
+    
+    
+    
+    <category term="文摘" scheme="http://phd99.com/categories/%E6%96%87%E6%91%98/"/>
+    
+    <category term="书籍" scheme="http://phd99.com/categories/%E6%96%87%E6%91%98/%E4%B9%A6%E7%B1%8D/"/>
+    
+    
+    <category term="书籍" scheme="http://phd99.com/tags/%E4%B9%A6%E7%B1%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python知识点</title>
+    <link href="http://phd99.com/2022/11/24/Python%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>http://phd99.com/2022/11/24/Python%E7%9F%A5%E8%AF%86%E7%82%B9/</id>
+    <published>2022-11-24T08:25:51.022Z</published>
+    <updated>2021-10-12T08:30:16.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、关键字&quot;&gt;&lt;a href=&quot;#一、关键字&quot; class=&quot;headerlink&quot; title=&quot;一、关键字&quot;&gt;&lt;/a&gt;一、关键字&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;关键字就是在Python内部已经使用的标识符&lt;/li&gt;
+&lt;li&gt;关键字具有特殊的功能和含义&lt;/li&gt;
+&lt;li&gt;开发者不允许定义和关键字相同的名字的标识符&lt;/li&gt;
+&lt;li&gt;通过以下命令可以查看Python中的关键字&lt;ul&gt;
+&lt;li&gt;import keyword&lt;/li&gt;
+&lt;li&gt;print(keyword.kwlist)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Python中的关键字：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;False,None,True,and,as,assert,break,class,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;continue,def,del,elif,else,except,finally,for,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from,global,if,import,in,is,lambda,nonlocal,not,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;or,pass,raise,return,try,while,with,yield&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;import关键字可以导入一个“工具包”，在Python中不同的工具包，提供有不同的工具。&lt;/li&gt;
+&lt;li&gt;pass&lt;ul&gt;
+&lt;li&gt;如果在开发程序时，不希望立刻编写分支内部的代码，可以使用pass关键字，表示一个占位符，能够保证程序的代码结构正确。&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;if action_str in [&amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;, &amp;quot;3&amp;quot;]:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pass&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;elif action_str &amp;#x3D;&amp;#x3D; &amp;quot;0&amp;quot;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pass&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;else:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print(&amp;quot;宝剑锋从磨砺出，梅花香自苦寒来&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    
+    
+    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python基础</title>
+    <link href="http://phd99.com/2022/11/24/Python%E5%9F%BA%E7%A1%80/"/>
+    <id>http://phd99.com/2022/11/24/Python%E5%9F%BA%E7%A1%80/</id>
+    <published>2022-11-24T08:25:51.020Z</published>
+    <updated>2021-10-12T08:30:20.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、Python介绍&quot;&gt;&lt;a href=&quot;#一、Python介绍&quot; class=&quot;headerlink&quot; title=&quot;一、Python介绍&quot;&gt;&lt;/a&gt;一、Python介绍&lt;/h2&gt;&lt;h3 id=&quot;1-1-创始人&quot;&gt;&lt;a href=&quot;#1-1-创始人&quot; class=&quot;headerlink&quot; title=&quot;1.1. 创始人&quot;&gt;&lt;/a&gt;1.1. 创始人&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Python的创始人为吉多·范罗苏姆（Guido van Rossum）&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    
+    
+    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之运算符</title>
+    <link href="http://phd99.com/2022/11/24/Java%E4%B9%8B%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>http://phd99.com/2022/11/24/Java%E4%B9%8B%E8%BF%90%E7%AE%97%E7%AC%A6/</id>
+    <published>2022-11-24T08:25:51.014Z</published>
+    <updated>2021-06-03T13:49:42.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、算术运算符&quot;&gt;&lt;a href=&quot;#一、算术运算符&quot; class=&quot;headerlink&quot; title=&quot;一、算术运算符&quot;&gt;&lt;/a&gt;一、算术运算符&lt;/h2&gt;&lt;h3 id=&quot;1-1-运算符和表达式&quot;&gt;&lt;a href=&quot;#1-1-运算符和表达式&quot; class=&quot;headerlink&quot; title=&quot;1.1. 运算符和表达式&quot;&gt;&lt;/a&gt;1.1. 运算符和表达式&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;运算符：对常量或者变量进行操作的符号&lt;/li&gt;
+&lt;li&gt;表达式：用运算符把常量或者变量连接起来符合java语法的式子就可以称为表达式。不同运算符连接的表达式体现的是不同类型的表达式。&lt;/li&gt;
+&lt;li&gt;范例&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;int a = 10;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int b = 20;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int c = a + b;&lt;/code&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之类型转换</title>
+    <link href="http://phd99.com/2022/11/24/Java%E4%B9%8B%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://phd99.com/2022/11/24/Java%E4%B9%8B%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</id>
+    <published>2022-11-24T08:25:51.011Z</published>
+    <updated>2021-07-16T10:02:10.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、自动类型转换&quot;&gt;&lt;a href=&quot;#一、自动类型转换&quot; class=&quot;headerlink&quot; title=&quot;一、自动类型转换&quot;&gt;&lt;/a&gt;一、自动类型转换&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;把一个表示数据范围小的数值或者变量赋值给另一个表示数据范围大的变量&lt;/li&gt;
+&lt;li&gt;范例&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;double d = 10;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;byte&lt;/code&gt; -&amp;gt; &lt;code&gt;short&lt;/code&gt; -&amp;gt; &lt;code&gt;int&lt;/code&gt; -&amp;gt; &lt;code&gt;long&lt;/code&gt; -&amp;gt; &lt;code&gt;float&lt;/code&gt; -&amp;gt; &lt;code&gt;double&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;char&lt;/code&gt; -&amp;gt; &lt;code&gt;int&lt;/code&gt; -&amp;gt; &lt;code&gt;long&lt;/code&gt; -&amp;gt; &lt;code&gt;float&lt;/code&gt; -&amp;gt; &lt;code&gt;double&lt;/code&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之类</title>
+    <link href="http://phd99.com/2022/11/24/Java%E4%B9%8B%E7%B1%BB/"/>
+    <id>http://phd99.com/2022/11/24/Java%E4%B9%8B%E7%B1%BB/</id>
+    <published>2022-11-24T08:25:51.009Z</published>
+    <updated>2021-08-20T03:36:14.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、类的介绍&quot;&gt;&lt;a href=&quot;#一、类的介绍&quot; class=&quot;headerlink&quot; title=&quot;一、类的介绍&quot;&gt;&lt;/a&gt;一、类的介绍&lt;/h2&gt;&lt;h3 id=&quot;1-1-概述&quot;&gt;&lt;a href=&quot;#1-1-概述&quot; class=&quot;headerlink&quot; title=&quot;1.1. 概述&quot;&gt;&lt;/a&gt;1.1. 概述&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;类是对现实生活中一类具有共同属性和行为的事物的抽象&lt;/li&gt;
+&lt;li&gt;对象是计算机中具体的数据信息，而类是这个信息的数据类型&lt;/li&gt;
+&lt;li&gt;java程序中最基本的组成单位是类&lt;/li&gt;
+&lt;li&gt;类的定义格式&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;public class 类名&amp;#123;&amp;#125;&lt;/code&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之流程控制</title>
+    <link href="http://phd99.com/2022/11/24/Java%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/"/>
+    <id>http://phd99.com/2022/11/24/Java%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</id>
+    <published>2022-11-24T08:25:51.006Z</published>
+    <updated>2021-06-03T13:49:14.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、顺序结构&quot;&gt;&lt;a href=&quot;#一、顺序结构&quot; class=&quot;headerlink&quot; title=&quot;一、顺序结构&quot;&gt;&lt;/a&gt;一、顺序结构&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;顺序结构是程序中最简单最基本的流程控制，没有特定的语法结构，按照代码的先后顺序，依次执行，程序中大多数的代码都是这样执行的。&lt;/li&gt;
+&lt;li&gt;它是从上往下依次执行的。</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之标识符</title>
+    <link href="http://phd99.com/2022/11/24/Java%E4%B9%8B%E6%A0%87%E8%AF%86%E7%AC%A6/"/>
+    <id>http://phd99.com/2022/11/24/Java%E4%B9%8B%E6%A0%87%E8%AF%86%E7%AC%A6/</id>
+    <published>2022-11-24T08:25:51.001Z</published>
+    <updated>2021-10-18T02:55:10.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;标识符就是给类、方法、变量等起名字的符号</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之方法</title>
+    <link href="http://phd99.com/2022/11/24/Java%E4%B9%8B%E6%96%B9%E6%B3%95/"/>
+    <id>http://phd99.com/2022/11/24/Java%E4%B9%8B%E6%96%B9%E6%B3%95/</id>
+    <published>2022-11-24T08:25:51.000Z</published>
+    <updated>2021-06-03T13:48:54.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;方法是将具有独立功能的代码块组织成为一个整体，使其具有特殊功能的代码集。&lt;/li&gt;
+&lt;li&gt;方法必须先创建才可以使用，该过程称为方法定义&lt;/li&gt;
+&lt;li&gt;方法创建后并不是直接运行的，需要手动使用后才执行，该过程称为方法调用</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之数组</title>
+    <link href="http://phd99.com/2022/11/24/Java%E4%B9%8B%E6%95%B0%E7%BB%84/"/>
+    <id>http://phd99.com/2022/11/24/Java%E4%B9%8B%E6%95%B0%E7%BB%84/</id>
+    <published>2022-11-24T08:25:50.998Z</published>
+    <updated>2021-06-03T13:49:28.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;数组（array）是一种用于存储多个相同类型数据的存储模型</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之数据类型</title>
+    <link href="http://phd99.com/2022/11/24/Java%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://phd99.com/2022/11/24/Java%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
+    <published>2022-11-24T08:25:50.996Z</published>
+    <updated>2021-06-03T13:49:26.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;java语言是强类型语言，对于每一种数据都给出了明确的数据类型，不同的数据类型也分配了不同的内存空间，所以它们表示的数据大小也是不一样的。&lt;/li&gt;
+&lt;li&gt;数据类型&lt;ul&gt;
+&lt;li&gt;基本数据类型&lt;ul&gt;
+&lt;li&gt;数值型&lt;ul&gt;
+&lt;li&gt;整数&lt;code&gt;byte,short,int,long&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;浮点数&lt;code&gt;float,double&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;字符&lt;code&gt;char&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;非数值型&lt;ul&gt;
+&lt;li&gt;布尔&lt;code&gt;boolean&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;引用数据类型&lt;ul&gt;
+&lt;li&gt;类&lt;code&gt;class&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;接口&lt;code&gt;interface&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;数值&lt;code&gt;[]&lt;/code&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之常量和变量</title>
+    <link href="http://phd99.com/2022/11/24/Java%E4%B9%8B%E5%B8%B8%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F/"/>
+    <id>http://phd99.com/2022/11/24/Java%E4%B9%8B%E5%B8%B8%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F/</id>
+    <published>2022-11-24T08:25:50.993Z</published>
+    <updated>2021-06-03T13:48:34.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、常量&quot;&gt;&lt;a href=&quot;#一、常量&quot; class=&quot;headerlink&quot; title=&quot;一、常量&quot;&gt;&lt;/a&gt;一、常量&lt;/h2&gt;&lt;h3 id=&quot;1-1-概述&quot;&gt;&lt;a href=&quot;#1-1-概述&quot; class=&quot;headerlink&quot; title=&quot;1.1. 概述&quot;&gt;&lt;/a&gt;1.1. 概述&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;常量就是在程序运行过程中，其值不可以发生改变的量。</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java之修饰符</title>
+    <link href="http://phd99.com/2022/11/24/Java%E4%B9%8B%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
+    <id>http://phd99.com/2022/11/24/Java%E4%B9%8B%E4%BF%AE%E9%A5%B0%E7%AC%A6/</id>
+    <published>2022-11-24T08:25:50.990Z</published>
+    <updated>2021-06-03T13:49:36.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、权限修饰符&quot;&gt;&lt;a href=&quot;#一、权限修饰符&quot; class=&quot;headerlink&quot; title=&quot;一、权限修饰符&quot;&gt;&lt;/a&gt;一、权限修饰符&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;修饰符&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;同一个类中&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;同一个包中子类或无关类&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;不同包的子类&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;不同包的无关类&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;private&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;√&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;默认&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;√&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;√&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;protected&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;√&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;√&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;√&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;public&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;√&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;√&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;√&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
+    
+    
+    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GitHub和git的相关操作</title>
+    <link href="http://phd99.com/2022/11/24/GitHub%E5%92%8Cgit%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"/>
+    <id>http://phd99.com/2022/11/24/GitHub%E5%92%8Cgit%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</id>
+    <published>2022-11-24T08:25:50.981Z</published>
+    <updated>2022-11-24T12:44:05.147Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、全局配置&quot;&gt;&lt;a href=&quot;#一、全局配置&quot; class=&quot;headerlink&quot; title=&quot;一、全局配置&quot;&gt;&lt;/a&gt;一、全局配置&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;添加全局范围的邮箱&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email 邮箱&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;添加全局范围的用户名&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name 用户名&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;查看用户配置&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global -l&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;二、初始化一个git仓库&quot;&gt;&lt;a href=&quot;#二、初始化一个git仓库&quot; class=&quot;headerlink&quot; title=&quot;二、初始化一个git仓库&quot;&gt;&lt;/a&gt;二、初始化一个git仓库&lt;/h2&gt;&lt;/li&gt;
+&lt;li&gt;将当前文件夹作为git仓库&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;或者将当前文件夹下的xxx文件夹作为git仓库&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git init xxx&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;初始化后会出现一个名为&lt;code&gt;.git&lt;/code&gt;的隐藏文件夹&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="github" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/github/"/>
+    
+    
+    <category term="github" scheme="http://phd99.com/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Emmet</title>
+    <link href="http://phd99.com/2022/11/24/Emmet/"/>
+    <id>http://phd99.com/2022/11/24/Emmet/</id>
+    <published>2022-11-24T08:25:50.979Z</published>
+    <updated>2021-04-11T03:54:12.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;一、Emmet简介&quot;&gt;&lt;a href=&quot;#一、Emmet简介&quot; class=&quot;headerlink&quot; title=&quot;一、Emmet简介&quot;&gt;&lt;/a&gt;一、Emmet简介&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Emmet&lt;/code&gt;能够快速生成&lt;code&gt;HTML&lt;/code&gt;结构和&lt;code&gt;CSS&lt;/code&gt;样式语法，提高了编写速度&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="web开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
+    
+    <category term="HTML" scheme="http://phd99.com/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>调用放在项目中的第三方库</title>
     <link href="http://phd99.com/2021/10/12/%E8%B0%83%E7%94%A8%E6%94%BE%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
     <id>http://phd99.com/2021/10/12/%E8%B0%83%E7%94%A8%E6%94%BE%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</id>
     <published>2021-10-12T08:40:00.000Z</published>
-    <updated>2021-10-12T10:03:32.361Z</updated>
+    <updated>2021-10-13T01:03:32.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;调用放在项目中的第三方库&quot;&gt;&lt;a href=&quot;#调用放在项目中的第三方库&quot; class=&quot;headerlink&quot; title=&quot;调用放在项目中的第三方库&quot;&gt;&lt;/a&gt;调用放在项目中的第三方库&lt;/h1&gt;&lt;hr&gt;
@@ -59,7 +539,7 @@
     <link href="http://phd99.com/2021/10/12/cx_Oracle%E5%92%8Cinstantclient/"/>
     <id>http://phd99.com/2021/10/12/cx_Oracle%E5%92%8Cinstantclient/</id>
     <published>2021-10-12T08:39:53.000Z</published>
-    <updated>2021-10-12T10:03:19.142Z</updated>
+    <updated>2021-10-19T14:22:34.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;cx-Oracle和instantclient&quot;&gt;&lt;a href=&quot;#cx-Oracle和instantclient&quot; class=&quot;headerlink&quot; title=&quot;cx_Oracle和instantclient&quot;&gt;&lt;/a&gt;cx_Oracle和instantclient&lt;/h1&gt;&lt;hr&gt;
@@ -96,7 +576,7 @@
     <link href="http://phd99.com/2021/10/12/%E4%BD%BF%E7%94%A8paramiko%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/"/>
     <id>http://phd99.com/2021/10/12/%E4%BD%BF%E7%94%A8paramiko%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/</id>
     <published>2021-10-12T08:31:20.000Z</published>
-    <updated>2021-10-12T10:03:44.042Z</updated>
+    <updated>2021-10-19T02:43:34.000Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;使用paramiko访问远程主机&quot;&gt;&lt;a href=&quot;#使用paramiko访问远程主机&quot; class=&quot;headerlink&quot; title=&quot;使用paramiko访问远程主机&quot;&gt;&lt;/a&gt;使用paramiko访问远程主机&lt;/h1&gt;&lt;hr&gt;
@@ -112,437 +592,6 @@
     
     
     <category term="python" scheme="http://phd99.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在Linux中安装python3</title>
-    <link href="http://phd99.com/2021/10/12/%E5%9C%A8linux%E4%B8%AD%E5%AE%89%E8%A3%85python3/"/>
-    <id>http://phd99.com/2021/10/12/%E5%9C%A8linux%E4%B8%AD%E5%AE%89%E8%A3%85python3/</id>
-    <published>2021-10-12T08:31:14.000Z</published>
-    <updated>2021-10-12T10:02:04.308Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;在Linux中安装python3&quot;&gt;&lt;a href=&quot;#在Linux中安装python3&quot; class=&quot;headerlink&quot; title=&quot;在Linux中安装python3&quot;&gt;&lt;/a&gt;在Linux中安装python3&lt;/h1&gt;&lt;hr&gt;
-&lt;h2 id=&quot;1-获得</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
-    
-    
-    <category term="python" scheme="http://phd99.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>定时任务</title>
-    <link href="http://phd99.com/2021/10/12/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
-    <id>http://phd99.com/2021/10/12/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</id>
-    <published>2021-10-12T08:19:29.000Z</published>
-    <updated>2021-10-12T08:30:12.215Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、Windows下的定时任务——schtasks&quot;&gt;&lt;a href=&quot;#一、Windows下的定时任务——schtasks&quot; class=&quot;headerlink&quot; title=&quot;一、Windows下的定时任务——schtasks&quot;&gt;&lt;/a&gt;一、Windows下的</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="可执行文件" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/"/>
-    
-    
-    <category term="bat" scheme="http://phd99.com/tags/bat/"/>
-    
-    <category term="sh" scheme="http://phd99.com/tags/sh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>个人制作小游戏之二</title>
-    <link href="http://phd99.com/2021/06/16/%E4%B8%AA%E4%BA%BA%E5%88%B6%E4%BD%9C%E5%B0%8F%E6%B8%B8%E6%88%8F%E4%B9%8B%E4%BA%8C/"/>
-    <id>http://phd99.com/2021/06/16/%E4%B8%AA%E4%BA%BA%E5%88%B6%E4%BD%9C%E5%B0%8F%E6%B8%B8%E6%88%8F%E4%B9%8B%E4%BA%8C/</id>
-    <published>2021-06-16T08:27:47.000Z</published>
-    <updated>2021-06-16T09:03:12.634Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;iframe src=&quot;https://www.bilibili.com/video/BV1bq4y1L7xP?share_source=copy_web&quot; scrolling=&quot;no&quot; width=&quot;800px&quot; height=&quot;600px&quot; border=&quot;0&quot;
-frame</summary>
-      
-    
-    
-    
-    <category term="记录" scheme="http://phd99.com/categories/%E8%AE%B0%E5%BD%95/"/>
-    
-    <category term="游戏" scheme="http://phd99.com/categories/%E8%AE%B0%E5%BD%95/%E6%B8%B8%E6%88%8F/"/>
-    
-    
-    <category term="游戏" scheme="http://phd99.com/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>个人制作小游戏之一</title>
-    <link href="http://phd99.com/2021/06/16/%E4%B8%AA%E4%BA%BA%E5%88%B6%E4%BD%9C%E5%B0%8F%E6%B8%B8%E6%88%8F%E4%B9%8B%E4%B8%80/"/>
-    <id>http://phd99.com/2021/06/16/%E4%B8%AA%E4%BA%BA%E5%88%B6%E4%BD%9C%E5%B0%8F%E6%B8%B8%E6%88%8F%E4%B9%8B%E4%B8%80/</id>
-    <published>2021-06-16T07:42:39.000Z</published>
-    <updated>2021-06-16T09:02:50.521Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;iframe src=&quot;https://www.bilibili.com/video/BV1xo4y1k72y?share_source=copy_web&quot; scrolling=&quot;no&quot; width=&quot;800px&quot; height=&quot;600px&quot; border=&quot;0&quot;
-frame</summary>
-      
-    
-    
-    
-    <category term="记录" scheme="http://phd99.com/categories/%E8%AE%B0%E5%BD%95/"/>
-    
-    <category term="游戏" scheme="http://phd99.com/categories/%E8%AE%B0%E5%BD%95/%E6%B8%B8%E6%88%8F/"/>
-    
-    
-    <category term="游戏" scheme="http://phd99.com/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS之文字阴影</title>
-    <link href="http://phd99.com/2021/06/08/CSS%E4%B9%8B%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1/"/>
-    <id>http://phd99.com/2021/06/08/CSS%E4%B9%8B%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1/</id>
-    <published>2021-06-08T13:10:01.000Z</published>
-    <updated>2021-06-08T12:17:41.100Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在&lt;code&gt;CSS3&lt;/code&gt;中，可以使用&lt;code&gt;text-shadow&lt;/code&gt;属性将阴影应用于</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
-    
-    
-    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS之盒子阴影</title>
-    <link href="http://phd99.com/2021/06/08/CSS%E4%B9%8B%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1/"/>
-    <id>http://phd99.com/2021/06/08/CSS%E4%B9%8B%E7%9B%92%E5%AD%90%E9%98%B4%E5%BD%B1/</id>
-    <published>2021-06-08T12:17:06.000Z</published>
-    <updated>2021-06-08T12:18:02.655Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;CSS3中新增了盒子阴影，我们可以使用box-shadow属性为盒子添加阴影&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
-    
-    
-    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS之圆角边框</title>
-    <link href="http://phd99.com/2021/06/07/CSS%E4%B9%8B%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/"/>
-    <id>http://phd99.com/2021/06/07/CSS%E4%B9%8B%E5%9C%86%E8%A7%92%E8%BE%B9%E6%A1%86/</id>
-    <published>2021-06-07T14:05:16.000Z</published>
-    <updated>2021-06-07T15:20:55.576Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;CSS3&lt;/code&gt;中，新增了圆角边框样式，可以使盒子边框变成圆角&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
-    
-    
-    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS之盒子模型</title>
-    <link href="http://phd99.com/2021/06/06/CSS%E4%B9%8B%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
-    <id>http://phd99.com/2021/06/06/CSS%E4%B9%8B%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</id>
-    <published>2021-06-06T13:10:01.000Z</published>
-    <updated>2021-06-07T15:19:11.044Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、页面布局&quot;&gt;&lt;a href=&quot;#一、页面布局&quot; class=&quot;headerlink&quot; title=&quot;一、页面布局&quot;&gt;&lt;/a&gt;一、页面布局&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;页面布局要学习三大核心，盒子模型，浮动和定位，学习好盒子模型能非常好的帮助我们布局页面&lt;/li&gt;</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
-    
-    
-    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS之水平居中的方法</title>
-    <link href="http://phd99.com/2021/06/06/CSS%E4%B9%8B%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://phd99.com/2021/06/06/CSS%E4%B9%8B%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/</id>
-    <published>2021-06-06T12:18:34.000Z</published>
-    <updated>2021-06-07T15:20:42.323Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、块级盒子水平居中&quot;&gt;&lt;a href=&quot;#一、块级盒子水平居中&quot; class=&quot;headerlink&quot; title=&quot;一、块级盒子水平居中&quot;&gt;&lt;/a&gt;一、块级盒子水平居中&lt;/h2&gt;&lt;h3 id=&quot;1-1-简介&quot;&gt;&lt;a href=&quot;#1-1-简介&quot; class=&quot;</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
-    
-    
-    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS的三大特性</title>
-    <link href="http://phd99.com/2021/06/04/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/"/>
-    <id>http://phd99.com/2021/06/04/CSS%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/</id>
-    <published>2021-06-04T13:51:18.000Z</published>
-    <updated>2021-06-07T15:19:48.566Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、层叠性&quot;&gt;&lt;a href=&quot;#一、层叠性&quot; class=&quot;headerlink&quot; title=&quot;一、层叠性&quot;&gt;&lt;/a&gt;一、层叠性&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;多个选择器对同一元素设置了相同的样式，那么离该元素最近的样式就会覆盖其他样式，层叠就是覆盖&lt;/li&gt;
-&lt;</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
-    
-    
-    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS的元素显示模式</title>
-    <link href="http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%BE%E7%A4%BA%E6%A8%A1%E5%BC%8F/</id>
-    <published>2021-06-03T13:21:11.000Z</published>
-    <updated>2021-06-10T02:42:47.769Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;指元素以什么方式显示到页面中&lt;/li&gt;
-&lt;li&gt;HTML元素分为块元素和行内元素&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 </summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
-    
-    
-    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS的引入方式</title>
-    <link href="http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/"/>
-    <id>http://phd99.com/2021/06/03/CSS%E7%9A%84%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F/</id>
-    <published>2021-06-03T12:11:36.000Z</published>
-    <updated>2021-06-07T15:20:14.426Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、内部样式表（嵌入式引入）&quot;&gt;&lt;a href=&quot;#一、内部样式表（嵌入式引入）&quot; class=&quot;headerlink&quot; title=&quot;一、内部样式表（嵌入式引入）&quot;&gt;&lt;/a&gt;一、内部样式表（嵌入式引入）&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;将所有&lt;code&gt;CSS&lt;/co</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
-    
-    
-    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS的选择器</title>
-    <link href="http://phd99.com/2021/06/02/CSS%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/"/>
-    <id>http://phd99.com/2021/06/02/CSS%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/</id>
-    <published>2021-06-02T13:01:09.000Z</published>
-    <updated>2021-06-07T15:20:08.864Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、选择器&quot;&gt;&lt;a href=&quot;#一、选择器&quot; class=&quot;headerlink&quot; title=&quot;一、选择器&quot;&gt;&lt;/a&gt;一、选择器&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;选择器就是根据不同的需求把想要的标签选出来，进行样式的设置&lt;/li&gt;
-&lt;li&gt;选择器按类型可以分为基础选</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
-    
-    
-    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS的相关属性</title>
-    <link href="http://phd99.com/2021/06/02/CSS%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7/"/>
-    <id>http://phd99.com/2021/06/02/CSS%E7%9A%84%E7%9B%B8%E5%85%B3%E5%B1%9E%E6%80%A7/</id>
-    <published>2021-06-02T12:19:10.000Z</published>
-    <updated>2021-06-07T15:19:57.235Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、字体属性&quot;&gt;&lt;a href=&quot;#一、字体属性&quot; class=&quot;headerlink&quot; title=&quot;一、字体属性&quot;&gt;&lt;/a&gt;一、字体属性&lt;/h2&gt;&lt;h3 id=&quot;1-1-简介&quot;&gt;&lt;a href=&quot;#1-1-简介&quot; class=&quot;headerlink&quot; titl</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/CSS/"/>
-    
-    
-    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>所有的遇见，都是一种偿还</title>
-    <link href="http://phd99.com/2021/05/16/%E6%89%80%E6%9C%89%E7%9A%84%E9%81%87%E8%A7%81%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B8%80%E7%A7%8D%E5%81%BF%E8%BF%98/"/>
-    <id>http://phd99.com/2021/05/16/%E6%89%80%E6%9C%89%E7%9A%84%E9%81%87%E8%A7%81%EF%BC%8C%E9%83%BD%E6%98%AF%E4%B8%80%E7%A7%8D%E5%81%BF%E8%BF%98/</id>
-    <published>2021-05-16T07:24:06.000Z</published>
-    <updated>2021-05-22T14:48:28.483Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h5 id=&quot;来源：十点读书（微信公众号）&quot;&gt;&lt;a href=&quot;#来源：十点读书（微信公众号）&quot; class=&quot;headerlink&quot; title=&quot;来源：十点读书（微信公众号）&quot;&gt;&lt;/a&gt;来源：十点读书（微信公众号）&lt;/h5&gt;&lt;h5 id=&quot;文章名：所有的遇见，都是一种偿还&quot;</summary>
-      
-    
-    
-    
-    <category term="文摘" scheme="http://phd99.com/categories/%E6%96%87%E6%91%98/"/>
-    
-    <category term="网络" scheme="http://phd99.com/categories/%E6%96%87%E6%91%98/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-    <category term="网络文摘" scheme="http://phd99.com/tags/%E7%BD%91%E7%BB%9C%E6%96%87%E6%91%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之Properties</title>
-    <link href="http://phd99.com/2021/05/16/Java%E4%B9%8BProperties/"/>
-    <id>http://phd99.com/2021/05/16/Java%E4%B9%8BProperties/</id>
-    <published>2021-05-16T03:00:00.000Z</published>
-    <updated>2021-06-03T13:49:50.733Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Properties&lt;/code&gt;是一个Map体系的集合类&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Prope</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java之特殊操作流</title>
-    <link href="http://phd99.com/2021/05/16/Java%E4%B9%8B%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C%E6%B5%81/"/>
-    <id>http://phd99.com/2021/05/16/Java%E4%B9%8B%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C%E6%B5%81/</id>
-    <published>2021-05-16T02:54:09.000Z</published>
-    <updated>2021-06-03T13:49:30.856Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、标准输入输出流&quot;&gt;&lt;a href=&quot;#一、标准输入输出流&quot; class=&quot;headerlink&quot; title=&quot;一、标准输入输出流&quot;&gt;&lt;/a&gt;一、标准输入输出流&lt;/h2&gt;&lt;h3 id=&quot;1-1-System类中有两个静态的成员变量&quot;&gt;&lt;a href=&quot;#1-1</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="Java" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Java/"/>
-    
-    
-    <category term="Java" scheme="http://phd99.com/tags/Java/"/>
     
   </entry>
   
