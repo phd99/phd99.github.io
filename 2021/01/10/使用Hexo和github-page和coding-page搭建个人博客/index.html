@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>使用Hexo和github page和coding page搭建个人博客 | phd</title><meta name="keywords" content="Hexo"><meta name="author" content="phd,310619242@qq.com"><meta name="copyright" content="phd"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、搭建环境 Windows  二、安装 安装 Node.js 安装 Git 安装 Hexo 鼠标右键打开git bash 在在git bash中输入下列命令1npm install -g hexo-cli">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Hexo和github page和coding page搭建个人博客">
+<meta property="og:url" content="http://phd99.com/2021/01/10/%E4%BD%BF%E7%94%A8Hexo%E5%92%8Cgithub-page%E5%92%8Ccoding-page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="phd">
+<meta property="og:description" content="一、搭建环境 Windows  二、安装 安装 Node.js 安装 Git 安装 Hexo 鼠标右键打开git bash 在在git bash中输入下列命令1npm install -g hexo-cli">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/phd99/img/img/hexo1.jpg">
+<meta property="article:published_time" content="2021-01-10T07:42:39.000Z">
+<meta property="article:modified_time" content="2022-12-04T11:29:27.312Z">
+<meta property="article:author" content="phd">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/phd99/img/img/hexo1.jpg"><link rel="shortcut icon" href="/img/logo.png"><link rel="canonical" href="http://phd99.com/2021/01/10/%E4%BD%BF%E7%94%A8Hexo%E5%92%8Cgithub-page%E5%92%8Ccoding-page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-04 19:29:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/myself.css"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="phd" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://gcore.jsdelivr.net/gh/phd99/img/touxiang1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/video/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gcore.jsdelivr.net/gh/phd99/img/img/hexo1.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">phd</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/video/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">使用Hexo和github page和coding page搭建个人博客</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-10T07:42:39.000Z" title="发表于 2021-01-10 15:42:39">2021-01-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-04T11:29:27.312Z" title="更新于 2022-12-04 19:29:27">2022-12-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/Hexo/">Hexo</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="使用Hexo和github page和coding page搭建个人博客"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="一、搭建环境"><a href="#一、搭建环境" class="headerlink" title="一、搭建环境"></a>一、搭建环境</h2><ul>
+<li>Windows</li>
+</ul>
+<h2 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h2><ul>
+<li>安装 <a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js</a></li>
+<li>安装 <a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a></li>
+<li>安装 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a><ul>
+<li>鼠标右键打开<code>git bash</code></li>
+<li>在<code>在git bash</code>中输入下列命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+</ul>
+</li>
+<li>安装<code>hexo-deployer-git</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>查看版本<ul>
+<li>查看<code>node</code>的版本<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure></li>
+<li>查看<code>npm</code>的版本<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure></li>
+<li>查看<code>hexo</code>的版本<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、新建网站"><a href="#三、新建网站" class="headerlink" title="三、新建网站"></a>三、新建网站</h2><ul>
+<li>初始化<code>hexo</code>，在<code>git bash</code>中输入如下命令。<code>***</code>是文件夹名称，名称任意，如果为空，则默认在当前的文件夹下建立网站。以后的博客内容都在该文件夹中。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init ***</span><br></pre></td></tr></table></figure></li>
+<li>进入<code>***</code>文件夹<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ***</span><br></pre></td></tr></table></figure></li>
+<li>在<code>***</code>文件夹下执行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+<li>生成静态文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></li>
+<li>启动服务器<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure></li>
+<li>访问网站，默认情况下，访问网址为：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></li>
+</ul>
+<h2 id="四、生成SSH"><a href="#四、生成SSH" class="headerlink" title="四、生成SSH"></a>四、生成SSH</h2><ul>
+<li>配置<code>git</code>用户名。<code>-–global</code>参数，用了这个参数，表示你这台机器上所有的<code>Git</code>仓库都会使用这个配置，也可以对某个仓库指定不同的用户名和<code>Email</code>地址，我配置的用户名和邮箱与<code>github</code>和<code>coding</code>平台的相同。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;name&quot;</span><br></pre></td></tr></table></figure></li>
+<li>配置<code>git</code>邮箱<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;email&quot;</span><br></pre></td></tr></table></figure></li>
+<li>查看用户配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure></li>
+<li>创建<code>SSH</code>，创建过程中会要求设置密码，可以不设置密码，直接按回车键<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email&quot;</span><br></pre></td></tr></table></figure></li>
+<li><code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥，默认位置在<code>C:\Users\用户名\.ssh</code>中。</li>
+<li>将公钥添加到<code>github</code>中<ul>
+<li><code>Settings</code>-&gt;<code>SSH and GPG keys</code>-&gt;<code>New SSH key</code></li>
+<li>将<code>id_rsa.pub</code>公钥文件中的内容复制到<code>Key</code>中</li>
+<li>公钥名称任意</li>
+<li>查看是否添加成功<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>将公钥添加到<code>coding</code>中<ul>
+<li>个人账户设置-&gt;<code>SSH</code>公钥-&gt;新增公钥</li>
+<li>将<code>id_rsa.pub</code>公钥文件中的内容复制到公钥内容中</li>
+<li>公钥名称任意</li>
+<li>查看是否添加成功<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@git.coding.net</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="五、将博客部署到-github"><a href="#五、将博客部署到-github" class="headerlink" title="五、将博客部署到 github"></a>五、将博客部署到 <a target="_blank" rel="noopener" href="https://github.com/">github</a></h2><ul>
+<li>在<code>github</code>中创建一个仓库，仓库名称为<code>***.github.io</code>,<code>***</code>为<code>github</code>的用户名。</li>
+<li>打开站点配置文件<code>_config.yml</code>，添加下列内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">    github: git@github.com:phd99&#x2F;phd99.github.io.git,master</span><br></pre></td></tr></table></figure></li>
+<li>将博客内容部署到<code>github</code>，- 部署成功后，可以访问<code>http://***.github.io</code>查看自己的个人博客<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="六、将博客部署到-coding"><a href="#六、将博客部署到-coding" class="headerlink" title="六、将博客部署到 coding"></a>六、将博客部署到 <a target="_blank" rel="noopener" href="https://coding.net/">coding</a></h2><ul>
+<li>在<code>coding</code>中创建一个项目，名称任意</li>
+<li>在该项目中创建一个代码仓库，名称任意，仓库类型为<code>git</code>仓库</li>
+<li>开启<code>coding pages</code>服务<ul>
+<li>在该项目中选择持续部署-&gt;静态网站</li>
+<li>部署成功后会提供一个网络地址，使用该<code>url</code>查看自己的博客</li>
+</ul>
+</li>
+<li>打开站点配置文件<code>_config.yml</code>，修改下列内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">    coding: git@e.coding.net:phd99&#x2F;phd99&#x2F;phd99.git,master</span><br><span class="line">    github: git@github.com:phd99&#x2F;phd99.github.io.git,master</span><br></pre></td></tr></table></figure></li>
+<li>将博客内容部署到<code>coding</code>，- 部署成功后，可以访问coding提供的网络地址来查看个人博客<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="七、设置个人域名"><a href="#七、设置个人域名" class="headerlink" title="七、设置个人域名"></a>七、设置个人域名</h2><ul>
+<li>如果购买了域名，可以设置通过购买的域名来访问个人博客，我是在阿里云上购买的域名</li>
+</ul>
+<h3 id="7-1-github中的设置"><a href="#7-1-github中的设置" class="headerlink" title="7.1. github中的设置"></a>7.1. github中的设置</h3><ul>
+<li>登录<code>github</code>-&gt;进入仓库-&gt;<code>Settings</code>-&gt;<code>Options</code>-&gt;<code>GitHub Pages</code><ul>
+<li>在<code>Custom domain</code>中添加自己购买的域名</li>
+<li>点击保存</li>
+<li>勾选<code>Enforce HTTPS</code></li>
+</ul>
+</li>
+<li>登录<a target="_blank" rel="noopener" href="https://www.aliyun.com/">阿里云</a>-&gt;账号管理-&gt;域名控制台-&gt;找到要设置的域名-&gt;解析-&gt;添加记录<ul>
+<li>记录类型为<code>CNAME</code></li>
+<li>主机记录为<code>@</code>，再重新添加一条记录并将主机记录改为<code>www</code>，其他的不变</li>
+<li>解析线路为默认，若还使用了coding，可以将github设置为境外，将coding设置为默认</li>
+<li>记录值为<code>***.github.io</code></li>
+</ul>
+</li>
+<li>在博客根目录下<code>source</code>文件夹中创建一个文件，名称为<code>CNAME</code>，没有后缀</li>
+<li>编辑<code>CNAME</code>文件，将购买的域名输入到该文件内<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.phd99.com</span><br></pre></td></tr></table></figure></li>
+<li>重新部署一下，过一会儿就可以通过访问购买的域名来查看个人博客了<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="7-2-coding中的设置"><a href="#7-2-coding中的设置" class="headerlink" title="7.2. coding中的设置"></a>7.2. coding中的设置</h3><ul>
+<li>登录<code>coding</code>-&gt;进入项目-&gt;持续部署-&gt;静态网站-&gt;自定义域名-&gt;新建域名-&gt;输入购买的域名-&gt;确定</li>
+<li>添加域名后，网站会自动重新部署，并且同时去申请<code>SSL</code>证书<ul>
+<li>申请证书时，会提供一些信息，需要给域名添加一条记录，添加之后，过一会儿，<code>SSL</code>证书就申请成功了，此时域名也添加成功了</li>
+</ul>
+</li>
+<li>登录<a target="_blank" rel="noopener" href="https://www.aliyun.com/">阿里云</a>-&gt;账号管理-&gt;域名控制台-&gt;找到要设置的域名-&gt;解析-&gt;添加记录<ul>
+<li>记录类型为<code>CNAME</code></li>
+<li>主机记录为<code>@</code>，再重新添加一条记录并将主机记录改为<code>www</code>，其他的不变</li>
+<li>解析线路为默认</li>
+<li>记录值为<code>***.com.cdn.dnsv1.com</code></li>
+</ul>
+</li>
+<li>登录<code>coding</code>-&gt;进入项目-&gt;持续部署-&gt;静态网站-&gt;重新部署</li>
+</ul>
+<!--more-->
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:310619242@qq.com">phd</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://phd99.com/2021/01/10/%E4%BD%BF%E7%94%A8Hexo%E5%92%8Cgithub-page%E5%92%8Ccoding-page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">http://phd99.com/2021/01/10/%E4%BD%BF%E7%94%A8Hexo%E5%92%8Cgithub-page%E5%92%8Ccoding-page%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://phd99.com" target="_blank">phd</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a></div><div class="post_share"><div class="social-share" data-image="https://gcore.jsdelivr.net/gh/phd99/img/img/hexo1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2021/01/12/GitHub%E5%92%8Cgit%E7%9A%84%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"><img class="prev-cover" src="https://gcore.jsdelivr.net/gh/phd99/img/img/github1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">GitHub和git的相关操作</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://gcore.jsdelivr.net/gh/phd99/img/touxiang1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">phd</div><div class="author-info__description">宝剑锋从磨砺出，梅花香自苦寒来</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">53</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/phd99"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:310619242@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="rss"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%90%AD%E5%BB%BA%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">一、搭建环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">二、安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%96%B0%E5%BB%BA%E7%BD%91%E7%AB%99"><span class="toc-number">3.</span> <span class="toc-text">三、新建网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%94%9F%E6%88%90SSH"><span class="toc-number">4.</span> <span class="toc-text">四、生成SSH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%B0%86%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0-github"><span class="toc-number">5.</span> <span class="toc-text">五、将博客部署到 github</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%B0%86%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0-coding"><span class="toc-number">6.</span> <span class="toc-text">六、将博客部署到 coding</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E8%AE%BE%E7%BD%AE%E4%B8%AA%E4%BA%BA%E5%9F%9F%E5%90%8D"><span class="toc-number">7.</span> <span class="toc-text">七、设置个人域名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-github%E4%B8%AD%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-number">7.1.</span> <span class="toc-text">7.1. github中的设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-coding%E4%B8%AD%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-number">7.2.</span> <span class="toc-text">7.2. coding中的设置</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/24/%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub%E5%9B%BE%E7%89%87/" title="无法访问github图片"><img src="https://gcore.jsdelivr.net/gh/phd99/img/技术/github/1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无法访问github图片"/></a><div class="content"><a class="title" href="/2022/11/24/%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub%E5%9B%BE%E7%89%87/" title="无法访问github图片">无法访问github图片</a><time datetime="2022-11-24T10:57:11.000Z" title="发表于 2022-11-24 18:57:11">2022-11-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/12/%E8%B0%83%E7%94%A8%E6%94%BE%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" title="调用放在项目中的第三方库"><img src="https://gcore.jsdelivr.net/gh/phd99/img/技术/python/background.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="调用放在项目中的第三方库"/></a><div class="content"><a class="title" href="/2021/10/12/%E8%B0%83%E7%94%A8%E6%94%BE%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" title="调用放在项目中的第三方库">调用放在项目中的第三方库</a><time datetime="2021-10-12T08:40:00.000Z" title="发表于 2021-10-12 16:40:00">2021-10-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/12/cx_Oracle%E5%92%8Cinstantclient/" title="cx_Oracle和instantclient"><img src="https://gcore.jsdelivr.net/gh/phd99/img/技术/python/background.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cx_Oracle和instantclient"/></a><div class="content"><a class="title" href="/2021/10/12/cx_Oracle%E5%92%8Cinstantclient/" title="cx_Oracle和instantclient">cx_Oracle和instantclient</a><time datetime="2021-10-12T08:39:53.000Z" title="发表于 2021-10-12 16:39:53">2021-10-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/12/%E4%BD%BF%E7%94%A8paramiko%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/" title="使用paramiko访问远程主机"><img src="https://gcore.jsdelivr.net/gh/phd99/img/技术/python/background.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用paramiko访问远程主机"/></a><div class="content"><a class="title" href="/2021/10/12/%E4%BD%BF%E7%94%A8paramiko%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/" title="使用paramiko访问远程主机">使用paramiko访问远程主机</a><time datetime="2021-10-12T08:31:20.000Z" title="发表于 2021-10-12 16:31:20">2021-10-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/12/%E5%9C%A8linux%E4%B8%AD%E5%AE%89%E8%A3%85python3/" title="在Linux中安装python3"><img src="https://gcore.jsdelivr.net/gh/phd99/img/技术/python/background.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在Linux中安装python3"/></a><div class="content"><a class="title" href="/2021/10/12/%E5%9C%A8linux%E4%B8%AD%E5%AE%89%E8%A3%85python3/" title="在Linux中安装python3">在Linux中安装python3</a><time datetime="2021-10-12T08:31:14.000Z" title="发表于 2021-10-12 16:31:14">2021-10-12</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gcore.jsdelivr.net/gh/phd99/img/img/hexo1.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By phd</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      true && mermaid.init()
+    })
+  }
+}</script></div><div class="aplayer no-destroy" data-id="000993SC4KERj4" data-server="tencent" data-type="artist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
