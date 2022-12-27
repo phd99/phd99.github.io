@@ -1,6 +1,263 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>vue中props的使用</title>
+    <url>/2022/12/04/vue%E4%B8%ADprops%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="步骤一：设置自定义属性"><a href="#步骤一：设置自定义属性" class="headerlink" title="步骤一：设置自定义属性"></a>步骤一：设置自定义属性</h2><ul>
+<li>创建<code>Test2.vue</code>组件</li>
+<li>在<code>export default</code>中使用<code>props</code>来自定义属性<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="comment">// props: [&#x27;自定义属性1&#x27;, &#x27;自定义属性2&#x27;, &#x27;自定义属性3&#x27;...]</span></span><br><span class="line">    props: [<span class="string">&#x27;value1&#x27;</span>, <span class="string">&#x27;value2&#x27;</span>, <span class="string">&#x27;value3&#x27;</span>],</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="步骤二：显示属性值"><a href="#步骤二：显示属性值" class="headerlink" title="步骤二：显示属性值"></a>步骤二：显示属性值</h2></li>
+<li>使用<code>&#123;&#123;&#125;&#125;</code>，引用自定义属性值，将其显示到界面中<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        值1为: &#123;&#123;value1&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        值2为: &#123;&#123;value2&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        值3为: &#123;&#123;value3&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="步骤三：引用Test2-vue组件"><a href="#步骤三：引用Test2-vue组件" class="headerlink" title="步骤三：引用Test2.vue组件"></a>步骤三：引用<code>Test2.vue</code>组件</h2></li>
+<li>在<code>App.vue</code>中引用<code>Test2.vue</code>组件<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">import</span> Test2 <span class="keyword">from</span> <span class="string">&#x27;@/components/Test2.vue&#x27;</span></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">      Test2</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="步骤四：设置初始值"><a href="#步骤四：设置初始值" class="headerlink" title="步骤四：设置初始值"></a>步骤四：设置初始值</h2></li>
+<li>在<code>App.vue</code>中使用<code>Test2.vue</code>组件时，给<code>Test2.vue</code>组件的自定义属性设置初始值</li>
+<li>注意<ul>
+<li><code>value1=&quot;11&quot;</code>中的11为字符串</li>
+<li><code>:value2=&quot;15&quot;</code>和<code>:value3=&quot;20&quot;</code>中的15和20为数值</li>
+<li>即使用了<code>:</code>时，显示的为数值；未使用<code>:</code>时，显示的为字符串<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Test2</span> <span class="attr">value1</span>=<span class="string">&quot;11&quot;</span> <span class="attr">:value2</span>=<span class="string">&quot;15&quot;</span> <span class="attr">:value3</span>=<span class="string">&quot;20&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">Test2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="各组件代码"><a href="#各组件代码" class="headerlink" title="各组件代码"></a>各组件代码</h2><ul>
+<li><code>Test2.vue</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        值1为: &#123;&#123;value1&#125;&#125;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">        值2为: &#123;&#123;value2&#125;&#125;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">        值3为: &#123;&#123;value3&#125;&#125;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    props: [&#39;value1&#39;, &#39;value2&#39;, &#39;value3&#39;],</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
+<li><code>App.vue</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;Test2 value1&#x3D;&quot;11&quot; :value2&#x3D;&quot;15&quot; :value3&#x3D;&quot;20&quot;&gt;&lt;&#x2F;Test2&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import Test2 from &#39;@&#x2F;components&#x2F;Test2.vue&#39;</span><br><span class="line">  export default &#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">      Test2</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<!--more--></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>web开发</category>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue中methods的使用</title>
+    <url>/2022/12/03/vue%E4%B8%ADmethods%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h2><ul>
+<li>在<code>export default</code>中定义<code>methods</code><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  methods: &#123;&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2></li>
+<li>在<code>methods</code>的<code>&#123;&#125;</code>中定义方法<code>test1</code><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">test1</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="comment">//this表示当前组件的实例对象</span></span><br><span class="line">      <span class="built_in">this</span>.username1 = <span class="string">&#x27;李四&#x27;</span></span><br><span class="line">      <span class="comment">//打印当前组件</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="built_in">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2></li>
+<li>调用<code>test1</code>方法<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>宝剑锋从磨砺出，梅花香自苦寒来。&#123;&#123;username&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;test1&quot;</span>&gt;</span>测试按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h2></li>
+<li>当点击测试按钮时，张三变成了李四<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;p&gt;宝剑锋从磨砺出，梅花香自苦寒来。&#123;&#123;username&#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;button @click&#x3D;&quot;test1&quot;&gt;测试按钮&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      username: &#39;张三&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    test1() &#123;</span><br><span class="line">      &#x2F;&#x2F;this表示当前组件的实例对象</span><br><span class="line">      this.username1 &#x3D; &#39;李四&#39;</span><br><span class="line">      &#x2F;&#x2F;打印当前组件</span><br><span class="line">      console.log(this)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<!--more--></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>web开发</category>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vscode中配置@路径提示</title>
+    <url>/2022/12/02/vscode%E4%B8%AD%E9%85%8D%E7%BD%AE@%E8%B7%AF%E5%BE%84%E6%8F%90%E7%A4%BA/</url>
+    <content><![CDATA[<h2 id="步骤一：配置webpack-config"><a href="#步骤一：配置webpack-config" class="headerlink" title="步骤一：配置webpack.config"></a>步骤一：配置webpack.config</h2><ul>
+<li>在<code>webpack.config.js</code>文件的<code>module.exports</code>中添加如下内容<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">resolve: &#123;</span><br><span class="line">  alias: &#123;</span><br><span class="line">      <span class="string">&#x27;@&#x27;</span>: path.join(__dirname, <span class="string">&#x27;./src/&#x27;</span>)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="步骤二：安装插件"><a href="#步骤二：安装插件" class="headerlink" title="步骤二：安装插件"></a>步骤二：安装插件</h2></li>
+<li>在vscode中安装<code>Path Autocomplete</code>插件<div  align="center">
+<img src="./img/vscode中配置@路径提示/1.jpg" width = 80% />
+</div>
+
+
+</li>
+</ul>
+<h2 id="步骤三：设置配置项"><a href="#步骤三：设置配置项" class="headerlink" title="步骤三：设置配置项"></a>步骤三：设置配置项</h2><ul>
+<li>在vscode的<code>setting.json</code>中添加如下代码<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="comment">//导入文件时是否携带文件的扩展名</span></span><br><span class="line">&quot;path-autocomplete.extensionOnImport&quot;: true,</span><br><span class="line"><span class="comment">//配置@的路径提示</span></span><br><span class="line">&quot;path-autocomplete.pathMappings&quot;: &#123;</span><br><span class="line">    &quot;@&quot;: &quot;$&#123;folder&#125;/src&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>需要找到项目文件夹，右键使用vscode打开后，使用<code>@</code>才会生效<div  align="center">
+<img src="./img/vscode中配置@路径提示/2.jpg" width = 80% />
+</div>
+
+</li>
+</ul>
+<!--more-->]]></content>
+      <categories>
+        <category>技术</category>
+        <category>web开发</category>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>全局vue组件</title>
+    <url>/2022/12/02/%E5%85%A8%E5%B1%80vue%E7%BB%84%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h2><ul>
+<li>在<code>main.js</code>中添加如下内容<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 导入需要全局使用的组件</span></span><br><span class="line"><span class="keyword">import</span> Test1 <span class="keyword">from</span> <span class="string">&#x27;@/components/test1.vue&#x27;</span></span><br><span class="line"><span class="comment">// component(&#x27;定义名称&#x27;, 组件名)</span></span><br><span class="line">Vue.component(<span class="string">&#x27;Test1_1&#x27;</span>, Test1)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2></li>
+<li>在<code>vue</code>组件中使用全局组件<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用test1.vue组件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Test1_1</span>&gt;</span><span class="tag">&lt;/<span class="name">Test1_1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="私有组件的使用"><a href="#私有组件的使用" class="headerlink" title="私有组件的使用"></a>私有组件的使用</h2></li>
+<li>使用<code>components</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> test1 <span class="keyword">from</span> <span class="string">&#x27;@/components/test1.vue&#x27;</span></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">      <span class="string">&#x27;Test1&#x27;</span>: test1 <span class="comment">//可直接写为test，相当于&#x27;test1&#x27;: test1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<!--more-->]]></content>
+      <categories>
+        <category>技术</category>
+        <category>web开发</category>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue组件中调用vue组件</title>
+    <url>/2022/12/02/vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E8%B0%83%E7%94%A8vue%E7%BB%84%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h2><ul>
+<li>使用<code>import</code>语法导入需要的组件<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> test1 <span class="keyword">from</span> <span class="string">&#x27;./components/test1.vue&#x27;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2></li>
+<li>使用<code>components</code>节点注册组件</li>
+<li><code>&#39;Test1&#39;: test1</code>若引号中的内容和冒号后的内容相同时可以简写<ul>
+<li>例如：<code>&#39;test1&#39;: test1</code>可直接写为test1<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">    <span class="string">&#x27;Test1&#x27;</span>: test1 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2></li>
+</ul>
+</li>
+<li>以标签的形式使用刚才注册的组件<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Test1</span>&gt;</span><span class="tag">&lt;/<span class="name">Test1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;!-- 3.以标签的形式使用刚才注册的组件 --&gt;</span><br><span class="line">    &lt;Test1&gt;&lt;&#x2F;Test1&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">&#x2F;&#x2F; 1.使用import语法导入需要的组件</span><br><span class="line">import test1 from &#39;.&#x2F;components&#x2F;test1.vue&#39;</span><br><span class="line">  export default &#123;</span><br><span class="line">    &#x2F;&#x2F; 2.使用components节点注册组件</span><br><span class="line">    components: &#123;</span><br><span class="line">      &#39;Test1&#39;: test1 &#x2F;&#x2F;可直接写为test，相当于&#39;test1&#39;: test1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<!--more--></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>web开发</category>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue中data的使用</title>
+    <url>/2022/12/01/vue%E4%B8%ADdata%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h2><ul>
+<li>在<code>export default</code>中定义data函数<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">//data为数据源，是一个函数</span></span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 在return的&#123;&#125;中，可以定义数据</span></span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2></li>
+<li>在<code>return</code>的<code>&#123;&#125;</code>中定义数据<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      username1: <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">      username2: <span class="string">&#x27;李四&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2></li>
+<li>引用<code>data</code>中定义的数据</li>
+<li>使用<code>&#123;&#123;&#125;&#125;</code>来引用<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>宝剑锋从磨砺出，梅花香自苦寒来。&#123;&#123;username1&#125;&#125;、&#123;&#123;username2&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;p&gt;宝剑锋从磨砺出，梅花香自苦寒来。&#123;&#123;username1&#125;&#125;、&#123;&#123;username2&#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">&#x2F;&#x2F;默认导出，固定写法</span><br><span class="line">export default &#123;</span><br><span class="line">  &#x2F;&#x2F;data为数据源，是一个函数</span><br><span class="line">  data() &#123;</span><br><span class="line">    &#x2F;&#x2F; 在return的&#123;&#125;中，可以定义数据</span><br><span class="line">    return &#123;</span><br><span class="line">      username1: &#39;张三&#39;,</span><br><span class="line">      username2: &#39;李四&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<!--more--></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>web开发</category>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue组件中只能有一个根节点</title>
+    <url>/2022/11/30/vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E5%8F%AA%E8%83%BD%E6%9C%89%E4%B8%80%E4%B8%AA%E6%A0%B9%E8%8A%82%E7%82%B9/</url>
+    <content><![CDATA[<h2 id="vue组件中只能有一个根节点"><a href="#vue组件中只能有一个根节点" class="headerlink" title="vue组件中只能有一个根节点"></a>vue组件中只能有一个根节点</h2><ul>
+<li>组件模板中只能有一个根节点</li>
+<li>最外层应使用<code>&lt;template&gt;&lt;/template&gt;</code>包裹</li>
+</ul>
+<a id="more"></a>
+<h2 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h2><ul>
+<li>错误写法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;111&lt;&#x2F;div&gt;&lt;!-- 根节点1 --&gt;</span><br><span class="line">    &lt;div&gt;222&lt;&#x2F;div&gt;&lt;!-- 根节点2 --&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure></li>
+<li>正确写法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;&lt;!-- 根节点 --&gt;</span><br><span class="line">        &lt;div&gt;111&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div&gt;222&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+<!--more--></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>web开发</category>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue-cil目录结构</title>
+    <url>/2022/11/29/vue-cil%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<h2 id="node-modules"><a href="#node-modules" class="headerlink" title="node_modules"></a>node_modules</h2><ul>
+<li>存储所有第三方包</li>
+</ul>
+<h2 id="src"><a href="#src" class="headerlink" title="src"></a>src</h2><ul>
+<li>项目源代码目录</li>
+</ul>
+<a id="more"></a>
+<h3 id="assets"><a href="#assets" class="headerlink" title="assets"></a>assets</h3><ul>
+<li>存放静态资源，例如：图片、css样式表等<h3 id="components"><a href="#components" class="headerlink" title="components"></a>components</h3></li>
+<li>存放封装的、可复用的组件<h3 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h3></li>
+<li>是项目的入口文件，运行整个项目时，会先执行main.js<h3 id="App-vue是项目的根组件"><a href="#App-vue是项目的根组件" class="headerlink" title="App.vue是项目的根组件"></a>App.vue是项目的根组件</h3></li>
+<li>是项目的根组件</li>
+</ul>
+<h2 id="vue项目的运行流程"><a href="#vue项目的运行流程" class="headerlink" title="vue项目的运行流程"></a>vue项目的运行流程</h2><ul>
+<li>在工程化的项目中，vue要做的事情：通过main.js把App.vue渲染到index.html的指定区域中</li>
+</ul>
+<!--more-->]]></content>
+      <categories>
+        <category>技术</category>
+        <category>web开发</category>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue组件中只能有一个根节点</title>
+    <url>/2022/11/28/vue%E7%BB%84%E4%BB%B6/</url>
+    <content><![CDATA[<h2 id="什么是组件化开发"><a href="#什么是组件化开发" class="headerlink" title="什么是组件化开发"></a>什么是组件化开发</h2><ul>
+<li>组件化开发指：根据封装的思想，把页面上可重用的UI结构封装为组件，从而方便项目的开发和维护</li>
+</ul>
+<h2 id="vue中的组件化开发"><a href="#vue中的组件化开发" class="headerlink" title="vue中的组件化开发"></a>vue中的组件化开发</h2><ul>
+<li>vue中规定组件的后缀名是<code>.vue</code></li>
+<li>App.vue文件本质上就是一个<code>vue</code>的组件</li>
+</ul>
+<a id="more"></a>
+<h2 id="组件之间的关系"><a href="#组件之间的关系" class="headerlink" title="组件之间的关系"></a>组件之间的关系</h2><ul>
+<li>组件在被封装号之后，彼此之间是相互独立的，不存在关系</li>
+<li>在使用组件的时候，根据彼此的嵌套关系，形成了父子关系、兄弟关系</li>
+</ul>
+<h2 id="vue组件的三个组成部分"><a href="#vue组件的三个组成部分" class="headerlink" title="vue组件的三个组成部分"></a>vue组件的三个组成部分</h2><ul>
+<li>每个<code>.vue</code>组件都由三部分构成<ul>
+<li><code>template</code>：组件的模板结构</li>
+<li><code>script</code>：组件的<code>JavaScript</code>行为</li>
+<li><code>style</code>：组件的样式</li>
+</ul>
+</li>
+</ul>
+<h2 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;p&gt;宝剑锋从磨砺出，梅花香自苦寒来。&#123;&#123;username1&#125;&#125;、&#123;&#123;username2&#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;button @click&#x3D;&quot;test1&quot;&gt;测试按钮&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">&#x2F;&#x2F;默认导出，固定写法</span><br><span class="line">export default &#123;</span><br><span class="line">  &#x2F;&#x2F;data为数据源，是一个函数</span><br><span class="line">  data() &#123;</span><br><span class="line">    &#x2F;&#x2F; 在return的&#123;&#125;中，可以定义数据</span><br><span class="line">    return &#123;</span><br><span class="line">      username1: &#39;张三&#39;,</span><br><span class="line">      username2: &#39;李四&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    test1() &#123;</span><br><span class="line">      &#x2F;&#x2F;this表示当前组件的实例对象</span><br><span class="line">      this.username1 &#x3D; &#39;盖伦&#39;</span><br><span class="line">      &#x2F;&#x2F;打印当前组件</span><br><span class="line">      console.log(this)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#x2F;&#x2F;当前组件中的侦听器</span><br><span class="line">  watch: &#123;&#125;,</span><br><span class="line">  &#x2F;&#x2F;当前组件中的计算属性</span><br><span class="line">  computed: &#123;&#125;,</span><br><span class="line">  &#x2F;&#x2F;当前组件中的过滤器</span><br><span class="line">  filters: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">p &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<!--more-->]]></content>
+      <categories>
+        <category>技术</category>
+        <category>web开发</category>
+        <category>vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无法访问github图片</title>
     <url>/2022/11/24/%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEgithub%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><ul>
