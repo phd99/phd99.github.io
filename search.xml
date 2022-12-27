@@ -6,12 +6,21 @@
     <content><![CDATA[<h2 id="步骤一：设置自定义属性"><a href="#步骤一：设置自定义属性" class="headerlink" title="步骤一：设置自定义属性"></a>步骤一：设置自定义属性</h2><ul>
 <li>创建<code>Test2.vue</code>组件</li>
 <li>在<code>export default</code>中使用<code>props</code>来自定义属性<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="comment">// props: [&#x27;自定义属性1&#x27;, &#x27;自定义属性2&#x27;, &#x27;自定义属性3&#x27;...]</span></span><br><span class="line">    props: [<span class="string">&#x27;value1&#x27;</span>, <span class="string">&#x27;value2&#x27;</span>, <span class="string">&#x27;value3&#x27;</span>],</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 <a id="more"></a>
-<h2 id="步骤二：显示属性值"><a href="#步骤二：显示属性值" class="headerlink" title="步骤二：显示属性值"></a>步骤二：显示属性值</h2></li>
+<h2 id="步骤二：显示属性值"><a href="#步骤二：显示属性值" class="headerlink" title="步骤二：显示属性值"></a>步骤二：显示属性值</h2><ul>
 <li>使用<code>&#123;&#123;&#125;&#125;</code>，引用自定义属性值，将其显示到界面中<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        值1为: &#123;&#123;value1&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        值2为: &#123;&#123;value2&#125;&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        值3为: &#123;&#123;value3&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="步骤三：引用Test2-vue组件"><a href="#步骤三：引用Test2-vue组件" class="headerlink" title="步骤三：引用Test2.vue组件"></a>步骤三：引用<code>Test2.vue</code>组件</h2></li>
+
+</li>
+</ul>
+<h2 id="步骤三：引用Test2-vue组件"><a href="#步骤三：引用Test2-vue组件" class="headerlink" title="步骤三：引用Test2.vue组件"></a>步骤三：引用<code>Test2.vue</code>组件</h2><ul>
 <li>在<code>App.vue</code>中引用<code>Test2.vue</code>组件<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">import</span> Test2 <span class="keyword">from</span> <span class="string">&#x27;@/components/Test2.vue&#x27;</span></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">      Test2</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="步骤四：设置初始值"><a href="#步骤四：设置初始值" class="headerlink" title="步骤四：设置初始值"></a>步骤四：设置初始值</h2></li>
+
+</li>
+</ul>
+<h2 id="步骤四：设置初始值"><a href="#步骤四：设置初始值" class="headerlink" title="步骤四：设置初始值"></a>步骤四：设置初始值</h2><ul>
 <li>在<code>App.vue</code>中使用<code>Test2.vue</code>组件时，给<code>Test2.vue</code>组件的自定义属性设置初始值</li>
 <li>注意<ul>
 <li><code>value1=&quot;11&quot;</code>中的11为字符串</li>
@@ -43,12 +52,21 @@
     <url>/2022/12/03/vue%E4%B8%ADmethods%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h2><ul>
 <li>在<code>export default</code>中定义<code>methods</code><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  methods: &#123;&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 <a id="more"></a>
-<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2></li>
+<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><ul>
 <li>在<code>methods</code>的<code>&#123;&#125;</code>中定义方法<code>test1</code><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  methods: &#123;</span><br><span class="line">    <span class="function"><span class="title">test1</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="comment">//this表示当前组件的实例对象</span></span><br><span class="line">      <span class="built_in">this</span>.username1 = <span class="string">&#x27;李四&#x27;</span></span><br><span class="line">      <span class="comment">//打印当前组件</span></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="built_in">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2></li>
+
+</li>
+</ul>
+<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2><ul>
 <li>调用<code>test1</code>方法<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>宝剑锋从磨砺出，梅花香自苦寒来。&#123;&#123;username&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;test1&quot;</span>&gt;</span>测试按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h2></li>
+
+</li>
+</ul>
+<h2 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h2><ul>
 <li>当点击测试按钮时，张三变成了李四<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;p&gt;宝剑锋从磨砺出，梅花香自苦寒来。&#123;&#123;username&#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;button @click&#x3D;&quot;test1&quot;&gt;测试按钮&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      username: &#39;张三&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    test1() &#123;</span><br><span class="line">      &#x2F;&#x2F;this表示当前组件的实例对象</span><br><span class="line">      this.username1 &#x3D; &#39;李四&#39;</span><br><span class="line">      &#x2F;&#x2F;打印当前组件</span><br><span class="line">      console.log(this)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 <!--more--></li>
 </ul>
@@ -67,8 +85,11 @@
     <url>/2022/12/02/vscode%E4%B8%AD%E9%85%8D%E7%BD%AE@%E8%B7%AF%E5%BE%84%E6%8F%90%E7%A4%BA/</url>
     <content><![CDATA[<h2 id="步骤一：配置webpack-config"><a href="#步骤一：配置webpack-config" class="headerlink" title="步骤一：配置webpack.config"></a>步骤一：配置webpack.config</h2><ul>
 <li>在<code>webpack.config.js</code>文件的<code>module.exports</code>中添加如下内容<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">resolve: &#123;</span><br><span class="line">  alias: &#123;</span><br><span class="line">      <span class="string">&#x27;@&#x27;</span>: path.join(__dirname, <span class="string">&#x27;./src/&#x27;</span>)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 <a id="more"></a>
-<h2 id="步骤二：安装插件"><a href="#步骤二：安装插件" class="headerlink" title="步骤二：安装插件"></a>步骤二：安装插件</h2></li>
+<h2 id="步骤二：安装插件"><a href="#步骤二：安装插件" class="headerlink" title="步骤二：安装插件"></a>步骤二：安装插件</h2><ul>
 <li>在vscode中安装<code>Path Autocomplete</code>插件<div  align="center">
 <img src="./img/vscode中配置@路径提示/1.jpg" width = 80% />
 </div>
@@ -103,10 +124,16 @@
     <url>/2022/12/02/%E5%85%A8%E5%B1%80vue%E7%BB%84%E4%BB%B6/</url>
     <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h2><ul>
 <li>在<code>main.js</code>中添加如下内容<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 导入需要全局使用的组件</span></span><br><span class="line"><span class="keyword">import</span> Test1 <span class="keyword">from</span> <span class="string">&#x27;@/components/test1.vue&#x27;</span></span><br><span class="line"><span class="comment">// component(&#x27;定义名称&#x27;, 组件名)</span></span><br><span class="line">Vue.component(<span class="string">&#x27;Test1_1&#x27;</span>, Test1)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 <a id="more"></a>
-<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2></li>
+<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><ul>
 <li>在<code>vue</code>组件中使用全局组件<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 使用test1.vue组件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Test1_1</span>&gt;</span><span class="tag">&lt;/<span class="name">Test1_1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="私有组件的使用"><a href="#私有组件的使用" class="headerlink" title="私有组件的使用"></a>私有组件的使用</h2></li>
+
+</li>
+</ul>
+<h2 id="私有组件的使用"><a href="#私有组件的使用" class="headerlink" title="私有组件的使用"></a>私有组件的使用</h2><ul>
 <li>使用<code>components</code></li>
 </ul>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> test1 <span class="keyword">from</span> <span class="string">&#x27;@/components/test1.vue&#x27;</span></span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">      <span class="string">&#x27;Test1&#x27;</span>: test1 <span class="comment">//可直接写为test，相当于&#x27;test1&#x27;: test1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
@@ -125,19 +152,26 @@
     <url>/2022/12/02/vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E8%B0%83%E7%94%A8vue%E7%BB%84%E4%BB%B6/</url>
     <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h2><ul>
 <li>使用<code>import</code>语法导入需要的组件<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> test1 <span class="keyword">from</span> <span class="string">&#x27;./components/test1.vue&#x27;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 <a id="more"></a>
-<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2></li>
+<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><ul>
 <li>使用<code>components</code>节点注册组件</li>
 <li><code>&#39;Test1&#39;: test1</code>若引号中的内容和冒号后的内容相同时可以简写<ul>
 <li>例如：<code>&#39;test1&#39;: test1</code>可直接写为test1<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">    <span class="string">&#x27;Test1&#x27;</span>: test1 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2></li>
+
+</li>
 </ul>
 </li>
-<li>以标签的形式使用刚才注册的组件<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Test1</span>&gt;</span><span class="tag">&lt;/<span class="name">Test1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;!-- 3.以标签的形式使用刚才注册的组件 --&gt;</span><br><span class="line">    &lt;Test1&gt;&lt;&#x2F;Test1&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">&#x2F;&#x2F; 1.使用import语法导入需要的组件</span><br><span class="line">import test1 from &#39;.&#x2F;components&#x2F;test1.vue&#39;</span><br><span class="line">  export default &#123;</span><br><span class="line">    &#x2F;&#x2F; 2.使用components节点注册组件</span><br><span class="line">    components: &#123;</span><br><span class="line">      &#39;Test1&#39;: test1 &#x2F;&#x2F;可直接写为test，相当于&#39;test1&#39;: test1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<!--more--></li>
 </ul>
-]]></content>
+<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2><ul>
+<li>以标签的形式使用刚才注册的组件<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Test1</span>&gt;</span><span class="tag">&lt;/<span class="name">Test1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;!-- 3.以标签的形式使用刚才注册的组件 --&gt;</span><br><span class="line">    &lt;Test1&gt;&lt;&#x2F;Test1&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">&#x2F;&#x2F; 1.使用import语法导入需要的组件</span><br><span class="line">import test1 from &#39;.&#x2F;components&#x2F;test1.vue&#39;</span><br><span class="line">  export default &#123;</span><br><span class="line">    &#x2F;&#x2F; 2.使用components节点注册组件</span><br><span class="line">    components: &#123;</span><br><span class="line">      &#39;Test1&#39;: test1 &#x2F;&#x2F;可直接写为test，相当于&#39;test1&#39;: test1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<!--more-->]]></content>
       <categories>
         <category>技术</category>
         <category>web开发</category>
@@ -152,16 +186,23 @@
     <url>/2022/12/01/vue%E4%B8%ADdata%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h2><ul>
 <li>在<code>export default</code>中定义data函数<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">//data为数据源，是一个函数</span></span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 在return的&#123;&#125;中，可以定义数据</span></span><br><span class="line">    <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 <a id="more"></a>
-<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2></li>
+<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><ul>
 <li>在<code>return</code>的<code>&#123;&#125;</code>中定义数据<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      username1: <span class="string">&#x27;张三&#x27;</span>,</span><br><span class="line">      username2: <span class="string">&#x27;李四&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2></li>
+
+</li>
+</ul>
+<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2><ul>
 <li>引用<code>data</code>中定义的数据</li>
 <li>使用<code>&#123;&#123;&#125;&#125;</code>来引用<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>宝剑锋从磨砺出，梅花香自苦寒来。&#123;&#123;username1&#125;&#125;、&#123;&#123;username2&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;p&gt;宝剑锋从磨砺出，梅花香自苦寒来。&#123;&#123;username1&#125;&#125;、&#123;&#123;username2&#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">&#x2F;&#x2F;默认导出，固定写法</span><br><span class="line">export default &#123;</span><br><span class="line">  &#x2F;&#x2F;data为数据源，是一个函数</span><br><span class="line">  data() &#123;</span><br><span class="line">    &#x2F;&#x2F; 在return的&#123;&#125;中，可以定义数据</span><br><span class="line">    return &#123;</span><br><span class="line">      username1: &#39;张三&#39;,</span><br><span class="line">      username2: &#39;李四&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-<!--more--></li>
+
+</li>
 </ul>
-]]></content>
+<h2 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;p&gt;宝剑锋从磨砺出，梅花香自苦寒来。&#123;&#123;username1&#125;&#125;、&#123;&#123;username2&#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">&#x2F;&#x2F;默认导出，固定写法</span><br><span class="line">export default &#123;</span><br><span class="line">  &#x2F;&#x2F;data为数据源，是一个函数</span><br><span class="line">  data() &#123;</span><br><span class="line">    &#x2F;&#x2F; 在return的&#123;&#125;中，可以定义数据</span><br><span class="line">    return &#123;</span><br><span class="line">      username1: &#39;张三&#39;,</span><br><span class="line">      username2: &#39;李四&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<!--more-->]]></content>
       <categories>
         <category>技术</category>
         <category>web开发</category>
@@ -7563,95 +7604,6 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       </tags>
   </entry>
   <entry>
-    <title>Java之流程控制</title>
-    <url>/2021/03/31/Java%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
-    <content><![CDATA[<h2 id="一、顺序结构"><a href="#一、顺序结构" class="headerlink" title="一、顺序结构"></a>一、顺序结构</h2><ul>
-<li>顺序结构是程序中最简单最基本的流程控制，没有特定的语法结构，按照代码的先后顺序，依次执行，程序中大多数的代码都是这样执行的。</li>
-<li>它是从上往下依次执行的。<a id="more"></a>
-
-</li>
-</ul>
-<h2 id="二、分支结构"><a href="#二、分支结构" class="headerlink" title="二、分支结构"></a>二、分支结构</h2><h3 id="2-1-if语句"><a href="#2-1-if语句" class="headerlink" title="2.1. if语句"></a>2.1. if语句</h3><ul>
-<li>格式1<ul>
-<li>if（关系表达式）{语句体；}</li>
-</ul>
-</li>
-<li>格式2<ul>
-<li>if（关系表达式）{语句体；}else{语句体；}</li>
-</ul>
-</li>
-<li>格式3<ul>
-<li>if（关系表达式1）{语句体1；}else if（关系表达式2）{语句体2；} ···  else{语句体n+1；}</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-2-switch语句"><a href="#2-2-switch语句" class="headerlink" title="2.2. switch语句"></a>2.2. switch语句</h3><ul>
-<li>格式<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> 值<span class="number">1</span>:</span><br><span class="line">        语句体<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 值<span class="number">2</span>:</span><br><span class="line">        语句体<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    ……</span><br><span class="line">   <span class="keyword">default</span>:</span><br><span class="line">       语句体n+<span class="number">1</span>;</span><br><span class="line">       <span class="keyword">break</span>;<span class="comment">//default中的break可以省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>在switch语句中，如果case控制的语句体后面不写break，将会出现穿透现象，在不判断下一个case值的情况下，向下运行，直到遇到break，或者整体switch语句结束</li>
-</ul>
-<h2 id="三、循环结构"><a href="#三、循环结构" class="headerlink" title="三、循环结构"></a>三、循环结构</h2><h3 id="3-1-循环结构的组成"><a href="#3-1-循环结构的组成" class="headerlink" title="3.1. 循环结构的组成"></a>3.1. 循环结构的组成</h3><ul>
-<li>初始化语句：用于表示循环开启时的起始状态，简单说就是循环开始的时候是什么样的</li>
-<li>条件判断语句：用于表示循环反复执行的条件，简单说就是判断循环是否能一直执行下去。</li>
-<li>循环体语句：用于表示循环反复执行的内容，简单说就是循环反复执行的事情。</li>
-<li>条件控制语句：用于表示循环执行中每次变化的内容，简单说就是控制循环是否能执行下去</li>
-</ul>
-<h3 id="3-2-循环结构对应的语法"><a href="#3-2-循环结构对应的语法" class="headerlink" title="3.2. 循环结构对应的语法"></a>3.2. 循环结构对应的语法</h3><ul>
-<li>初始化语句：这里可以是一条或者多条语句，这些语句可以完成一些初始化操作。</li>
-<li>条件判断语句：这里使用一个结果值为boolean类型的表达式，这个表达式能决定是否执行循环体。</li>
-<li>循环体语句：这里可以是任意语句，这些语句将反复执行。</li>
-<li>条件控制语句：这里通常是使用一条语句类改变变量的值，从而达到控制循环是否继续向下执行的效果。常见i++，i–这样的操作。</li>
-</ul>
-<h3 id="3-3-for循环语句"><a href="#3-3-for循环语句" class="headerlink" title="3.3. for循环语句"></a>3.3. for循环语句</h3><ul>
-<li>格式<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(初始化语句, 条件判断语句, 条件控制语句)</span><br><span class="line">&#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="3-4-while循环语句"><a href="#3-4-while循环语句" class="headerlink" title="3.4. while循环语句"></a>3.4. while循环语句</h3><ul>
-<li>格式<ul>
-<li>初始化语句;<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(条件判断语句)</span><br><span class="line">&#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">    条件控制语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-5-do…while循环语句"><a href="#3-5-do…while循环语句" class="headerlink" title="3.5. do…while循环语句"></a>3.5. do…while循环语句</h3><ul>
-<li>格式<ul>
-<li>初始化语句<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">    循环语句;</span><br><span class="line">    条件控制语句;</span><br><span class="line">&#125;<span class="keyword">while</span>(条件判断语句);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-6-三种循环的区别"><a href="#3-6-三种循环的区别" class="headerlink" title="3.6. 三种循环的区别"></a>3.6. 三种循环的区别</h3><ul>
-<li>for循环和while循环先判断条件是否成立，然后决定是否执行循环体（先判断后执行）</li>
-<li><code>do……while</code>循环先执行一次循环体，然后判断条件是否成立，是否继续执行循环体（先执行后判断）</li>
-<li>for和while的区别<ul>
-<li>条件控制语句所控制的自增变量，因为归属for循环的语法结构中，在for循环结束后，就不能再次被访问到了。</li>
-<li>条件控制语句所控制的自增变量，对于while循环来说不归属其语法结构中，在while循环结束后，该变量还可以继续使用。</li>
-</ul>
-</li>
-<li>死循环格式<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(;;)&#123;&#125;</span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;&#125;</span><br><span class="line"><span class="keyword">do</span>&#123;&#125;<span class="keyword">while</span>(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure></li>
-<li>命令提示窗口中Ctrl+C可以结束死循环</li>
-</ul>
-<h2 id="四、跳转控制语句"><a href="#四、跳转控制语句" class="headerlink" title="四、跳转控制语句"></a>四、跳转控制语句</h2><ul>
-<li>continue用在循环中，基于条件控制，跳过某次循环体内容的执行，继续下一次的执行。</li>
-<li>break用在循环中，基于条件控制，终止循环体内容的执行，也就是说结束当前的整个循环。</li>
-</ul>
-<h2 id="五、循环嵌套"><a href="#五、循环嵌套" class="headerlink" title="五、循环嵌套"></a>五、循环嵌套</h2><ul>
-<li>分支语句中包含分支语句称为分支嵌套</li>
-<li>循环语句中包含循环语句称为循环嵌套</li>
-</ul>
-<!--more-->
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java之类加载</title>
     <url>/2021/03/31/Java%E4%B9%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD/</url>
     <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><ul>
@@ -7731,6 +7683,95 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 <!--more-->
 </li>
 </ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之流程控制</title>
+    <url>/2021/03/31/Java%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
+    <content><![CDATA[<h2 id="一、顺序结构"><a href="#一、顺序结构" class="headerlink" title="一、顺序结构"></a>一、顺序结构</h2><ul>
+<li>顺序结构是程序中最简单最基本的流程控制，没有特定的语法结构，按照代码的先后顺序，依次执行，程序中大多数的代码都是这样执行的。</li>
+<li>它是从上往下依次执行的。<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="二、分支结构"><a href="#二、分支结构" class="headerlink" title="二、分支结构"></a>二、分支结构</h2><h3 id="2-1-if语句"><a href="#2-1-if语句" class="headerlink" title="2.1. if语句"></a>2.1. if语句</h3><ul>
+<li>格式1<ul>
+<li>if（关系表达式）{语句体；}</li>
+</ul>
+</li>
+<li>格式2<ul>
+<li>if（关系表达式）{语句体；}else{语句体；}</li>
+</ul>
+</li>
+<li>格式3<ul>
+<li>if（关系表达式1）{语句体1；}else if（关系表达式2）{语句体2；} ···  else{语句体n+1；}</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-switch语句"><a href="#2-2-switch语句" class="headerlink" title="2.2. switch语句"></a>2.2. switch语句</h3><ul>
+<li>格式<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> 值<span class="number">1</span>:</span><br><span class="line">        语句体<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> 值<span class="number">2</span>:</span><br><span class="line">        语句体<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    ……</span><br><span class="line">   <span class="keyword">default</span>:</span><br><span class="line">       语句体n+<span class="number">1</span>;</span><br><span class="line">       <span class="keyword">break</span>;<span class="comment">//default中的break可以省略</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>在switch语句中，如果case控制的语句体后面不写break，将会出现穿透现象，在不判断下一个case值的情况下，向下运行，直到遇到break，或者整体switch语句结束</li>
+</ul>
+<h2 id="三、循环结构"><a href="#三、循环结构" class="headerlink" title="三、循环结构"></a>三、循环结构</h2><h3 id="3-1-循环结构的组成"><a href="#3-1-循环结构的组成" class="headerlink" title="3.1. 循环结构的组成"></a>3.1. 循环结构的组成</h3><ul>
+<li>初始化语句：用于表示循环开启时的起始状态，简单说就是循环开始的时候是什么样的</li>
+<li>条件判断语句：用于表示循环反复执行的条件，简单说就是判断循环是否能一直执行下去。</li>
+<li>循环体语句：用于表示循环反复执行的内容，简单说就是循环反复执行的事情。</li>
+<li>条件控制语句：用于表示循环执行中每次变化的内容，简单说就是控制循环是否能执行下去</li>
+</ul>
+<h3 id="3-2-循环结构对应的语法"><a href="#3-2-循环结构对应的语法" class="headerlink" title="3.2. 循环结构对应的语法"></a>3.2. 循环结构对应的语法</h3><ul>
+<li>初始化语句：这里可以是一条或者多条语句，这些语句可以完成一些初始化操作。</li>
+<li>条件判断语句：这里使用一个结果值为boolean类型的表达式，这个表达式能决定是否执行循环体。</li>
+<li>循环体语句：这里可以是任意语句，这些语句将反复执行。</li>
+<li>条件控制语句：这里通常是使用一条语句类改变变量的值，从而达到控制循环是否继续向下执行的效果。常见i++，i–这样的操作。</li>
+</ul>
+<h3 id="3-3-for循环语句"><a href="#3-3-for循环语句" class="headerlink" title="3.3. for循环语句"></a>3.3. for循环语句</h3><ul>
+<li>格式<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(初始化语句, 条件判断语句, 条件控制语句)</span><br><span class="line">&#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="3-4-while循环语句"><a href="#3-4-while循环语句" class="headerlink" title="3.4. while循环语句"></a>3.4. while循环语句</h3><ul>
+<li>格式<ul>
+<li>初始化语句;<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(条件判断语句)</span><br><span class="line">&#123;</span><br><span class="line">    循环体语句;</span><br><span class="line">    条件控制语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-5-do…while循环语句"><a href="#3-5-do…while循环语句" class="headerlink" title="3.5. do…while循环语句"></a>3.5. do…while循环语句</h3><ul>
+<li>格式<ul>
+<li>初始化语句<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">    循环语句;</span><br><span class="line">    条件控制语句;</span><br><span class="line">&#125;<span class="keyword">while</span>(条件判断语句);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-6-三种循环的区别"><a href="#3-6-三种循环的区别" class="headerlink" title="3.6. 三种循环的区别"></a>3.6. 三种循环的区别</h3><ul>
+<li>for循环和while循环先判断条件是否成立，然后决定是否执行循环体（先判断后执行）</li>
+<li><code>do……while</code>循环先执行一次循环体，然后判断条件是否成立，是否继续执行循环体（先执行后判断）</li>
+<li>for和while的区别<ul>
+<li>条件控制语句所控制的自增变量，因为归属for循环的语法结构中，在for循环结束后，就不能再次被访问到了。</li>
+<li>条件控制语句所控制的自增变量，对于while循环来说不归属其语法结构中，在while循环结束后，该变量还可以继续使用。</li>
+</ul>
+</li>
+<li>死循环格式<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(;;)&#123;&#125;</span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;&#125;</span><br><span class="line"><span class="keyword">do</span>&#123;&#125;<span class="keyword">while</span>(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure></li>
+<li>命令提示窗口中Ctrl+C可以结束死循环</li>
+</ul>
+<h2 id="四、跳转控制语句"><a href="#四、跳转控制语句" class="headerlink" title="四、跳转控制语句"></a>四、跳转控制语句</h2><ul>
+<li>continue用在循环中，基于条件控制，跳过某次循环体内容的执行，继续下一次的执行。</li>
+<li>break用在循环中，基于条件控制，终止循环体内容的执行，也就是说结束当前的整个循环。</li>
+</ul>
+<h2 id="五、循环嵌套"><a href="#五、循环嵌套" class="headerlink" title="五、循环嵌套"></a>五、循环嵌套</h2><ul>
+<li>分支语句中包含分支语句称为分支嵌套</li>
+<li>循环语句中包含循环语句称为循环嵌套</li>
+</ul>
+<!--more-->
 ]]></content>
       <categories>
         <category>技术</category>

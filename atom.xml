@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2022-12-27T12:45:43.282Z</updated>
+  <updated>2022-12-27T12:52:43.160Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -21,12 +21,15 @@
     <link href="http://phd99.com/2022/12/04/vue%E4%B8%ADprops%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://phd99.com/2022/12/04/vue%E4%B8%ADprops%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
     <published>2022-12-04T08:10:50.000Z</published>
-    <updated>2022-12-27T12:45:43.282Z</updated>
+    <updated>2022-12-27T12:52:43.160Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;步骤一：设置自定义属性&quot;&gt;&lt;a href=&quot;#步骤一：设置自定义属性&quot; class=&quot;headerlink&quot; title=&quot;步骤一：设置自定义属性&quot;&gt;&lt;/a&gt;步骤一：设置自定义属性&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;创建&lt;code&gt;Test2.vue&lt;/code&gt;组件&lt;/li&gt;
-&lt;li&gt;在&lt;code&gt;export default&lt;/code&gt;中使用&lt;code&gt;props&lt;/code&gt;来自定义属性&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// props: [&amp;#x27;自定义属性1&amp;#x27;, &amp;#x27;自定义属性2&amp;#x27;, &amp;#x27;自定义属性3&amp;#x27;...]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    props: [&lt;span class=&quot;string&quot;&gt;&amp;#x27;value1&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;value2&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;value3&amp;#x27;&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+&lt;li&gt;在&lt;code&gt;export default&lt;/code&gt;中使用&lt;code&gt;props&lt;/code&gt;来自定义属性&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// props: [&amp;#x27;自定义属性1&amp;#x27;, &amp;#x27;自定义属性2&amp;#x27;, &amp;#x27;自定义属性3&amp;#x27;...]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    props: [&lt;span class=&quot;string&quot;&gt;&amp;#x27;value1&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;value2&amp;#x27;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;#x27;value3&amp;#x27;&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -46,11 +49,14 @@
     <link href="http://phd99.com/2022/12/03/vue%E4%B8%ADmethods%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://phd99.com/2022/12/03/vue%E4%B8%ADmethods%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
     <published>2022-12-03T02:20:50.000Z</published>
-    <updated>2022-12-27T12:45:46.110Z</updated>
+    <updated>2022-12-27T12:51:54.366Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;步骤一&quot;&gt;&lt;a href=&quot;#步骤一&quot; class=&quot;headerlink&quot; title=&quot;步骤一&quot;&gt;&lt;/a&gt;步骤一&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在&lt;code&gt;export default&lt;/code&gt;中定义&lt;code&gt;methods&lt;/code&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  methods: &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+&lt;li&gt;在&lt;code&gt;export default&lt;/code&gt;中定义&lt;code&gt;methods&lt;/code&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  methods: &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -70,11 +76,14 @@
     <link href="http://phd99.com/2022/12/02/vscode%E4%B8%AD%E9%85%8D%E7%BD%AE@%E8%B7%AF%E5%BE%84%E6%8F%90%E7%A4%BA/"/>
     <id>http://phd99.com/2022/12/02/vscode%E4%B8%AD%E9%85%8D%E7%BD%AE@%E8%B7%AF%E5%BE%84%E6%8F%90%E7%A4%BA/</id>
     <published>2022-12-02T12:46:57.000Z</published>
-    <updated>2022-12-27T12:46:09.669Z</updated>
+    <updated>2022-12-27T12:53:11.885Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;步骤一：配置webpack-config&quot;&gt;&lt;a href=&quot;#步骤一：配置webpack-config&quot; class=&quot;headerlink&quot; title=&quot;步骤一：配置webpack.config&quot;&gt;&lt;/a&gt;步骤一：配置webpack.config&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在&lt;code&gt;webpack.config.js&lt;/code&gt;文件的&lt;code&gt;module.exports&lt;/code&gt;中添加如下内容&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;resolve: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  alias: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&amp;#x27;@&amp;#x27;&lt;/span&gt;: path.join(__dirname, &lt;span class=&quot;string&quot;&gt;&amp;#x27;./src/&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+&lt;li&gt;在&lt;code&gt;webpack.config.js&lt;/code&gt;文件的&lt;code&gt;module.exports&lt;/code&gt;中添加如下内容&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;resolve: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  alias: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&amp;#x27;@&amp;#x27;&lt;/span&gt;: path.join(__dirname, &lt;span class=&quot;string&quot;&gt;&amp;#x27;./src/&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -94,11 +103,14 @@
     <link href="http://phd99.com/2022/12/02/%E5%85%A8%E5%B1%80vue%E7%BB%84%E4%BB%B6/"/>
     <id>http://phd99.com/2022/12/02/%E5%85%A8%E5%B1%80vue%E7%BB%84%E4%BB%B6/</id>
     <published>2022-12-02T12:21:19.000Z</published>
-    <updated>2022-12-27T12:47:55.404Z</updated>
+    <updated>2022-12-27T12:53:32.378Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;步骤一&quot;&gt;&lt;a href=&quot;#步骤一&quot; class=&quot;headerlink&quot; title=&quot;步骤一&quot;&gt;&lt;/a&gt;步骤一&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在&lt;code&gt;main.js&lt;/code&gt;中添加如下内容&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 导入需要全局使用的组件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; Test1 &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;#x27;@/components/test1.vue&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// component(&amp;#x27;定义名称&amp;#x27;, 组件名)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Vue.component(&lt;span class=&quot;string&quot;&gt;&amp;#x27;Test1_1&amp;#x27;&lt;/span&gt;, Test1)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+&lt;li&gt;在&lt;code&gt;main.js&lt;/code&gt;中添加如下内容&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 导入需要全局使用的组件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; Test1 &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;#x27;@/components/test1.vue&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// component(&amp;#x27;定义名称&amp;#x27;, 组件名)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Vue.component(&lt;span class=&quot;string&quot;&gt;&amp;#x27;Test1_1&amp;#x27;&lt;/span&gt;, Test1)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -118,11 +130,14 @@
     <link href="http://phd99.com/2022/12/02/vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E8%B0%83%E7%94%A8vue%E7%BB%84%E4%BB%B6/"/>
     <id>http://phd99.com/2022/12/02/vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E8%B0%83%E7%94%A8vue%E7%BB%84%E4%BB%B6/</id>
     <published>2022-12-02T11:39:20.000Z</published>
-    <updated>2022-12-27T12:45:33.065Z</updated>
+    <updated>2022-12-27T12:52:10.993Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;步骤一&quot;&gt;&lt;a href=&quot;#步骤一&quot; class=&quot;headerlink&quot; title=&quot;步骤一&quot;&gt;&lt;/a&gt;步骤一&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;使用&lt;code&gt;import&lt;/code&gt;语法导入需要的组件&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; test1 &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;#x27;./components/test1.vue&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+&lt;li&gt;使用&lt;code&gt;import&lt;/code&gt;语法导入需要的组件&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; test1 &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&amp;#x27;./components/test1.vue&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -142,11 +157,14 @@
     <link href="http://phd99.com/2022/12/01/vue%E4%B8%ADdata%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://phd99.com/2022/12/01/vue%E4%B8%ADdata%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
     <published>2022-12-01T12:31:36.000Z</published>
-    <updated>2022-12-27T12:45:49.357Z</updated>
+    <updated>2022-12-27T12:51:46.419Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;步骤一&quot;&gt;&lt;a href=&quot;#步骤一&quot; class=&quot;headerlink&quot; title=&quot;步骤一&quot;&gt;&lt;/a&gt;步骤一&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在&lt;code&gt;export default&lt;/code&gt;中定义data函数&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//data为数据源，是一个函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;data&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 在return的&amp;#123;&amp;#125;中，可以定义数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+&lt;li&gt;在&lt;code&gt;export default&lt;/code&gt;中定义data函数&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;//data为数据源，是一个函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;title&quot;&gt;data&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// 在return的&amp;#123;&amp;#125;中，可以定义数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -192,7 +210,7 @@
     <link href="http://phd99.com/2022/11/29/vue-cil%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/"/>
     <id>http://phd99.com/2022/11/29/vue-cil%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</id>
     <published>2022-11-29T12:11:23.000Z</published>
-    <updated>2022-12-27T12:46:00.115Z</updated>
+    <updated>2022-12-27T12:53:04.989Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;node-modules&quot;&gt;&lt;a href=&quot;#node-modules&quot; class=&quot;headerlink&quot; title=&quot;node_modules&quot;&gt;&lt;/a&gt;node_modules&lt;/h2&gt;&lt;ul&gt;
@@ -220,7 +238,7 @@
     <link href="http://phd99.com/2022/11/28/vue%E7%BB%84%E4%BB%B6/"/>
     <id>http://phd99.com/2022/11/28/vue%E7%BB%84%E4%BB%B6/</id>
     <published>2022-11-28T11:51:29.000Z</published>
-    <updated>2022-12-27T12:45:38.403Z</updated>
+    <updated>2022-12-27T12:52:27.240Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是组件化开发&quot;&gt;&lt;a href=&quot;#什么是组件化开发&quot; class=&quot;headerlink&quot; title=&quot;什么是组件化开发&quot;&gt;&lt;/a&gt;什么是组件化开发&lt;/h2&gt;&lt;ul&gt;
