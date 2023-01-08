@@ -7884,12 +7884,16 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 <li>添加全局范围的邮箱<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email 邮箱</span><br></pre></td></tr></table></figure></li>
 <li>添加全局范围的用户名<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name 用户名</span><br></pre></td></tr></table></figure></li>
 <li>查看用户配置<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
-<h2 id="二、初始化一个git仓库"><a href="#二、初始化一个git仓库" class="headerlink" title="二、初始化一个git仓库"></a>二、初始化一个git仓库</h2></li>
+
+</li>
+</ul>
+<h2 id="二、初始化一个git仓库"><a href="#二、初始化一个git仓库" class="headerlink" title="二、初始化一个git仓库"></a>二、初始化一个git仓库</h2><ul>
 <li>将当前文件夹作为git仓库<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure></li>
 <li>或者将当前文件夹下的xxx文件夹作为git仓库<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git init xxx</span><br></pre></td></tr></table></figure></li>
 <li>初始化后会出现一个名为<code>.git</code>的隐藏文件夹</li>
 </ul>
 <a id="more"></a>
+
 
 <h2 id="三、添加远程仓库GitHub"><a href="#三、添加远程仓库GitHub" class="headerlink" title="三、添加远程仓库GitHub"></a>三、添加远程仓库GitHub</h2><ul>
 <li>给远程仓库<code>git@github.com:phd99/test.git</code>设置一个别名（远程主机名）<code>test</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add [别名] git@github.com:phd99&#x2F;test.git</span><br><span class="line">git remote add origin git@github.com:phd99&#x2F;test.git</span><br></pre></td></tr></table></figure></li>
