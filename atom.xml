@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2022-12-27T12:52:43.160Z</updated>
+  <updated>2023-01-08T13:43:56.293Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql常用函数</title>
+    <link href="http://phd99.com/2023/01/08/mysql%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/"/>
+    <id>http://phd99.com/2023/01/08/mysql%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/</id>
+    <published>2023-01-08T13:19:01.000Z</published>
+    <updated>2023-01-08T13:43:56.293Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;substring-index&quot;&gt;&lt;a href=&quot;#substring-index&quot; class=&quot;headerlink&quot; title=&quot;substring_index&quot;&gt;&lt;/a&gt;substring_index&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;用于获取字符串中的一部分值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;substring_index(value, &amp;#39;分隔符&amp;#39;, index)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;若&lt;code&gt;index&lt;/code&gt;为正数&lt;ul&gt;
+&lt;li&gt;获取的值为：从左往右数，第&lt;code&gt;index&lt;/code&gt;个分隔符之前的内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;若&lt;code&gt;index&lt;/code&gt;为负数&lt;ul&gt;
+&lt;li&gt;获取的值为：从右往左数，第&lt;code&gt;|index|&lt;/code&gt;个分隔符之后的内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="数据库" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="mysql" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/"/>
+    
+    
+    <category term="mysql" scheme="http://phd99.com/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>vue中props的使用</title>
@@ -537,33 +571,6 @@ frame</summary>
     
     
     <category term="游戏" scheme="http://phd99.com/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS之文字阴影</title>
-    <link href="http://phd99.com/2021/06/08/CSS%E4%B9%8B%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1/"/>
-    <id>http://phd99.com/2021/06/08/CSS%E4%B9%8B%E6%96%87%E5%AD%97%E9%98%B4%E5%BD%B1/</id>
-    <published>2021-06-08T13:10:01.000Z</published>
-    <updated>2022-12-04T11:34:15.338Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;一、简介&quot;&gt;&lt;a href=&quot;#一、简介&quot; class=&quot;headerlink&quot; title=&quot;一、简介&quot;&gt;&lt;/a&gt;一、简介&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在&lt;code&gt;CSS3&lt;/code&gt;中，可以使用&lt;code&gt;text-shadow&lt;/code&gt;属性将阴影应用于</summary>
-      
-    
-    
-    
-    <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    <category term="web开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/"/>
-    
-    <category term="CSS" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/CSS/"/>
-    
-    
-    <category term="CSS" scheme="http://phd99.com/tags/CSS/"/>
     
   </entry>
   

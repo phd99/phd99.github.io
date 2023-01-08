@@ -1,6 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>mysql常用函数</title>
+    <url>/2023/01/08/mysql%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h2 id="substring-index"><a href="#substring-index" class="headerlink" title="substring_index"></a>substring_index</h2><ul>
+<li>用于获取字符串中的一部分值</li>
+<li><code>substring_index(value, &#39;分隔符&#39;, index)</code></li>
+<li>若<code>index</code>为正数<ul>
+<li>获取的值为：从左往右数，第<code>index</code>个分隔符之前的内容</li>
+</ul>
+</li>
+<li>若<code>index</code>为负数<ul>
+<li>获取的值为：从右往左数，第<code>|index|</code>个分隔符之后的内容</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+
+
+<h3 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h3><ul>
+<li>取<code>new_table.value1</code>的第一个<code>,</code>前面的内容<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- new_table.value1的值为：1,2,3</span></span><br><span class="line">substring_index(new_table.value1, <span class="string">&#x27;,&#x27;</span>, <span class="number">1</span>)</span><br><span class="line"><span class="comment">-- 结果为：1</span></span><br></pre></td></tr></table></figure></li>
+<li>取<code>new_table.value1</code>的倒数第一个<code>,</code>后面的内容<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- new_table.value1的值为：1,2,3</span></span><br><span class="line">substring_index(new_table.value1, <span class="string">&#x27;,&#x27;</span>, <span class="number">-1</span>)</span><br><span class="line"><span class="comment">-- 结果为：3</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h2><ul>
+<li>用于拼接字符串</li>
+<li><code>concat(&#39;字符串1&#39;, &#39;字符串2&#39;, &#39;字符串3&#39;...)</code></li>
+</ul>
+<h3 id="范例-1"><a href="#范例-1" class="headerlink" title="范例"></a>范例</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">concat(<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>)</span><br><span class="line"><span class="comment">-- 值为：12</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="concat-ws"><a href="#concat-ws" class="headerlink" title="concat_ws"></a>concat_ws</h2><ul>
+<li>用于拼接字符串，且将各字符串之间用分隔符隔开</li>
+<li><code>concat_ws(&#39;分隔符&#39;, &#39;字符串1&#39;, &#39;字符串2&#39;, &#39;字符串3&#39;...)</code></li>
+</ul>
+<h3 id="范例-2"><a href="#范例-2" class="headerlink" title="范例"></a>范例</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">concat_ws(<span class="string">&#x27;,&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>)</span><br><span class="line"><span class="comment">-- 值为：1,2,3</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="group-concat"><a href="#group-concat" class="headerlink" title="group_concat"></a>group_concat</h2><ul>
+<li>可将同一分组中的多个值合并为一个字符串，每个值之间用逗号隔开</li>
+<li><code>group_concat(要合并的列名 [order by 列名])</code></li>
+</ul>
+<h3 id="范例-3"><a href="#范例-3" class="headerlink" title="范例"></a>范例</h3><ul>
+<li><p>有一张<code>student</code>表，如下图</p>
+<div  align="center">
+<img src="https://gcore.jsdelivr.net/gh/phd99/img/技术/mysql/1.jpg
+" width = 60% />
+</div>
+</li>
+<li><p>将表<code>student</code>按性别分组，且将性别相同名称合并，并按从小到大的顺序排序</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">sex,</span><br><span class="line">group_concat(name <span class="keyword">order</span> <span class="keyword">by</span> age <span class="keyword">asc</span>)</span><br><span class="line"><span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> student.sex</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="日期加减"><a href="#日期加减" class="headerlink" title="日期加减"></a>日期加减</h2><ul>
+<li>加1天<ul>
+<li><code>date_add(日期, interval 1 day)</code></li>
+</ul>
+</li>
+<li>加1月<ul>
+<li><code>date_add(日期, interval 1 month)</code></li>
+</ul>
+</li>
+<li>加1年<ul>
+<li><code>date_add(日期, interval 1 year)</code></li>
+</ul>
+</li>
+<li>减法使用<code>date_sub()</code></li>
+</ul>
+<h3 id="范例-4"><a href="#范例-4" class="headerlink" title="范例"></a>范例</h3><ul>
+<li>将<code>sys_last_upd</code>加1年减1天<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">date_sub(date_add(sys_last_upd, <span class="type">interval</span> <span class="number">1</span> <span class="keyword">year</span>), <span class="type">interval</span> <span class="number">1</span> <span class="keyword">DAY</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="format"><a href="#format" class="headerlink" title="format"></a>format</h2><ul>
+<li>用于四舍五入小数位数，且结果为字符串</li>
+<li><code>format(数值, 要保留的小数位数)</code></li>
+</ul>
+<h3 id="范例-5"><a href="#范例-5" class="headerlink" title="范例"></a>范例</h3><ul>
+<li>保留两位小数<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">format(<span class="number">11.1111</span>, <span class="number">2</span>)</span><br><span class="line"><span class="comment">-- 结果为：11.11</span></span><br></pre></td></tr></table></figure>
+<!--more--></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>数据库</category>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vue中props的使用</title>
     <url>/2022/12/04/vue%E4%B8%ADprops%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h2 id="步骤一：设置自定义属性"><a href="#步骤一：设置自定义属性" class="headerlink" title="步骤一：设置自定义属性"></a>步骤一：设置自定义属性</h2><ul>
@@ -2388,10 +2483,10 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       <categories>
         <category>技术</category>
         <category>web开发</category>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -2421,10 +2516,10 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       <categories>
         <category>技术</category>
         <category>web开发</category>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -2477,10 +2572,10 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       <categories>
         <category>技术</category>
         <category>web开发</category>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -2664,10 +2759,10 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       <categories>
         <category>技术</category>
         <category>web开发</category>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -2701,10 +2796,10 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       <categories>
         <category>技术</category>
         <category>web开发</category>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -2780,10 +2875,10 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       <categories>
         <category>技术</category>
         <category>web开发</category>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -2839,10 +2934,10 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       <categories>
         <category>技术</category>
         <category>web开发</category>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -2920,10 +3015,10 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       <categories>
         <category>技术</category>
         <category>web开发</category>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -3080,10 +3175,10 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       <categories>
         <category>技术</category>
         <category>web开发</category>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -3301,10 +3396,10 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       <categories>
         <category>技术</category>
         <category>web开发</category>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -3358,10 +3453,10 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       <categories>
         <category>技术</category>
         <category>web开发</category>
-        <category>CSS</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -5168,9 +5263,10 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       <categories>
         <category>技术</category>
         <category>web开发</category>
+        <category>css</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
+        <tag>css</tag>
         <tag>HTML</tag>
       </tags>
   </entry>
@@ -7604,95 +7700,6 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
       </tags>
   </entry>
   <entry>
-    <title>Java之类加载</title>
-    <url>/2021/03/31/Java%E4%B9%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD/</url>
-    <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><ul>
-<li>当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过类的加载、类的连接、类的初始化这三个步骤来对类进行初始化。如果不出现以外情况，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或者类初始化。<a id="more"></a>
-
-</li>
-</ul>
-<h2 id="二、类的加载"><a href="#二、类的加载" class="headerlink" title="二、类的加载"></a>二、类的加载</h2><ul>
-<li>就是指将class文件读入内存，并为之创建一个java.lang.Class对象</li>
-<li>任何类被使用时，系统都会为之建立一个java.lang.Class对象</li>
-</ul>
-<h2 id="三、类的连接"><a href="#三、类的连接" class="headerlink" title="三、类的连接"></a>三、类的连接</h2><ul>
-<li>验证阶段：用于检验被加载的类是否有正确的内部结构，并和其他类协调一致。</li>
-<li>准备阶段：负责为类的类变量分配内存，并设置默认初始化值。</li>
-<li>解析阶段：将类的二进制数据中的符号引用替换为直接引用。</li>
-</ul>
-<h2 id="四、类的初始化"><a href="#四、类的初始化" class="headerlink" title="四、类的初始化"></a>四、类的初始化</h2><ul>
-<li>在该阶段，主要就是对类变量进行初始化</li>
-</ul>
-<h2 id="五、类的初始化步骤"><a href="#五、类的初始化步骤" class="headerlink" title="五、类的初始化步骤"></a>五、类的初始化步骤</h2><ul>
-<li>(1)例如类还未被加载和连接，则程序先加载并连接该类</li>
-<li>(2)例如该类的直接父类还未被初始化，则先初始化其直接父类</li>
-<li>(3)例如类中有初始化语句，则系统依次执行这些初始化语句</li>
-<li>注意：在执行第2个步骤的时候，系统对直接父类的初始化步骤也遵循初始化步骤1-3</li>
-</ul>
-<h2 id="六、类的初始化时机"><a href="#六、类的初始化时机" class="headerlink" title="六、类的初始化时机"></a>六、类的初始化时机</h2><ul>
-<li>创建类的实例</li>
-<li>调用类的类方法</li>
-<li>访问类或者接口的类变量，或者为该类变量赋值</li>
-<li>使用反射方式来强制创建某个类或接口对应的<code>java.lang.Class</code>对象</li>
-<li>初始化某个类的子类</li>
-<li>直接使用java.exe命令来运行某个主类</li>
-</ul>
-<h2 id="七、类加载器"><a href="#七、类加载器" class="headerlink" title="七、类加载器"></a>七、类加载器</h2><h3 id="7-1-类加载器的作用"><a href="#7-1-类加载器的作用" class="headerlink" title="7.1. 类加载器的作用"></a>7.1. 类加载器的作用</h3><ul>
-<li>负责将.class文件加载到内存中，并为之生成对应的java.lang.Class对象</li>
-<li>虽然我们不用过分关心类加载机制，但是了解这个机制我们就能更好的理解程序的运行</li>
-</ul>
-<h3 id="7-2-JVM的类加载机制"><a href="#7-2-JVM的类加载机制" class="headerlink" title="7.2. JVM的类加载机制"></a>7.2. JVM的类加载机制</h3><ul>
-<li>全盘负责<ul>
-<li>就是当一个类加载器负责加载某个Class时，该Class所依赖的和引用的其他Class也将由该类加载器负责载入，除非显示使用另外一个类加载器来载入</li>
-</ul>
-</li>
-<li>父类委托<ul>
-<li>就是当一个类加载器负责加载某个Class时，先让父类加载器试图加载该Class，只有在父类加载器无法加载该类时才尝试从自己的类路径中加载该类</li>
-</ul>
-</li>
-<li>缓存机制<ul>
-<li>保证所有加载过的Class都会被缓存，当程序需要使用某个Class对象时，类加载器先从缓存区中搜索该Class，只有当缓存区中不存在该Class对象时，系统才会读取该类对应的二进制数据，并将其转换成Class对象，存储到缓存区</li>
-</ul>
-</li>
-<li>ClassLoader<ul>
-<li>是负责加载类的对象</li>
-</ul>
-</li>
-</ul>
-<h3 id="7-3-Java运行时具有以下内置类加载器"><a href="#7-3-Java运行时具有以下内置类加载器" class="headerlink" title="7.3. Java运行时具有以下内置类加载器"></a>7.3. Java运行时具有以下内置类加载器</h3><ul>
-<li>Bootstrap class loader<ul>
-<li>它是虚拟机的内置类加载器，通常表示为null，并且没有父null</li>
-</ul>
-</li>
-<li>Platform class loader<ul>
-<li>平台类加载器可以看到所有平台类，平台类包括由平台类加载器或其祖先定义的Java SE平台API，其实现类和JDK特定的运行时类</li>
-</ul>
-</li>
-<li>System class loader<ul>
-<li>它也被称为应用程序类加载器，与平台类加载器不同，系统类加载器通常用于定义应用程序类路径，模块路径和JDK特定工具上的类</li>
-</ul>
-</li>
-<li>类加载器的继承关系<ul>
-<li>System的父加载器为Platform，而Platform的父加载器为Bootstrap</li>
-</ul>
-</li>
-</ul>
-<h3 id="7-4-ClassLoader中的两个方法"><a href="#7-4-ClassLoader中的两个方法" class="headerlink" title="7.4. ClassLoader中的两个方法"></a>7.4. ClassLoader中的两个方法</h3><ul>
-<li>返回用于委派的系统类加载器<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> ClassLoader <span class="title">getSystemClassLoader</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></li>
-<li>返回父类加载器进行委派<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ClassLoader <span class="title">getParent</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-<!--more-->
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java之流程控制</title>
     <url>/2021/03/31/Java%E4%B9%8B%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
     <content><![CDATA[<h2 id="一、顺序结构"><a href="#一、顺序结构" class="headerlink" title="一、顺序结构"></a>一、顺序结构</h2><ul>
@@ -7772,6 +7779,95 @@ frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 <li>循环语句中包含循环语句称为循环嵌套</li>
 </ul>
 <!--more-->
+]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java之类加载</title>
+    <url>/2021/03/31/Java%E4%B9%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD/</url>
+    <content><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><ul>
+<li>当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过类的加载、类的连接、类的初始化这三个步骤来对类进行初始化。如果不出现以外情况，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或者类初始化。<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="二、类的加载"><a href="#二、类的加载" class="headerlink" title="二、类的加载"></a>二、类的加载</h2><ul>
+<li>就是指将class文件读入内存，并为之创建一个java.lang.Class对象</li>
+<li>任何类被使用时，系统都会为之建立一个java.lang.Class对象</li>
+</ul>
+<h2 id="三、类的连接"><a href="#三、类的连接" class="headerlink" title="三、类的连接"></a>三、类的连接</h2><ul>
+<li>验证阶段：用于检验被加载的类是否有正确的内部结构，并和其他类协调一致。</li>
+<li>准备阶段：负责为类的类变量分配内存，并设置默认初始化值。</li>
+<li>解析阶段：将类的二进制数据中的符号引用替换为直接引用。</li>
+</ul>
+<h2 id="四、类的初始化"><a href="#四、类的初始化" class="headerlink" title="四、类的初始化"></a>四、类的初始化</h2><ul>
+<li>在该阶段，主要就是对类变量进行初始化</li>
+</ul>
+<h2 id="五、类的初始化步骤"><a href="#五、类的初始化步骤" class="headerlink" title="五、类的初始化步骤"></a>五、类的初始化步骤</h2><ul>
+<li>(1)例如类还未被加载和连接，则程序先加载并连接该类</li>
+<li>(2)例如该类的直接父类还未被初始化，则先初始化其直接父类</li>
+<li>(3)例如类中有初始化语句，则系统依次执行这些初始化语句</li>
+<li>注意：在执行第2个步骤的时候，系统对直接父类的初始化步骤也遵循初始化步骤1-3</li>
+</ul>
+<h2 id="六、类的初始化时机"><a href="#六、类的初始化时机" class="headerlink" title="六、类的初始化时机"></a>六、类的初始化时机</h2><ul>
+<li>创建类的实例</li>
+<li>调用类的类方法</li>
+<li>访问类或者接口的类变量，或者为该类变量赋值</li>
+<li>使用反射方式来强制创建某个类或接口对应的<code>java.lang.Class</code>对象</li>
+<li>初始化某个类的子类</li>
+<li>直接使用java.exe命令来运行某个主类</li>
+</ul>
+<h2 id="七、类加载器"><a href="#七、类加载器" class="headerlink" title="七、类加载器"></a>七、类加载器</h2><h3 id="7-1-类加载器的作用"><a href="#7-1-类加载器的作用" class="headerlink" title="7.1. 类加载器的作用"></a>7.1. 类加载器的作用</h3><ul>
+<li>负责将.class文件加载到内存中，并为之生成对应的java.lang.Class对象</li>
+<li>虽然我们不用过分关心类加载机制，但是了解这个机制我们就能更好的理解程序的运行</li>
+</ul>
+<h3 id="7-2-JVM的类加载机制"><a href="#7-2-JVM的类加载机制" class="headerlink" title="7.2. JVM的类加载机制"></a>7.2. JVM的类加载机制</h3><ul>
+<li>全盘负责<ul>
+<li>就是当一个类加载器负责加载某个Class时，该Class所依赖的和引用的其他Class也将由该类加载器负责载入，除非显示使用另外一个类加载器来载入</li>
+</ul>
+</li>
+<li>父类委托<ul>
+<li>就是当一个类加载器负责加载某个Class时，先让父类加载器试图加载该Class，只有在父类加载器无法加载该类时才尝试从自己的类路径中加载该类</li>
+</ul>
+</li>
+<li>缓存机制<ul>
+<li>保证所有加载过的Class都会被缓存，当程序需要使用某个Class对象时，类加载器先从缓存区中搜索该Class，只有当缓存区中不存在该Class对象时，系统才会读取该类对应的二进制数据，并将其转换成Class对象，存储到缓存区</li>
+</ul>
+</li>
+<li>ClassLoader<ul>
+<li>是负责加载类的对象</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-3-Java运行时具有以下内置类加载器"><a href="#7-3-Java运行时具有以下内置类加载器" class="headerlink" title="7.3. Java运行时具有以下内置类加载器"></a>7.3. Java运行时具有以下内置类加载器</h3><ul>
+<li>Bootstrap class loader<ul>
+<li>它是虚拟机的内置类加载器，通常表示为null，并且没有父null</li>
+</ul>
+</li>
+<li>Platform class loader<ul>
+<li>平台类加载器可以看到所有平台类，平台类包括由平台类加载器或其祖先定义的Java SE平台API，其实现类和JDK特定的运行时类</li>
+</ul>
+</li>
+<li>System class loader<ul>
+<li>它也被称为应用程序类加载器，与平台类加载器不同，系统类加载器通常用于定义应用程序类路径，模块路径和JDK特定工具上的类</li>
+</ul>
+</li>
+<li>类加载器的继承关系<ul>
+<li>System的父加载器为Platform，而Platform的父加载器为Bootstrap</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-4-ClassLoader中的两个方法"><a href="#7-4-ClassLoader中的两个方法" class="headerlink" title="7.4. ClassLoader中的两个方法"></a>7.4. ClassLoader中的两个方法</h3><ul>
+<li>返回用于委派的系统类加载器<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> ClassLoader <span class="title">getSystemClassLoader</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></li>
+<li>返回父类加载器进行委派<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function">ClassLoader <span class="title">getParent</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<!--more-->
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>技术</category>
