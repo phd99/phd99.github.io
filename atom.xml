@@ -6,7 +6,7 @@
   <link href="http://phd99.com/atom.xml" rel="self"/>
   
   <link href="http://phd99.com/"/>
-  <updated>2023-01-10T15:35:58.854Z</updated>
+  <updated>2023-01-10T15:41:44.670Z</updated>
   <id>http://phd99.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://phd99.com/2023/01/10/%E6%89%B9%E9%87%8F%E5%A4%8D%E5%88%B6%E5%B9%B6%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6/"/>
     <id>http://phd99.com/2023/01/10/%E6%89%B9%E9%87%8F%E5%A4%8D%E5%88%B6%E5%B9%B6%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6/</id>
     <published>2023-01-10T15:24:11.000Z</published>
-    <updated>2023-01-10T15:35:58.854Z</updated>
+    <updated>2023-01-10T15:41:44.670Z</updated>
     
     
     <summary type="html">&lt;ul&gt;
@@ -38,10 +38,10 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    <category term="Python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Python/"/>
     
     
-    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    <category term="Python" scheme="http://phd99.com/tags/Python/"/>
     
   </entry>
   
@@ -50,7 +50,7 @@
     <link href="http://phd99.com/2023/01/08/mysql%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/"/>
     <id>http://phd99.com/2023/01/08/mysql%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0/</id>
     <published>2023-01-08T13:19:01.000Z</published>
-    <updated>2023-01-08T13:43:56.293Z</updated>
+    <updated>2023-01-10T15:50:04.251Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;substring-index&quot;&gt;&lt;a href=&quot;#substring-index&quot; class=&quot;headerlink&quot; title=&quot;substring_index&quot;&gt;&lt;/a&gt;substring_index&lt;/h2&gt;&lt;ul&gt;
@@ -72,10 +72,10 @@
     
     <category term="数据库" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-    <category term="mysql" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/"/>
+    <category term="Mysql" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/Mysql/"/>
     
     
-    <category term="mysql" scheme="http://phd99.com/tags/mysql/"/>
+    <category term="Mysql" scheme="http://phd99.com/tags/Mysql/"/>
     
   </entry>
   
@@ -84,7 +84,7 @@
     <link href="http://phd99.com/2022/12/04/vue%E4%B8%ADprops%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://phd99.com/2022/12/04/vue%E4%B8%ADprops%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
     <published>2022-12-04T08:10:50.000Z</published>
-    <updated>2022-12-27T12:52:43.160Z</updated>
+    <updated>2023-01-10T15:48:48.284Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;步骤一：设置自定义属性&quot;&gt;&lt;a href=&quot;#步骤一：设置自定义属性&quot; class=&quot;headerlink&quot; title=&quot;步骤一：设置自定义属性&quot;&gt;&lt;/a&gt;步骤一：设置自定义属性&lt;/h2&gt;&lt;ul&gt;
@@ -98,12 +98,12 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="web开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/"/>
+    <category term="WEB开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/"/>
     
-    <category term="vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/Vue/"/>
     
     
-    <category term="vue" scheme="http://phd99.com/tags/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/tags/Vue/"/>
     
   </entry>
   
@@ -112,7 +112,7 @@
     <link href="http://phd99.com/2022/12/03/vue%E4%B8%ADmethods%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://phd99.com/2022/12/03/vue%E4%B8%ADmethods%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
     <published>2022-12-03T02:20:50.000Z</published>
-    <updated>2022-12-27T12:51:54.366Z</updated>
+    <updated>2023-01-10T15:48:48.785Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;步骤一&quot;&gt;&lt;a href=&quot;#步骤一&quot; class=&quot;headerlink&quot; title=&quot;步骤一&quot;&gt;&lt;/a&gt;步骤一&lt;/h2&gt;&lt;ul&gt;
@@ -125,12 +125,12 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="web开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/"/>
+    <category term="WEB开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/"/>
     
-    <category term="vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/Vue/"/>
     
     
-    <category term="vue" scheme="http://phd99.com/tags/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/tags/Vue/"/>
     
   </entry>
   
@@ -139,7 +139,7 @@
     <link href="http://phd99.com/2022/12/02/vscode%E4%B8%AD%E9%85%8D%E7%BD%AE@%E8%B7%AF%E5%BE%84%E6%8F%90%E7%A4%BA/"/>
     <id>http://phd99.com/2022/12/02/vscode%E4%B8%AD%E9%85%8D%E7%BD%AE@%E8%B7%AF%E5%BE%84%E6%8F%90%E7%A4%BA/</id>
     <published>2022-12-02T12:46:57.000Z</published>
-    <updated>2022-12-27T12:53:11.885Z</updated>
+    <updated>2023-01-10T15:47:42.341Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;步骤一：配置webpack-config&quot;&gt;&lt;a href=&quot;#步骤一：配置webpack-config&quot; class=&quot;headerlink&quot; title=&quot;步骤一：配置webpack.config&quot;&gt;&lt;/a&gt;步骤一：配置webpack.config&lt;/h2&gt;&lt;ul&gt;
@@ -152,12 +152,12 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="web开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/"/>
+    <category term="WEB开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/"/>
     
-    <category term="vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/Vue/"/>
     
     
-    <category term="vue" scheme="http://phd99.com/tags/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/tags/Vue/"/>
     
   </entry>
   
@@ -166,7 +166,7 @@
     <link href="http://phd99.com/2022/12/02/%E5%85%A8%E5%B1%80vue%E7%BB%84%E4%BB%B6/"/>
     <id>http://phd99.com/2022/12/02/%E5%85%A8%E5%B1%80vue%E7%BB%84%E4%BB%B6/</id>
     <published>2022-12-02T12:21:19.000Z</published>
-    <updated>2022-12-27T12:53:32.378Z</updated>
+    <updated>2023-01-10T15:46:05.701Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;步骤一&quot;&gt;&lt;a href=&quot;#步骤一&quot; class=&quot;headerlink&quot; title=&quot;步骤一&quot;&gt;&lt;/a&gt;步骤一&lt;/h2&gt;&lt;ul&gt;
@@ -179,12 +179,12 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="web开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/"/>
+    <category term="WEB开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/"/>
     
-    <category term="vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/Vue/"/>
     
     
-    <category term="vue" scheme="http://phd99.com/tags/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/tags/Vue/"/>
     
   </entry>
   
@@ -193,7 +193,7 @@
     <link href="http://phd99.com/2022/12/02/vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E8%B0%83%E7%94%A8vue%E7%BB%84%E4%BB%B6/"/>
     <id>http://phd99.com/2022/12/02/vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E8%B0%83%E7%94%A8vue%E7%BB%84%E4%BB%B6/</id>
     <published>2022-12-02T11:39:20.000Z</published>
-    <updated>2022-12-27T12:52:10.993Z</updated>
+    <updated>2023-01-10T15:48:40.977Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;步骤一&quot;&gt;&lt;a href=&quot;#步骤一&quot; class=&quot;headerlink&quot; title=&quot;步骤一&quot;&gt;&lt;/a&gt;步骤一&lt;/h2&gt;&lt;ul&gt;
@@ -206,12 +206,12 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="web开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/"/>
+    <category term="WEB开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/"/>
     
-    <category term="vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/Vue/"/>
     
     
-    <category term="vue" scheme="http://phd99.com/tags/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/tags/Vue/"/>
     
   </entry>
   
@@ -220,7 +220,7 @@
     <link href="http://phd99.com/2022/12/01/vue%E4%B8%ADdata%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://phd99.com/2022/12/01/vue%E4%B8%ADdata%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
     <published>2022-12-01T12:31:36.000Z</published>
-    <updated>2022-12-27T12:51:46.419Z</updated>
+    <updated>2023-01-10T15:48:35.452Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;步骤一&quot;&gt;&lt;a href=&quot;#步骤一&quot; class=&quot;headerlink&quot; title=&quot;步骤一&quot;&gt;&lt;/a&gt;步骤一&lt;/h2&gt;&lt;ul&gt;
@@ -233,12 +233,12 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="web开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/"/>
+    <category term="WEB开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/"/>
     
-    <category term="vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/Vue/"/>
     
     
-    <category term="vue" scheme="http://phd99.com/tags/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/tags/Vue/"/>
     
   </entry>
   
@@ -247,7 +247,7 @@
     <link href="http://phd99.com/2022/11/30/vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E5%8F%AA%E8%83%BD%E6%9C%89%E4%B8%80%E4%B8%AA%E6%A0%B9%E8%8A%82%E7%82%B9/"/>
     <id>http://phd99.com/2022/11/30/vue%E7%BB%84%E4%BB%B6%E4%B8%AD%E5%8F%AA%E8%83%BD%E6%9C%89%E4%B8%80%E4%B8%AA%E6%A0%B9%E8%8A%82%E7%82%B9/</id>
     <published>2022-11-30T12:10:55.000Z</published>
-    <updated>2022-12-27T12:45:19.847Z</updated>
+    <updated>2023-01-10T15:45:26.783Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;vue组件中只能有一个根节点&quot;&gt;&lt;a href=&quot;#vue组件中只能有一个根节点&quot; class=&quot;headerlink&quot; title=&quot;vue组件中只能有一个根节点&quot;&gt;&lt;/a&gt;vue组件中只能有一个根节点&lt;/h2&gt;&lt;ul&gt;
@@ -259,12 +259,12 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="web开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/"/>
+    <category term="WEB开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/"/>
     
-    <category term="vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/Vue/"/>
     
     
-    <category term="vue" scheme="http://phd99.com/tags/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/tags/Vue/"/>
     
   </entry>
   
@@ -273,7 +273,7 @@
     <link href="http://phd99.com/2022/11/29/vue-cil%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/"/>
     <id>http://phd99.com/2022/11/29/vue-cil%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</id>
     <published>2022-11-29T12:11:23.000Z</published>
-    <updated>2022-12-27T12:53:04.989Z</updated>
+    <updated>2023-01-10T15:48:45.145Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;node-modules&quot;&gt;&lt;a href=&quot;#node-modules&quot; class=&quot;headerlink&quot; title=&quot;node_modules&quot;&gt;&lt;/a&gt;node_modules&lt;/h2&gt;&lt;ul&gt;
@@ -287,12 +287,12 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="web开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/"/>
+    <category term="WEB开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/"/>
     
-    <category term="vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/Vue/"/>
     
     
-    <category term="vue" scheme="http://phd99.com/tags/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/tags/Vue/"/>
     
   </entry>
   
@@ -301,7 +301,7 @@
     <link href="http://phd99.com/2022/11/28/vue%E7%BB%84%E4%BB%B6/"/>
     <id>http://phd99.com/2022/11/28/vue%E7%BB%84%E4%BB%B6/</id>
     <published>2022-11-28T11:51:29.000Z</published>
-    <updated>2022-12-27T12:52:27.240Z</updated>
+    <updated>2023-01-10T15:48:38.141Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;什么是组件化开发&quot;&gt;&lt;a href=&quot;#什么是组件化开发&quot; class=&quot;headerlink&quot; title=&quot;什么是组件化开发&quot;&gt;&lt;/a&gt;什么是组件化开发&lt;/h2&gt;&lt;ul&gt;
@@ -316,12 +316,12 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="web开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/"/>
+    <category term="WEB开发" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/"/>
     
-    <category term="vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/web%E5%BC%80%E5%8F%91/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/WEB%E5%BC%80%E5%8F%91/Vue/"/>
     
     
-    <category term="vue" scheme="http://phd99.com/tags/vue/"/>
+    <category term="Vue" scheme="http://phd99.com/tags/Vue/"/>
     
   </entry>
   
@@ -352,7 +352,7 @@
     <link href="http://phd99.com/2021/10/12/%E8%B0%83%E7%94%A8%E6%94%BE%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"/>
     <id>http://phd99.com/2021/10/12/%E8%B0%83%E7%94%A8%E6%94%BE%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</id>
     <published>2021-10-12T08:40:00.000Z</published>
-    <updated>2022-12-04T11:26:41.820Z</updated>
+    <updated>2023-01-10T15:42:16.676Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;调用放在项目中的第三方库&quot;&gt;&lt;a href=&quot;#调用放在项目中的第三方库&quot; class=&quot;headerlink&quot; title=&quot;调用放在项目中的第三方库&quot;&gt;&lt;/a&gt;调用放在项目中的第三方库&lt;/h1&gt;&lt;hr&gt;
@@ -378,10 +378,10 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    <category term="Python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Python/"/>
     
     
-    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    <category term="Python" scheme="http://phd99.com/tags/Python/"/>
     
   </entry>
   
@@ -390,7 +390,7 @@
     <link href="http://phd99.com/2021/10/12/cx_Oracle%E5%92%8Cinstantclient/"/>
     <id>http://phd99.com/2021/10/12/cx_Oracle%E5%92%8Cinstantclient/</id>
     <published>2021-10-12T08:39:53.000Z</published>
-    <updated>2022-12-04T11:34:49.325Z</updated>
+    <updated>2023-01-10T15:42:33.503Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;cx-Oracle和instantclient&quot;&gt;&lt;a href=&quot;#cx-Oracle和instantclient&quot; class=&quot;headerlink&quot; title=&quot;cx_Oracle和instantclient&quot;&gt;&lt;/a&gt;cx_Oracle和instantclient&lt;/h1&gt;&lt;hr&gt;
@@ -415,10 +415,10 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    <category term="Python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Python/"/>
     
     
-    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    <category term="Python" scheme="http://phd99.com/tags/Python/"/>
     
   </entry>
   
@@ -427,7 +427,7 @@
     <link href="http://phd99.com/2021/10/12/%E4%BD%BF%E7%94%A8paramiko%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/"/>
     <id>http://phd99.com/2021/10/12/%E4%BD%BF%E7%94%A8paramiko%E8%AE%BF%E9%97%AE%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA/</id>
     <published>2021-10-12T08:31:20.000Z</published>
-    <updated>2022-12-04T12:10:10.052Z</updated>
+    <updated>2023-01-10T15:42:43.847Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;使用paramiko访问远程主机&quot;&gt;&lt;a href=&quot;#使用paramiko访问远程主机&quot; class=&quot;headerlink&quot; title=&quot;使用paramiko访问远程主机&quot;&gt;&lt;/a&gt;使用paramiko访问远程主机&lt;/h1&gt;&lt;hr&gt;
@@ -439,10 +439,10 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    <category term="Python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Python/"/>
     
     
-    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    <category term="Python" scheme="http://phd99.com/tags/Python/"/>
     
   </entry>
   
@@ -451,7 +451,7 @@
     <link href="http://phd99.com/2021/10/12/%E5%9C%A8linux%E4%B8%AD%E5%AE%89%E8%A3%85python3/"/>
     <id>http://phd99.com/2021/10/12/%E5%9C%A8linux%E4%B8%AD%E5%AE%89%E8%A3%85python3/</id>
     <published>2021-10-12T08:31:14.000Z</published>
-    <updated>2022-12-04T11:31:12.156Z</updated>
+    <updated>2023-01-10T15:42:58.199Z</updated>
     
     
       
@@ -464,10 +464,10 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    <category term="Python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Python/"/>
     
     
-    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    <category term="Python" scheme="http://phd99.com/tags/Python/"/>
     
   </entry>
   
@@ -476,7 +476,7 @@
     <link href="http://phd99.com/2021/10/12/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
     <id>http://phd99.com/2021/10/12/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</id>
     <published>2021-10-12T08:19:29.000Z</published>
-    <updated>2022-12-04T11:27:05.165Z</updated>
+    <updated>2023-01-10T15:50:52.715Z</updated>
     
     
       
@@ -491,9 +491,9 @@
     <category term="可执行文件" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/"/>
     
     
-    <category term="bat" scheme="http://phd99.com/tags/bat/"/>
+    <category term="BAT" scheme="http://phd99.com/tags/BAT/"/>
     
-    <category term="ssh" scheme="http://phd99.com/tags/ssh/"/>
+    <category term="SSH" scheme="http://phd99.com/tags/SSH/"/>
     
   </entry>
   
@@ -502,7 +502,7 @@
     <link href="http://phd99.com/2021/06/26/Python%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     <id>http://phd99.com/2021/06/26/Python%E7%9F%A5%E8%AF%86%E7%82%B9/</id>
     <published>2021-06-26T13:08:12.000Z</published>
-    <updated>2023-01-10T15:33:17.467Z</updated>
+    <updated>2023-01-10T15:48:12.234Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;一、关键字&quot;&gt;&lt;a href=&quot;#一、关键字&quot; class=&quot;headerlink&quot; title=&quot;一、关键字&quot;&gt;&lt;/a&gt;一、关键字&lt;/h2&gt;&lt;ul&gt;
@@ -523,10 +523,10 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    <category term="Python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Python/"/>
     
     
-    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    <category term="Python" scheme="http://phd99.com/tags/Python/"/>
     
   </entry>
   
@@ -535,7 +535,7 @@
     <link href="http://phd99.com/2021/06/25/Python%E5%9F%BA%E7%A1%80/"/>
     <id>http://phd99.com/2021/06/25/Python%E5%9F%BA%E7%A1%80/</id>
     <published>2021-06-25T13:08:12.000Z</published>
-    <updated>2022-12-04T11:43:17.999Z</updated>
+    <updated>2023-01-10T15:43:06.016Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;一、Python介绍&quot;&gt;&lt;a href=&quot;#一、Python介绍&quot; class=&quot;headerlink&quot; title=&quot;一、Python介绍&quot;&gt;&lt;/a&gt;一、Python介绍&lt;/h2&gt;&lt;h3 id=&quot;1-1-创始人&quot;&gt;&lt;a href=&quot;#1-1-创始人&quot; class=&quot;headerlink&quot; title=&quot;1.1. 创始人&quot;&gt;&lt;/a&gt;1.1. 创始人&lt;/h3&gt;&lt;ul&gt;
@@ -546,10 +546,10 @@
     
     <category term="技术" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    <category term="python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/python/"/>
+    <category term="Python" scheme="http://phd99.com/categories/%E6%8A%80%E6%9C%AF/Python/"/>
     
     
-    <category term="python" scheme="http://phd99.com/tags/python/"/>
+    <category term="Python" scheme="http://phd99.com/tags/Python/"/>
     
   </entry>
   
